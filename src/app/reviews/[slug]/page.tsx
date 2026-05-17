@@ -86,13 +86,13 @@ export default async function ReviewPage({ params }: Props) {
           <div className="review-content-grid">
             <div className="review-main">
               {/* Overview */}
-              <h2>Overview</h2>
+              <h2 id="overview">Overview</h2>
               <p style={{ color: "var(--text-secondary)", marginBottom: 32, lineHeight: 1.8 }}>
                 {browser.description}
               </p>
 
               {/* Detailed Ratings */}
-              <h2>Detailed Ratings</h2>
+              <h2 id="ratings">Detailed Ratings</h2>
               <div className="rating-bars">
                 {ratingCategories.map((cat) => (
                   <div key={cat.label} className="rating-bar-item">
@@ -108,7 +108,7 @@ export default async function ReviewPage({ params }: Props) {
               </div>
 
               {/* Pros & Cons */}
-              <div className="pros-cons">
+              <div id="pros-cons" className="pros-cons">
                 <div className="pros-list">
                   <h3>✅ Pros</h3>
                   <ul>
@@ -126,7 +126,7 @@ export default async function ReviewPage({ params }: Props) {
               {/* In-Depth Review Sections */}
               {browser.reviewContent && browser.reviewContent.length > 0 && (
                 <>
-                  <h2 style={{ marginTop: 48 }}>In-Depth Review</h2>
+                  <h2 id="review" style={{ marginTop: 48 }}>In-Depth Review</h2>
                   {browser.reviewContent.map((section) => (
                     <div key={section.title} className="review-section">
                       <h3>{section.title}</h3>
@@ -148,7 +148,7 @@ export default async function ReviewPage({ params }: Props) {
               {/* Use Cases */}
               {browser.useCases && browser.useCases.length > 0 && (
                 <>
-                  <h2 style={{ marginTop: 48 }}>Best Use Cases</h2>
+                  <h2 id="use-cases" style={{ marginTop: 48 }}>Best Use Cases</h2>
                   <div className="use-cases-grid">
                     {browser.useCases.map((uc) => (
                       <div key={uc} className="use-case-item">
@@ -161,7 +161,7 @@ export default async function ReviewPage({ params }: Props) {
               )}
 
               {/* Key Features */}
-              <h2 style={{ marginTop: 48 }}>Key Features</h2>
+              <h2 id="features" style={{ marginTop: 48 }}>Key Features</h2>
               <div className="features-grid" style={{ marginTop: 20 }}>
                 {browser.features.map((f) => {
                   const [title, desc] = f.includes(" — ") ? f.split(" — ") : [f, ""];
@@ -175,7 +175,7 @@ export default async function ReviewPage({ params }: Props) {
               </div>
 
               {/* Pricing Plans */}
-              <h2 style={{ marginTop: 48 }}>Pricing Plans</h2>
+              <h2 id="pricing" style={{ marginTop: 48 }}>Pricing Plans</h2>
               <div className="browser-grid" style={{ marginTop: 20 }}>
                 {browser.pricing.plans.map((plan) => (
                   <div key={plan.name} className="feature-card">
@@ -196,7 +196,7 @@ export default async function ReviewPage({ params }: Props) {
               {/* Testimonials */}
               {browser.testimonials && browser.testimonials.length > 0 && (
                 <>
-                  <h2 style={{ marginTop: 48 }}>What Users Say</h2>
+                  <h2 id="testimonials" style={{ marginTop: 48 }}>What Users Say</h2>
                   <div className="testimonials-grid">
                     {browser.testimonials.map((t) => (
                       <div key={t.name} className="testimonial-card">
@@ -219,7 +219,7 @@ export default async function ReviewPage({ params }: Props) {
               {/* FAQs */}
               {browser.faqs && browser.faqs.length > 0 && (
                 <>
-                  <h2 style={{ marginTop: 48 }}>Frequently Asked Questions</h2>
+                  <h2 id="faqs" style={{ marginTop: 48 }}>Frequently Asked Questions</h2>
                   <div className="faq-list">
                     {browser.faqs.map((faq) => (
                       <details key={faq.question} className="faq-item">

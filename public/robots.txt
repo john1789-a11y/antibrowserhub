@@ -1,0 +1,5 @@
+# AntiBrowserHub
+User-agent: *
+Allow: /
+
+Sitemap: https://antibrowserhub.com/sitemap.xml

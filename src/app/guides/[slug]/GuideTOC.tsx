@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
 interface TocItem {
   id: string;
@@ -9,56 +9,58 @@ interface TocItem {
 }
 
 export default function GuideTOC({ items }: { items: TocItem[] }) {
-  const [activeId, setActiveId] = useState<string>("");
   const tocRef = useRef<HTMLDivElement>(null);
-  const linkRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+  const activeRef = useRef<string>("");
+  const linkEls = useRef<Map<string, HTMLAnchorElement>>(new Map());
 
-  // Auto-scroll TOC to keep active item visible
-  const scrollActiveIntoView = useCallback((id: string) => {
-    const link = linkRefs.current.get(id);
-    const container = tocRef.current;
-    if (link && container) {
-      const linkTop = link.offsetTop - container.offsetTop;
-      const linkBottom = linkTop + link.offsetHeight;
-      const scrollTop = container.scrollTop;
-      const containerHeight = container.clientHeight;
-
-      if (linkTop < scrollTop + 40) {
-        container.scrollTo({ top: Math.max(0, linkTop - 40), behavior: "smooth" });
-      } else if (linkBottom > scrollTop + containerHeight - 20) {
-        container.scrollTo({ top: linkBottom - containerHeight + 20, behavior: "smooth" });
+  const setActive = useCallback((id: string) => {
+    if (id === activeRef.current) return;
+    // Remove old active
+    if (activeRef.current) {
+      const old = linkEls.current.get(activeRef.current);
+      if (old) old.classList.remove("active");
+    }
+    // Add new active
+    activeRef.current = id;
+    const link = linkEls.current.get(id);
+    if (link) {
+      link.classList.add("active");
+      // Auto-scroll TOC to keep active item visible
+      const container = tocRef.current;
+      if (container) {
+        const linkRect = link.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        if (linkRect.top < containerRect.top + 40) {
+          container.scrollBy({ top: linkRect.top - containerRect.top - 40, behavior: "smooth" });
+        } else if (linkRect.bottom > containerRect.bottom - 20) {
+          container.scrollBy({ top: linkRect.bottom - containerRect.bottom + 20, behavior: "smooth" });
+        }
       }
     }
   }, []);
 
   useEffect(() => {
-    const headingIds = items.map((item) => item.id);
-    const headings = headingIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
+    const headingEls = items
+      .map((item) => ({ id: item.id, el: document.getElementById(item.id) }))
+      .filter((h) => h.el !== null) as { id: string; el: HTMLElement }[];
 
-    if (headings.length === 0) return;
+    if (headingEls.length === 0) return;
 
-    // Use scroll event for more reliable tracking
     const handleScroll = () => {
-      const scrollY = window.scrollY + 120; // offset for header
+      const scrollY = window.scrollY + 120;
 
-      let currentId = headings[0]?.id || "";
-      for (const heading of headings) {
-        if (heading.offsetTop <= scrollY) {
-          currentId = heading.id;
+      // Find the last heading that's above the scroll position
+      let currentId = headingEls[0].id;
+      for (const h of headingEls) {
+        if (h.el.offsetTop <= scrollY) {
+          currentId = h.id;
         } else {
           break;
         }
       }
-
-      if (currentId !== activeId) {
-        setActiveId(currentId);
-        scrollActiveIntoView(currentId);
-      }
+      setActive(currentId);
     };
 
-    // Throttle scroll handler
     let ticking = false;
     const onScroll = () => {
       if (!ticking) {
@@ -71,10 +73,11 @@ export default function GuideTOC({ items }: { items: TocItem[] }) {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    handleScroll(); // initial check
+    // Run once on mount
+    setTimeout(handleScroll, 100);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [items, activeId, scrollActiveIntoView]);
+  }, [items, setActive]);
 
   if (items.length === 0) return null;
 
@@ -87,16 +90,17 @@ export default function GuideTOC({ items }: { items: TocItem[] }) {
             <a
               key={item.id}
               href={`#${item.id}`}
-              ref={(el) => { if (el) linkRefs.current.set(item.id, el); }}
-              className={`guide-toc-link${item.level === 3 ? " guide-toc-sub" : ""}${activeId === item.id ? " active" : ""}`}
+              ref={(el) => {
+                if (el) linkEls.current.set(item.id, el);
+              }}
+              className={`guide-toc-link${item.level === 3 ? " guide-toc-sub" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
                 const el = document.getElementById(item.id);
                 if (el) {
                   el.scrollIntoView({ behavior: "smooth", block: "start" });
                   history.pushState(null, "", `#${item.id}`);
-                  setActiveId(item.id);
-                  scrollActiveIntoView(item.id);
+                  setActive(item.id);
                 }
               }}
             >

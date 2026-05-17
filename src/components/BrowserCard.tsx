@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Browser } from "@/types";
 import { useI18n } from "./I18nProvider";
+import { getBrowserI18n } from "@/i18n/browsers";
 
 function StarRating({ rating }: { rating: number }) {
   const full = Math.floor(rating);
@@ -19,17 +20,14 @@ const ratingLabels: Record<string, Record<string, string>> = {
   good: { en: "Good", zh: "良好", ru: "Хорошо", ja: "良い", fr: "Bien", de: "Gut" },
 };
 
-const startingFrom: Record<string, string> = {
-  en: "Starting from", zh: "起步价", ru: "От", ja: "開始価格", fr: "À partir de", de: "Ab",
-};
-
-const freePlan: Record<string, string> = {
-  en: "✓ Free plan available", zh: "✓ 有免费计划", ru: "✓ Бесплатный план", ja: "✓ 無料プランあり", fr: "✓ Plan gratuit", de: "✓ Kostenloser Plan",
-};
+const startingFrom: Record<string, string> = { en: "Starting from", zh: "起步价", ru: "От", ja: "開始価格", fr: "À partir de", de: "Ab" };
+const freePlanText: Record<string, string> = { en: "✓ Free plan available", zh: "✓ 有免费计划", ru: "✓ Бесплатный план", ja: "✓ 無料プランあり", fr: "✓ Plan gratuit", de: "✓ Kostenloser Plan" };
 
 export default function BrowserCard({ browser }: { browser: Browser }) {
   const { locale, t } = useI18n();
-  const topFeatures = browser.features.slice(0, 4);
+  const bi = getBrowserI18n(browser.slug, locale);
+  const tagline = bi?.tagline || browser.tagline;
+  const features = bi?.features || browser.features.slice(0, 4);
   const ratingLabel = browser.rating.overall >= 4.5
     ? (ratingLabels.excellent[locale] || "Excellent")
     : browser.rating.overall >= 4.0
@@ -39,12 +37,10 @@ export default function BrowserCard({ browser }: { browser: Browser }) {
   return (
     <div className="browser-card" style={{ "--card-accent": browser.color } as React.CSSProperties}>
       <div className="browser-card-header">
-        <div className="browser-card-logo" style={{ background: browser.color }}>
-          {browser.name.charAt(0)}
-        </div>
+        <div className="browser-card-logo" style={{ background: browser.color }}>{browser.name.charAt(0)}</div>
         <div className="browser-card-info">
           <div className="browser-card-name">{browser.name}</div>
-          <div className="browser-card-tagline">{browser.tagline}</div>
+          <div className="browser-card-tagline">{tagline}</div>
         </div>
       </div>
       <div className="browser-card-rating">
@@ -53,19 +49,15 @@ export default function BrowserCard({ browser }: { browser: Browser }) {
         <span className="rating-label">{ratingLabel}</span>
       </div>
       <div className="browser-card-features">
-        {topFeatures.map((f) => (
-          <span key={f} className="feature-tag">{f}</span>
-        ))}
+        {features.map((f) => (<span key={f} className="feature-tag">{f}</span>))}
       </div>
       <div className="browser-card-pricing">
         <div className="pricing-info">
           <div className="pricing-label">{startingFrom[locale] || "Starting from"}</div>
           <div className="pricing-value">{browser.pricing.startingPrice}</div>
-          {browser.pricing.free && <div className="pricing-free">{freePlan[locale] || "✓ Free plan available"}</div>}
+          {browser.pricing.free && <div className="pricing-free">{freePlanText[locale] || "✓ Free plan available"}</div>}
         </div>
-        <Link href={`/reviews/${browser.slug}`} className="card-cta">
-          {t.reviews.readReview}
-        </Link>
+        <Link href={`/reviews/${browser.slug}`} className="card-cta">{t.reviews.readReview}</Link>
       </div>
     </div>
   );

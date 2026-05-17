@@ -381,6 +381,7 @@ img { max-width: 100%; height: auto; }
   background: var(--bg-card); border: 1px solid var(--border-primary);
   border-radius: var(--radius-lg); padding: 28px;
   transition: all 0.3s ease; position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
 }
 .browser-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -415,6 +416,7 @@ img { max-width: 100%; height: auto; }
 .rating-label { font-size: 0.8rem; color: var(--text-muted); }
 .browser-card-features {
   display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+  flex: 1; align-content: flex-start;
 }
 .feature-tag {
   padding: 4px 10px; border-radius: 100px;
@@ -424,6 +426,7 @@ img { max-width: 100%; height: auto; }
 .browser-card-pricing {
   display: flex; align-items: center; justify-content: space-between;
   padding-top: 16px; border-top: 1px solid var(--border-primary);
+  margin-top: auto;
 }
 .pricing-info { }
 .pricing-label { font-size: 0.75rem; color: var(--text-muted); }

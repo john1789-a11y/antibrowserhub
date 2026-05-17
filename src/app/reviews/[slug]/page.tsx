@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { browsers, getBrowserBySlug, getAllBrowserSlugs } from "@/data/browsers";
+import ReviewTOC from "./ReviewTOC";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -305,20 +306,17 @@ export default async function ReviewPage({ params }: Props) {
               </div>
 
               {/* Table of Contents */}
-              <div className="sidebar-card" style={{ marginTop: 20 }}>
-                <h3>Table of Contents</h3>
-                <nav className="sidebar-toc">
-                  <a href="#overview">Overview</a>
-                  <a href="#ratings">Detailed Ratings</a>
-                  <a href="#pros-cons">Pros & Cons</a>
-                  {browser.reviewContent && <a href="#review">In-Depth Review</a>}
-                  {browser.useCases && <a href="#use-cases">Use Cases</a>}
-                  <a href="#features">Key Features</a>
-                  <a href="#pricing">Pricing Plans</a>
-                  {browser.testimonials && <a href="#testimonials">User Reviews</a>}
-                  {browser.faqs && <a href="#faqs">FAQs</a>}
-                </nav>
-              </div>
+              <ReviewTOC sections={[
+                { id: "overview", label: "Overview" },
+                { id: "ratings", label: "Detailed Ratings" },
+                { id: "pros-cons", label: "Pros & Cons" },
+                ...(browser.reviewContent ? [{ id: "review", label: "In-Depth Review" }] : []),
+                ...(browser.useCases ? [{ id: "use-cases", label: "Use Cases" }] : []),
+                { id: "features", label: "Key Features" },
+                { id: "pricing", label: "Pricing Plans" },
+                ...(browser.testimonials ? [{ id: "testimonials", label: "User Reviews" }] : []),
+                ...(browser.faqs ? [{ id: "faqs", label: "FAQs" }] : []),
+              ]} />
             </aside>
           </div>
         </div>

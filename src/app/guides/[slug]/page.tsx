@@ -43,9 +43,6 @@ function extractTOC(content: string): TocItem[] {
     if (line.startsWith("## ")) {
       const text = line.slice(3);
       toc.push({ id: slugify(text), text, level: 2 });
-    } else if (line.startsWith("### ")) {
-      const text = line.slice(4);
-      toc.push({ id: slugify(text), text, level: 3 });
     }
   }
   return toc;

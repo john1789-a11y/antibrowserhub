@@ -1,6 +1,10 @@
+"use client";
 import Link from "next/link";
+import { useI18n } from "./I18nProvider";
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="footer">
       <div className="container">
@@ -10,10 +14,10 @@ export default function Footer() {
               <div className="logo-icon">🛡️</div>
               <div className="logo-text"><span>AntiBrowserHub</span></div>
             </div>
-            <p>Your trusted resource for antidetect browser reviews, comparisons, and guides. We help you find the perfect tool for your multi-account management needs.</p>
+            <p>{t.footer.description}</p>
           </div>
           <div className="footer-col">
-            <h4>Browsers</h4>
+            <h4>{t.footer.product}</h4>
             <Link href="/reviews/morelogin">MoreLogin</Link>
             <Link href="/reviews/adspower">AdsPower</Link>
             <Link href="/reviews/gologin">GoLogin</Link>
@@ -22,22 +26,22 @@ export default function Footer() {
             <Link href="/reviews/octobrowser">Octo Browser</Link>
           </div>
           <div className="footer-col">
-            <h4>Resources</h4>
-            <Link href="/reviews">All Reviews</Link>
-            <Link href="/compare">Compare</Link>
-            <Link href="/guides">Guides</Link>
-            <Link href="/about">About Us</Link>
+            <h4>{t.footer.resources}</h4>
+            <Link href="/reviews">{t.nav.reviews}</Link>
+            <Link href="/compare">{t.nav.compare}</Link>
+            <Link href="/guides">{t.nav.guides}</Link>
+            <Link href="/about">{t.nav.about}</Link>
           </div>
           <div className="footer-col">
-            <h4>Legal</h4>
-            <Link href="/about">Privacy Policy</Link>
-            <Link href="/about">Terms of Service</Link>
+            <h4>{t.footer.legal}</h4>
+            <Link href="/about">{t.footer.privacy}</Link>
+            <Link href="/about">{t.footer.terms}</Link>
             <Link href="/about">Affiliate Disclosure</Link>
             <Link href="/about">Contact</Link>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} AntiBrowserHub. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} {t.footer.copyright}</span>
           <span>Made with ❤️ for the antidetect community</span>
         </div>
       </div>

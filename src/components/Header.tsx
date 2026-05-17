@@ -1,9 +1,16 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useTheme } from "./ThemeProvider";
+import { useI18n } from "./I18nProvider";
+import { locales, localeNames, localeFlags, type Locale } from "@/i18n/config";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+  const { theme, toggleTheme } = useTheme();
+  const { locale, setLocale, t } = useI18n();
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -14,6 +21,17 @@ export default function Header() {
     }
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
+
+  // Close language dropdown on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   const closeMenu = () => setMobileOpen(false);
 
@@ -26,28 +44,90 @@ export default function Header() {
             <div className="logo-text"><span>AntiBrowserHub</span></div>
           </Link>
           <nav className="nav nav-desktop">
-            <Link href="/reviews" className="nav-link">Reviews</Link>
-            <Link href="/compare" className="nav-link">Compare</Link>
-            <Link href="/guides" className="nav-link">Guides</Link>
-            <Link href="/about" className="nav-link">About</Link>
-            <Link href="/reviews" className="nav-cta">Get Started →</Link>
+            <Link href="/reviews" className="nav-link">{t.nav.reviews}</Link>
+            <Link href="/compare" className="nav-link">{t.nav.compare}</Link>
+            <Link href="/guides" className="nav-link">{t.nav.guides}</Link>
+            <Link href="/about" className="nav-link">{t.nav.about}</Link>
+
+            {/* Theme toggle */}
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
+
+            {/* Language switcher */}
+            <div className="lang-switcher" ref={langRef}>
+              <button
+                className="lang-btn"
+                onClick={() => setLangOpen(!langOpen)}
+                aria-label="Change language"
+              >
+                {localeFlags[locale]} <span className="lang-code">{locale.toUpperCase()}</span>
+              </button>
+              {langOpen && (
+                <div className="lang-dropdown">
+                  {locales.map((loc) => (
+                    <button
+                      key={loc}
+                      className={`lang-option${loc === locale ? " active" : ""}`}
+                      onClick={() => { setLocale(loc); setLangOpen(false); }}
+                    >
+                      <span>{localeFlags[loc]}</span>
+                      <span>{localeNames[loc]}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link href="/reviews" className="nav-cta">{t.nav.getStarted}</Link>
           </nav>
-          <button className="mobile-menu-btn" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-            {mobileOpen ? "✕" : "☰"}
-          </button>
+          <div className="mobile-controls">
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
+            <button className="mobile-menu-btn" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+              {mobileOpen ? "✕" : "☰"}
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Mobile menu - rendered outside header to avoid z-index/overflow issues */}
+      {/* Mobile menu */}
       {mobileOpen && (
         <>
           <div className="mobile-overlay" onClick={closeMenu} />
           <nav className="mobile-nav">
-            <Link href="/reviews" className="mobile-nav-link" onClick={closeMenu}>Reviews</Link>
-            <Link href="/compare" className="mobile-nav-link" onClick={closeMenu}>Compare</Link>
-            <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>Guides</Link>
-            <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>About</Link>
-            <Link href="/reviews" className="mobile-nav-cta" onClick={closeMenu}>Get Started →</Link>
+            <Link href="/reviews" className="mobile-nav-link" onClick={closeMenu}>{t.nav.reviews}</Link>
+            <Link href="/compare" className="mobile-nav-link" onClick={closeMenu}>{t.nav.compare}</Link>
+            <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>{t.nav.guides}</Link>
+            <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>{t.nav.about}</Link>
+
+            {/* Mobile language switcher */}
+            <div className="mobile-lang-section">
+              <div className="mobile-lang-label">{t.common.language}</div>
+              <div className="mobile-lang-grid">
+                {locales.map((loc) => (
+                  <button
+                    key={loc}
+                    className={`mobile-lang-btn${loc === locale ? " active" : ""}`}
+                    onClick={() => { setLocale(loc); }}
+                  >
+                    {localeFlags[loc]} {localeNames[loc]}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <Link href="/reviews" className="mobile-nav-cta" onClick={closeMenu}>{t.nav.getStarted}</Link>
           </nav>
         </>
       )}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuideBySlug, getAllGuideSlugs } from "@/data/guides";
+import GuideTOC from "./GuideTOC";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,8 +20,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+interface TocItem {
+  id: string;
+  text: string;
+  level: number;
+}
+
+function extractTOC(content: string): TocItem[] {
+  const toc: TocItem[] = [];
+  const lines = content.split("\n");
+  let inCodeBlock = false;
+  for (const line of lines) {
+    if (line.startsWith("```")) { inCodeBlock = !inCodeBlock; continue; }
+    if (inCodeBlock) continue;
+    if (line.startsWith("## ")) {
+      const text = line.slice(3);
+      toc.push({ id: slugify(text), text, level: 2 });
+    } else if (line.startsWith("### ")) {
+      const text = line.slice(4);
+      toc.push({ id: slugify(text), text, level: 3 });
+    }
+  }
+  return toc;
+}
+
 function renderMarkdown(content: string) {
-  // Simple markdown-to-HTML for guide content
   const lines = content.split("\n");
   const html: string[] = [];
   let inCodeBlock = false;
@@ -102,13 +133,17 @@ function renderMarkdown(content: string) {
       continue;
     }
 
-    // Headers
+    // Headers — add id for anchor links
     if (line.startsWith("### ")) {
-      html.push(`<h3>${line.slice(4)}</h3>`);
+      const text = line.slice(4);
+      const id = slugify(text);
+      html.push(`<h3 id="${id}">${text}</h3>`);
       continue;
     }
     if (line.startsWith("## ")) {
-      html.push(`<h2>${line.slice(3)}</h2>`);
+      const text = line.slice(3);
+      const id = slugify(text);
+      html.push(`<h2 id="${id}">${text}</h2>`);
       continue;
     }
 
@@ -134,6 +169,8 @@ export default async function GuidePage({ params }: Props) {
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
+  const toc = extractTOC(guide.content);
+
   return (
     <>
       <section className="page-hero">
@@ -151,11 +188,14 @@ export default async function GuidePage({ params }: Props) {
         </div>
       </section>
       <section className="section">
-        <div className="container" style={{ maxWidth: 800 }}>
+        <div className="container guide-layout">
           <article
             className="guide-content"
             dangerouslySetInnerHTML={{ __html: renderMarkdown(guide.content) }}
           />
+          <GuideTOC items={toc} />
+        </div>
+        <div className="container" style={{ maxWidth: 800 }}>
           <div style={{ marginTop: 48, padding: "32px", background: "var(--bg-secondary)", borderRadius: "var(--radius-lg)", border: "1px solid var(--border-primary)", textAlign: "center" }}>
             <h3 style={{ marginBottom: 8 }}>Ready to choose your antidetect browser?</h3>
             <p style={{ color: "var(--text-secondary)", marginBottom: 16 }}>Compare features, pricing, and performance side by side.</p>

@@ -97,10 +97,42 @@ img { max-width: 100%; height: auto; }
   font-size: 1.5rem; cursor: pointer; z-index: 110;
 }
 
-/* Mobile overlay backdrop */
+/* Mobile Nav (rendered outside header) */
 .mobile-overlay {
-  display: none;
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
 }
+.mobile-nav {
+  position: fixed;
+  top: var(--header-height); left: 0; right: 0; bottom: 0;
+  z-index: 210;
+  background: var(--bg-primary);
+  display: flex; flex-direction: column;
+  padding: 16px 24px 40px;
+  overflow-y: auto;
+  animation: mobileNavIn 0.25s ease;
+}
+@keyframes mobileNavIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.mobile-nav-link {
+  display: block; padding: 16px 0;
+  font-size: 1.1rem; font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-primary);
+  transition: color 0.2s;
+}
+.mobile-nav-link:hover { color: var(--text-primary); }
+.mobile-nav-cta {
+  display: block; margin-top: 24px; padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary); color: white;
+  font-weight: 600; font-size: 1rem; text-align: center;
+  transition: transform 0.2s;
+}
+.mobile-nav-cta:hover { transform: translateY(-2px); }
 
 /* ===== HERO ===== */
 .hero {
@@ -517,37 +549,8 @@ img { max-width: 100%; height: auto; }
 /* Mobile */
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
-  .nav { display: none !important; }
-  .nav.nav-mobile-open {
-    display: flex !important;
-    position: fixed;
-    top: var(--header-height);
-    left: 0; right: 0; bottom: 0;
-    background: var(--bg-primary);
-    flex-direction: column;
-    padding: 32px 24px;
-    gap: 8px;
-    z-index: 100;
-    overflow-y: auto;
-    animation: slideDown 0.2s ease;
-  }
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .nav.nav-mobile-open .nav-link {
-    font-size: 1.1rem; padding: 14px 0;
-    border-bottom: 1px solid var(--border-primary);
-  }
-  .nav.nav-mobile-open .nav-cta {
-    margin-top: 16px; text-align: center;
-    padding: 14px 24px; font-size: 1rem;
-  }
+  .nav-desktop { display: none; }
   .mobile-menu-btn { display: block; }
-  .mobile-overlay {
-    display: block; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.5); z-index: 90;
-  }
 
   /* Hero */
   .hero { padding: 120px 0 60px; }

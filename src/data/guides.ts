@@ -627,84 +627,166 @@ main().catch(console.error);
 
 Setting up an antidetect browser profile is just the first step. You need to **verify** that your fingerprint is actually working correctly. A misconfigured profile can leak your real identity or produce inconsistent data that flags your account.
 
-## Essential Testing Tools
+**Important:** Always test your fingerprint setup before using a profile for real accounts. A 5-minute test can save you from account bans.
 
-### 1. BrowserLeaks (browserleaks.com)
-The most comprehensive fingerprint testing suite. Check:
-- **Canvas Fingerprint** — should show a unique hash per profile
-- **WebGL Report** — GPU information should match your profile settings
-- **Fonts** — number and list of fonts should vary between profiles
-- **WebRTC** — should not leak your real IP address
-- **Audio Context** — should show unique audio fingerprint
+---
 
-### 2. CreepJS (abrahamjuliot.github.io/creepjs)
-Advanced detection testing that checks for:
-- Fingerprint **consistency** — all parameters should tell a coherent story
-- **Lies detected** — flags when parameters appear tampered with
-- **Trust Score** — overall assessment of how "real" your browser looks
+## Step-by-Step Testing Workflow
 
-### 3. Pixelscan (pixelscan.net)
-Quick visual check that evaluates:
-- IP/Timezone consistency
-- Browser/OS consistency
-- WebRTC leak status
-- Overall detection risk level
+### Step 1: Prepare Your Profile
 
-### 4. IPHey (iphey.com)
-Focused specifically on:
-- IP reputation score
-- Browser fingerprint uniqueness
-- Proxy detection
+Before testing, make sure your antidetect browser profile is properly configured:
+1. Open your antidetect browser (MoreLogin, AdsPower, GoLogin, etc.)
+2. Create a new profile or select an existing one
+3. Assign a proxy — **residential proxy recommended** for best results
+4. Set the profile timezone and language to match your proxy location
+5. Launch the profile
 
-## What to Check
+### Step 2: Test with BrowserLeaks
 
-### ✅ Canvas Fingerprint
-Each profile should have a **different** Canvas hash. If two profiles show the same hash, your antidetect browser isn't properly spoofing Canvas.
+**Visit:** [browserleaks.com](https://browserleaks.com)
 
-### ✅ WebGL Renderer
-The GPU renderer string should:
-- Match a real GPU model
-- Be consistent with the OS you're spoofing
-- Differ between profiles (ideally)
+BrowserLeaks is the most comprehensive fingerprint testing suite. Test each section in order:
 
-### ✅ WebRTC
-**Critical check!** WebRTC can leak your real IP even behind a proxy. Verify:
-- No local IP leak
-- Public IP matches your proxy IP
-- No ICE candidate leaks
+**2a. Canvas Fingerprint** → [browserleaks.com/canvas](https://browserleaks.com/canvas)
+- Look at the **Signature** hash — it should be unique per profile
+- Open 2 profiles side by side — their Canvas hashes should be **different**
+- If they match, your antidetect browser isn't spoofing Canvas properly
+- Expected result: ✅ Unique hash like \`4a8b2c1d9e7f3a5b\`
 
-### ✅ Timezone & Language
-Must match your proxy location:
-- If proxy is in New York, timezone should be America/New_York
-- Language should include en-US
-- Geolocation (if enabled) should match
+**2b. WebGL Report** → [browserleaks.com/webgl](https://browserleaks.com/webgl)
+- Check the **Unmasked Renderer** field — it should show a real GPU model
+- Verify it matches the OS you're spoofing (e.g., no NVIDIA RTX on a "macOS" profile)
+- Expected result: ✅ GPU like \`ANGLE (NVIDIA, NVIDIA GeForce GTX 1660 SUPER)\`
 
-### ✅ Screen Resolution
-Should be a common resolution for the spoofed OS:
-- Windows: 1920x1080, 1366x768
-- macOS: 1440x900, 2560x1440
-- Avoid unusual resolutions like 1234x567
+**2c. WebRTC Leak Test** → [browserleaks.com/webrtc](https://browserleaks.com/webrtc)
+- **CRITICAL CHECK** — WebRTC can expose your real IP even behind a proxy
+- Your real local IP should NOT appear anywhere
+- The public IP should match your proxy IP
+- Expected result: ✅ Only proxy IP shown, no local IP leaks
 
-## Red Flags to Watch For
+**2d. Font Detection** → [browserleaks.com/fonts](https://browserleaks.com/fonts)
+- The number and list of fonts should match the spoofed OS
+- Windows profiles should show Windows fonts, macOS profiles should show macOS fonts
+- Expected result: ✅ Font list consistent with the spoofed operating system
 
-| Issue | What It Means |
-|-------|--------------|
-| Same Canvas hash across profiles | Canvas spoofing not working |
-| WebRTC leaking real IP | WebRTC protection disabled |
-| Timezone mismatch with IP | Profile/proxy location mismatch |
-| "Lies detected" in CreepJS | Fingerprint parameters are inconsistent |
-| Low trust score | Multiple parameters look artificial |
+**2e. Audio Context** → [browserleaks.com/javascript](https://browserleaks.com/javascript)
+- The AudioContext fingerprint should be unique per profile
+- Expected result: ✅ Unique audio hash
 
-## Testing Workflow
+### Step 3: Test with CreepJS
 
-1. **Create a new profile** with default settings
-2. **Assign a proxy** matching your desired location
-3. **Launch the profile** and visit BrowserLeaks
-4. **Check each section** — Canvas, WebGL, WebRTC, Fonts
-5. **Visit CreepJS** — check trust score and lies
-6. **Fix any issues** — adjust profile settings
-7. **Re-test** until all checks pass
-8. **Save the profile** — it's ready for use`,
+**Visit:** [abrahamjuliot.github.io/creepjs](https://abrahamjuliot.github.io/creepjs/)
+
+CreepJS is the most advanced detection test. Wait 10-15 seconds for all tests to complete.
+
+**What to check:**
+- **Trust Score** — higher is better, aim for 70%+
+- **Lies Detected** — should be **0** for best results
+- **Fingerprint Grade** — A or B is good, C or below needs fixing
+- **Browser/OS consistency** — CreepJS checks if all parameters tell a coherent story
+
+**How to read results:**
+- 🟢 Green items = passing, your fingerprint is good
+- 🟡 Yellow items = suspicious, may need adjustment
+- 🔴 Red items = detected tampering, needs immediate fixing
+
+**Common CreepJS warnings and fixes:**
+- "Navigator lies detected" → Update your antidetect browser to the latest version
+- "Canvas/WebGL mismatch" → Reset fingerprint settings and regenerate
+- "Timezone inconsistency" → Match timezone to proxy location
+
+### Step 4: Test with Pixelscan
+
+**Visit:** [pixelscan.net](https://pixelscan.net)
+
+Pixelscan provides a quick visual check with clear pass/fail indicators:
+
+**Expected results:**
+- **IP/Timezone** → ✅ Match (green)
+- **Browser/OS** → ✅ Consistent (green)
+- **WebRTC** → ✅ No Leak (green)
+- **Overall Status** → ✅ Consistent
+
+If any item shows ❌ (red), refer to the troubleshooting section below.
+
+### Step 5: Test with IPHey
+
+**Visit:** [iphey.com](https://iphey.com)
+
+IPHey focuses on IP and browser consistency:
+- **Overall Score** — aim for "Real" or "Good" rating
+- **IP Quality** — check your proxy isn't flagged
+- **Browser Fingerprint** — should show as unique and consistent
+
+---
+
+## Detailed Parameter Checklist
+
+| Parameter | Where to Test | What to Look For | Fix If Wrong |
+|-----------|--------------|-----------------|--------------|
+| Canvas Hash | BrowserLeaks /canvas | Unique per profile | Regenerate fingerprint |
+| WebGL Renderer | BrowserLeaks /webgl | Real GPU model | Update GPU settings |
+| WebRTC IP | BrowserLeaks /webrtc | Only proxy IP | Enable WebRTC blocking |
+| Timezone | Pixelscan | Match proxy location | Set correct timezone |
+| Language | BrowserLeaks /javascript | Match proxy country | Update language settings |
+| Screen Size | BrowserLeaks /javascript | Common resolution | Use 1920x1080 or 1366x768 |
+| User Agent | BrowserLeaks /javascript | Current Chrome/Firefox | Update browser version |
+| Fonts | BrowserLeaks /fonts | Match spoofed OS | Reset font settings |
+| Audio | BrowserLeaks /javascript | Unique hash | Regenerate audio fingerprint |
+| Platform | CreepJS | Match other parameters | Ensure OS consistency |
+
+---
+
+## Troubleshooting Common Issues
+
+### Problem: Same Canvas hash across all profiles
+**Cause:** Canvas spoofing is disabled or using the same seed
+**Fix:** In your antidetect browser settings:
+1. Find the Canvas/Fingerprint section
+2. Set Canvas mode to "Noise" or "Unique per profile"
+3. Regenerate the profile fingerprint
+4. Retest on BrowserLeaks
+
+### Problem: WebRTC leaking real IP
+**Cause:** WebRTC protection is not enabled
+**Fix:**
+1. In profile settings, find WebRTC section
+2. Set to "Disabled" or "Proxy Only"
+3. Relaunch the profile
+4. Verify at browserleaks.com/webrtc
+
+### Problem: Timezone doesn't match IP location
+**Cause:** Profile timezone not matching proxy location
+**Fix:**
+1. Check your proxy's actual location (e.g., New York)
+2. Set profile timezone to match (America/New_York)
+3. Also update the language (en-US) and geolocation coordinates
+
+### Problem: CreepJS shows "Lies detected"
+**Cause:** Fingerprint parameters are inconsistent
+**Fix:**
+1. Don't mix parameters from different OS/browser combinations
+2. Use your antidetect browser's auto-fingerprint feature
+3. Avoid manually overriding individual parameters unless necessary
+
+### Problem: Pixelscan shows "Inconsistent"
+**Cause:** One or more parameters don't match each other
+**Fix:**
+1. Check the specific red items in Pixelscan
+2. Most common: timezone/IP mismatch or browser/OS mismatch
+3. Reset the profile and use automatic fingerprint generation
+
+---
+
+## Testing Best Practices
+
+- **Test every new profile** before using it for real accounts
+- **Test after proxy changes** — a new proxy might need timezone/language adjustments
+- **Test periodically** — antidetect browser updates can change fingerprint behavior
+- **Use multiple test tools** — no single tool catches everything
+- **Compare profiles** — open 2 profiles side by side and verify they look different
+- **Save working configurations** — once a profile passes all tests, note the settings for future reference`,
   },
 ];
 

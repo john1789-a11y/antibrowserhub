@@ -82,7 +82,7 @@ export default async function ReviewPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 40 }}>
+      <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="review-content-grid">
             <div className="review-main">

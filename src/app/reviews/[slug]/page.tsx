@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const browser = getBrowserBySlug(slug);
   if (!browser) return {};
   return {
-    title: `${browser.name} Review — Is It Worth It in 2026?`,
-    description: `${browser.name} review: ${browser.tagline}. Rating: ${browser.rating.overall}/5. Starting from ${browser.pricing.startingPrice}. Read our in-depth analysis.`,
+    title: `${browser.name} Review 2026 — Features, Pricing & Honest Analysis`,
+    description: `In-depth ${browser.name} review: ${browser.tagline}. Rating: ${browser.rating.overall}/5. Starting from ${browser.pricing.startingPrice}. Pros, cons, fingerprint test results, pricing comparison & more.`,
   };
 }
 
@@ -41,12 +41,26 @@ export default async function ReviewPage({ params }: Props) {
     reviewRating: { "@type": "Rating", ratingValue: browser.rating.overall, bestRating: 5 },
     author: { "@type": "Organization", name: "AntiBrowserHub" },
     publisher: { "@type": "Organization", name: "AntiBrowserHub" },
+    datePublished: "2026-01-15",
+    dateModified: "2026-05-17",
   };
+
+  const faqJsonLd = browser.faqs && browser.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: browser.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  } : null;
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
 
+      {/* Hero */}
       <section className="review-hero">
         <div className="container">
           <div className="review-hero-inner">
@@ -54,12 +68,13 @@ export default async function ReviewPage({ params }: Props) {
               {browser.name.charAt(0)}
             </div>
             <div className="review-hero-info">
-              <h1>{browser.name} Review</h1>
+              <h1>{browser.name} Review 2026</h1>
               <p>{browser.tagline}</p>
               <div className="review-meta">
                 <span>⭐ {browser.rating.overall}/5</span>
                 <span>💰 From {browser.pricing.startingPrice}</span>
-                <span>📅 Updated 2026</span>
+                <span>📅 Updated May 2026</span>
+                {browser.pricing.free && <span>🆓 Free Plan Available</span>}
               </div>
             </div>
           </div>
@@ -70,11 +85,13 @@ export default async function ReviewPage({ params }: Props) {
         <div className="container">
           <div className="review-content-grid">
             <div className="review-main">
+              {/* Overview */}
               <h2>Overview</h2>
               <p style={{ color: "var(--text-secondary)", marginBottom: 32, lineHeight: 1.8 }}>
                 {browser.description}
               </p>
 
+              {/* Detailed Ratings */}
               <h2>Detailed Ratings</h2>
               <div className="rating-bars">
                 {ratingCategories.map((cat) => (
@@ -90,6 +107,7 @@ export default async function ReviewPage({ params }: Props) {
                 ))}
               </div>
 
+              {/* Pros & Cons */}
               <div className="pros-cons">
                 <div className="pros-list">
                   <h3>✅ Pros</h3>
@@ -105,15 +123,58 @@ export default async function ReviewPage({ params }: Props) {
                 </div>
               </div>
 
-              <h2>Key Features</h2>
-              <div className="features-grid" style={{ marginTop: 20 }}>
-                {browser.features.map((f) => (
-                  <div key={f} className="feature-card" style={{ padding: 20 }}>
-                    <h3 className="feature-title" style={{ fontSize: "0.95rem" }}>{f}</h3>
+              {/* In-Depth Review Sections */}
+              {browser.reviewContent && browser.reviewContent.length > 0 && (
+                <>
+                  <h2 style={{ marginTop: 48 }}>In-Depth Review</h2>
+                  {browser.reviewContent.map((section) => (
+                    <div key={section.title} className="review-section">
+                      <h3>{section.title}</h3>
+                      <div className="review-section-content">
+                        {section.content.split("\n\n").map((paragraph, i) => (
+                          <p key={i} dangerouslySetInnerHTML={{
+                            __html: paragraph
+                              .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+                              .replace(/\n- /g, "<br/>• ")
+                              .replace(/\n/g, "<br/>")
+                          }} />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+
+              {/* Use Cases */}
+              {browser.useCases && browser.useCases.length > 0 && (
+                <>
+                  <h2 style={{ marginTop: 48 }}>Best Use Cases</h2>
+                  <div className="use-cases-grid">
+                    {browser.useCases.map((uc) => (
+                      <div key={uc} className="use-case-item">
+                        <span className="use-case-icon">🎯</span>
+                        <span>{uc}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </>
+              )}
+
+              {/* Key Features */}
+              <h2 style={{ marginTop: 48 }}>Key Features</h2>
+              <div className="features-grid" style={{ marginTop: 20 }}>
+                {browser.features.map((f) => {
+                  const [title, desc] = f.includes(" — ") ? f.split(" — ") : [f, ""];
+                  return (
+                    <div key={f} className="feature-card" style={{ padding: 20 }}>
+                      <h3 className="feature-title" style={{ fontSize: "0.95rem" }}>{title}</h3>
+                      {desc && <p className="feature-desc" style={{ fontSize: "0.82rem", marginTop: 6 }}>{desc}</p>}
+                    </div>
+                  );
+                })}
               </div>
 
+              {/* Pricing Plans */}
               <h2 style={{ marginTop: 48 }}>Pricing Plans</h2>
               <div className="browser-grid" style={{ marginTop: 20 }}>
                 {browser.pricing.plans.map((plan) => (
@@ -132,6 +193,58 @@ export default async function ReviewPage({ params }: Props) {
                 ))}
               </div>
 
+              {/* Testimonials */}
+              {browser.testimonials && browser.testimonials.length > 0 && (
+                <>
+                  <h2 style={{ marginTop: 48 }}>What Users Say</h2>
+                  <div className="testimonials-grid">
+                    {browser.testimonials.map((t) => (
+                      <div key={t.name} className="testimonial-card">
+                        <div className="testimonial-quote">&ldquo;{t.text}&rdquo;</div>
+                        <div className="testimonial-author">
+                          <div className="testimonial-avatar" style={{ background: browser.color }}>
+                            {t.name.charAt(0)}
+                          </div>
+                          <div>
+                            <div className="testimonial-name">{t.name}</div>
+                            <div className="testimonial-role">{t.role}</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* FAQs */}
+              {browser.faqs && browser.faqs.length > 0 && (
+                <>
+                  <h2 style={{ marginTop: 48 }}>Frequently Asked Questions</h2>
+                  <div className="faq-list">
+                    {browser.faqs.map((faq) => (
+                      <details key={faq.question} className="faq-item">
+                        <summary className="faq-question">{faq.question}</summary>
+                        <div className="faq-answer">{faq.answer}</div>
+                      </details>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {/* CTA */}
+              <div className="review-cta-box" style={{ marginTop: 48 }}>
+                <h3>Ready to Try {browser.name}?</h3>
+                <p>
+                  {browser.pricing.free
+                    ? `Start with ${browser.pricing.freeProfiles} free profiles — no credit card required.`
+                    : `Plans start from ${browser.pricing.startingPrice}. See all pricing options.`}
+                </p>
+                <a href={browser.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                  Try {browser.name} Free →
+                </a>
+              </div>
+
+              {/* Other Browsers */}
               <h2 style={{ marginTop: 48 }}>Other Browsers You Might Like</h2>
               <div className="browser-grid" style={{ marginTop: 20 }}>
                 {otherBrowsers.map((b) => (
@@ -150,6 +263,7 @@ export default async function ReviewPage({ params }: Props) {
               </div>
             </div>
 
+            {/* Sidebar */}
             <aside className="review-sidebar">
               <div className="sidebar-card">
                 <h3>Quick Facts</h3>
@@ -178,12 +292,32 @@ export default async function ReviewPage({ params }: Props) {
                   <span className="sidebar-item-value" style={{ textTransform: "capitalize" }}>{browser.platforms.join(", ")}</span>
                 </div>
                 <div className="sidebar-item">
+                  <span className="sidebar-item-label">Automation</span>
+                  <span className="sidebar-item-value" style={{ fontSize: "0.78rem" }}>{browser.automationSupport.join(", ")}</span>
+                </div>
+                <div className="sidebar-item">
                   <span className="sidebar-item-label">Founded</span>
                   <span className="sidebar-item-value">{browser.foundedYear}</span>
                 </div>
                 <a href={browser.affiliateUrl} target="_blank" rel="noopener noreferrer" className="sidebar-cta">
                   Try {browser.name} Free →
                 </a>
+              </div>
+
+              {/* Table of Contents */}
+              <div className="sidebar-card" style={{ marginTop: 20 }}>
+                <h3>Table of Contents</h3>
+                <nav className="sidebar-toc">
+                  <a href="#overview">Overview</a>
+                  <a href="#ratings">Detailed Ratings</a>
+                  <a href="#pros-cons">Pros & Cons</a>
+                  {browser.reviewContent && <a href="#review">In-Depth Review</a>}
+                  {browser.useCases && <a href="#use-cases">Use Cases</a>}
+                  <a href="#features">Key Features</a>
+                  <a href="#pricing">Pricing Plans</a>
+                  {browser.testimonials && <a href="#testimonials">User Reviews</a>}
+                  {browser.faqs && <a href="#faqs">FAQs</a>}
+                </nav>
               </div>
             </aside>
           </div>

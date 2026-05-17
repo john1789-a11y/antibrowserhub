@@ -31,6 +31,26 @@ export interface Browser {
   automationSupport: string[];
   foundedYear: number;
   color: string;
+  reviewContent?: ReviewSection[];
+  useCases?: string[];
+  testimonials?: Testimonial[];
+  faqs?: FAQ[];
+}
+
+export interface ReviewSection {
+  title: string;
+  content: string;
+}
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  text: string;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
 }
 
 export interface PricingPlan {

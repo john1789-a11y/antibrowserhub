@@ -1,71 +1,72 @@
+"use client";
 import { browsers } from "@/data/browsers";
+import { useI18n } from "./I18nProvider";
+
+const tableLabels: Record<string, Record<string, string>> = {
+  feature: { en: "Feature", zh: "功能", ru: "Функция", ja: "機能", fr: "Fonctionnalité", de: "Funktion" },
+  overallRating: { en: "Overall Rating", zh: "综合评分", ru: "Общий рейтинг", ja: "総合評価", fr: "Note globale", de: "Gesamtbewertung" },
+  freePlan: { en: "Free Plan", zh: "免费计划", ru: "Бесплатный план", ja: "無料プラン", fr: "Plan gratuit", de: "Kostenloser Plan" },
+  startingPrice: { en: "Starting Price", zh: "起步价", ru: "Начальная цена", ja: "開始価格", fr: "Prix de départ", de: "Startpreis" },
+  apiSupport: { en: "API Support", zh: "API 支持", ru: "Поддержка API", ja: "API対応", fr: "Support API", de: "API-Unterstützung" },
+  teamFeatures: { en: "Team Features", zh: "团队功能", ru: "Командные функции", ja: "チーム機能", fr: "Fonctions d'équipe", de: "Team-Funktionen" },
+  cookieImport: { en: "Cookie Import", zh: "Cookie 导入", ru: "Импорт Cookie", ja: "Cookie インポート", fr: "Import Cookie", de: "Cookie-Import" },
+  automation: { en: "Automation", zh: "自动化", ru: "Автоматизация", ja: "自動化", fr: "Automatisation", de: "Automatisierung" },
+  platforms: { en: "Platforms", zh: "支持平台", ru: "Платформы", ja: "プラットフォーム", fr: "Plateformes", de: "Plattformen" },
+  founded: { en: "Founded", zh: "成立年份", ru: "Основан", ja: "設立年", fr: "Fondé", de: "Gegründet" },
+  profiles: { en: "profiles", zh: "配置", ru: "профилей", ja: "プロファイル", fr: "profils", de: "Profile" },
+};
 
 export default function ComparisonTable() {
+  const { locale } = useI18n();
+  const l = (key: string) => tableLabels[key]?.[locale] || tableLabels[key]?.en || key;
+
   return (
     <div className="comparison-table-wrap">
       <table className="comparison-table">
         <thead>
           <tr>
-            <th>Feature</th>
-            {browsers.map((b) => (
-              <th key={b.id}>{b.name}</th>
-            ))}
+            <th>{l("feature")}</th>
+            {browsers.map((b) => (<th key={b.id}>{b.name}</th>))}
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Overall Rating</td>
+            <td>{l("overallRating")}</td>
+            {browsers.map((b) => (<td key={b.id}><strong>{b.rating.overall}/5</strong></td>))}
+          </tr>
+          <tr>
+            <td>{l("freePlan")}</td>
             {browsers.map((b) => (
-              <td key={b.id}><strong>{b.rating.overall}/5</strong></td>
+              <td key={b.id}>{b.pricing.free ? <span className="check">✓ {b.pricing.freeProfiles} {l("profiles")}</span> : <span className="cross">✗</span>}</td>
             ))}
           </tr>
           <tr>
-            <td>Free Plan</td>
-            {browsers.map((b) => (
-              <td key={b.id}>{b.pricing.free ? <span className="check">✓ {b.pricing.freeProfiles} profiles</span> : <span className="cross">✗</span>}</td>
-            ))}
+            <td>{l("startingPrice")}</td>
+            {browsers.map((b) => (<td key={b.id}>{b.pricing.startingPrice}</td>))}
           </tr>
           <tr>
-            <td>Starting Price</td>
-            {browsers.map((b) => (
-              <td key={b.id}>{b.pricing.startingPrice}</td>
-            ))}
+            <td>{l("apiSupport")}</td>
+            {browsers.map((b) => (<td key={b.id}>{b.hasAPI ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>))}
           </tr>
           <tr>
-            <td>API Support</td>
-            {browsers.map((b) => (
-              <td key={b.id}>{b.hasAPI ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-            ))}
+            <td>{l("teamFeatures")}</td>
+            {browsers.map((b) => (<td key={b.id}>{b.hasTeamFeatures ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>))}
           </tr>
           <tr>
-            <td>Team Features</td>
-            {browsers.map((b) => (
-              <td key={b.id}>{b.hasTeamFeatures ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-            ))}
+            <td>{l("cookieImport")}</td>
+            {browsers.map((b) => (<td key={b.id}>{b.hasCookieImport ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>))}
           </tr>
           <tr>
-            <td>Cookie Import</td>
-            {browsers.map((b) => (
-              <td key={b.id}>{b.hasCookieImport ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-            ))}
+            <td>{l("automation")}</td>
+            {browsers.map((b) => (<td key={b.id}>{b.automationSupport.join(", ")}</td>))}
           </tr>
           <tr>
-            <td>Automation</td>
-            {browsers.map((b) => (
-              <td key={b.id}>{b.automationSupport.join(", ")}</td>
-            ))}
+            <td>{l("platforms")}</td>
+            {browsers.map((b) => (<td key={b.id} style={{ textTransform: "capitalize" }}>{b.platforms.join(", ")}</td>))}
           </tr>
           <tr>
-            <td>Platforms</td>
-            {browsers.map((b) => (
-              <td key={b.id} style={{ textTransform: "capitalize" }}>{b.platforms.join(", ")}</td>
-            ))}
-          </tr>
-          <tr>
-            <td>Founded</td>
-            {browsers.map((b) => (
-              <td key={b.id}>{b.foundedYear}</td>
-            ))}
+            <td>{l("founded")}</td>
+            {browsers.map((b) => (<td key={b.id}>{b.foundedYear}</td>))}
           </tr>
         </tbody>
       </table>

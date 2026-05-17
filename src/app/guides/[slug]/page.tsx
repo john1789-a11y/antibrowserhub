@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuideBySlug, getAllGuideSlugs } from "@/data/guides";
 import GuideTOC from "./GuideTOC";
+import GuideCTA from "./GuideCTA";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -193,13 +194,7 @@ export default async function GuidePage({ params }: Props) {
           <GuideTOC items={toc} />
         </div>
         <div className="container" style={{ maxWidth: 800 }}>
-          <div style={{ marginTop: 48, padding: "32px", background: "var(--bg-secondary)", borderRadius: "var(--radius-lg)", border: "1px solid var(--border-primary)", textAlign: "center" }}>
-            <h3 style={{ marginBottom: 8 }}>Ready to choose your antidetect browser?</h3>
-            <p style={{ color: "var(--text-secondary)", marginBottom: 16 }}>Compare features, pricing, and performance side by side.</p>
-            <Link href="/compare" className="card-cta" style={{ display: "inline-block", padding: "12px 28px" }}>
-              Compare All Browsers →
-            </Link>
-          </div>
+          <GuideCTA />
         </div>
       </section>
     </>

@@ -507,24 +507,29 @@ img { max-width: 100%; height: auto; }
 .review-content-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; padding: 60px 0; }
 .review-main { }
 .review-main [id] { scroll-margin-top: calc(var(--header-height) + 24px); }
-.review-sidebar { position: sticky; top: calc(var(--header-height) + 20px); align-self: start; }
+.review-sidebar {
+  position: sticky; top: calc(var(--header-height) + 20px); align-self: start;
+  max-height: calc(100vh - var(--header-height) - 40px);
+  overflow-y: auto; overflow-x: hidden;
+  scrollbar-width: thin; scrollbar-color: var(--border-primary) transparent;
+}
 .sidebar-card {
   background: var(--bg-card); border: 1px solid var(--border-primary);
-  border-radius: var(--radius-lg); padding: 24px;
+  border-radius: var(--radius-lg); padding: 20px;
 }
-.sidebar-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+.sidebar-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; }
 .sidebar-item {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 0; border-bottom: 1px solid var(--border-primary);
-  font-size: 0.88rem;
+  padding: 8px 0; border-bottom: 1px solid var(--border-primary);
+  font-size: 0.82rem;
 }
 .sidebar-item:last-child { border-bottom: none; }
 .sidebar-item-label { color: var(--text-secondary); }
 .sidebar-item-value { font-weight: 600; }
 .sidebar-cta {
-  display: block; width: 100%; padding: 14px; margin-top: 20px;
+  display: block; width: 100%; padding: 12px; margin-top: 16px;
   border-radius: var(--radius-md); background: var(--gradient-primary);
-  color: white; font-weight: 600; font-size: 0.95rem;
+  color: white; font-weight: 600; font-size: 0.9rem;
   text-align: center; border: none; cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
 }

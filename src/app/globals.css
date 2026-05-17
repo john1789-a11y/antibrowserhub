@@ -898,7 +898,6 @@ img { max-width: 100%; height: auto; }
   grid-template-columns: 1fr 240px;
   gap: 48px;
   max-width: 1100px;
-  align-items: start;
 }
 .guide-layout .guide-content {
   min-width: 0;
@@ -906,7 +905,7 @@ img { max-width: 100%; height: auto; }
 
 /* TOC Sidebar */
 .guide-toc {
-  position: relative;
+  /* Must NOT have align-self: start — needs to stretch full grid row height for sticky to work */
 }
 .guide-toc-inner {
   position: sticky;

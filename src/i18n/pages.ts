@@ -1,6 +1,8 @@
 import type { Locale } from "./config";
 
 // Page-level content translations
+interface GuideI18n { title: string; excerpt: string; category: string; }
+
 export interface PageTexts {
   home: {
     badge: string; heroTitle1: string; heroTitle2: string; heroTitle3: string;
@@ -21,6 +23,7 @@ export interface PageTexts {
     affiliate: string; affiliateText: string;
     contact: string; contactText: string;
   };
+  guideCards: Record<string, GuideI18n>;
 }
 
 const en: PageTexts = {
@@ -55,6 +58,12 @@ const en: PageTexts = {
     r3t: "Expert Guides", r3d: "Practical tutorials on proxy setup, API integration, browser automation, and fingerprint testing.",
     affiliate: "Affiliate Disclosure", affiliateText: "AntiBrowserHub participates in affiliate programs with some of the browsers and proxy services reviewed on this site. This means we may earn a commission when you sign up through our links — at no extra cost to you. Our reviews and ratings are always honest and independent, regardless of affiliate relationships.",
     contact: "Contact Us", contactText: "Have questions, suggestions, or want to partner with us?",
+  },
+  guideCards: {
+    "getting-started": { title: "Getting Started with Antidetect Browsers", excerpt: "A beginner-friendly guide to understanding what antidetect browsers are, how they work, and which one is right for you.", category: "Beginner" },
+    "proxy-setup": { title: "How to Set Up Proxies with Your Antidetect Browser", excerpt: "Step-by-step guide to configuring residential, datacenter, and ISP proxies with popular antidetect browsers.", category: "Setup" },
+    "automation-guide": { title: "Antidetect Browser Automation: API & Code Examples by Platform", excerpt: "Real API endpoints and working code examples for automating MoreLogin, AdsPower, GoLogin, Multilogin, Dolphin Anty, and Octo Browser.", category: "API" },
+    "fingerprint-testing": { title: "Fingerprint Testing: How to Verify Your Browser Setup", excerpt: "Use CreepJS, BrowserLeaks, and Pixelscan to verify your antidetect browser fingerprint configuration.", category: "Testing" },
   },
 };
 
@@ -91,6 +100,12 @@ const zh: PageTexts = {
     affiliate: "联盟披露", affiliateText: "AntiBrowserHub 参与了本站所评测的部分浏览器和代理服务的联盟计划。这意味着当您通过我们的链接注册时，我们可能会获得佣金——对您不会产生任何额外费用。我们的评测和评分始终保持诚实和独立。",
     contact: "联系我们", contactText: "有问题、建议或想与我们合作？",
   },
+  guideCards: {
+    "getting-started": { title: "指纹浏览器入门指南", excerpt: "一篇面向初学者的指南，了解什么是指纹浏览器、它们如何工作以及哪一款最适合你。", category: "入门" },
+    "proxy-setup": { title: "如何为指纹浏览器配置代理", excerpt: "逐步配置住宅代理、数据中心代理和 ISP 代理的完整教程。", category: "配置" },
+    "automation-guide": { title: "指纹浏览器自动化：各平台 API 及代码示例", excerpt: "MoreLogin、AdsPower、GoLogin、Multilogin、Dolphin Anty 和 Octo Browser 的真实 API 端点和可运行代码示例。", category: "API" },
+    "fingerprint-testing": { title: "指纹测试：如何验证你的浏览器配置", excerpt: "使用 CreepJS、BrowserLeaks 和 Pixelscan 验证指纹浏览器的指纹配置效果。", category: "测试" },
+  },
 };
 
 const ru: PageTexts = {
@@ -125,6 +140,12 @@ const ru: PageTexts = {
     r3t: "Экспертные руководства", r3d: "Практические руководства по настройке прокси, API и автоматизации.",
     affiliate: "Партнёрское раскрытие", affiliateText: "AntiBrowserHub участвует в партнёрских программах некоторых браузеров. Мы можем получать комиссию при регистрации по нашим ссылкам — без дополнительных затрат для вас.",
     contact: "Связаться с нами", contactText: "Есть вопросы или предложения?",
+  },
+  guideCards: {
+    "getting-started": { title: "Начало работы с антидетект браузерами", excerpt: "Руководство для начинающих: что такое антидетект браузеры, как они работают и какой выбрать.", category: "Начало" },
+    "proxy-setup": { title: "Настройка прокси для антидетект браузера", excerpt: "Пошаговое руководство по настройке резидентных, дата-центровых и ISP прокси.", category: "Настройка" },
+    "automation-guide": { title: "Автоматизация антидетект браузеров: API и примеры кода", excerpt: "Реальные API-эндпоинты и рабочие примеры кода для MoreLogin, AdsPower, GoLogin и других.", category: "API" },
+    "fingerprint-testing": { title: "Тестирование отпечатков: проверка настроек браузера", excerpt: "Используйте CreepJS, BrowserLeaks и Pixelscan для проверки конфигурации отпечатков.", category: "Тесты" },
   },
 };
 
@@ -161,6 +182,12 @@ const ja: PageTexts = {
     affiliate: "アフィリエイト開示", affiliateText: "当サイトはアフィリエイトプログラムに参加しています。リンク経由で登録された場合、手数料を受け取ることがあります。",
     contact: "お問い合わせ", contactText: "ご質問やご提案はありますか？",
   },
+  guideCards: {
+    "getting-started": { title: "アンチ検出ブラウザ入門ガイド", excerpt: "アンチ検出ブラウザとは何か、どのように機能し、どれが最適かを理解するための初心者向けガイド。", category: "入門" },
+    "proxy-setup": { title: "プロキシの設定方法", excerpt: "住宅用、データセンター、ISPプロキシの設定手順ガイド。", category: "設定" },
+    "automation-guide": { title: "ブラウザ自動化：プラットフォーム別APIとコード例", excerpt: "各プラットフォームの実際のAPIエンドポイントと動作するコード例。", category: "API" },
+    "fingerprint-testing": { title: "フィンガープリントテスト：ブラウザ設定の検証方法", excerpt: "CreepJS、BrowserLeaks、Pixelscanを使用してブラウザのフィンガープリント設定を確認。", category: "テスト" },
+  },
 };
 
 const fr: PageTexts = {
@@ -196,6 +223,12 @@ const fr: PageTexts = {
     affiliate: "Divulgation d'affiliation", affiliateText: "AntiBrowserHub participe à des programmes d'affiliation. Nous pouvons recevoir une commission via nos liens — sans frais supplémentaires pour vous.",
     contact: "Contactez-nous", contactText: "Des questions ou suggestions ?",
   },
+  guideCards: {
+    "getting-started": { title: "Premiers pas avec les navigateurs anti-détection", excerpt: "Un guide pour comprendre ce que sont les navigateurs anti-détection, comment ils fonctionnent et lequel choisir.", category: "Débutant" },
+    "proxy-setup": { title: "Configurer les proxies avec votre navigateur", excerpt: "Guide étape par étape pour configurer les proxies résidentiels, datacenter et ISP.", category: "Configuration" },
+    "automation-guide": { title: "Automatisation : API et exemples de code par plateforme", excerpt: "Points d'API réels et exemples de code fonctionnels pour chaque plateforme.", category: "API" },
+    "fingerprint-testing": { title: "Test d'empreinte : vérifier votre configuration", excerpt: "Utilisez CreepJS, BrowserLeaks et Pixelscan pour vérifier la configuration de votre navigateur.", category: "Test" },
+  },
 };
 
 const de: PageTexts = {
@@ -230,6 +263,12 @@ const de: PageTexts = {
     r3t: "Expertenanleitungen", r3d: "Praktische Anleitungen zu Proxy-Einrichtung, API und Automatisierung.",
     affiliate: "Affiliate-Offenlegung", affiliateText: "AntiBrowserHub nimmt an Partnerprogrammen teil. Wir erhalten möglicherweise eine Provision über unsere Links — ohne zusätzliche Kosten für Sie.",
     contact: "Kontakt", contactText: "Haben Sie Fragen oder Vorschläge?",
+  },
+  guideCards: {
+    "getting-started": { title: "Erste Schritte mit Antidetect-Browsern", excerpt: "Ein Anfänger-Leitfaden zum Verständnis von Antidetect-Browsern, ihrer Funktionsweise und der richtigen Wahl.", category: "Anfänger" },
+    "proxy-setup": { title: "Proxy-Einrichtung für Ihren Browser", excerpt: "Schritt-für-Schritt-Anleitung zur Konfiguration von Residential-, Datacenter- und ISP-Proxies.", category: "Einrichtung" },
+    "automation-guide": { title: "Browser-Automatisierung: API & Code-Beispiele", excerpt: "Echte API-Endpunkte und funktionierende Code-Beispiele für jede Plattform.", category: "API" },
+    "fingerprint-testing": { title: "Fingerprint-Test: Browser-Einstellungen überprüfen", excerpt: "Verwenden Sie CreepJS, BrowserLeaks und Pixelscan zur Überprüfung Ihrer Konfiguration.", category: "Test" },
   },
 };
 

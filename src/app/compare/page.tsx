@@ -44,7 +44,7 @@ const comparisonCategories = [
     rows: [
       { label: "Windows", values: ["✓", "✓", "✓", "✓", "✓", "✓"] },
       { label: "macOS", values: ["✓", "✓", "✓", "✓", "✓", "✓"] },
-      { label: "Linux", values: ["✗", "✗", "✓", "✓", "✓", "✓ Beta"] },
+      { label: "Linux", values: ["✓", "✗", "✓", "✓", "✓", "✓ Beta"] },
       { label: "Web Version", values: ["✗", "✗", "✓ Full web access", "✗", "✗", "✗"] },
       { label: "Mobile App", values: ["✗ Coming soon", "✗", "✓ Android", "✗", "✗", "✗"] },
       { label: "Cloud Profile Launch", values: ["✗", "✗", "✓", "✗", "✗", "✗"] },

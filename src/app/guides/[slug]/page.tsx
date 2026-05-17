@@ -86,8 +86,20 @@ function renderMarkdown(content: string) {
       const content = line.slice(2).replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/`(.*?)`/g, "<code>$1</code>").replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
       listItems.push(`<li>${content}</li>`);
       continue;
+    } else if (/^\d+\.\s/.test(line)) {
+      flushTable();
+      inList = true;
+      const content = line.replace(/^\d+\.\s/, "").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/`(.*?)`/g, "<code>$1</code>").replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
+      listItems.push(`<li>${content}</li>`);
+      continue;
     } else {
       flushList();
+    }
+
+    // Horizontal rule
+    if (line.trim() === "---") {
+      html.push("<hr />");
+      continue;
     }
 
     // Headers

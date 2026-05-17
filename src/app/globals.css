@@ -628,3 +628,104 @@ img { max-width: 100%; height: auto; }
   .review-logo { width: 60px; height: 60px; font-size: 1.8rem; }
   .footer-grid { gap: 16px; }
 }
+
+/* Guide Content */
+.guide-content h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 48px 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-primary);
+  color: var(--text-primary);
+}
+.guide-content h2:first-child { margin-top: 0; }
+.guide-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 32px 0 12px;
+  color: var(--text-primary);
+}
+.guide-content p {
+  line-height: 1.8;
+  margin: 12px 0;
+  color: var(--text-secondary);
+}
+.guide-content strong { color: var(--text-primary); font-weight: 600; }
+.guide-content a { color: var(--color-indigo); text-decoration: underline; text-underline-offset: 3px; }
+.guide-content a:hover { color: var(--color-cyan); }
+.guide-content ul {
+  margin: 12px 0;
+  padding-left: 24px;
+  list-style: disc;
+}
+.guide-content li {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 6px 0;
+}
+.guide-content li strong { color: var(--text-primary); }
+.guide-content code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--color-indigo);
+}
+.guide-content pre {
+  background: #0d1117;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin: 20px 0;
+  overflow-x: auto;
+  position: relative;
+}
+.guide-content pre code {
+  background: none;
+  padding: 0;
+  color: #e6edf3;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  display: block;
+  white-space: pre;
+}
+.guide-content hr {
+  border: none;
+  border-top: 1px solid var(--border-primary);
+  margin: 48px 0;
+}
+.guide-content .comparison-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-primary);
+}
+.guide-content .comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.guide-content .comparison-table th {
+  background: var(--bg-tertiary);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-primary);
+  white-space: nowrap;
+}
+.guide-content .comparison-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.guide-content .comparison-table tr:last-child td { border-bottom: none; }
+.guide-content .comparison-table tr:hover td { background: var(--bg-card-hover); }
+
+@media (max-width: 768px) {
+  .guide-content h2 { font-size: 1.3rem; margin: 32px 0 12px; }
+  .guide-content h3 { font-size: 1.1rem; }
+  .guide-content pre { padding: 14px 16px; font-size: 0.8rem; }
+}

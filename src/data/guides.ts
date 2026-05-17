@@ -155,130 +155,466 @@ After launching the profile with the proxy:
 - **Monitor proxy health** — regularly check proxy speed and uptime`,
   },
   {
-    title: "Browser Automation with Playwright & Selenium",
+    title: "Antidetect Browser Automation: API & Code Examples by Platform",
     slug: "automation-guide",
-    excerpt: "Learn how to automate browser profiles using Playwright and Selenium with complete code examples.",
+    excerpt: "Real API endpoints and working code examples for automating MoreLogin, AdsPower, GoLogin, Multilogin, Dolphin Anty, and Octo Browser with Playwright, Selenium, and Puppeteer.",
     category: "API",
-    readTime: "12 min read",
+    readTime: "15 min read",
     publishDate: "2026-05-05",
     content: `## Why Automate Antidetect Browsers?
 
-Automation allows you to:
-- **Scale operations** — manage hundreds of profiles programmatically
+Automation allows you to scale from managing a few accounts to hundreds or thousands:
+- **Scale operations** — create, launch, and manage profiles programmatically
 - **Save time** — automate repetitive tasks like login, posting, data collection
 - **Reduce errors** — eliminate human mistakes in multi-account workflows
 - **Run 24/7** — schedule tasks to run automatically
 
-## Automation Frameworks
+All major antidetect browsers expose a **Local API** that lets you control profiles programmatically and connect automation frameworks (Playwright, Selenium, Puppeteer) to launched browser instances.
 
-### Playwright (Recommended)
-Modern, fast, and supports multiple browsers. Best choice for new projects.
+---
 
-### Selenium
-Industry standard with the largest ecosystem. Best for existing projects.
+## MoreLogin
 
-### Puppeteer
-Chrome/Chromium focused. Good for Chrome-specific automation.
+**API Base URL:** \`http://127.0.0.1:40000\`
+**API Docs:** [guide.morelogin.com](https://guide.morelogin.com)
 
-## Getting Started with Playwright
+MoreLogin's Local API lets you create, start, stop profiles and connects seamlessly with Puppeteer, Selenium, and Playwright.
 
-### Install Playwright
+### Node.js + Puppeteer
 
-\`\`\`bash
-npm init -y
-npm install playwright
+\`\`\`javascript
+const axios = require('axios');
+const puppeteer = require('puppeteer');
+const BASE = 'http://127.0.0.1:40000';
+
+async function main() {
+  // 1. Create a browser profile
+  const createResp = await axios.post(BASE + '/api/env/create/quick', {
+    name: 'automation-profile'
+  });
+  const envId = createResp.data.data.envId;
+  console.log('Created profile:', envId);
+
+  // 2. Start the profile
+  const startResp = await axios.post(BASE + '/api/env/start', {
+    envId: envId
+  });
+  const { debugPort } = startResp.data.data;
+  console.log('Debug port:', debugPort);
+
+  // 3. Connect Puppeteer
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: 'ws://127.0.0.1:' + debugPort,
+    defaultViewport: null
+  });
+
+  // 4. Automate
+  const page = await browser.newPage();
+  await page.goto('https://www.google.com');
+  console.log('Page title:', await page.title());
+
+  // 5. Cleanup
+  await browser.disconnect();
+  await axios.post(BASE + '/api/env/close', { envId });
+  console.log('Profile closed.');
+}
+
+main().catch(console.error);
 \`\`\`
 
-### Connect to an Antidetect Browser Profile
+### Python + Selenium
 
-Most antidetect browsers expose a **debugging port** when launching profiles via API. Here's how to connect:
+\`\`\`python
+import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+
+BASE = "http://127.0.0.1:40000"
+
+# 1. Create a browser profile
+resp = requests.post(f"{BASE}/api/env/create/quick", json={
+    "name": "automation-profile"
+})
+env_id = resp.json()["data"]["envId"]
+print(f"Created profile: {env_id}")
+
+# 2. Start the profile
+resp = requests.post(f"{BASE}/api/env/start", json={
+    "envId": env_id
+})
+data = resp.json()["data"]
+debug_port = data["debugPort"]
+webdriver_path = data["webdriver"]
+print(f"Debug port: {debug_port}, WebDriver: {webdriver_path}")
+
+# 3. Connect Selenium
+options = Options()
+options.debugger_address = f"127.0.0.1:{debug_port}"
+service = Service(executable_path=webdriver_path)
+driver = webdriver.Chrome(service=service, options=options)
+
+# 4. Automate
+driver.get("https://www.google.com")
+print(f"Page title: {driver.title}")
+
+# 5. Cleanup
+driver.quit()
+requests.post(f"{BASE}/api/env/close", json={"envId": env_id})
+print("Profile closed.")
+\`\`\`
+
+### Key API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| /api/env/create/quick | POST | Quick create a profile |
+| /api/env/start | POST | Start a profile (returns debugPort) |
+| /api/env/close | POST | Close a profile |
+| /api/env/page | POST | List all profiles |
+| /api/env/updateProxy/batch | POST | Batch update proxy settings |
+
+---
+
+## AdsPower
+
+**API Base URL:** \`http://local.adspower.com:50325\`
+**API Docs:** [localapi-doc-en.adspower.com](https://localapi-doc-en.adspower.com/docs/overview)
+
+AdsPower uses a Local API that runs alongside the desktop application.
+
+### Node.js + Puppeteer
+
+\`\`\`javascript
+const axios = require('axios');
+const puppeteer = require('puppeteer');
+const BASE = 'http://local.adspower.com:50325';
+
+async function main() {
+  // 1. Create a profile
+  const createResp = await axios.post(BASE + '/api/v1/user/create', {
+    group_id: '0',
+    user_proxy_config: {
+      proxy_soft: 'no_proxy'
+    }
+  });
+  const profileId = createResp.data.data.id;
+  console.log('Created profile:', profileId);
+
+  // 2. Start the profile
+  const startResp = await axios.get(
+    BASE + '/api/v1/browser/start?user_id=' + profileId
+  );
+  const { ws } = startResp.data.data;
+  console.log('WebSocket endpoint:', ws.puppeteer);
+
+  // 3. Connect Puppeteer
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: ws.puppeteer,
+    defaultViewport: null
+  });
+
+  // 4. Automate
+  const page = (await browser.pages())[0];
+  await page.goto('https://www.google.com');
+  console.log('Page title:', await page.title());
+
+  // 5. Cleanup
+  await browser.disconnect();
+  await axios.get(BASE + '/api/v1/browser/stop?user_id=' + profileId);
+  console.log('Profile closed.');
+}
+
+main().catch(console.error);
+\`\`\`
+
+### Python + Selenium
+
+\`\`\`python
+import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+
+BASE = "http://local.adspower.com:50325"
+
+# 1. Start the profile
+resp = requests.get(f"{BASE}/api/v1/browser/start?user_id=YOUR_PROFILE_ID")
+data = resp.json()["data"]
+selenium_address = data["ws"]["selenium"]
+webdriver_path = data["webdriver"]
+
+# 2. Connect Selenium
+options = Options()
+options.debugger_address = selenium_address
+service = Service(executable_path=webdriver_path)
+driver = webdriver.Chrome(service=service, options=options)
+
+# 3. Automate
+driver.get("https://www.google.com")
+print(f"Page title: {driver.title}")
+
+# 4. Cleanup
+driver.quit()
+requests.get(f"{BASE}/api/v1/browser/stop?user_id=YOUR_PROFILE_ID")
+\`\`\`
+
+### Key API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| /api/v1/user/create | POST | Create a new profile |
+| /api/v1/browser/start | GET | Start a profile (returns WS endpoint) |
+| /api/v1/browser/stop | GET | Stop a profile |
+| /api/v1/browser/active | GET | Check browser status |
+| /api/v1/user/list | GET | List all profiles |
+| /api/v1/user/delete | POST | Delete a profile |
+
+---
+
+## GoLogin
+
+**API Base URL:** \`https://api.gologin.com\`
+**Automation Port:** Profile-specific debugging port
+
+GoLogin provides both a cloud REST API and local debugging ports.
+
+### Node.js + Playwright
 
 \`\`\`javascript
 const { chromium } = require('playwright');
+const axios = require('axios');
+
+const API_TOKEN = 'YOUR_API_TOKEN';
+const BASE = 'https://api.gologin.com';
 
 async function main() {
-  // Step 1: Launch profile via the antidetect browser's API
-  const response = await fetch('http://localhost:PORT/api/v1/browser/start?profile_id=YOUR_PROFILE_ID');
-  const data = await response.json();
-  
-  // Step 2: Connect Playwright to the debugging port
-  const browser = await chromium.connectOverCDP(data.ws_endpoint);
+  // 1. Start profile via API
+  const startResp = await axios.post(
+    BASE + '/browser/start-profile',
+    { profileId: 'YOUR_PROFILE_ID' },
+    { headers: { Authorization: 'Bearer ' + API_TOKEN } }
+  );
+  const { wsUrl } = startResp.data;
+  console.log('WebSocket URL:', wsUrl);
+
+  // 2. Connect Playwright
+  const browser = await chromium.connectOverCDP(wsUrl);
   const context = browser.contexts()[0];
   const page = context.pages()[0] || await context.newPage();
-  
-  // Step 3: Automate!
-  await page.goto('https://example.com');
+
+  // 3. Automate
+  await page.goto('https://www.google.com');
+  console.log('Page title:', await page.title());
   await page.screenshot({ path: 'screenshot.png' });
-  
-  // Step 4: Close when done
+
+  // 4. Cleanup
   await browser.close();
 }
 
-main();
+main().catch(console.error);
 \`\`\`
 
-## Getting Started with Selenium
+### Key API Endpoints
 
-### Install Selenium
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| /browser/profiles | GET | List all profiles |
+| /browser/start-profile | POST | Start a profile |
+| /browser/stop-profile | POST | Stop a profile |
+| /browser/fingerprint | GET | Get fingerprint settings |
+| /browser/proxy | PUT | Update proxy settings |
 
-\`\`\`bash
-pip install selenium
-\`\`\`
+---
 
-### Connect to an Antidetect Browser Profile
+## Multilogin
 
-\`\`\`python
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import requests
+**API Base URL:** \`https://api.multilogin.com\` / \`http://127.0.0.1:35000\`
+**Requires:** Active subscription + API token
 
-# Step 1: Launch profile via API
-response = requests.get('http://localhost:PORT/api/v1/browser/start?profile_id=YOUR_PROFILE_ID')
-data = response.json()
+Multilogin provides both a cloud API and local automation interface.
 
-# Step 2: Connect Selenium
-chrome_options = Options()
-chrome_options.debugger_address = data['debug_address']
-driver = webdriver.Chrome(options=chrome_options)
+### Node.js + Playwright
 
-# Step 3: Automate!
-driver.get('https://example.com')
-driver.save_screenshot('screenshot.png')
-
-# Step 4: Close when done
-driver.quit()
-\`\`\`
-
-## Common Automation Tasks
-
-### Auto-Login
 \`\`\`javascript
-await page.goto('https://platform.com/login');
-await page.fill('#email', 'user@example.com');
-await page.fill('#password', 'your-password');
-await page.click('#login-button');
-await page.waitForNavigation();
+const { chromium } = require('playwright');
+const axios = require('axios');
+
+const MLX_BASE = 'https://api.multilogin.com';
+const TOKEN = 'YOUR_API_TOKEN';
+
+async function main() {
+  // 1. Start a profile
+  const resp = await axios.post(
+    MLX_BASE + '/profile/start',
+    {
+      profileId: 'YOUR_PROFILE_ID',
+      browserType: 'mimic'  // or 'stealthfox'
+    },
+    { headers: { Authorization: 'Bearer ' + TOKEN } }
+  );
+  const { port } = resp.data;
+
+  // 2. Connect Playwright via CDP
+  const browser = await chromium.connectOverCDP(
+    'http://127.0.0.1:' + port
+  );
+  const context = browser.contexts()[0];
+  const page = context.pages()[0] || await context.newPage();
+
+  // 3. Automate
+  await page.goto('https://www.google.com');
+  console.log('Title:', await page.title());
+
+  // 4. Cleanup
+  await browser.close();
+}
+
+main().catch(console.error);
 \`\`\`
 
-### Data Scraping
+### Key API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| /profile/start | POST | Start a profile |
+| /profile/stop | POST | Stop a profile |
+| /profile/create | POST | Create a new profile |
+| /profile/remove | DELETE | Delete a profile |
+
+---
+
+## Dolphin Anty
+
+**API Base URL:** \`http://localhost:3001\`
+**API Docs:** [Dolphin Anty Documentation](https://dolphin-anty.com/docs)
+
+Dolphin Anty exposes a local API for profile automation.
+
+### Node.js + Puppeteer
+
 \`\`\`javascript
-await page.goto('https://target-site.com/products');
-const products = await page.$$eval('.product-card', cards =>
-  cards.map(card => ({
-    title: card.querySelector('.title')?.textContent,
-    price: card.querySelector('.price')?.textContent,
-  }))
-);
-console.log(products);
+const axios = require('axios');
+const puppeteer = require('puppeteer');
+const BASE = 'http://localhost:3001';
+
+async function main() {
+  // 1. Start the profile
+  const startResp = await axios.get(
+    BASE + '/v1.0/browser_profiles/' + 'YOUR_PROFILE_ID' + '/start?automation=1'
+  );
+  const { wsEndpoint, port } = startResp.data.automation;
+  console.log('WS Endpoint:', wsEndpoint);
+
+  // 2. Connect Puppeteer
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: wsEndpoint,
+    defaultViewport: null
+  });
+
+  // 3. Automate
+  const page = (await browser.pages())[0];
+  await page.goto('https://www.google.com');
+  console.log('Title:', await page.title());
+
+  // 4. Cleanup
+  await browser.disconnect();
+  await axios.get(
+    BASE + '/v1.0/browser_profiles/' + 'YOUR_PROFILE_ID' + '/stop'
+  );
+}
+
+main().catch(console.error);
 \`\`\`
+
+### Key API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| /v1.0/browser_profiles | GET | List profiles |
+| /v1.0/browser_profiles/:id/start | GET | Start a profile |
+| /v1.0/browser_profiles/:id/stop | GET | Stop a profile |
+| /v1.0/browser_profiles | POST | Create a profile |
+| /v1.0/browser_profiles/:id | PATCH | Update a profile |
+
+---
+
+## Octo Browser
+
+**API Base URL:** \`http://localhost:58888\`
+**API Docs:** [Octo Browser Documentation](https://docs.octobrowser.net)
+
+Octo Browser provides a local REST API for automation integration.
+
+### Node.js + Puppeteer
+
+\`\`\`javascript
+const axios = require('axios');
+const puppeteer = require('puppeteer');
+const BASE = 'http://localhost:58888';
+
+async function main() {
+  // 1. Start the profile
+  const startResp = await axios.post(BASE + '/api/profiles/start', {
+    uuid: 'YOUR_PROFILE_UUID',
+    headless: false,
+    debug_port: true
+  });
+  const { ws_endpoint } = startResp.data;
+
+  // 2. Connect Puppeteer
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: ws_endpoint,
+    defaultViewport: null
+  });
+
+  // 3. Automate
+  const page = (await browser.pages())[0];
+  await page.goto('https://www.google.com');
+  console.log('Title:', await page.title());
+
+  // 4. Cleanup
+  await browser.disconnect();
+  await axios.post(BASE + '/api/profiles/stop', {
+    uuid: 'YOUR_PROFILE_UUID'
+  });
+}
+
+main().catch(console.error);
+\`\`\`
+
+### Key API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| /api/profiles/start | POST | Start a profile |
+| /api/profiles/stop | POST | Stop a profile |
+| /api/profiles | GET | List profiles |
+| /api/profiles | POST | Create a profile |
+
+---
+
+## Automation Comparison
+
+| Feature | MoreLogin | AdsPower | GoLogin | Multilogin | Dolphin Anty | Octo Browser |
+|---------|-----------|----------|---------|------------|-------------|--------------|
+| API Type | Local REST | Local REST | Cloud REST | Cloud + Local | Local REST | Local REST |
+| Default Port | 40000 | 50325 | Cloud | 35000 | 3001 | 58888 |
+| Puppeteer | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Selenium | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Playwright | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| CLI Tool | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| MCP Support | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ |
+| RPA Builder | ✓ | ✓ | ✗ | ✗ | ✓ | ✗ |
 
 ## Best Practices
 
-- **Add random delays** between actions to mimic human behavior
+- **Add random delays** between actions (500-3000ms) to mimic human behavior
 - **Use page.waitForSelector()** instead of fixed timeouts
 - **Handle errors gracefully** — profiles can disconnect unexpectedly
-- **Rotate user agents** within natural parameters
-- **Save session data** — export cookies after successful logins`,
+- **Always close profiles** after automation to free resources
+- **Batch operations** — when managing many profiles, use batch APIs where available
+- **Save session data** — export cookies after successful logins for reuse`,
   },
   {
     title: "Fingerprint Testing: How to Verify Your Browser Setup",

@@ -504,7 +504,7 @@ img { max-width: 100%; height: auto; }
 .review-hero-info h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
 .review-hero-info p { color: var(--text-secondary); font-size: 1.05rem; }
 .review-meta { display: flex; gap: 20px; margin-top: 12px; font-size: 0.85rem; color: var(--text-muted); }
-.review-content-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; padding: 20px 0 60px; }
+.review-content-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; padding: 6px 0 60px; }
 .review-main { }
 .review-main [id] { scroll-margin-top: calc(var(--header-height) + 24px); }
 .review-sidebar {

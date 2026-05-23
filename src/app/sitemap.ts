@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllBrowserSlugs } from "@/data/browsers";
+import { getAllComparisonSlugs } from "@/data/comparisons";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://antibrowserhub.com";
@@ -10,6 +11,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
+  }));
+
+  const comparisonSlugs = getAllComparisonSlugs();
+  const comparisonPages = comparisonSlugs.map((slug) => ({
+    url: `${baseUrl}/compare/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
   }));
 
   return [
@@ -43,6 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/deals`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
     ...browserPages,
+    ...comparisonPages,
   ];
 }
+

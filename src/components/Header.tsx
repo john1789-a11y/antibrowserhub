@@ -4,10 +4,12 @@ import { useState, useEffect, useRef } from "react";
 import { useTheme } from "./ThemeProvider";
 import { useI18n } from "./I18nProvider";
 import { locales, localeNames, localeFlags, type Locale } from "@/i18n/config";
+import SearchModal from "./SearchModal";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme } = useTheme();
   const { locale, setLocale, t } = useI18n();
@@ -33,6 +35,18 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
+  // Global keyboard shortcut for search (Cmd/Ctrl + K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const closeMenu = () => setMobileOpen(false);
 
   return (
@@ -47,7 +61,13 @@ export default function Header() {
             <Link href="/reviews" className="nav-link">{t.nav.reviews}</Link>
             <Link href="/compare" className="nav-link">{t.nav.compare}</Link>
             <Link href="/guides" className="nav-link">{t.nav.guides}</Link>
+            <Link href="/deals" className="nav-link">Deals</Link>
             <Link href="/about" className="nav-link">{t.nav.about}</Link>
+
+            {/* Search trigger */}
+            <button className="search-trigger" onClick={() => setSearchOpen(true)} aria-label="Search">
+              🔍 Search <kbd>⌘K</kbd>
+            </button>
 
             {/* Theme toggle */}
             <button
@@ -87,6 +107,9 @@ export default function Header() {
             <Link href="/reviews" className="nav-cta">{t.nav.getStarted}</Link>
           </nav>
           <div className="mobile-controls">
+            <button className="search-trigger" onClick={() => setSearchOpen(true)} aria-label="Search" style={{ padding: "6px 8px" }}>
+              🔍
+            </button>
             <button
               className="theme-toggle"
               onClick={toggleTheme}
@@ -109,6 +132,7 @@ export default function Header() {
             <Link href="/reviews" className="mobile-nav-link" onClick={closeMenu}>{t.nav.reviews}</Link>
             <Link href="/compare" className="mobile-nav-link" onClick={closeMenu}>{t.nav.compare}</Link>
             <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>{t.nav.guides}</Link>
+            <Link href="/deals" className="mobile-nav-link" onClick={closeMenu}>Deals</Link>
             <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>{t.nav.about}</Link>
 
             {/* Mobile language switcher */}
@@ -131,6 +155,10 @@ export default function Header() {
           </nav>
         </>
       )}
+
+      {/* Search Modal */}
+      <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }
+

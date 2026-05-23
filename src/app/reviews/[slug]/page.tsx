@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { browsers, getBrowserBySlug, getAllBrowserSlugs } from "@/data/browsers";
 import ReviewTOC from "./ReviewTOC";
+import Breadcrumb from "@/components/Breadcrumb";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -64,6 +65,10 @@ export default async function ReviewPage({ params }: Props) {
       {/* Hero */}
       <section className="review-hero">
         <div className="container">
+          <Breadcrumb customItems={[
+            { label: "Reviews", href: "/reviews" },
+            { label: `${browser.name} Review`, href: `/reviews/${browser.slug}` },
+          ]} />
           <div className="review-hero-inner">
             <div className="review-logo" style={{ background: browser.color }}>
               {browser.name.charAt(0)}

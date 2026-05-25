@@ -40,7 +40,7 @@ export default function BrowserLogo({
       }}
     >
       <Image
-        src={`/images/browsers/${slug}.png`}
+        src={`/images/browsers/${slug}.png?v=2`}
         alt={`${name} logo`}
         width={size}
         height={size}

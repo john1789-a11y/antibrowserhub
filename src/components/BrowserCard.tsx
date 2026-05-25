@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Browser } from "@/types";
 import { useI18n } from "./I18nProvider";
 import { getBrowserI18n } from "@/i18n/browsers";
+import BrowserLogo from "./BrowserLogo";
 
 function StarRating({ rating }: { rating: number }) {
   const full = Math.floor(rating);
@@ -37,7 +38,7 @@ export default function BrowserCard({ browser }: { browser: Browser }) {
   return (
     <div className="browser-card" style={{ "--card-accent": browser.color } as React.CSSProperties}>
       <div className="browser-card-header">
-        <div className="browser-card-logo" style={{ background: browser.color }}>{browser.name.charAt(0)}</div>
+        <BrowserLogo slug={browser.slug} name={browser.name} color={browser.color} size={52} className="browser-card-logo" />
         <div className="browser-card-info">
           <div className="browser-card-name">{browser.name}</div>
           <div className="browser-card-tagline">{tagline}</div>

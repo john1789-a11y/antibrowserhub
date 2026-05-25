@@ -5,6 +5,7 @@ export interface Dictionary {
     reviews: string;
     compare: string;
     guides: string;
+    deals: string;
     about: string;
     getStarted: string;
   };
@@ -59,11 +60,39 @@ export interface Dictionary {
   common: {
     theme: string;
     language: string;
+    search: string;
+    searchPlaceholder: string;
+    noResults: string;
+  };
+  deals: {
+    title: string;
+    subtitle: string;
+    exclusiveOffers: string;
+    freePlans: string;
+    freePlansSub: string;
+    discounts: string;
+    discountsSub: string;
+    getDeal: string;
+    readReview: string;
+    notSure: string;
+    notSureSub: string;
+    compareAll: string;
+    browseReviews: string;
+    verified: string;
+    expires: string;
+  };
+  newsletter: {
+    title: string;
+    description: string;
+    placeholder: string;
+    subscribe: string;
+    success: string;
+    error: string;
   };
 }
 
 const en: Dictionary = {
-  nav: { reviews: "Reviews", compare: "Compare", guides: "Guides", about: "About", getStarted: "Get Started →" },
+  nav: { reviews: "Reviews", compare: "Compare", guides: "Guides", deals: "Deals", about: "About", getStarted: "Get Started →" },
   home: {
     heroTitle: "Find the Best Antidetect Browser",
     heroSubtitle: "In-depth reviews, side-by-side comparisons, and expert guides to help you choose the right antidetect browser for multi-account management.",
@@ -106,11 +135,13 @@ const en: Dictionary = {
     terms: "Terms of Service",
     copyright: "AntiBrowserHub. All rights reserved.",
   },
-  common: { theme: "Theme", language: "Language" },
+  common: { theme: "Theme", language: "Language", search: "Search", searchPlaceholder: "Search browsers, guides, comparisons...", noResults: "No results found" },
+  deals: { title: "Antidetect Browser Deals & Discounts", subtitle: "Exclusive coupon codes, free plans, and discounts. All verified for 2026.", exclusiveOffers: "Exclusive Offers", freePlans: "🆓 Free Plans", freePlansSub: "Get started without spending a dime. These browsers offer generous free tiers.", discounts: "🏷️ Discounts & Savings", discountsSub: "Save more with exclusive discount codes and annual plan savings.", getDeal: "Get Deal →", readReview: "Read Review", notSure: "Not sure which browser to choose?", notSureSub: "Compare features, pricing, and performance side by side.", compareAll: "Compare All Browsers →", browseReviews: "Browse Reviews", verified: "Verified", expires: "Expires" },
+  newsletter: { title: "Stay Updated", description: "Get the latest antidetect browser reviews, deals, and guides delivered to your inbox.", placeholder: "your@email.com", subscribe: "Subscribe →", success: "✓ Thanks for subscribing!", error: "Please enter a valid email." },
 };
 
 const zh: Dictionary = {
-  nav: { reviews: "评测", compare: "对比", guides: "教程", about: "关于", getStarted: "立即开始 →" },
+  nav: { reviews: "评测", compare: "对比", guides: "教程", deals: "优惠", about: "关于", getStarted: "立即开始 →" },
   home: {
     heroTitle: "寻找最佳指纹浏览器",
     heroSubtitle: "深度评测、横向对比、专家教程，帮您选择最适合多账号管理的指纹浏览器。",
@@ -153,11 +184,13 @@ const zh: Dictionary = {
     terms: "服务条款",
     copyright: "AntiBrowserHub. 保留所有权利。",
   },
-  common: { theme: "主题", language: "语言" },
+  common: { theme: "主题", language: "语言", search: "搜索", searchPlaceholder: "搜索浏览器、教程、对比...", noResults: "未找到结果" },
+  deals: { title: "指纹浏览器优惠折扣", subtitle: "独家优惠码、免费计划和折扣。2026年最新验证。", exclusiveOffers: "独家优惠", freePlans: "🆓 免费计划", freePlansSub: "零成本上手。这些浏览器提供慷慨的免费套餐。", discounts: "🏷️ 折扣优惠", discountsSub: "通过独家折扣码和年付方案节省更多。", getDeal: "获取优惠 →", readReview: "阅读评测", notSure: "不确定选择哪款浏览器？", notSureSub: "横向对比功能、价格和性能。", compareAll: "对比所有浏览器 →", browseReviews: "浏览评测", verified: "已验证", expires: "到期" },
+  newsletter: { title: "获取最新资讯", description: "获取最新的指纹浏览器评测、优惠和教程。", placeholder: "your@email.com", subscribe: "订阅 →", success: "✓ 感谢订阅！", error: "请输入有效的邮箱地址。" },
 };
 
 const ru: Dictionary = {
-  nav: { reviews: "Обзоры", compare: "Сравнение", guides: "Руководства", about: "О нас", getStarted: "Начать →" },
+  nav: { reviews: "Обзоры", compare: "Сравнение", guides: "Руководства", deals: "Скидки", about: "О нас", getStarted: "Начать →" },
   home: {
     heroTitle: "Найдите лучший антидетект браузер",
     heroSubtitle: "Подробные обзоры, сравнения и экспертные руководства для выбора идеального антидетект браузера.",
@@ -200,11 +233,13 @@ const ru: Dictionary = {
     terms: "Условия использования",
     copyright: "AntiBrowserHub. Все права защищены.",
   },
-  common: { theme: "Тема", language: "Язык" },
+  common: { theme: "Тема", language: "Язык", search: "Поиск", searchPlaceholder: "Поиск браузеров, руководств, сравнений...", noResults: "Ничего не найдено" },
+  deals: { title: "Скидки на антидетект браузеры", subtitle: "Эксклюзивные промокоды, бесплатные планы и скидки. Проверено на 2026 год.", exclusiveOffers: "Эксклюзивные предложения", freePlans: "🆓 Бесплатные планы", freePlansSub: "Начните бесплатно. Эти браузеры предлагают щедрые бесплатные тарифы.", discounts: "🏷️ Скидки и экономия", discountsSub: "Экономьте больше с эксклюзивными промокодами.", getDeal: "Получить скидку →", readReview: "Читать обзор", notSure: "Не уверены, какой браузер выбрать?", notSureSub: "Сравните функции, цены и производительность.", compareAll: "Сравнить все браузеры →", browseReviews: "Обзоры", verified: "Проверено", expires: "Истекает" },
+  newsletter: { title: "Будьте в курсе", description: "Получайте последние обзоры, скидки и руководства.", placeholder: "your@email.com", subscribe: "Подписаться →", success: "✓ Спасибо за подписку!", error: "Введите корректный email." },
 };
 
 const ja: Dictionary = {
-  nav: { reviews: "レビュー", compare: "比較", guides: "ガイド", about: "概要", getStarted: "始める →" },
+  nav: { reviews: "レビュー", compare: "比較", guides: "ガイド", deals: "セール", about: "概要", getStarted: "始める →" },
   home: {
     heroTitle: "最適なアンチ検出ブラウザを見つける",
     heroSubtitle: "詳細なレビュー、比較、専門家ガイドで、マルチアカウント管理に最適なアンチ検出ブラウザを選びましょう。",
@@ -247,11 +282,13 @@ const ja: Dictionary = {
     terms: "利用規約",
     copyright: "AntiBrowserHub. All rights reserved.",
   },
-  common: { theme: "テーマ", language: "言語" },
+  common: { theme: "テーマ", language: "言語", search: "検索", searchPlaceholder: "ブラウザ、ガイド、比較を検索...", noResults: "結果が見つかりません" },
+  deals: { title: "アンチ検出ブラウザのセール", subtitle: "限定クーポン、無料プラン、割引。2026年最新版。", exclusiveOffers: "限定オファー", freePlans: "🆓 無料プラン", freePlansSub: "無料で始めましょう。これらのブラウザは寛大な無料プランを提供しています。", discounts: "🏷️ 割引とセール", discountsSub: "限定コードと年間プランでさらにお得に。", getDeal: "セールを見る →", readReview: "レビューを読む", notSure: "どのブラウザを選べばいいですか？", notSureSub: "機能、価格、パフォーマンスを比較してください。", compareAll: "すべてのブラウザを比較 →", browseReviews: "レビューを見る", verified: "確認済み", expires: "有効期限" },
+  newsletter: { title: "最新情報を入手", description: "最新のレビュー、セール、ガイドをお届けします。", placeholder: "your@email.com", subscribe: "購読 →", success: "✓ 購読ありがとうございます！", error: "有効なメールアドレスを入力してください。" },
 };
 
 const fr: Dictionary = {
-  nav: { reviews: "Avis", compare: "Comparer", guides: "Guides", about: "À propos", getStarted: "Commencer →" },
+  nav: { reviews: "Avis", compare: "Comparer", guides: "Guides", deals: "Offres", about: "À propos", getStarted: "Commencer →" },
   home: {
     heroTitle: "Trouvez le meilleur navigateur anti-détection",
     heroSubtitle: "Avis approfondis, comparaisons côte à côte et guides experts pour choisir le bon navigateur anti-détection.",
@@ -294,11 +331,13 @@ const fr: Dictionary = {
     terms: "Conditions d'utilisation",
     copyright: "AntiBrowserHub. Tous droits réservés.",
   },
-  common: { theme: "Thème", language: "Langue" },
+  common: { theme: "Thème", language: "Langue", search: "Rechercher", searchPlaceholder: "Rechercher navigateurs, guides, comparaisons...", noResults: "Aucun résultat trouvé" },
+  deals: { title: "Offres et réductions", subtitle: "Codes promo exclusifs, plans gratuits et réductions. Vérifiés pour 2026.", exclusiveOffers: "Offres exclusives", freePlans: "🆓 Plans gratuits", freePlansSub: "Commencez sans dépenser un centime.", discounts: "🏷️ Réductions", discountsSub: "Économisez plus avec des codes promo exclusifs.", getDeal: "Obtenir l'offre →", readReview: "Lire l'avis", notSure: "Pas sûr de quel navigateur choisir ?", notSureSub: "Comparez les fonctionnalités, les prix et les performances.", compareAll: "Comparer tous les navigateurs →", browseReviews: "Parcourir les avis", verified: "Vérifié", expires: "Expire" },
+  newsletter: { title: "Restez informé", description: "Recevez les derniers avis, offres et guides.", placeholder: "votre@email.com", subscribe: "S'abonner →", success: "✓ Merci de votre abonnement !", error: "Veuillez entrer un email valide." },
 };
 
 const de: Dictionary = {
-  nav: { reviews: "Bewertungen", compare: "Vergleichen", guides: "Anleitungen", about: "Über uns", getStarted: "Loslegen →" },
+  nav: { reviews: "Bewertungen", compare: "Vergleichen", guides: "Anleitungen", deals: "Angebote", about: "Über uns", getStarted: "Loslegen →" },
   home: {
     heroTitle: "Finden Sie den besten Antidetect-Browser",
     heroSubtitle: "Ausführliche Bewertungen, Vergleiche und Expertenanleitungen für die Wahl des richtigen Antidetect-Browsers.",
@@ -341,7 +380,9 @@ const de: Dictionary = {
     terms: "Nutzungsbedingungen",
     copyright: "AntiBrowserHub. Alle Rechte vorbehalten.",
   },
-  common: { theme: "Thema", language: "Sprache" },
+  common: { theme: "Thema", language: "Sprache", search: "Suchen", searchPlaceholder: "Browser, Anleitungen, Vergleiche suchen...", noResults: "Keine Ergebnisse gefunden" },
+  deals: { title: "Antidetect-Browser Angebote", subtitle: "Exklusive Gutscheincodes, kostenlose Pläne und Rabatte. Verifiziert für 2026.", exclusiveOffers: "Exklusive Angebote", freePlans: "🆓 Kostenlose Pläne", freePlansSub: "Starten Sie kostenlos. Diese Browser bieten großzügige Gratis-Tarife.", discounts: "🏷️ Rabatte & Ersparnisse", discountsSub: "Sparen Sie mehr mit exklusiven Rabattcodes.", getDeal: "Angebot erhalten →", readReview: "Bewertung lesen", notSure: "Nicht sicher, welchen Browser Sie wählen sollen?", notSureSub: "Vergleichen Sie Funktionen, Preise und Leistung.", compareAll: "Alle Browser vergleichen →", browseReviews: "Bewertungen ansehen", verified: "Verifiziert", expires: "Läuft ab" },
+  newsletter: { title: "Bleiben Sie informiert", description: "Erhalten Sie die neuesten Bewertungen, Angebote und Anleitungen.", placeholder: "ihre@email.com", subscribe: "Abonnieren →", success: "✓ Danke für Ihr Abonnement!", error: "Bitte geben Sie eine gültige E-Mail-Adresse ein." },
 };
 
 const dictionaries: Record<Locale, Dictionary> = { en, zh, ru, ja, fr, de };

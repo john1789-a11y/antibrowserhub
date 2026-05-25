@@ -1188,7 +1188,7 @@ export const browsers: Browser[] = [
       "Hidemyacc is an antidetect browser from Vietnam that has grown rapidly in Southeast Asian markets. It offers a built-in automation tool, cloud profile sync, and competitive pricing. The platform focuses on e-commerce and social media management use cases, with support for both Chromium and Firefox kernels.",
     logo: "/images/browsers/hidemyacc.svg",
     website: "https://hidemyacc.com",
-    affiliateUrl: "https://hidemyacc.com/?ref=antibrowserhub",
+    affiliateUrl: "https://go.hidemyacc.com/antibrowserhub",
     rating: {
       overall: 3.9,
       fingerprint: 4.0,

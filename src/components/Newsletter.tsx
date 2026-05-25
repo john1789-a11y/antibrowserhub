@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
+import { useI18n } from "./I18nProvider";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const { t } = useI18n();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -11,7 +13,6 @@ export default function Newsletter() {
       setStatus("error");
       return;
     }
-    // TODO: Integrate with email service (Mailchimp, Buttondown, etc.)
     setStatus("success");
     setEmail("");
   };
@@ -22,31 +23,28 @@ export default function Newsletter() {
         <div className="newsletter-box">
           <div className="newsletter-content">
             <span className="newsletter-icon">📬</span>
-            <h3 className="newsletter-title">Stay Updated</h3>
-            <p className="newsletter-desc">
-              Get the latest antidetect browser reviews, deals, and guides delivered to your inbox.
-              No spam — unsubscribe anytime.
-            </p>
+            <h3 className="newsletter-title">{t.newsletter.title}</h3>
+            <p className="newsletter-desc">{t.newsletter.description}</p>
           </div>
           <form className="newsletter-form" onSubmit={handleSubmit}>
             <div className="newsletter-input-wrap">
               <input
                 type="email"
                 className="newsletter-input"
-                placeholder="your@email.com"
+                placeholder={t.newsletter.placeholder}
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); setStatus("idle"); }}
                 required
               />
               <button type="submit" className="newsletter-btn">
-                Subscribe →
+                {t.newsletter.subscribe}
               </button>
             </div>
             {status === "success" && (
-              <p className="newsletter-msg success">✓ Thanks for subscribing!</p>
+              <p className="newsletter-msg success">{t.newsletter.success}</p>
             )}
             {status === "error" && (
-              <p className="newsletter-msg error">Please enter a valid email.</p>
+              <p className="newsletter-msg error">{t.newsletter.error}</p>
             )}
           </form>
         </div>

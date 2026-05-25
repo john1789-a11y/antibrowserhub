@@ -35,7 +35,7 @@ export default function Footer() {
               <Link href="/reviews">{t.nav.reviews}</Link>
               <Link href="/compare">{t.nav.compare}</Link>
               <Link href="/guides">{t.nav.guides}</Link>
-              <Link href="/deals">Deals & Discounts</Link>
+              <Link href="/deals">{t.nav.deals}</Link>
               <Link href="/about">{t.nav.about}</Link>
             </div>
             <div className="footer-col">

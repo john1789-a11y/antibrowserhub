@@ -10,6 +10,7 @@ import {
 import { browsers } from "@/data/browsers";
 import type { Browser } from "@/types";
 import Breadcrumb from "@/components/Breadcrumb";
+import BrowserLogo from "@/components/BrowserLogo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -105,23 +106,7 @@ export default async function ComparisonPage({ params }: Props) {
                     marginBottom: 16,
                   }}
                 >
-                  <div
-                    style={{
-                      width: 48,
-                      height: 48,
-                      borderRadius: 12,
-                      background: browser.color,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "white",
-                      fontWeight: 800,
-                      fontSize: "1.2rem",
-                      flexShrink: 0,
-                    }}
-                  >
-                    {browser.name.charAt(0)}
-                  </div>
+                  <BrowserLogo slug={browser.slug} name={browser.name} color={browser.color} size={48} />
                   <div>
                     <h2 style={{ fontSize: "1.2rem", marginBottom: 2 }}>
                       {browser.name}
@@ -343,22 +328,7 @@ export default async function ComparisonPage({ params }: Props) {
                     gap: 8,
                   }}
                 >
-                  <span
-                    style={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: 6,
-                      background: browser.color,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "white",
-                      fontWeight: 800,
-                      fontSize: "0.7rem",
-                    }}
-                  >
-                    {browser.name.charAt(0)}
-                  </span>
+                  <BrowserLogo slug={browser.slug} name={browser.name} color={browser.color} size={24} style={{ display: "inline-flex" }} />
                   {browser.name} Pricing
                 </h3>
                 {browser.pricing.plans.map((plan: { name: string; price: string; profiles: string; features: string[] }) => (
@@ -429,22 +399,7 @@ export default async function ComparisonPage({ params }: Props) {
                     gap: 8,
                   }}
                 >
-                  <span
-                    style={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: 6,
-                      background: browser.color,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "white",
-                      fontWeight: 800,
-                      fontSize: "0.7rem",
-                    }}
-                  >
-                    {browser.name.charAt(0)}
-                  </span>
+                  <BrowserLogo slug={browser.slug} name={browser.name} color={browser.color} size={24} style={{ display: "inline-flex" }} />
                   {browser.name}
                 </h3>
                 <div className="pros-list" style={{ marginBottom: 16 }}>

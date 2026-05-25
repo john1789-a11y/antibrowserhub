@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { browsers } from "@/data/browsers";
 import { guides } from "@/data/guides";
+import { useI18n } from "./I18nProvider";
 
 interface SearchResult {
   type: "browser" | "guide" | "page";
@@ -63,6 +64,7 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const searchIndex = useRef<SearchResult[]>([]);
+  const { t } = useI18n();
 
   useEffect(() => {
     searchIndex.current = buildSearchIndex();
@@ -123,7 +125,7 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
             ref={inputRef}
             type="text"
             className="search-input"
-            placeholder="Search browsers, guides, comparisons..."
+            placeholder={t.common.searchPlaceholder}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -151,7 +153,7 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
         )}
         {query && results.length === 0 && (
           <div className="search-empty">
-            No results found for &ldquo;{query}&rdquo;
+            {t.common.noResults} — &ldquo;{query}&rdquo;
           </div>
         )}
       </div>

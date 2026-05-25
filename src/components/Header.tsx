@@ -61,12 +61,12 @@ export default function Header() {
             <Link href="/reviews" className="nav-link">{t.nav.reviews}</Link>
             <Link href="/compare" className="nav-link">{t.nav.compare}</Link>
             <Link href="/guides" className="nav-link">{t.nav.guides}</Link>
-            <Link href="/deals" className="nav-link">Deals</Link>
+            <Link href="/deals" className="nav-link">{t.nav.deals}</Link>
             <Link href="/about" className="nav-link">{t.nav.about}</Link>
 
             {/* Search trigger */}
             <button className="search-trigger" onClick={() => setSearchOpen(true)} aria-label="Search">
-              🔍 Search <kbd>⌘K</kbd>
+              🔍 {t.common.search} <kbd>⌘K</kbd>
             </button>
 
             {/* Theme toggle */}
@@ -132,7 +132,7 @@ export default function Header() {
             <Link href="/reviews" className="mobile-nav-link" onClick={closeMenu}>{t.nav.reviews}</Link>
             <Link href="/compare" className="mobile-nav-link" onClick={closeMenu}>{t.nav.compare}</Link>
             <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>{t.nav.guides}</Link>
-            <Link href="/deals" className="mobile-nav-link" onClick={closeMenu}>Deals</Link>
+            <Link href="/deals" className="mobile-nav-link" onClick={closeMenu}>{t.nav.deals}</Link>
             <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>{t.nav.about}</Link>
 
             {/* Mobile language switcher */}

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { browsers } from "@/data/browsers";
 import { useI18n } from "@/components/I18nProvider";
+import BrowserLogo from "@/components/BrowserLogo";
 
 const i = (m: Record<string, string>, locale: string) => m[locale] || m.en;
 
@@ -27,41 +28,42 @@ const ui: Record<string, Record<string, string>> = {
 };
 
 const comparisonCategories = [
+  // Browser order: MoreLogin, AdsPower, GoLogin, Multilogin, Dolphin Anty, Octo Browser, Incogniton, Kameleo, VMLogin, Undetectable, Hidemyacc, Lalicat, Marketer Browser
   { titleKey: "🔒 Fingerprint & Security", titles: { en: "🔒 Fingerprint & Security", zh: "🔒 指纹与安全", ru: "🔒 Отпечатки и безопасность", ja: "🔒 フィンガープリントとセキュリティ", fr: "🔒 Empreinte et sécurité", de: "🔒 Fingerprint & Sicherheit" },
     rows: [
-      { label: { en: "Browser Engine", zh: "浏览器引擎", ru: "Движок", ja: "エンジン", fr: "Moteur", de: "Engine" }, values: ["Chromium + Firefox", "SunBrowser + FlowerBrowser", "Orbita (Chromium)", "Mimic + Stealthfox", "Chromium", "Chromium"] },
-      { label: { en: "Canvas Fingerprint", zh: "Canvas 指纹", ru: "Canvas отпечаток", ja: "Canvas指紋", fr: "Empreinte Canvas", de: "Canvas Fingerprint" }, values: ["ML-based real data", "Noise injection", "Custom generation", "Advanced spoofing", "Basic masking", "Auto mode"] },
-      { label: { en: "WebGL Fingerprint", zh: "WebGL 指纹", ru: "WebGL отпечаток", ja: "WebGL指紋", fr: "Empreinte WebGL", de: "WebGL Fingerprint" }, values: ["✓", "✓", "✓", "✓", "✓", "✓"] },
-      { label: { en: "WebRTC Protection", zh: "WebRTC 保护", ru: "Защита WebRTC", ja: "WebRTC保護", fr: "Protection WebRTC", de: "WebRTC-Schutz" }, values: ["✓", "✓", "✓", "✓", "✓", "✓"] },
-      { label: { en: "Mobile Fingerprints", zh: "移动端指纹", ru: "Мобильные отпечатки", ja: "モバイル指紋", fr: "Empreintes mobiles", de: "Mobile Fingerprints" }, values: ["✓ Android/iOS", "✓ Android", "✓ Android", "✓", "✗", "✗"] },
-      { label: { en: "2FA Support", zh: "双因素认证", ru: "Поддержка 2FA", ja: "2FA対応", fr: "Support 2FA", de: "2FA-Unterstützung" }, values: ["✓", "✓", "✓", "✓", "✓", "✓"] },
+      { label: { en: "Browser Engine", zh: "浏览器引擎", ru: "Движок", ja: "エンジン", fr: "Moteur", de: "Engine" }, values: ["Chromium + Firefox", "SunBrowser + FlowerBrowser", "Orbita (Chromium)", "Mimic + Stealthfox", "Chromium", "Chromium", "Chromium + Firefox", "Chromium + Firefox", "Chromium", "Chromium", "Chromium + Firefox", "Chromium", "Chromium"] },
+      { label: { en: "Canvas Fingerprint", zh: "Canvas 指纹", ru: "Canvas отпечаток", ja: "Canvas指紋", fr: "Empreinte Canvas", de: "Canvas Fingerprint" }, values: ["ML-based real data", "Noise injection", "Custom generation", "Advanced spoofing", "Real fingerprints", "Auto mode", "Auto generation", "Intelligent spoofing", "Deep customization", "Real device data", "Basic masking", "Basic masking", "Basic spoofing"] },
+      { label: { en: "WebGL Fingerprint", zh: "WebGL 指纹", ru: "WebGL отпечаток", ja: "WebGL指紋", fr: "Empreinte WebGL", de: "WebGL Fingerprint" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
+      { label: { en: "WebRTC Protection", zh: "WebRTC 保护", ru: "Защита WebRTC", ja: "WebRTC保護", fr: "Protection WebRTC", de: "WebRTC-Schutz" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
+      { label: { en: "Mobile Fingerprints", zh: "移动端指纹", ru: "Мобильные отпечатки", ja: "モバイル指紋", fr: "Empreintes mobiles", de: "Mobile Fingerprints" }, values: ["✓ Android/iOS", "✓ Android", "✓ Android", "✓", "✓ iOS/Android", "✗", "✗", "✓ Android/iOS", "✗", "✗", "✗", "✗", "✗"] },
+      { label: { en: "2FA Support", zh: "双因素认证", ru: "Поддержка 2FA", ja: "2FA対応", fr: "Support 2FA", de: "2FA-Unterstützung" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
     ],
   },
   { titleKey: "💼 Features & Usability", titles: { en: "💼 Features & Usability", zh: "💼 功能与易用性", ru: "💼 Функции и удобство", ja: "💼 機能と使いやすさ", fr: "💼 Fonctionnalités", de: "💼 Funktionen & Nutzbarkeit" },
     rows: [
-      { label: { en: "Free Plan", zh: "免费计划", ru: "Бесплатный план", ja: "無料プラン", fr: "Plan gratuit", de: "Kostenloser Plan" }, values: ["✓ 2 profiles", "✓ 2 profiles", "✓ 3 profiles", "✗ None", "✓ 10 profiles", "✗ None"] },
-      { label: { en: "API Access", zh: "API 访问", ru: "Доступ к API", ja: "APIアクセス", fr: "Accès API", de: "API-Zugang" }, values: ["REST + Local API", "Local API", "REST API", "REST API", "API", "API"] },
-      { label: { en: "Team Collaboration", zh: "团队协作", ru: "Совместная работа", ja: "チーム協力", fr: "Collaboration", de: "Teamarbeit" }, values: ["✓ Advanced", "✓ Advanced", "✓ Profile sharing", "✓ Team mgmt", "✓ Basic", "✓ Limited seats"] },
-      { label: { en: "Bulk Operations", zh: "批量操作", ru: "Массовые операции", ja: "一括操作", fr: "Opérations en masse", de: "Massenoperationen" }, values: ["✓ Create/Open/Delete", "✓ Extensive", "✓ Basic", "✓ Basic", "✓ Basic", "✗ Limited"] },
-      { label: { en: "Built-in Proxies", zh: "内置代理", ru: "Встроенные прокси", ja: "内蔵プロキシ", fr: "Proxies intégrés", de: "Integrierte Proxies" }, values: ["✓ Proxy store", "✓ Partner proxies", "✓ Free + Paid", "✗", "✗", "✓ 3 providers"] },
-      { label: { en: "RPA / No-code", zh: "RPA / 无代码", ru: "RPA / Без кода", ja: "RPA / ノーコード", fr: "RPA / No-code", de: "RPA / No-Code" }, values: ["✗", "✓ Built-in RPA", "✗", "✗", "✓ Scenarios", "✗"] },
+      { label: { en: "Free Plan", zh: "免费计划", ru: "Бесплатный план", ja: "無料プラン", fr: "Plan gratuit", de: "Kostenloser Plan" }, values: ["✓ 2 profiles", "✓ 2 profiles", "✓ 3 profiles", "✗ None", "✓ 10 profiles", "✗ None", "✓ 10 profiles", "✓ 2 concurrent", "✗ 3-day trial", "✓ 5 cloud", "✓ 5 profiles", "✗ None", "✓ 3 profiles"] },
+      { label: { en: "API Access", zh: "API 访问", ru: "Доступ к API", ja: "APIアクセス", fr: "Accès API", de: "API-Zugang" }, values: ["REST + Local API", "Local API", "REST API", "REST API", "Local API", "REST API", "REST API", "REST API + SDK", "REST API", "REST API", "REST API", "REST API", "REST API"] },
+      { label: { en: "Team Collaboration", zh: "团队协作", ru: "Совместная работа", ja: "チーム協力", fr: "Collaboration", de: "Teamarbeit" }, values: ["✓ Advanced", "✓ Advanced", "✓ Profile sharing", "✓ Team mgmt", "✓ Profile transfer", "✓ Limited seats", "✓ Profile sharing", "✓ Team mgmt", "✓ Sub-accounts", "✓ Profile sharing", "✓ Basic", "✓ Sub-accounts", "✓ Basic"] },
+      { label: { en: "Bulk Operations", zh: "批量操作", ru: "Массовые операции", ja: "一括操作", fr: "Opérations en masse", de: "Massenoperationen" }, values: ["✓ Create/Open/Delete", "✓ Extensive", "✓ Basic", "✓ Basic", "✓ Mass actions", "✗ Limited", "✓ Bulk create", "✓ Basic", "✓ Batch create", "✓ Basic", "✓ Mass actions", "✓ Batch ops", "✓ Basic"] },
+      { label: { en: "Built-in Proxies", zh: "内置代理", ru: "Встроенные прокси", ja: "内蔵プロキシ", fr: "Proxies intégrés", de: "Integrierte Proxies" }, values: ["✓ Proxy store", "✓ Partner proxies", "✓ Free + Paid", "✓ Integration", "✗", "✓ 3 providers", "✗", "✗", "✗", "✗", "✗", "✗", "✗"] },
+      { label: { en: "RPA / No-code", zh: "RPA / 无代码", ru: "RPA / Без кода", ja: "RPA / ノーコード", fr: "RPA / No-code", de: "RPA / No-Code" }, values: ["✗", "✓ Built-in RPA", "✗", "✗", "✓ Scenarios", "✗", "✗", "✗", "✗", "✗", "✓ Built-in", "✗", "✓ Pre-built workflows"] },
     ],
   },
   { titleKey: "💰 Pricing", titles: { en: "💰 Pricing (Monthly)", zh: "💰 价格（月付）", ru: "💰 Цены (ежемесячно)", ja: "💰 料金（月額）", fr: "💰 Tarifs (mensuels)", de: "💰 Preise (monatlich)" },
     rows: [
-      { label: { en: "Entry Plan", zh: "入门套餐", ru: "Начальный план", ja: "エントリープラン", fr: "Plan d'entrée", de: "Einstiegsplan" }, values: ["$9 / 10 profiles", "$5.4 / 10 profiles", "$24 / 100 profiles", "€99 / 100 profiles", "$89 / 100 profiles", "€29 / 10 profiles"] },
-      { label: { en: "100 Profiles Plan", zh: "100 配置套餐", ru: "План на 100 профилей", ja: "100プロファイルプラン", fr: "Plan 100 profils", de: "100-Profile-Plan" }, values: ["~$40 / 150 profiles", "$30 / 100 profiles", "$24 / 100 profiles", "€99 / 100 profiles", "$89 / 100 profiles", "€79 / 100 profiles"] },
-      { label: { en: "Team Plan", zh: "团队套餐", ru: "Командный план", ja: "チームプラン", fr: "Plan équipe", de: "Team-Plan" }, values: ["$80 / 400 profiles", "Contact", "$99 / 300 profiles", "€199 / 300 profiles", "$159 / 300 profiles", "€169 / 350 profiles"] },
-      { label: { en: "Annual Discount", zh: "年付折扣", ru: "Годовая скидка", ja: "年間割引", fr: "Remise annuelle", de: "Jahresrabatt" }, values: ["✓ Up to 50%", "✓ Available", "✓ 50%", "✓ Available", "✓ Available", "✓ 10-30%"] },
+      { label: { en: "Entry Plan", zh: "入门套餐", ru: "Начальный план", ja: "エントリープラン", fr: "Plan d'entrée", de: "Einstiegsplan" }, values: ["$5.4 / 10 profiles", "$5.4 / 10 profiles", "$24 / 100 profiles", "€99 / 100 profiles", "$89 / 100 profiles", "€29 / 10 profiles", "$29.99 / 50 profiles", "€45 / 10 concurrent", "$99 / 200 profiles", "$49 / 50 cloud", "$15 / 30 profiles", "$59 / 100 profiles", "$30 / 50 profiles"] },
+      { label: { en: "100 Profiles Plan", zh: "100 配置套餐", ru: "План на 100 профилей", ja: "100プロファイルプラン", fr: "Plan 100 profils", de: "100-Profile-Plan" }, values: ["~$40 / 150 profiles", "$30 / 100 profiles", "$24 / 100 profiles", "€99 / 100 profiles", "$89 / 100 profiles", "€79 / 100 profiles", "$79.99 / 150 profiles", "€299 / 100 concurrent", "$99 / 200 profiles", "$99 / 100 cloud", "$30 / 60 profiles", "$59 / 100 profiles", "$60 / 150 profiles"] },
+      { label: { en: "Team Plan", zh: "团队套餐", ru: "Командный план", ja: "チームプラン", fr: "Plan équipe", de: "Team-Plan" }, values: ["$80 / 400 profiles", "Contact", "$49 / 300 profiles", "€199 / 300 profiles", "$159 / 300 profiles", "€169 / 350 profiles", "$149.99 / 500 profiles", "€1499 / 1000+ concurrent", "$209 / 500 profiles", "Contact", "$80 / 200 profiles", "$199 / 500 profiles", "$120 / 500 profiles"] },
+      { label: { en: "Annual Discount", zh: "年付折扣", ru: "Годовая скидка", ja: "年間割引", fr: "Remise annuelle", de: "Jahresrabatt" }, values: ["✓ Up to 50%", "✓ Available", "✓ 50%", "✓ Available", "✓ Available", "✓ 10-30%", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available"] },
     ],
   },
   { titleKey: "🤖 Automation", titles: { en: "🤖 Automation Support", zh: "🤖 自动化支持", ru: "🤖 Автоматизация", ja: "🤖 自動化サポート", fr: "🤖 Automatisation", de: "🤖 Automatisierung" },
     rows: [
-      { label: { en: "Playwright", zh: "Playwright", ru: "Playwright", ja: "Playwright", fr: "Playwright", de: "Playwright" }, values: ["✓", "✗", "✓", "✓", "✗", "✗"] },
-      { label: { en: "Selenium", zh: "Selenium", ru: "Selenium", ja: "Selenium", fr: "Selenium", de: "Selenium" }, values: ["✓", "✓", "✓", "✓", "✓", "✓"] },
-      { label: { en: "Puppeteer", zh: "Puppeteer", ru: "Puppeteer", ja: "Puppeteer", fr: "Puppeteer", de: "Puppeteer" }, values: ["✓", "✓", "✓", "✓", "✓", "✓"] },
-      { label: { en: "Built-in RPA", zh: "内置 RPA", ru: "Встроенный RPA", ja: "内蔵RPA", fr: "RPA intégré", de: "Integriertes RPA" }, values: ["✗", "✓", "✗", "✗", "✓", "✗"] },
-      { label: { en: "MCP Support", zh: "MCP 支持", ru: "Поддержка MCP", ja: "MCP対応", fr: "Support MCP", de: "MCP-Unterstützung" }, values: ["✓", "✗", "✓", "✗", "✗", "✗"] },
+      { label: { en: "Playwright", zh: "Playwright", ru: "Playwright", ja: "Playwright", fr: "Playwright", de: "Playwright" }, values: ["✓", "✗", "✓", "✓", "✗", "✗", "✗", "✓", "✗", "✗", "✗", "✗", "✗"] },
+      { label: { en: "Selenium", zh: "Selenium", ru: "Selenium", ja: "Selenium", fr: "Selenium", de: "Selenium" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
+      { label: { en: "Puppeteer", zh: "Puppeteer", ru: "Puppeteer", ja: "Puppeteer", fr: "Puppeteer", de: "Puppeteer" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✗"] },
+      { label: { en: "Built-in RPA", zh: "内置 RPA", ru: "Встроенный RPA", ja: "内蔵RPA", fr: "RPA intégré", de: "Integriertes RPA" }, values: ["✗", "✓", "✗", "✗", "✓", "✗", "✗", "✗", "✗", "✗", "✓", "✗", "✗"] },
+      { label: { en: "MCP Support", zh: "MCP 支持", ru: "Поддержка MCP", ja: "MCP対応", fr: "Support MCP", de: "MCP-Unterstützung" }, values: ["✓", "✗", "✓", "✗", "✗", "✗", "✗", "✗", "✗", "✗", "✗", "✗", "✗"] },
     ],
   },
 ];
@@ -101,7 +103,7 @@ export default function CompareContent() {
               <tbody>
                 {browsers.map((b) => (
                   <tr key={b.id}>
-                    <td><div style={{ display: "flex", alignItems: "center", gap: 10 }}><div style={{ width: 32, height: 32, borderRadius: 8, background: b.color, display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontWeight: 800, fontSize: "0.85rem", flexShrink: 0 }}>{b.name.charAt(0)}</div><strong>{b.name}</strong></div></td>
+                    <td><div style={{ display: "flex", alignItems: "center", gap: 10 }}><BrowserLogo slug={b.slug} name={b.name} color={b.color} size={32} /><strong>{b.name}</strong></div></td>
                     <td><span style={{ fontWeight: 700, color: "var(--color-cyan)" }}>⭐ {b.rating.overall}</span></td>
                     <td>{b.pricing.startingPrice}</td>
                     <td>{b.pricing.free ? <span className="check">✓ {b.pricing.freeProfiles} {i(ui.profiles, locale)}</span> : <span className="cross">✗</span>}</td>

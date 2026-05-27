@@ -1,4 +1,4 @@
-import Image from "next/image";
+import browserLogos from "@/data/browserLogos";
 
 interface BrowserLogoProps {
   slug: string;
@@ -11,8 +11,8 @@ interface BrowserLogoProps {
 
 /**
  * Unified browser logo component.
- * Renders the real browser logo from /images/browsers/{slug}.png,
- * falling back to a colored initial letter if the image fails to load.
+ * Uses embedded base64 data URLs to avoid dependency on static file serving.
+ * Falls back to a colored initial letter if no logo is found for the slug.
  */
 export default function BrowserLogo({
   slug,
@@ -22,6 +22,8 @@ export default function BrowserLogo({
   className,
   style,
 }: BrowserLogoProps) {
+  const logoDataUrl = browserLogos[slug];
+
   return (
     <div
       className={className}
@@ -36,23 +38,30 @@ export default function BrowserLogo({
         flexShrink: 0,
         background: color,
         position: "relative",
+        color: "white",
+        fontWeight: 800,
+        fontSize: size > 40 ? "1.5rem" : "1rem",
         ...style,
       }}
     >
-      <Image
-        src={`/images/browsers/${slug}.png?v=2`}
-        alt={`${name} logo`}
-        width={size}
-        height={size}
-        style={{
-          objectFit: "contain",
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-        }}
-        unoptimized
-      />
+      {logoDataUrl ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={logoDataUrl}
+          alt={`${name} logo`}
+          width={size}
+          height={size}
+          style={{
+            objectFit: "contain",
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      ) : (
+        name.charAt(0).toUpperCase()
+      )}
     </div>
   );
 }

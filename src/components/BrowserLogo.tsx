@@ -1,3 +1,4 @@
+"use client";
 import browserLogos from "@/data/browserLogos";
 
 interface BrowserLogoProps {

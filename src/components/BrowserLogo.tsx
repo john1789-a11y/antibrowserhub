@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import browserLogos from "@/data/browserLogos";
 
 interface BrowserLogoProps {
@@ -12,8 +13,7 @@ interface BrowserLogoProps {
 
 /**
  * Unified browser logo component.
- * Uses embedded base64 data URLs to avoid dependency on static file serving.
- * Falls back to a colored initial letter if no logo is found for the slug.
+ * Tries public PNG first, falls back to embedded base64, then to initial letter.
  */
 export default function BrowserLogo({
   slug,
@@ -23,7 +23,23 @@ export default function BrowserLogo({
   className,
   style,
 }: BrowserLogoProps) {
-  const logoDataUrl = browserLogos[slug];
+  const publicUrl = `/images/browsers/${slug}.png`;
+  const base64Url = browserLogos[slug];
+  const [imgSrc, setImgSrc] = useState<string | null>(publicUrl);
+  const [imgFailed, setImgFailed] = useState(false);
+
+  const handleError = () => {
+    if (imgSrc === publicUrl && base64Url) {
+      // Public URL failed, try base64
+      setImgSrc(base64Url);
+    } else {
+      // Both failed, show fallback letter
+      setImgSrc(null);
+      setImgFailed(true);
+    }
+  };
+
+  const showImage = imgSrc && !imgFailed;
 
   return (
     <div
@@ -45,13 +61,14 @@ export default function BrowserLogo({
         ...style,
       }}
     >
-      {logoDataUrl ? (
+      {showImage ? (
         /* eslint-disable-next-line @next/next/no-img-element */
         <img
-          src={logoDataUrl}
+          src={imgSrc}
           alt={`${name} logo`}
           width={size}
           height={size}
+          onError={handleError}
           style={{
             objectFit: "contain",
             position: "absolute",

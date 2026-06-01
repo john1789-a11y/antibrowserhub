@@ -99,7 +99,6 @@ function ProxyCard({ provider, locale }: { provider: ProxyProvider; locale: stri
   const highlight = proxyHighlightTranslations[provider.slug]?.[l] || provider.highlight;
   const pricing = getLocalizedPricing(provider.pricing, l);
 
-  const [logoError, setLogoError] = useState(false);
   const domain = useMemo(() => {
     try {
       return new URL(provider.website).hostname.replace("www.", "");
@@ -108,20 +107,38 @@ function ProxyCard({ provider, locale }: { provider: ProxyProvider; locale: stri
     }
   }, [provider.website]);
 
+  // Triple-fallback state: 0 = Clearbit, 1 = Cravatar, 2 = Letter Placeholder
+  const [logoStage, setLogoStage] = useState(0);
+
+  const handleLogoError = () => {
+    setLogoStage((prev) => prev + 1);
+  };
+
   return (
     <div className="proxy-card">
       {badge && <div className="proxy-badge">{badge}</div>}
       <div className="proxy-card-header">
-        {!logoError && domain ? (
+        {domain && logoStage === 0 && (
           <div className="proxy-logo-container">
             <img
               src={`https://logo.clearbit.com/${domain}`}
               alt={`${provider.name} logo`}
               className="proxy-logo-img"
-              onError={() => setLogoError(true)}
+              onError={handleLogoError}
             />
           </div>
-        ) : (
+        )}
+        {domain && logoStage === 1 && (
+          <div className="proxy-logo-container">
+            <img
+              src={`https://cn.cravatar.com/favicon/api/index.php?url=${domain}`}
+              alt={`${provider.name} icon`}
+              className="proxy-logo-img"
+              onError={handleLogoError}
+            />
+          </div>
+        )}
+        {(logoStage >= 2 || !domain) && (
           <div className="proxy-logo-placeholder" style={{ background: `hsl(${provider.name.charCodeAt(0) * 7 % 360}, 60%, 35%)` }}>
             {provider.name.charAt(0)}
           </div>

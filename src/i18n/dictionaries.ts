@@ -6,6 +6,8 @@ export interface Dictionary {
     compare: string;
     guides: string;
     deals: string;
+    proxies: string;
+    tools: string;
     about: string;
     getStarted: string;
   };
@@ -92,7 +94,7 @@ export interface Dictionary {
 }
 
 const en: Dictionary = {
-  nav: { reviews: "Reviews", compare: "Compare", guides: "Guides", deals: "Deals", about: "About", getStarted: "Get Started →" },
+  nav: { reviews: "Reviews", compare: "Compare", guides: "Guides", deals: "Deals", proxies: "Proxies", tools: "Tools", about: "About", getStarted: "Get Started →" },
   home: {
     heroTitle: "Find the Best Antidetect Browser",
     heroSubtitle: "In-depth reviews, side-by-side comparisons, and expert guides to help you choose the right antidetect browser for multi-account management.",
@@ -141,7 +143,7 @@ const en: Dictionary = {
 };
 
 const zh: Dictionary = {
-  nav: { reviews: "评测", compare: "对比", guides: "教程", deals: "优惠", about: "关于", getStarted: "立即开始 →" },
+  nav: { reviews: "评测", compare: "对比", guides: "教程", deals: "优惠", proxies: "代理", tools: "工具", about: "关于", getStarted: "立即开始 →" },
   home: {
     heroTitle: "寻找最佳指纹浏览器",
     heroSubtitle: "深度评测、横向对比、专家教程，帮您选择最适合多账号管理的指纹浏览器。",
@@ -190,7 +192,7 @@ const zh: Dictionary = {
 };
 
 const ru: Dictionary = {
-  nav: { reviews: "Обзоры", compare: "Сравнение", guides: "Руководства", deals: "Скидки", about: "О нас", getStarted: "Начать →" },
+  nav: { reviews: "Обзоры", compare: "Сравнение", guides: "Руководства", deals: "Скидки", proxies: "Прокси", tools: "Инструменты", about: "О нас", getStarted: "Начать →" },
   home: {
     heroTitle: "Найдите лучший антидетект браузер",
     heroSubtitle: "Подробные обзоры, сравнения и экспертные руководства для выбора идеального антидетект браузера.",
@@ -239,7 +241,7 @@ const ru: Dictionary = {
 };
 
 const ja: Dictionary = {
-  nav: { reviews: "レビュー", compare: "比較", guides: "ガイド", deals: "セール", about: "概要", getStarted: "始める →" },
+  nav: { reviews: "レビュー", compare: "比較", guides: "ガイド", deals: "セール", proxies: "プロキシ", tools: "ツール", about: "概要", getStarted: "始める →" },
   home: {
     heroTitle: "最適なアンチ検出ブラウザを見つける",
     heroSubtitle: "詳細なレビュー、比較、専門家ガイドで、マルチアカウント管理に最適なアンチ検出ブラウザを選びましょう。",
@@ -288,7 +290,7 @@ const ja: Dictionary = {
 };
 
 const fr: Dictionary = {
-  nav: { reviews: "Avis", compare: "Comparer", guides: "Guides", deals: "Offres", about: "À propos", getStarted: "Commencer →" },
+  nav: { reviews: "Avis", compare: "Comparer", guides: "Guides", deals: "Offres", proxies: "Proxies", tools: "Outils", about: "À propos", getStarted: "Commencer →" },
   home: {
     heroTitle: "Trouvez le meilleur navigateur anti-détection",
     heroSubtitle: "Avis approfondis, comparaisons côte à côte et guides experts pour choisir le bon navigateur anti-détection.",
@@ -337,7 +339,7 @@ const fr: Dictionary = {
 };
 
 const de: Dictionary = {
-  nav: { reviews: "Bewertungen", compare: "Vergleichen", guides: "Anleitungen", deals: "Angebote", about: "Über uns", getStarted: "Loslegen →" },
+  nav: { reviews: "Bewertungen", compare: "Vergleichen", guides: "Anleitungen", deals: "Angebote", proxies: "Proxies", tools: "Tools", about: "Über uns", getStarted: "Loslegen →" },
   home: {
     heroTitle: "Finden Sie den besten Antidetect-Browser",
     heroSubtitle: "Ausführliche Bewertungen, Vergleiche und Expertenanleitungen für die Wahl des richtigen Antidetect-Browsers.",

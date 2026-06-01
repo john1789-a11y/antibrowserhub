@@ -18,6 +18,8 @@ const staticPages: SearchResult[] = [
   { type: "page", title: "Guides & Tutorials", description: "Expert guides for antidetect browsers", href: "/guides", icon: "📚" },
   { type: "page", title: "About AntiBrowserHub", description: "Learn about our mission and team", href: "/about", icon: "ℹ️" },
   { type: "page", title: "Deals & Discounts", description: "Exclusive coupon codes and promotions", href: "/deals", icon: "🏷️" },
+  { type: "page", title: "Proxy Providers", description: "Top 50 proxy providers for antidetect browsers", href: "/proxies", icon: "🌐" },
+  { type: "page", title: "Fingerprint Checker", description: "Free browser fingerprint analysis tool", href: "/tools/fingerprint-check", icon: "🔍" },
 ];
 
 function buildSearchIndex(): SearchResult[] {

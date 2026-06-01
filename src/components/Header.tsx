@@ -53,23 +53,28 @@ export default function Header() {
     <>
       <header className="header">
         <div className="header-inner">
+          {/* Left: Logo */}
           <Link href="/" className="logo" onClick={closeMenu}>
             <div className="logo-icon">🛡️</div>
             <div className="logo-text"><span>AntiBrowserHub</span></div>
           </Link>
+
+          {/* Center: Nav links */}
           <nav className="nav nav-desktop">
             <Link href="/reviews" className="nav-link">{t.nav.reviews}</Link>
             <Link href="/compare" className="nav-link">{t.nav.compare}</Link>
             <Link href="/guides" className="nav-link">{t.nav.guides}</Link>
+            <Link href="/proxies" className="nav-link">{t.nav.proxies}</Link>
             <Link href="/deals" className="nav-link">{t.nav.deals}</Link>
-            <Link href="/about" className="nav-link">{t.nav.about}</Link>
+            <Link href="/tools/fingerprint-check" className="nav-link">{t.nav.tools}</Link>
+          </nav>
 
-            {/* Search trigger */}
+          {/* Right: Actions */}
+          <div className="header-actions">
             <button className="search-trigger" onClick={() => setSearchOpen(true)} aria-label="Search">
-              🔍 {t.common.search} <kbd>⌘K</kbd>
+              🔍 <kbd>⌘K</kbd>
             </button>
 
-            {/* Theme toggle */}
             <button
               className="theme-toggle"
               onClick={toggleTheme}
@@ -79,7 +84,6 @@ export default function Header() {
               {theme === "dark" ? "☀️" : "🌙"}
             </button>
 
-            {/* Language switcher */}
             <div className="lang-switcher" ref={langRef}>
               <button
                 className="lang-btn"
@@ -105,7 +109,9 @@ export default function Header() {
             </div>
 
             <Link href="/reviews" className="nav-cta">{t.nav.getStarted}</Link>
-          </nav>
+          </div>
+
+          {/* Mobile controls */}
           <div className="mobile-controls">
             <button className="search-trigger" onClick={() => setSearchOpen(true)} aria-label="Search" style={{ padding: "6px 8px" }}>
               🔍
@@ -132,7 +138,9 @@ export default function Header() {
             <Link href="/reviews" className="mobile-nav-link" onClick={closeMenu}>{t.nav.reviews}</Link>
             <Link href="/compare" className="mobile-nav-link" onClick={closeMenu}>{t.nav.compare}</Link>
             <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>{t.nav.guides}</Link>
+            <Link href="/proxies" className="mobile-nav-link" onClick={closeMenu}>{t.nav.proxies}</Link>
             <Link href="/deals" className="mobile-nav-link" onClick={closeMenu}>{t.nav.deals}</Link>
+            <Link href="/tools/fingerprint-check" className="mobile-nav-link" onClick={closeMenu}>{t.nav.tools}</Link>
             <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>{t.nav.about}</Link>
 
             {/* Mobile language switcher */}

@@ -99,7 +99,7 @@ export default function CompareContent() {
           <p className="section-subtitle" style={{ marginBottom: 32, textAlign: "left", maxWidth: "100%" }}>{i(ui.quickSub, locale)}</p>
           <div className="comparison-table-wrap">
             <table className="comparison-table">
-              <thead><tr><th>{i(ui.browser, locale)}</th><th>{i(ui.rating, locale)}</th><th>{i(ui.startPrice, locale)}</th><th>{i(ui.freePlan, locale)}</th><th>{i(ui.bestFor, locale)}</th><th></th></tr></thead>
+              <thead><tr><th>{i(ui.browser, locale)}</th><th>{i(ui.rating, locale)}</th><th>{i(ui.startPrice, locale)}</th><th>{i(ui.freePlan, locale)}</th><th>{i(ui.bestFor, locale)}</th><th style={{ minWidth: 120 }}></th></tr></thead>
               <tbody>
                 {browsers.map((b) => (
                   <tr key={b.id}>
@@ -108,7 +108,7 @@ export default function CompareContent() {
                     <td>{b.pricing.startingPrice}</td>
                     <td>{b.pricing.free ? <span className="check">✓ {b.pricing.freeProfiles} {i(ui.profiles, locale)}</span> : <span className="cross">✗</span>}</td>
                     <td style={{ fontSize: "0.82rem", color: "var(--text-secondary)" }}>{b.tagline}</td>
-                    <td><Link href={`/reviews/${b.slug}`} className="card-cta" style={{ fontSize: "0.75rem", padding: "6px 12px" }}>{t.reviews.readReview}</Link></td>
+                    <td style={{ whiteSpace: "nowrap" }}><Link href={`/reviews/${b.slug}`} className="card-cta" style={{ fontSize: "0.75rem", padding: "6px 14px", whiteSpace: "nowrap" }}>{t.reviews.readReview}</Link></td>
                   </tr>
                 ))}
               </tbody>

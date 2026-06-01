@@ -53,7 +53,7 @@ export default function BrowserLogo({
         alignItems: "center",
         justifyContent: "center",
         flexShrink: 0,
-        background: color,
+        background: showImage ? "transparent" : color,
         position: "relative",
         color: "white",
         fontWeight: 800,

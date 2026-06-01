@@ -99,13 +99,33 @@ function ProxyCard({ provider, locale }: { provider: ProxyProvider; locale: stri
   const highlight = proxyHighlightTranslations[provider.slug]?.[l] || provider.highlight;
   const pricing = getLocalizedPricing(provider.pricing, l);
 
+  const [logoError, setLogoError] = useState(false);
+  const domain = useMemo(() => {
+    try {
+      return new URL(provider.website).hostname.replace("www.", "");
+    } catch {
+      return "";
+    }
+  }, [provider.website]);
+
   return (
     <div className="proxy-card">
       {badge && <div className="proxy-badge">{badge}</div>}
       <div className="proxy-card-header">
-        <div className="proxy-logo-placeholder" style={{ background: `hsl(${provider.name.charCodeAt(0) * 7 % 360}, 60%, 35%)` }}>
-          {provider.name.charAt(0)}
-        </div>
+        {!logoError && domain ? (
+          <div className="proxy-logo-container">
+            <img
+              src={`https://logo.clearbit.com/${domain}`}
+              alt={`${provider.name} logo`}
+              className="proxy-logo-img"
+              onError={() => setLogoError(true)}
+            />
+          </div>
+        ) : (
+          <div className="proxy-logo-placeholder" style={{ background: `hsl(${provider.name.charCodeAt(0) * 7 % 360}, 60%, 35%)` }}>
+            {provider.name.charAt(0)}
+          </div>
+        )}
         <div className="proxy-card-info">
           <div className="proxy-card-name">
             {provider.countryFlag} {provider.name}

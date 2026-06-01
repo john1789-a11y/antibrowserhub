@@ -884,12 +884,7 @@ export default function FingerprintChecker() {
   const authenticityScore = isDone ? calculateAuthenticityScore(categories) : 0;
   const scoreColor = authenticityScore >= 85 ? "var(--color-emerald)" : authenticityScore >= 55 ? "var(--color-amber)" : "var(--color-rose)";
   // Real consistency/spoofing anomalies count
-  const anomalyCount = isDone ? categories.reduce((s, c) => s + c.items.filter(item => {
-    if (item.label === "WebDriver" && item.value.toLowerCase().includes("detected")) return true;
-    if (item.label === "Automation Flags" && !item.value.includes("None")) return true;
-    if (item.value.includes("⚠️")) return true;
-    return false;
-  }).length, 0) : 0;
+  const anomalyCount = isDone ? categories.reduce((s, c) => s + c.items.filter(item => item.value.includes("⚠️")).length, 0) : 0;
 
   const riskColor = (r: Risk) => r === "high" ? "var(--color-rose, #f43f5e)" : r === "medium" ? "var(--color-amber, #f59e0b)" : "var(--color-emerald, #10b981)";
 

@@ -395,14 +395,6 @@ export const proxyHighlightTranslations: Record<string, Record<Locale, string>> 
     fr: "Proxys résidentiels les moins chers. Modèle de réseau P2P.",
     de: "Günstigste Residential-Proxies. P2P-Netzwerkmodell.",
   },
-  "geosurf": {
-    en: "Premium residential proxies with browser extension support.",
-    zh: "优质住宅代理，支持浏览器扩展程序。",
-    ru: "Премиальные резидентные прокси с поддержкой браузерного расширения.",
-    ja: "ブラウザ拡張機能のサポートを備えたプレミアムなレジデンシャルプロキシ。",
-    fr: "Proxys résidentiels premium avec prise en charge d'extensions de navigateur.",
-    de: "Premium Residential-Proxies mit Unterstützung für Browser-Erweiterungen.",
-  },
   "netnut": {
     en: "Direct ISP connectivity. Very fast and stable for enterprise.",
     zh: "直接连接 ISP 网关。非常快速且稳定，适合企业级运营。",
@@ -579,30 +571,7 @@ export const proxyHighlightTranslations: Record<string, Record<Locale, string>> 
     fr: "Proxys datacenter IPv6 et IPv4 ultra-économiques.",
     de: "Extrem günstige IPv6- und IPv4-Rechenzentrum-Proxies.",
   },
-  "922proxy": {
-    en: "Massive pool with ultra-cheap per-IP pricing. Popular in Asia.",
-    zh: "庞大的 IP 池与极低按 IP 计费的价格。在亚洲备受欢迎。",
-    ru: "Огромный пул с ультрадешевой ценой за один IP. Популярен в Азии.",
-    ja: "アジアで絶大な人気を誇る、IPごとの超格安料金と大規模プール。",
-    fr: "Pool massif avec tarification par IP ultra-économique. Populaire en Asie.",
-    de: "Riesiger Pool mit extrem günstigen Preisen pro IP. Beliebt in Asien.",
-  },
-  "piaproxy": {
-    en: "Claims largest IP pool. Very popular among antidetect browser users.",
-    zh: "声称拥有最大的 IP 池。在指纹浏览器用户群体中极其流行。",
-    ru: "Заявляет о самом большом пуле IP. Очень популярен среди пользователей антидетектов.",
-    ja: "最大のIPプールを謳う。アンチ検出ブラウザの利用者に極めて人気。",
-    fr: "Revendique le plus grand pool IP. Très populaire auprès des utilisateurs de navigateurs anti-détection.",
-    de: "Beansprucht den größten IP-Pool. Sehr beliebt bei Antidetect-Browser-Nutzern.",
-  },
-  "abcproxy": {
-    en: "Budget residential proxies with wide country coverage.",
-    zh: "经济型住宅代理，国家覆盖范围广泛。",
-    ru: "Бюджетные резидентные прокси с широким охватом стран.",
-    ja: "幅広い国をカバーした、低価格なレジデンシャルプロキシ。",
-    fr: "Proxys résidentiels économiques avec une large couverture pays.",
-    de: "Günstige Residential-Proxies mit breiter Länderabdeckung.",
-  },
+
   "luna-io": {
     en: "Singapore-based provider with good APAC coverage.",
     zh: "总部位于新加坡的代理商，在亚太地区覆盖良好。",
@@ -627,14 +596,6 @@ export const proxyHighlightTranslations: Record<string, Record<Locale, string>> 
     fr: "Fournisseur rapide basé en Australie avec des tarifs compétitifs.",
     de: "Schneller Anbieter mit Sitz in Australien und wettbewerbsfähigen Preisen.",
   },
-  "kproxy": {
-    en: "Free web proxy service. Basic but works for casual use.",
-    zh: "免费网页代理服务。基础实用，适合日常临时使用。",
-    ru: "Бесплатный веб-прокси. Простой, но рабочий вариант для повседневных задач.",
-    ja: "無料のウェブプロキシサービス。簡易的ですが日常的な利用には十分です。",
-    fr: "Service proxy web gratuit. Basique mais fonctionnel pour un usage occasionnel.",
-    de: "Kostenloser Web-Proxy-Dienst. Einfach, aber ausreichend für den Gelegenheitsgebrauch.",
-  },
   "coldproxy": {
     en: "Affordable ISP proxies with focus on US locations.",
     zh: "性价比高的 ISP 静态住宅代理，重点覆盖美国节点。",
@@ -643,14 +604,6 @@ export const proxyHighlightTranslations: Record<string, Record<Locale, string>> 
     fr: "Proxys ISP abordables axés sur les emplacements aux États-Unis.",
     de: "Erschwingliche ISP-Proxies mit Fokus auf Standorte in den USA.",
   },
-  "tabproxy": {
-    en: "Pay-per-IP model popular with Chinese antidetect browser users.",
-    zh: "按 IP 计费的模式，在国内指纹浏览器用户中很受欢迎。",
-    ru: "Модель оплаты за IP, популярная среди китайских пользователей антидетект-браузеров.",
-    ja: "中国のアンチ検出ブラウザユーザーに人気のある、IPごとの課金モデル。",
-    fr: "Modèle de paiement par IP populaire auprès des utilisateurs de navigateurs anti-détection chinois.",
-    de: "Pay-per-IP-Modell, das bei chinesischen Antidetect-Browser-Nutzern beliebt ist.",
-  },
   "proxyline": {
     en: "Budget datacenter proxies with manual IP selection.",
     zh: "经济型数据中心代理，支持手动挑选具体 IP 地址。",
@@ -658,14 +611,6 @@ export const proxyHighlightTranslations: Record<string, Record<Locale, string>> 
     ja: "手動でIPアドレスを選択できる、低価格なデータセンタープロキシ。",
     fr: "Proxys datacenter économiques avec sélection manuelle des adresses IP.",
     de: "Günstige Rechenzentrum-Proxies mit manueller IP-Auswahl.",
-  },
-  "360proxy": {
-    en: "Chinese residential proxy service with global IP coverage.",
-    zh: "住宅代理服务，提供全球 IP 资源覆盖。",
-    ru: "Резидентный прокси-сервис с глобальным покрытием IP-адресов.",
-    ja: "グローバルなIPカバー範囲を提供するレジデンシャルプロキシサービス。",
-    fr: "Service proxy résidentiel avec une couverture IP mondiale.",
-    de: "Residential-Proxy-Dienst mit globaler IP-Abdeckung.",
   },
   "iproxy-online": {
     en: "Turn your own phone into a mobile proxy. DIY mobile proxy solution.",
@@ -691,14 +636,6 @@ export const proxyHighlightTranslations: Record<string, Record<Locale, string>> 
     fr: "Proxys résidentiels et ISP avec un modèle de tarification par IP.",
     de: "Residential- und ISP-Proxies mit Preisen pro IP.",
   },
-  "pyproxy": {
-    en: "Growing proxy service with competitive pricing and global coverage.",
-    zh: "快速成长的代理服务商，价格极具竞争力，全球覆盖广。",
-    ru: "Растущий прокси-сервис с конкурентными ценами и глобальным покрытием.",
-    ja: "競争力のある価格設定と世界的なカバー範囲を提供する、成長中のプロキシサービス。",
-    fr: "Service proxy en pleine croissance avec des tarifs compétitifs et une couverture mondiale.",
-    de: "Wachsender Proxy-Dienst mit wettbewerbsfähigen Preisen und globaler Abdeckung.",
-  },
   "okeyproxy": {
     en: "Premium residential proxies with 99.9% uptime SLA.",
     zh: "高品质住宅代理，提供 99.9% 正常运行时间的在线承诺。",
@@ -722,13 +659,5 @@ export const proxyHighlightTranslations: Record<string, Record<Locale, string>> 
     ja: "複数のサブネットから選べる、専用のプライベートプロキシ。",
     fr: "Proxys privés dédiés avec plusieurs sous-réseaux.",
     de: "Dedizierte private Proxies mit mehreren Subnetzen.",
-  },
-  "pia-s5": {
-    en: "SOCKS5 residential proxy with desktop app and browser extension.",
-    zh: "支持 SOCKS5 的住宅代理，配有桌面客户端和浏览器扩展程序。",
-    ru: "Резидентный прокси SOCKS5 с настольным приложением и расширением для браузера.",
-    ja: "デスクトップアプリとブラウザ拡張機能を備えたSOCKS5レジデンシャルプロキシ。",
-    fr: "Proxy résidentiel SOCKS5 avec application de bureau et extension de navigateur.",
-    de: "SOCKS5-Residential-Proxy mit Desktop-App und Browser-Erweiterung.",
   },
 };

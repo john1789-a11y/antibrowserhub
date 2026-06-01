@@ -100,6 +100,8 @@ function ProxyCard({ provider, locale }: { provider: ProxyProvider; locale: stri
   const pricing = getLocalizedPricing(provider.pricing, l);
 
   const [logoError, setLogoError] = useState(false);
+  const isSvg = provider.slug === "mobileproxy-space";
+  const logoUrl = `/images/providers/${provider.slug}.${isSvg ? "svg" : "png"}`;
 
   return (
     <div className="proxy-card">
@@ -108,7 +110,7 @@ function ProxyCard({ provider, locale }: { provider: ProxyProvider; locale: stri
         {!logoError ? (
           <div className="proxy-logo-container">
             <img
-              src={`/images/proxies/${provider.slug}.png`}
+              src={logoUrl}
               alt={`${provider.name} logo`}
               className="proxy-logo-img"
               onError={() => setLogoError(true)}

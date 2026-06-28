@@ -10,8 +10,22 @@ export default function HomeContent() {
   const { locale } = useI18n();
   const p = getPageTexts(locale).home;
 
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "AntiBrowserHub",
+    url: "https://antibrowserhub.com",
+    description: "Independent reviews and comparisons of antidetect browsers.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://antibrowserhub.com/reviews?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <section className="hero">
         <div className="container">
           <div className="hero-content">
@@ -23,8 +37,8 @@ export default function HomeContent() {
               <Link href="/compare" className="btn-secondary">{p.btnCompare}</Link>
             </div>
             <div className="hero-stats">
-              <div className="hero-stat"><div className="hero-stat-value">5+</div><div className="hero-stat-label">{p.stat1}</div></div>
-              <div className="hero-stat"><div className="hero-stat-value">50+</div><div className="hero-stat-label">{p.stat2}</div></div>
+              <div className="hero-stat"><div className="hero-stat-value">{browsers.length}+</div><div className="hero-stat-label">{p.stat1}</div></div>
+              <div className="hero-stat"><div className="hero-stat-value">100+</div><div className="hero-stat-label">{p.stat2}</div></div>
               <div className="hero-stat"><div className="hero-stat-value">100%</div><div className="hero-stat-label">{p.stat3}</div></div>
             </div>
           </div>

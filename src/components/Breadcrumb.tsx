@@ -9,12 +9,16 @@ interface BreadcrumbItem {
 }
 
 const labelMap: Record<string, Record<string, string>> = {
+  home: { en: "Home", zh: "首页", ru: "Главная", ja: "ホーム", fr: "Accueil", de: "Startseite" },
   reviews: { en: "Reviews", zh: "评测", ru: "Обзоры", ja: "レビュー", fr: "Avis", de: "Bewertungen" },
   compare: { en: "Compare", zh: "对比", ru: "Сравнение", ja: "比較", fr: "Comparer", de: "Vergleichen" },
   guides: { en: "Guides", zh: "教程", ru: "Руководства", ja: "ガイド", fr: "Guides", de: "Anleitungen" },
   about: { en: "About", zh: "关于", ru: "О нас", ja: "概要", fr: "À propos", de: "Über uns" },
   blog: { en: "Blog", zh: "博客", ru: "Блог", ja: "ブログ", fr: "Blog", de: "Blog" },
   deals: { en: "Deals", zh: "优惠", ru: "Скидки", ja: "セール", fr: "Offres", de: "Angebote" },
+  privacy: { en: "Privacy Policy", zh: "隐私政策", ru: "Конфиденциальность", ja: "プライバシー", fr: "Confidentialité", de: "Datenschutz" },
+  terms: { en: "Terms of Service", zh: "服务条款", ru: "Условия", ja: "利用規約", fr: "Conditions", de: "Nutzungsbedingungen" },
+  "best-for": { en: "Best For", zh: "最佳推荐", ru: "Лучшие для", ja: "ベスト", fr: "Meilleur pour", de: "Beste für" },
 };
 
 export default function Breadcrumb({ customItems }: { customItems?: BreadcrumbItem[] }) {
@@ -34,7 +38,7 @@ export default function Breadcrumb({ customItems }: { customItems?: BreadcrumbIt
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://antibrowserhub.com" },
+      { "@type": "ListItem", position: 1, name: labelMap.home?.[locale] || "Home", item: "https://antibrowserhub.com" },
       ...items.map((item, idx) => ({
         "@type": "ListItem",
         position: idx + 2,
@@ -50,7 +54,7 @@ export default function Breadcrumb({ customItems }: { customItems?: BreadcrumbIt
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <ol>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">{labelMap.home?.[locale] || "Home"}</Link>
           </li>
           {items.map((item, idx) => (
             <li key={item.href}>

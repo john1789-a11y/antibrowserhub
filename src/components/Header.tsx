@@ -65,6 +65,7 @@ export default function Header() {
             <Link href="/compare" className="nav-link">{t.nav.compare}</Link>
             <Link href="/guides" className="nav-link">{t.nav.guides}</Link>
             <Link href="/proxies" className="nav-link">{t.nav.proxies}</Link>
+            <Link href="/best-for" className="nav-link">{t.nav.bestFor}</Link>
             <Link href="/deals" className="nav-link">{t.nav.deals}</Link>
             <Link href="/tools/fingerprint-check" className="nav-link">{t.nav.tools}</Link>
           </nav>
@@ -139,6 +140,7 @@ export default function Header() {
             <Link href="/compare" className="mobile-nav-link" onClick={closeMenu}>{t.nav.compare}</Link>
             <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>{t.nav.guides}</Link>
             <Link href="/proxies" className="mobile-nav-link" onClick={closeMenu}>{t.nav.proxies}</Link>
+            <Link href="/best-for" className="mobile-nav-link" onClick={closeMenu}>{t.nav.bestFor}</Link>
             <Link href="/deals" className="mobile-nav-link" onClick={closeMenu}>{t.nav.deals}</Link>
             <Link href="/tools/fingerprint-check" className="mobile-nav-link" onClick={closeMenu}>{t.nav.tools}</Link>
             <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>{t.nav.about}</Link>

@@ -3,9 +3,10 @@ import { useEffect, useState, useCallback } from "react";
 
 interface ReviewTOCProps {
   sections: { id: string; label: string }[];
+  title?: string;
 }
 
-export default function ReviewTOC({ sections }: ReviewTOCProps) {
+export default function ReviewTOC({ sections, title }: ReviewTOCProps) {
   const [activeId, setActiveId] = useState<string>("");
 
   // Scroll-spy: track which section is currently visible
@@ -55,7 +56,7 @@ export default function ReviewTOC({ sections }: ReviewTOCProps) {
 
   return (
     <div className="sidebar-card" style={{ marginTop: 20 }}>
-      <h3>Table of Contents</h3>
+      <h3>{title || "Table of Contents"}</h3>
       <nav className="sidebar-toc">
         {sections.map((s) => (
           <a

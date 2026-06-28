@@ -591,6 +591,15 @@ img { max-width: 100%; height: auto; }
   display: flex; justify-content: space-between; align-items: center;
   font-size: 0.8rem; color: var(--text-muted);
 }
+.footer-social { display: flex; gap: 12px; margin-top: 16px; }
+.social-link {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  text-decoration: none; font-size: 1rem;
+  transition: all 0.2s;
+}
+.social-link:hover { border-color: var(--color-indigo); background: rgba(99,102,241,0.1); transform: translateY(-2px); }
 
 /* ===== REVIEW LIST ===== */
 .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
@@ -2131,4 +2140,94 @@ img { max-width: 100%; height: auto; }
   .proxy-grid { grid-template-columns: 1fr; }
   .proxy-card { padding: 18px; }
   .proxy-filter-btn { padding: 5px 10px; font-size: 0.72rem; }
+}
+
+/* ===== BEST-FOR PAGES ===== */
+.bestfor-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;
+}
+.bestfor-list-card {
+  display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md); transition: all 0.25s;
+  text-decoration: none; color: var(--text-primary);
+}
+.bestfor-list-card:hover {
+  border-color: var(--color-indigo); transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+.bestfor-list-icon { font-size: 2rem; flex-shrink: 0; }
+.bestfor-list-body { flex: 1; }
+.bestfor-list-body h3 { font-size: 1rem; font-weight: 600; margin: 0 0 4px; }
+.bestfor-list-body p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+.bestfor-list-arrow { font-size: 0.82rem; color: var(--color-indigo); white-space: nowrap; flex-shrink: 0; }
+
+.bestfor-block { margin-bottom: 48px; }
+.bestfor-block h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; }
+.bestfor-intro { color: var(--text-secondary); line-height: 1.85; font-size: 1rem; }
+
+.bestfor-criteria { display: flex; flex-wrap: wrap; gap: 12px; }
+.bestfor-criteria-item {
+  display: flex; align-items: center; gap: 8px; padding: 10px 16px;
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md); font-size: 0.9rem;
+}
+.bestfor-criteria-check { color: var(--color-emerald); font-weight: 700; }
+
+.bestfor-rankings { display: flex; flex-direction: column; gap: 24px; }
+.bestfor-rank-card {
+  position: relative; padding: 24px; padding-left: 60px;
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg); transition: all 0.25s;
+}
+.bestfor-rank-card:hover { border-color: var(--color-indigo); box-shadow: var(--shadow-glow); }
+.bestfor-rank-badge {
+  position: absolute; left: 16px; top: 24px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--bg-tertiary); color: var(--text-primary);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.85rem;
+}
+.bestfor-rank-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.bestfor-rank-info h3 { font-size: 1.15rem; font-weight: 700; margin: 0 0 6px; }
+.bestfor-rank-meta { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--text-muted); }
+.bestfor-free-badge { color: var(--color-emerald); }
+.bestfor-rank-tagline { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px; line-height: 1.6; }
+.bestfor-rank-proscons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 16px; }
+.bestfor-rank-pros strong { color: var(--color-emerald); font-size: 0.82rem; }
+.bestfor-rank-cons strong { color: var(--color-rose); font-size: 0.82rem; }
+.bestfor-rank-proscons ul { list-style: none; padding: 0; margin: 8px 0 0; }
+.bestfor-rank-proscons li {
+  font-size: 0.85rem; color: var(--text-secondary); padding: 3px 0;
+  padding-left: 16px; position: relative;
+}
+.bestfor-rank-pros li::before { content: "✓"; position: absolute; left: 0; color: var(--color-emerald); font-size: 0.75rem; }
+.bestfor-rank-cons li::before { content: "✗"; position: absolute; left: 0; color: var(--color-rose); font-size: 0.75rem; }
+.bestfor-rank-actions { display: flex; gap: 12px; }
+.bestfor-rank-actions .btn-primary,
+.bestfor-rank-actions .btn-secondary { font-size: 0.82rem; padding: 8px 16px; }
+
+.bestfor-tips { display: flex; flex-direction: column; gap: 12px; }
+.bestfor-tip {
+  display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px;
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-secondary);
+}
+.bestfor-tip-num {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--gradient-primary); color: white; font-size: 0.75rem;
+  font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+
+/* Best-for responsive */
+@media (max-width: 768px) {
+  .bestfor-grid { grid-template-columns: 1fr; }
+  .bestfor-rank-card { padding-left: 24px; }
+  .bestfor-rank-badge { position: static; margin-bottom: 12px; }
+  .bestfor-rank-header { flex-direction: column; align-items: flex-start; }
+  .bestfor-rank-proscons { grid-template-columns: 1fr; gap: 12px; }
+  .bestfor-rank-actions { flex-direction: column; }
+  .bestfor-rank-actions .btn-primary,
+  .bestfor-rank-actions .btn-secondary { width: 100%; text-align: center; }
+  .bestfor-criteria { flex-direction: column; }
 }

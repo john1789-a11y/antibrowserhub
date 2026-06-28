@@ -2,14 +2,17 @@ import { MetadataRoute } from "next";
 import { getAllBrowserSlugs } from "@/data/browsers";
 import { getAllComparisonSlugs } from "@/data/comparisons";
 import { getAllGuideSlugs } from "@/data/guides";
+import { getAllUseCaseSlugs } from "@/data/useCases";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://antibrowserhub.com";
+  // Update this date when content is actually modified
+  const lastUpdated = new Date("2026-06-27");
 
   const browserSlugs = getAllBrowserSlugs();
   const browserPages = browserSlugs.map((slug) => ({
     url: `${baseUrl}/reviews/${slug}`,
-    lastModified: new Date(),
+    lastModified: lastUpdated,
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -17,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const comparisonSlugs = getAllComparisonSlugs();
   const comparisonPages = comparisonSlugs.map((slug) => ({
     url: `${baseUrl}/compare/${slug}`,
-    lastModified: new Date(),
+    lastModified: lastUpdated,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -25,80 +28,107 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const guideSlugs = getAllGuideSlugs();
   const guidePages = guideSlugs.map((slug) => ({
     url: `${baseUrl}/guides/${slug}`,
-    lastModified: new Date(),
+    lastModified: lastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.7,
+  }));
+
+  const useCaseSlugs = getAllUseCaseSlugs();
+  const useCasePages = useCaseSlugs.map((slug) => ({
+    url: `${baseUrl}/best-for/${slug}`,
+    lastModified: lastUpdated,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
   }));
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "daily",
       priority: 1,
     },
     {
       url: `${baseUrl}/reviews`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/compare`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/guides`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${baseUrl}/deals`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/glossary`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/proxies`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/best-for`,
+      lastModified: lastUpdated,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
       url: `${baseUrl}/tools/fingerprint-check`,
-      lastModified: new Date(),
+      lastModified: lastUpdated,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     ...browserPages,
     ...comparisonPages,
     ...guidePages,
+    ...useCasePages,
   ];
 }

@@ -18,6 +18,21 @@ export default function Footer() {
                 <div className="logo-text"><span>AntiBrowserHub</span></div>
               </div>
               <p>{t.footer.description}</p>
+              {/* Social media links */}
+              <div className="footer-social">
+                <a href="https://twitter.com/antibrowserhub" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" className="social-link">
+                  𝕏
+                </a>
+                <a href="https://t.me/antibrowserhub" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="social-link">
+                  ✈️
+                </a>
+                <a href="https://github.com/AntiBrowserHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-link">
+                  🐙
+                </a>
+                <a href="https://discord.gg/antibrowserhub" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="social-link">
+                  💬
+                </a>
+              </div>
             </div>
             <div className="footer-col">
               <h4>{t.footer.product}</h4>
@@ -36,24 +51,25 @@ export default function Footer() {
               <Link href="/compare">{t.nav.compare}</Link>
               <Link href="/guides">{t.nav.guides}</Link>
               <Link href="/proxies">{t.nav.proxies}</Link>
+              <Link href="/best-for">{t.nav.bestFor}</Link>
               <Link href="/deals">{t.nav.deals}</Link>
-              <Link href="/pricing">Pricing</Link>
-              <Link href="/faq">FAQ</Link>
-              <Link href="/glossary">Glossary</Link>
+              <Link href="/pricing">{t.footer.pricing}</Link>
+              <Link href="/faq">{t.footer.faq}</Link>
+              <Link href="/glossary">{t.footer.glossary}</Link>
               <Link href="/tools/fingerprint-check">{t.nav.tools}</Link>
               <Link href="/about">{t.nav.about}</Link>
             </div>
             <div className="footer-col">
               <h4>{t.footer.legal}</h4>
-              <Link href="/about">{t.footer.privacy}</Link>
-              <Link href="/about">{t.footer.terms}</Link>
-              <Link href="/about">Affiliate Disclosure</Link>
-              <Link href="/about">Contact</Link>
+              <Link href="/privacy">{t.footer.privacy}</Link>
+              <Link href="/terms">{t.footer.terms}</Link>
+              <Link href="/about">{t.footer.affiliateDisclosure}</Link>
+              <Link href="/about">{t.footer.contact}</Link>
             </div>
           </div>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} {t.footer.copyright}</span>
-            <span>Made with ❤️ for the antidetect community</span>
+            <span>{t.footer.madeWith}</span>
           </div>
         </div>
       </footer>

@@ -27,6 +27,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://antibrowserhub.com"),
   title: {
     default: "AntiBrowserHub — Best Antidetect Browser Reviews & Comparisons",
     template: "%s | AntiBrowserHub",
@@ -47,6 +48,9 @@ export const metadata: Metadata = {
     "Dolphin Anty",
   ],
   authors: [{ name: "AntiBrowserHub Team" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

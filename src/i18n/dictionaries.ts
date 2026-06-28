@@ -62,6 +62,7 @@ export interface Dictionary {
     pricing: string;
     faq: string;
     glossary: string;
+    methodology: string;
     affiliateDisclosure: string;
     contact: string;
     madeWith: string;
@@ -146,6 +147,7 @@ const en: Dictionary = {
     pricing: "Pricing",
     faq: "FAQ",
     glossary: "Glossary",
+    methodology: "Methodology",
     affiliateDisclosure: "Affiliate Disclosure",
     contact: "Contact",
     madeWith: "Made with ❤️ for the antidetect community",
@@ -201,6 +203,7 @@ const zh: Dictionary = {
     pricing: "价格",
     faq: "常见问题",
     glossary: "术语表",
+    methodology: "评测方法论",
     affiliateDisclosure: "联盟声明",
     contact: "联系我们",
     madeWith: "用 ❤️ 为指纹浏览器社区打造",
@@ -256,6 +259,7 @@ const ru: Dictionary = {
     pricing: "Цены",
     faq: "FAQ",
     glossary: "Глоссарий",
+    methodology: "Методология",
     affiliateDisclosure: "Партнёрское раскрытие",
     contact: "Контакты",
     madeWith: "Сделано с ❤️ для сообщества антидетект",
@@ -311,6 +315,7 @@ const ja: Dictionary = {
     pricing: "料金",
     faq: "FAQ",
     glossary: "用語集",
+    methodology: "評価方法",
     affiliateDisclosure: "アフィリエイト開示",
     contact: "お問い合わせ",
     madeWith: "アンチ検出コミュニティのために ❤️ で作成",
@@ -366,6 +371,7 @@ const fr: Dictionary = {
     pricing: "Tarifs",
     faq: "FAQ",
     glossary: "Glossaire",
+    methodology: "Méthodologie",
     affiliateDisclosure: "Divulgation d'affiliation",
     contact: "Contact",
     madeWith: "Fait avec ❤️ pour la communauté anti-détection",
@@ -421,6 +427,7 @@ const de: Dictionary = {
     pricing: "Preise",
     faq: "FAQ",
     glossary: "Glossar",
+    methodology: "Methodik",
     affiliateDisclosure: "Affiliate-Offenlegung",
     contact: "Kontakt",
     madeWith: "Mit ❤️ für die Antidetect-Community erstellt",

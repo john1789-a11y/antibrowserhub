@@ -364,4 +364,57 @@ npm run dev               # 本地开发服务器
 npm run build             # 生产构建（需要 Node >=20.9.0）
 git push origin main      # 触发 Vercel 部署
 ```
+
+---
+
+## 🤖 Codex 多角色工作流
+
+本项目使用 repo-scoped custom agents 管理复杂任务。主 Agent 负责需求澄清、决策、合并结果和最终交付；子 Agent 只处理边界清晰的分析、实现、审查或验证任务。
+
+### 可用角色
+
+| 角色 | 文件 | 用途 | 是否默认改代码 |
+|---|---|---|---|
+| `architect` | `.codex/agents/architect.toml` | 拆解需求、识别影响范围、制定实现方案和风险清单 | 否 |
+| `explorer` | `.codex/agents/explorer.toml` | 阅读代码、定位文件、总结现有模式 | 否 |
+| `implementer` | `.codex/agents/implementer.toml` | 按既定方案做最小范围实现 | 是 |
+| `reviewer` | `.codex/agents/reviewer.toml` | 检查正确性、回归、安全、i18n、SEO 和测试缺口 | 否 |
+| `tester` | `.codex/agents/tester.toml` | 运行验证、分析失败、补充聚焦测试建议 | 视任务而定 |
+
+### 标准执行顺序
+
+复杂需求默认按以下顺序处理：
+
+1. `architect` 先输出影响范围、实现方案、风险点和验证方式。
+2. `explorer` 定位相关文件、现有组件模式、i18n/SEO/样式约束。
+3. 主 Agent 合并方案，决定是否进入实现。
+4. `implementer` 按最小范围修改代码，避免无关重构。
+5. `reviewer` 审查行为回归、项目规则违反、缺失测试和安全风险。
+6. `tester` 运行 `npx tsc --noEmit`、`npm run lint`、必要时运行 `npm run build`，并解释任何失败。
+
+### 并行规则
+
+- 可以并行运行 `architect`、`explorer`、`reviewer`、`tester` 做只读分析。
+- 默认不要让多个 Agent 同时编辑同一批文件。
+- 写代码通常只交给一个 `implementer`，主 Agent 负责最终检查和整合。
+- 子 Agent 输出必须是摘要和证据，不要把大量日志、无关搜索结果或猜测带回主线程。
+
+### 推荐提示词
+
+```text
+按本项目 Codex 多角色工作流处理这个需求：
+先让 architect 和 explorer 分析，主 Agent 合并实现方案；
+再由 implementer 做最小范围修改；
+最后让 reviewer 和 tester 验证。
+遵守 AGENTS.md 中的 Next.js、i18n、SEO、样式和验证规则。
+```
+
+审查当前改动时使用：
+
+```text
+请并行使用 reviewer 和 tester 审查当前工作区改动。
+reviewer 只关注行为回归、安全、i18n、SEO、样式规范和缺失测试；
+tester 运行相关验证命令并分析失败原因。
+等待两个角色完成后，按严重程度合并结论。
+```
 <!-- END:antibrowserhub-rules -->

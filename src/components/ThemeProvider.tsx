@@ -20,24 +20,27 @@ export function useTheme() {
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("abh-theme") as Theme | null;
-    if (saved === "light" || saved === "dark") {
-      setTheme(saved);
-    }
-    setMounted(true);
+    const nextTheme = saved === "light" || saved === "dark" ? saved : "dark";
+    const timer = window.setTimeout(() => {
+      setTheme(nextTheme);
+      document.documentElement.setAttribute("data-theme", nextTheme);
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("abh-theme", theme);
-  }, [theme, mounted]);
+  }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((prev) => {
+      const nextTheme = prev === "dark" ? "light" : "dark";
+      localStorage.setItem("abh-theme", nextTheme);
+      return nextTheme;
+    });
   };
 
   return (

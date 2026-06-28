@@ -57,6 +57,7 @@ export default function Footer() {
               <Link href="/faq">{t.footer.faq}</Link>
               <Link href="/glossary">{t.footer.glossary}</Link>
               <Link href="/tools/fingerprint-check">{t.nav.tools}</Link>
+              <Link href="/methodology">{t.footer.methodology}</Link>
               <Link href="/about">{t.nav.about}</Link>
             </div>
             <div className="footer-col">

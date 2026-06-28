@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import BrowserLogo from "@/components/BrowserLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useI18n } from "@/components/I18nProvider";

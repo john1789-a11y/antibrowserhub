@@ -870,10 +870,13 @@ export default function FingerprintChecker() {
       if (typeof speechSynthesis !== "undefined" && speechSynthesis.getVoices) {
         speechSynthesis.getVoices();
       }
-    } catch (e) {}
+    } catch {}
   }, []);
 
-  useEffect(() => { runScan(); }, [runScan]);
+  useEffect(() => {
+    const timer = window.setTimeout(() => runScan(), 0);
+    return () => window.clearTimeout(timer);
+  }, [runScan]);
 
   const isScanning = scanPhase > 0 && scanPhase < 9;
   const isDone = scanPhase === 9;
@@ -885,8 +888,6 @@ export default function FingerprintChecker() {
   const scoreColor = authenticityScore >= 85 ? "var(--color-emerald)" : authenticityScore >= 55 ? "var(--color-amber)" : "var(--color-rose)";
   // Real consistency/spoofing anomalies count
   const anomalyCount = isDone ? categories.reduce((s, c) => s + c.items.filter(item => item.value.includes("⚠️")).length, 0) : 0;
-
-  const riskColor = (r: Risk) => r === "high" ? "var(--color-rose, #f43f5e)" : r === "medium" ? "var(--color-amber, #f59e0b)" : "var(--color-emerald, #10b981)";
 
   return (
     <>

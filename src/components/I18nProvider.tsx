@@ -23,15 +23,6 @@ export function useI18n() {
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("abh-locale") as Locale | null;
-    if (saved && locales.includes(saved)) {
-      setLocaleState(saved);
-    }
-    setMounted(true);
-  }, []);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
@@ -40,10 +31,18 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (mounted) {
-      document.documentElement.lang = locale;
-    }
-  }, [locale, mounted]);
+    const saved = localStorage.getItem("abh-locale") as Locale | null;
+    const nextLocale = saved && locales.includes(saved) ? saved : defaultLocale;
+    const timer = window.setTimeout(() => {
+      setLocaleState(nextLocale);
+      document.documentElement.lang = nextLocale;
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const t = getDictionary(locale);
 

@@ -73,6 +73,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/methodology`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/deals`,
       lastModified: lastUpdated,
       changeFrequency: "weekly",
@@ -121,7 +127,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
+      url: `${baseUrl}/tools`,
+      lastModified: lastUpdated,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/tools/fingerprint-check`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/tools/webrtc-leak-test`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/tools/ip-checker`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/tools/user-agent-parser`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/tools/http-headers`,
       lastModified: lastUpdated,
       changeFrequency: "monthly",
       priority: 0.8,

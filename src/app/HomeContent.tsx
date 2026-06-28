@@ -30,7 +30,7 @@ export default function HomeContent() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-badge"><span className="hero-badge-dot" />{p.badge}</div>
-            <h1>{p.heroTitle1} <span className="gradient-text">{p.heroTitle2}</span><br />{p.heroTitle3}</h1>
+            <h1>{p.heroTitle1} <span className="gradient-text">{p.heroTitle2}</span>{" "}<br />{p.heroTitle3}</h1>
             <p className="hero-subtitle">{p.heroSub}</p>
             <div className="hero-actions">
               <Link href="/reviews" className="btn-primary">{p.btnReviews}</Link>

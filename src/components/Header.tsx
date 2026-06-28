@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "./ThemeProvider";
 import { useI18n } from "./I18nProvider";
-import { locales, localeNames, localeFlags, type Locale } from "@/i18n/config";
+import { locales, localeNames, localeFlags } from "@/i18n/config";
 import SearchModal from "./SearchModal";
 
 export default function Header() {
@@ -67,7 +67,7 @@ export default function Header() {
             <Link href="/proxies" className="nav-link">{t.nav.proxies}</Link>
             <Link href="/best-for" className="nav-link">{t.nav.bestFor}</Link>
             <Link href="/deals" className="nav-link">{t.nav.deals}</Link>
-            <Link href="/tools/fingerprint-check" className="nav-link">{t.nav.tools}</Link>
+            <Link href="/tools" className="nav-link">{t.nav.tools}</Link>
           </nav>
 
           {/* Right: Actions */}
@@ -142,7 +142,7 @@ export default function Header() {
             <Link href="/proxies" className="mobile-nav-link" onClick={closeMenu}>{t.nav.proxies}</Link>
             <Link href="/best-for" className="mobile-nav-link" onClick={closeMenu}>{t.nav.bestFor}</Link>
             <Link href="/deals" className="mobile-nav-link" onClick={closeMenu}>{t.nav.deals}</Link>
-            <Link href="/tools/fingerprint-check" className="mobile-nav-link" onClick={closeMenu}>{t.nav.tools}</Link>
+            <Link href="/tools" className="mobile-nav-link" onClick={closeMenu}>{t.nav.tools}</Link>
             <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>{t.nav.about}</Link>
 
             {/* Mobile language switcher */}
@@ -171,4 +171,3 @@ export default function Header() {
     </>
   );
 }
-

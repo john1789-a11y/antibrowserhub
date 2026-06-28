@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useI18n } from "@/components/I18nProvider";
 import Breadcrumb from "@/components/Breadcrumb";
 import {
@@ -22,20 +23,20 @@ import {
 
 const ui: Record<string, Record<string, string>> = {
   title: {
-    en: "Top 50 Proxy Providers for Antidetect Browsers",
-    zh: "指纹浏览器代理供应商 Top 50",
-    ru: "Топ-50 прокси-провайдеров для антидетект-браузеров",
-    ja: "アンチ検出ブラウザ向けプロキシプロバイダー Top 50",
-    fr: "Top 50 des fournisseurs de proxies pour navigateurs anti-détection",
-    de: "Top 50 Proxy-Anbieter für Antidetect-Browser",
+    en: "{count} Proxy Providers for Antidetect Browsers",
+    zh: "{count} 家指纹浏览器代理供应商",
+    ru: "{count} прокси-провайдеров для антидетект-браузеров",
+    ja: "アンチ検出ブラウザ向けプロキシプロバイダー {count} 社",
+    fr: "{count} fournisseurs de proxies pour navigateurs anti-détection",
+    de: "{count} Proxy-Anbieter für Antidetect-Browser",
   },
   subtitle: {
-    en: "Compare residential, datacenter, ISP, and mobile proxies from 50 providers worldwide. Filter by region, type, and rating.",
-    zh: "对比全球 50 家代理供应商的住宅、数据中心、ISP 和移动代理。按区域、类型和评分筛选。",
-    ru: "Сравните резидентные, дата-центр, ISP и мобильные прокси от 50 провайдеров по всему миру.",
-    ja: "世界50社のレジデンシャル、データセンター、ISP、モバイルプロキシを比較。",
-    fr: "Comparez les proxies résidentiels, datacenter, ISP et mobiles de 50 fournisseurs dans le monde.",
-    de: "Vergleichen Sie Residential-, Datacenter-, ISP- und Mobile-Proxies von 50 Anbietern weltweit.",
+    en: "Compare residential, datacenter, ISP, and mobile proxies from {count} providers worldwide. Filter by region, type, and rating.",
+    zh: "对比全球 {count} 家代理供应商的住宅、数据中心、ISP 和移动代理。按区域、类型和评分筛选。",
+    ru: "Сравните резидентные, дата-центр, ISP и мобильные прокси от {count} провайдеров по всему миру.",
+    ja: "世界 {count} 社のレジデンシャル、データセンター、ISP、モバイルプロキシを比較。",
+    fr: "Comparez les proxies résidentiels, datacenter, ISP et mobiles de {count} fournisseurs dans le monde.",
+    de: "Vergleichen Sie Residential-, Datacenter-, ISP- und Mobile-Proxies von {count} Anbietern weltweit.",
   },
   label: { en: "Proxy Directory", zh: "代理目录", ru: "Каталог прокси", ja: "プロキシ一覧", fr: "Annuaire Proxy", de: "Proxy-Verzeichnis" },
   all: { en: "All Regions", zh: "全部区域", ru: "Все регионы", ja: "全地域", fr: "Toutes les régions", de: "Alle Regionen" },
@@ -77,7 +78,15 @@ const ui: Record<string, Record<string, string>> = {
   fpBtn: { en: "Check Your Fingerprint →", zh: "检测你的指纹 →", ru: "Проверить отпечаток →", ja: "フィンガープリントをチェック →", fr: "Vérifier votre empreinte →", de: "Fingerprint prüfen →" },
 };
 
-const ix = (m: Record<string, string>, locale: string) => m[locale] || m.en;
+const ix = (m: Record<string, string>, locale: string, vars?: Record<string, string | number>) => {
+  let text = m[locale] || m.en;
+  if (vars) {
+    Object.entries(vars).forEach(([key, value]) => {
+      text = text.replaceAll(`{${key}}`, String(value));
+    });
+  }
+  return text;
+};
 
 const regionLabels: Record<Region, string> = {
   "North America": "northAmerica",
@@ -109,9 +118,11 @@ function ProxyCard({ provider, locale }: { provider: ProxyProvider; locale: stri
       <div className="proxy-card-header">
         {!logoError ? (
           <div className="proxy-logo-container">
-            <img
+            <Image
               src={logoUrl}
               alt={`${provider.name} logo`}
+              width={48}
+              height={48}
               className="proxy-logo-img"
               onError={() => setLogoError(true)}
             />
@@ -173,6 +184,7 @@ export default function ProxiesContent() {
   const [activeRegion, setActiveRegion] = useState<"all" | Region>("all");
   const [activeType, setActiveType] = useState<"all" | ProxyType>("all");
   const [sortBy, setSortBy] = useState<"rating" | "price" | "name">("rating");
+  const providerCount = proxyProviders.length;
 
   const filtered = useMemo(() => {
     let list = [...proxyProviders];
@@ -187,8 +199,8 @@ export default function ProxiesContent() {
         <div className="container">
           <Breadcrumb customItems={[{ label: ix(ui.label, locale), href: "/proxies" }]} />
           <span className="section-label">{ix(ui.label, locale)}</span>
-          <h1>{ix(ui.title, locale)}</h1>
-          <p>{ix(ui.subtitle, locale)}</p>
+          <h1>{ix(ui.title, locale, { count: providerCount })}</h1>
+          <p>{ix(ui.subtitle, locale, { count: providerCount })}</p>
         </div>
       </section>
 

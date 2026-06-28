@@ -8,7 +8,6 @@ import {
   getComparisonVerdict,
 } from "@/data/comparisons";
 import { browsers } from "@/data/browsers";
-import type { Browser } from "@/types";
 import Breadcrumb from "@/components/Breadcrumb";
 import BrowserLogo from "@/components/BrowserLogo";
 

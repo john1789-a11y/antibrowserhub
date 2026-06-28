@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { browsers } from "@/data/browsers";
 import { guides } from "@/data/guides";
+import { proxyProviders } from "@/data/proxies";
 import { useI18n } from "./I18nProvider";
 
 interface SearchResult {
@@ -17,8 +18,9 @@ const staticPages: SearchResult[] = [
   { type: "page", title: "Compare All Browsers", description: "Side-by-side feature and pricing comparison", href: "/compare", icon: "⚖️" },
   { type: "page", title: "Guides & Tutorials", description: "Expert guides for antidetect browsers", href: "/guides", icon: "📚" },
   { type: "page", title: "About AntiBrowserHub", description: "Learn about our mission and team", href: "/about", icon: "ℹ️" },
+  { type: "page", title: "Review Methodology", description: "How AntiBrowserHub rates and tests antidetect browsers", href: "/methodology", icon: "🧪" },
   { type: "page", title: "Deals & Discounts", description: "Exclusive coupon codes and promotions", href: "/deals", icon: "🏷️" },
-  { type: "page", title: "Proxy Providers", description: "Top 50 proxy providers for antidetect browsers", href: "/proxies", icon: "🌐" },
+  { type: "page", title: "Proxy Providers", description: `${proxyProviders.length} proxy providers for antidetect browsers`, href: "/proxies", icon: "🌐" },
   { type: "page", title: "Fingerprint Checker", description: "Free browser fingerprint analysis tool", href: "/tools/fingerprint-check", icon: "🔍" },
 ];
 
@@ -62,42 +64,37 @@ function buildSearchIndex(): SearchResult[] {
 
 export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const searchIndex = useRef<SearchResult[]>([]);
+  const searchIndex = useMemo(() => buildSearchIndex(), []);
   const { t } = useI18n();
 
-  useEffect(() => {
-    searchIndex.current = buildSearchIndex();
-  }, []);
-
-  useEffect(() => {
-    if (isOpen) {
-      setQuery("");
-      setResults([]);
-      setSelectedIndex(0);
-      setTimeout(() => inputRef.current?.focus(), 100);
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (!query.trim()) {
-      setResults([]);
-      setSelectedIndex(0);
-      return;
-    }
-
+  const results = useMemo(() => {
+    if (!query.trim()) return [];
     const q = query.toLowerCase();
-    const filtered = searchIndex.current
+    return searchIndex
       .filter(
         (item) =>
           item.title.toLowerCase().includes(q) ||
           item.description.toLowerCase().includes(q)
       )
       .slice(0, 8);
-    setResults(filtered);
-    setSelectedIndex(0);
+  }, [query, searchIndex]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        setQuery("");
+        setSelectedIndex(0);
+        inputRef.current?.focus();
+      }, 100);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSelectedIndex(0);
+    }, 0);
   }, [query]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

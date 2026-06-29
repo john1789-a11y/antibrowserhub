@@ -1,0 +1,3 @@
+# AdSense publisher ID has not been issued yet.
+# After approval, replace this placeholder with:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

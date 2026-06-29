@@ -73,6 +73,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${baseUrl}/contact`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/affiliate-disclosure`,
+      lastModified: lastUpdated,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
       url: `${baseUrl}/methodology`,
       lastModified: lastUpdated,
       changeFrequency: "monthly",

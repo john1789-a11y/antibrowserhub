@@ -18,6 +18,8 @@ const labelMap: Record<string, Record<string, string>> = {
   deals: { en: "Deals", zh: "优惠", ru: "Скидки", ja: "セール", fr: "Offres", de: "Angebote" },
   privacy: { en: "Privacy Policy", zh: "隐私政策", ru: "Конфиденциальность", ja: "プライバシー", fr: "Confidentialité", de: "Datenschutz" },
   terms: { en: "Terms of Service", zh: "服务条款", ru: "Условия", ja: "利用規約", fr: "Conditions", de: "Nutzungsbedingungen" },
+  contact: { en: "Contact", zh: "联系我们", ru: "Контакты", ja: "お問い合わせ", fr: "Contact", de: "Kontakt" },
+  "affiliate-disclosure": { en: "Affiliate Disclosure", zh: "联盟披露", ru: "Партнёрские ссылки", ja: "アフィリエイト開示", fr: "Affiliation", de: "Affiliate-Offenlegung" },
   "best-for": { en: "Best For", zh: "最佳推荐", ru: "Лучшие для", ja: "ベスト", fr: "Meilleur pour", de: "Beste für" },
 };
 

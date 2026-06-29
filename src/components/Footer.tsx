@@ -64,8 +64,8 @@ export default function Footer() {
               <h4>{t.footer.legal}</h4>
               <Link href="/privacy">{t.footer.privacy}</Link>
               <Link href="/terms">{t.footer.terms}</Link>
-              <Link href="/about">{t.footer.affiliateDisclosure}</Link>
-              <Link href="/about">{t.footer.contact}</Link>
+              <Link href="/affiliate-disclosure">{t.footer.affiliateDisclosure}</Link>
+              <Link href="/contact">{t.footer.contact}</Link>
             </div>
           </div>
           <div className="footer-bottom">

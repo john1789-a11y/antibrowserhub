@@ -1,4 +1,7 @@
+import { reviewUpdatedAt } from "@/data/vendorUpdates";
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
+import AffiliateLink from "@/components/AffiliateLink";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -22,10 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pair = getComparisonBySlug(slug);
   if (!pair) return {};
   const { browserA, browserB } = pair;
-  return {
+  return pageMetadata(`/compare/${slug}`, {
     title: `${browserA.name} vs ${browserB.name} — Detailed Comparison 2026`,
     description: `${browserA.name} vs ${browserB.name}: Compare features, pricing, fingerprint quality, and performance side by side. Find out which antidetect browser is right for you in 2026.`,
-  };
+  });
 }
 
 export default async function ComparisonPage({ params }: Props) {
@@ -45,7 +48,7 @@ export default async function ComparisonPage({ params }: Props) {
     author: { "@type": "Organization", name: "AntiBrowserHub" },
     publisher: { "@type": "Organization", name: "AntiBrowserHub" },
     datePublished: "2026-01-15",
-    dateModified: "2026-05-23",
+    dateModified: [reviewUpdatedAt(a.slug), reviewUpdatedAt(b.slug)].sort().at(-1),
   };
 
   return (
@@ -450,15 +453,12 @@ export default async function ComparisonPage({ params }: Props) {
                     ? `Start with ${browser.pricing.freeProfiles} free profiles — no credit card required.`
                     : `Plans start from ${browser.pricing.startingPrice}.`}
                 </p>
-                <a
-                  href={browser.affiliateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <AffiliateLink product={browser.slug} placement="comparison"
                   className="btn-primary"
                   style={{ margin: "8px auto 0" }}
                 >
                   Visit {browser.name} →
-                </a>
+                </AffiliateLink>
               </div>
             ))}
           </div>

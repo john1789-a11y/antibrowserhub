@@ -180,7 +180,9 @@ Détection d'incohérences : navigateur vs OS, fuseau vs IP.
 ### Empreintes Canvas identiques
 **Solution** : Activer le bruit Canvas ou le mode ML`,
 
-  "best-for-amazon": `## Pourquoi les vendeurs Amazon ont-ils besoin d'un anti-détection ?
+  "best-for-amazon": `> Tarifs officiels vérifiés le 2026-10-12
+
+## Pourquoi les vendeurs Amazon ont-ils besoin d'un anti-détection ?
 
 Amazon est extrêmement strict concernant la détection de multicompte. La plateforme croise les empreintes de navigateur, les adresses IP, les cookies et le comportement des utilisateurs. Si elle associe plusieurs boutiques à un même utilisateur, elle suspend tous les comptes liés.
 
@@ -188,10 +190,11 @@ Un navigateur anti-détection crée des **environnements totalement isolés** po
 
 ## Notre sélection
 
-### 1. MoreLogin — Le meilleur choix global
-- Empreinte Canvas basée sur le Machine Learning (ML), indétectable par Amazon.
-- Synchronisation automatique du fuseau horaire, de la langue et de la localisation.
-- À partir de **5,4 $/mois** pour 10 profils.
+### MoreLogin
+
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+
+[MoreLogin](https://www.morelogin.com/pricing)
 
 ### 2. AdsPower — Idéal pour l'automatisation
 - Automatisation RPA intégrée pour gérer vos fiches produits et stocks en masse.
@@ -206,7 +209,9 @@ Un navigateur anti-détection crée des **environnements totalement isolés** po
 2. **Proxies ISP statiques dédiés** : utilisez des IP résidentielles fixes pour chaque boutique.
 3. **Moyens de paiement séparés** : utilisez des cartes et comptes bancaires différents.`,
 
-  "best-for-facebook-ads": `## Pourquoi utiliser un anti-détection pour les publicités Facebook ?
+  "best-for-facebook-ads": `> Tarifs officiels vérifiés le 2026-10-12
+
+## Pourquoi utiliser un anti-détection pour les publicités Facebook ?
 
 Meta dispose d'algorithmes de détection très avancés. L'utilisation de plusieurs comptes publicitaires sur un même appareil entraîne le blocage immédiat de tout votre réseau.
 
@@ -217,10 +222,11 @@ Meta dispose d'algorithmes de détection très avancés. L'utilisation de plusie
 - **Robot de cookies** pour collecter les cookies.
 - Tarifs dès **5,4 $/mois**.
 
-### 2. Dolphin Anty — Idéal pour les affiliés
-- **10 profils gratuits à vie**.
-- Automatisation par scénario visuel.
-- Émulation d'empreintes mobiles (iOS/Android).
+### Dolphin Anty
+
+Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 3. MoreLogin — Excellent rapport qualité/prix
 - Empreintes Canvas de haute qualité issues du Machine Learning.
@@ -232,7 +238,9 @@ Meta dispose d'algorithmes de détection très avancés. L'utilisation de plusie
 - **Jours 8-14** : Création d'une page pro et configuration de Business Manager (BM).
 - **Jours 15+** : Ajout du mode de paiement et lancement de petites campagnes (5-10 $/jour).`,
 
-  "best-free-antidetect-browser": `## Les navigateurs anti-détection gratuits fonctionnent-ils ?
+  "best-free-antidetect-browser": `> Tarifs officiels vérifiés le 2026-10-12
+
+## Les navigateurs anti-détection gratuits fonctionnent-ils ?
 
 Oui ! La plupart des navigateurs réputés proposent des forfaits gratuits avec une protection réelle. C'est parfait pour débuter, pour un usage personnel ou de petites opérations.
 
@@ -240,35 +248,50 @@ Oui ! La plupart des navigateurs réputés proposent des forfaits gratuits avec 
 
 | Navigateur | Profils gratuits | Fonctionnalités clés | Limitations |
 |------------|------------------|----------------------|-------------|
-| **Dolphin Anty** | 10 | Empreintes réelles, automatisation | Pas d'API |
+| **Dolphin Anty** | 5 | Empreintes réelles, automatisation | Pas d'API |
 | **Incogniton** | 10 | Synchronisation, intégration Selenium | Pas de fonctions avancées |
 | **Undetectable** | 5 cloud + ∞ locaux | Profils locaux **illimités** ! | Limité à 5 sur le cloud |
-| **GoLogin** | 3 | Lancement cloud, accès web | Fonctions limitées |
-| **MoreLogin** | 2 | **Toutes** les fonctions débloquées (avec API) | Uniquement 2 profils |
+| **GoLogin** | 3 | 3 profils de navigateur | Lancement cloud : dès 50 ; API/SDK/MCP : dès 100 |
+| **MoreLogin** | 2 | Chrome, Firefox, Local API, synchronisation | 2 profils |
 | **AdsPower** | 2 | Spoofing de base, SunBrowser | Automatisation limitée |
 
 ## Recommandations
 
-- **Besoin d'un maximum de profils gratuits ?** Choisissez **Dolphin Anty** (10 profils) ou **Incogniton** (10 profils).
-- **Besoin de profils locaux illimités ?** Choisissez **Undetectable**.
-- **Besoin d'un accès API complet gratuitement ?** Choisissez **MoreLogin** (toutes fonctions débloquées).`,
+### MoreLogin
 
-  "best-for-affiliate-marketing": `## Pourquoi l'affiliation nécessite-t-elle un anti-détection ?
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### Dolphin Anty
+
+Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
+
+  "best-for-affiliate-marketing": `> Tarifs officiels vérifiés le 2026-10-12
+
+## Pourquoi l'affiliation nécessite-t-elle un anti-détection ?
 
 Le marketing d'affiliation (Affiliate Marketing) implique de gérer plusieurs comptes publicitaires et réseaux. Un bannissement signifie la perte de vos campagnes et de vos gains.
 
 ## Choix principaux pour l'affiliation
 
-### 1. Dolphin Anty — Conçu pour les affiliés
-- Créé par des professionnels de l'affiliation, s'adapte parfaitement aux besoins du media buying.
-- 10 profils gratuits et émulation d'empreintes mobiles.
+### Dolphin Anty
+
+Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 2. AdsPower — Le choix des grandes équipes
 - Scénarios RPA pour l'enregistrement et l'échauffement automatiques des comptes.
 - Synchroniseur multi-fenêtres pour exécuter des actions groupées.
 
-### 3. MoreLogin — Très économique
-- Empreintes basées sur l'IA, à partir de **5,4 $/mois** pour 10 profils.
+### MoreLogin
+
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+
+[MoreLogin](https://www.morelogin.com/pricing)
 
 ## Flux de travail d'affiliation type
 1. **Préparation** : création de profils, configuration de proxys résidentiels, import de cookies.
@@ -293,7 +316,9 @@ Les sites modernes déploient des protections avancées (Cloudflare, CAPTCHAs). 
 - Modification des empreintes au niveau du moteur de rendu (Mimic / Stealthfox).
 - Haute stabilité en mode headless pour des opérations d'envergure.`,
 
-  "best-for-tiktok": `## Spécificités de TikTok
+  "best-for-tiktok": `> Tarifs officiels vérifiés le 2026-10-12
+
+## Spécificités de TikTok
 TikTok est une plateforme mobile avant tout. Elle analyse donc rigoureusement les empreintes mobiles, les coordonnées GPS, le type d'IP (priorité aux IP mobiles) et les comportements.
 
 ## Meilleurs choix pour TikTok
@@ -301,9 +326,11 @@ TikTok est une plateforme mobile avant tout. Elle analyse donc rigoureusement le
 ### 1. AdsPower — Pour les campagnes publicitaires
 - Modèles RPA spécifiques pour automatiser les campagnes TikTok Ads et gérer vos budgets.
 
-### 2. Dolphin Anty — Pour les créateurs de contenu
-- Émulation avancée d'empreintes mobiles (Android/iOS) pour passer les contrôles applicatifs.
-- 10 profils gratuits pour lancer vos réseaux de comptes.
+### Dolphin Anty
+
+Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 3. MoreLogin — TikTok Shop et Cloud Phone
 - Lancez un véritable téléphone Android virtuel (Cloud Phone) directement depuis votre navigateur.
@@ -328,23 +355,67 @@ Dans la crypto, le farming d'airdrops requiert plusieurs portefeuilles. Les proj
 2. **Proxys résidentiels dédiés** : un IP unique par portefeuille.
 3. **Séparation des transactions** : ne financez pas tous vos portefeuilles depuis la même adresse d'échange. Utilisez les sous-comptes d'exchanges (ex. OKX).`,
 
-  "cheapest-antidetect-browser": `## Comparatif des prix des navigateurs anti-détection (2026)
+  "cheapest-antidetect-browser": `> Tarifs officiels vérifiés le 2026-10-12
+
+## Comparatif des prix des navigateurs anti-détection (2026)
 
 Le choix de l'option la moins chère dépend du nombre de profils requis :
 
-| Navigateur | Gratuit | 10 profils | 50 profils | 100 profils | Coût/profil (100) |
-|------------|---------|------------|------------|-------------|-------------------|
-| **MoreLogin** | 2 | 5,4 $/mo | Sur mesure | Sur mesure | ~0,15 - 0,30 $ |
-| **AdsPower** | 2 | 5,4 $/mo | ~20 $/mo | 30 $/mo | 0,30 $ |
-| **GoLogin** | 3 | 24 $/mo | 24 $/mo | 24 $/mo | 0,24 $ |
-| **Dolphin Anty** | 10 | 89 $/mo | 89 $/mo | 89 $/mo | 0,89 $ |
-| **Multilogin** | 0 | 99 €/mo | 99 €/mo | 99 €/mo | 0,99 € |
+### MoreLogin
+
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### AdsPower
+
+AdsPower offre 2 profils gratuits. Professional : 10, 20, 50 ou 100 ; Business pour davantage. Automatisation et AI Agent sont disponibles. Les notes de septembre ajoutent planification, création rapide et agents parallèles. Les limites API dépendent du forfait. USD, sans membres supplémentaires ; facturation tous les 30 jours. Professional 10 : 64,80 $/an, soit 5,40 $/mois.
+
+[AdsPower](https://www.adspower.com/pricing)
+
+### GoLogin
+
+GoLogin offre 3 profils gratuits et des forfaits payants dès 10. API, SDK et MCP commencent à 100 profils ; lancement cloud et import/export de cookies à 50. Les petits forfaits ne comprennent pas toutes les fonctions. Prix mensuels ; paiement annuel à partir de 4,50 $/mois équivalent.
+
+[GoLogin](https://gologin.com/pricing/)
+
+### Multilogin
+
+Multilogin : 5 profils cloud gratuits, 200 Mo de proxy et 30 minutes mobiles offerts une fois, sans API. Pro 10/20/50 : 50/75/100 requêtes API par minute. Business commence à 100 profils avec sièges illimités. Les limites des téléphones cloud sont distinctes. Pro 10 : 11 $/mois ou 85 $/an (environ 7,08 $/mois). Profils gratuits cloud uniquement, sans API.
+
+[Multilogin](https://multilogin.com/pricing/)
+
+### Dolphin Anty
+
+Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ## Le meilleur rapport qualité-prix
 
-- **Moins de 10 profils** : **Dolphin Anty** (10 profils gratuits).
-- **De 10 à 100 profils** : **MoreLogin** ou **AdsPower** (5,4 $/mois pour 10 profils avec options d'évolution).
-- **Plus de 100 profils** : **GoLogin** (forfait fixe très compétitif de 24 $/mois pour 100 profils).`,
+### MoreLogin
+
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### AdsPower
+
+AdsPower offre 2 profils gratuits. Professional : 10, 20, 50 ou 100 ; Business pour davantage. Automatisation et AI Agent sont disponibles. Les notes de septembre ajoutent planification, création rapide et agents parallèles. Les limites API dépendent du forfait. USD, sans membres supplémentaires ; facturation tous les 30 jours. Professional 10 : 64,80 $/an, soit 5,40 $/mois.
+
+[AdsPower](https://www.adspower.com/pricing)
+
+### GoLogin
+
+GoLogin offre 3 profils gratuits et des forfaits payants dès 10. API, SDK et MCP commencent à 100 profils ; lancement cloud et import/export de cookies à 50. Les petits forfaits ne comprennent pas toutes les fonctions. Prix mensuels ; paiement annuel à partir de 4,50 $/mois équivalent.
+
+[GoLogin](https://gologin.com/pricing/)
+
+### Dolphin Anty
+
+Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 
   "avoid-amazon-suspension": `## Comment Amazon détecte-t-il les comptes liés ?
 

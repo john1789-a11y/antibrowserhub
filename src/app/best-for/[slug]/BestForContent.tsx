@@ -1,4 +1,5 @@
 "use client";
+import AffiliateLink from "@/components/AffiliateLink";
 import Link from "next/link";
 import { useI18n } from "@/components/I18nProvider";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -106,7 +107,7 @@ export default function BestForContent({ useCase, browsers }: BestForContentProp
                   </div>
                   <div className="bestfor-rank-actions">
                     <Link href={`/reviews/${b.slug}`} className="btn-secondary">{i(ui.readReview)}</Link>
-                    <a href={b.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">{i(ui.visitSite)} ↗</a>
+                    <AffiliateLink product={b.slug} placement="best-for" className="btn-primary">{i(ui.visitSite)} ↗</AffiliateLink>
                   </div>
                 </div>
               ))}

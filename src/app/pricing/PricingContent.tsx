@@ -1,6 +1,8 @@
 "use client";
+import VendorUpdateNote from "@/components/VendorUpdateNote";
 import Link from "next/link";
 import { useI18n } from "@/components/I18nProvider";
+import { vendorUpdates } from "@/data/vendorUpdates";
 import { browsers } from "@/data/browsers";
 import BrowserLogo from "@/components/BrowserLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -63,11 +65,7 @@ const ix = (m: Record<string, string>, locale: string) => m[locale] || m.en;
 export default function PricingContent() {
   const { locale } = useI18n();
 
-  const sorted = [...browsers].sort((a, b) => {
-    const aPrice = a.pricing.free ? 0 : parseFloat(a.pricing.startingPrice.replace(/[^0-9.]/g, "")) || 999;
-    const bPrice = b.pricing.free ? 0 : parseFloat(b.pricing.startingPrice.replace(/[^0-9.]/g, "")) || 999;
-    return aPrice - bPrice;
-  });
+  const sorted = browsers;
 
   return (
     <>
@@ -95,16 +93,14 @@ export default function PricingContent() {
                 </tr>
               </thead>
               <tbody>
-                {sorted.map((b, idx) => (
-                  <tr key={b.id} className={idx === 0 ? "pricing-highlight" : ""}>
+                {sorted.map((b) => (
+                  <tr key={b.id} className="">
                     <td>
                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                         <BrowserLogo slug={b.slug} name={b.name} color={b.color} size={28} />
                         <div>
                           <strong>{b.name}</strong>
-                          {idx === 0 && (
-                            <div style={{ fontSize: "0.7rem", color: "var(--color-emerald)" }}>{ix(ui.bestValue, locale)}</div>
-                          )}
+
                         </div>
                       </div>
                     </td>
@@ -142,6 +138,7 @@ export default function PricingContent() {
                   <BrowserLogo slug={b.slug} name={b.name} color={b.color} size={32} />
                   <strong style={{ fontSize: "1.05rem" }}>{b.name}</strong>
                 </div>
+                <VendorUpdateNote slug={b.slug} />
                 {b.pricing.plans.map((plan) => (
                   <div key={plan.name} style={{
                     padding: "10px 12px",
@@ -154,7 +151,7 @@ export default function PricingContent() {
                       <strong style={{ fontSize: "0.85rem" }}>{plan.name}</strong>
                       <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--color-indigo)" }}>{plan.price}</span>
                     </div>
-                    <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{plan.profiles}</div>
+                    <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{plan.profiles}{vendorUpdates[b.slug] ? ` ${ix(ui.freeProfiles, locale).replace(/Free |免费|Бесплатные |無料|gratuits|Kostenlose /g, "")}` : ""}</div>
                   </div>
                 ))}
                 <Link href={`/reviews/${b.slug}`} style={{ fontSize: "0.8rem", color: "var(--color-indigo)", marginTop: 8, display: "inline-block" }}>

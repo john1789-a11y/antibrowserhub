@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getGuideBySlug, getAllGuideSlugs } from "@/data/guides";
@@ -13,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
   if (!guide) return {};
-  return {
+  return pageMetadata(`/guides/${slug}`, {
     title: guide.title,
     description: guide.excerpt,
-  };
+  });
 }
 
 export default async function GuidePage({ params }: Props) {

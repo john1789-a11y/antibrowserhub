@@ -1,5 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
+import AffiliateLink from "@/components/AffiliateLink";
 import Link from "next/link";
 import Image from "next/image";
 import { useI18n } from "@/components/I18nProvider";
@@ -167,14 +168,11 @@ function ProxyCard({ provider, locale }: { provider: ProxyProvider; locale: stri
         </div>
       </div>
 
-      <a
-        href={provider.affiliateUrl || provider.website}
-        target="_blank"
-        rel="noopener noreferrer"
+      <AffiliateLink product={`proxy-${provider.slug}`} placement="proxy"
         className="proxy-card-cta"
       >
         {ix(ui.visitSite, locale)} ↗
-      </a>
+      </AffiliateLink>
     </div>
   );
 }

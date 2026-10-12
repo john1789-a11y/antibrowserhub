@@ -1,3 +1,5 @@
+import { reviewUpdatedAt } from "@/data/vendorUpdates";
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getBrowserBySlug, getAllBrowserSlugs } from "@/data/browsers";
@@ -14,13 +16,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const browser = getBrowserBySlug(slug);
   if (!browser) return {};
-  return {
+  return pageMetadata(`/reviews/${slug}`, {
     title: `${browser.name} Review 2026 — Features, Pricing & Honest Analysis`,
     description: `In-depth ${browser.name} review: ${browser.tagline}. Rating: ${browser.rating.overall}/5. Starting from ${browser.pricing.startingPrice}. Pros, cons, fingerprint test results, pricing comparison & more.`,
     alternates: {
       canonical: `/reviews/${slug}`,
     },
-  };
+  });
 }
 
 export default async function ReviewPage({ params }: Props) {
@@ -36,7 +38,7 @@ export default async function ReviewPage({ params }: Props) {
     author: { "@type": "Organization", name: "AntiBrowserHub" },
     publisher: { "@type": "Organization", name: "AntiBrowserHub" },
     datePublished: "2026-01-15",
-    dateModified: "2026-06-27",
+    dateModified: reviewUpdatedAt(slug),
   };
 
   const faqJsonLd = browser.faqs && browser.faqs.length > 0 ? {

@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import AttributionCapture from "@/components/AttributionCapture";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -48,9 +49,6 @@ export const metadata: Metadata = {
     "Dolphin Anty",
   ],
   authors: [{ name: "AntiBrowserHub Team" }],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -79,6 +77,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <I18nProvider>
+            <AttributionCapture />
             <Header />
             <main>{children}</main>
             <Footer />

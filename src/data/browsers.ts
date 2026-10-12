@@ -1,3 +1,5 @@
+import { affiliateDestinations } from "./affiliateDestinations";
+import { vendorUpdates } from "./vendorUpdates";
 import { Browser } from "@/types";
 
 export const browsers: Browser[] = [
@@ -7,10 +9,10 @@ export const browsers: Browser[] = [
     slug: "morelogin",
     tagline: "Enterprise-grade antidetect browser with powerful API & ML-based fingerprinting",
     description:
-      "MoreLogin is a professional antidetect browser that has protected over 5 million accounts since its founding. It stands out with its next-gen ML-powered canvas fingerprinting technology, six-layer data encryption, and support for both Chromium and Firefox kernels. Designed for teams and agencies, it offers robust API support, window synchronization, and flexible pricing suited for businesses of all sizes.",
+      "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately.",
     logo: "/images/browsers/morelogin.svg",
     website: "https://www.morelogin.com",
-    affiliateUrl: "https://www.morelogin.com/register/?from=antibrowserhub",
+    affiliateUrl: affiliateDestinations["morelogin"],
     rating: {
       overall: 4.7,
       fingerprint: 4.8,
@@ -19,49 +21,7 @@ export const browsers: Browser[] = [
       pricing: 4.8,
       support: 4.5,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 2,
-      startingPrice: "$5.4/mo",
-      plans: [
-        {
-          name: "Free",
-          price: "$0",
-          profiles: "2 profiles",
-          features: [
-            "All core features unlocked",
-            "Chrome & Firefox support",
-            "Real canvas fingerprint",
-            "Synchronizer",
-            "Local API",
-            "2 team members",
-          ],
-        },
-        {
-          name: "Pro",
-          price: "$5.4/mo (yearly)",
-          profiles: "10+ profiles (customizable)",
-          features: [
-            "All Free features included",
-            "Unlimited profile purchase",
-            "24/7 online support",
-            "Full API access",
-            "Batch operations",
-          ],
-        },
-        {
-          name: "Custom",
-          price: "Contact sales",
-          profiles: "Unlimited",
-          features: [
-            "Custom profiles & team size",
-            "Dedicated consulting service",
-            "Priority SLA guarantee",
-            "Custom integration support",
-          ],
-        },
-      ],
-    },
+    pricing: { free: vendorUpdates["morelogin"].freeProfiles > 0, freeProfiles: vendorUpdates["morelogin"].freeProfiles, startingPrice: vendorUpdates["morelogin"].startingPrice, plans: vendorUpdates["morelogin"].plans },
     features: [
       "Next-Gen ML Canvas Fingerprinting — uses machine learning to generate real canvas fingerprints from billions of user data points",
       "Six-Layer Data Encryption — unique encryption key per profile, end-to-end encryption, and local data protection",
@@ -79,24 +39,24 @@ export const browsers: Browser[] = [
       "Automation — Selenium, Puppeteer, and Playwright integration with WebDriver support",
     ],
     pros: [
-      "Best-in-class ML-based canvas fingerprinting (not random noise)",
-      "Extremely competitive pricing — one of the most affordable options in the market",
-      "Lifetime free plan with 2 profiles and all features unlocked",
-      "Both Chromium and Firefox kernel support",
-      "Six-layer encryption with end-to-end local data protection",
-      "Powerful window synchronizer for multi-account operations",
-      "Comprehensive API for automation workflows",
-      "Cloud Phone support for mobile-based workflows",
-      "5M+ accounts protected — proven track record",
-      "No data breach history",
-      "Active Bug Bounty program via Bugrap",
-    ],
+  "Best-in-class ML-based canvas fingerprinting (not random noise)",
+  "Extremely competitive pricing — one of the most affordable options in the market",
+  "Free plan includes 2 profiles and Local API",
+  "Both Chromium and Firefox kernel support",
+  "Six-layer encryption with end-to-end local data protection",
+  "Powerful window synchronizer for multi-account operations",
+  "Comprehensive API for automation workflows",
+  "Cloud Phone support for mobile-based workflows",
+  "5M+ accounts protected — proven track record",
+  "No data breach history",
+  "Active Bug Bounty program via Bugrap"
+],
     cons: [
-      "Founded in 2021 — relatively newer in the antidetect browser market",
-      "Mobile app still in development (Android coming soon)",
-      "No web-based version (desktop app required)",
-      "Some advanced features learning curve for beginners",
-    ],
+  "Founded in 2021 — relatively newer in the antidetect browser market",
+  "Mobile app still in development (Android coming soon)",
+  "No web-based version (desktop app required)",
+  "Some advanced features learning curve for beginners"
+],
     platforms: ["windows", "macos", "linux"],
     hasAPI: true,
     hasTeamFeatures: true,
@@ -115,31 +75,31 @@ export const browsers: Browser[] = [
       "Ticket purchasing & sneaker copping",
     ],
     reviewContent: [
-      {
-        title: "What Makes MoreLogin Different?",
-        content: "MoreLogin's standout feature is its **next-generation ML-based canvas fingerprinting**. Unlike most antidetect browsers that use random noise injection (which can actually be detected as anomalous), MoreLogin collects real canvas fingerprint data from billions of users worldwide and uses machine learning to match them in real-time. This means each browser profile gets a genuinely authentic fingerprint, making detection bypass natural and seamless.\n\nAnother major differentiator is the **six-layer data encryption system**. The platform generates a unique encryption key for each browser profile based on your device and profile information. With end-to-end encryption enabled, even MoreLogin themselves cannot access your data — only you hold the decryption key.",
-      },
-      {
-        title: "Fingerprint Technology Deep Dive",
-        content: "MoreLogin supports both **Chromium and Firefox** browser kernels, giving users the flexibility to choose the engine that best suits their workflow. When creating a new profile, the system **intelligently matches** the language, timezone, and geographic location to your proxy region, eliminating common mismatches that trigger detection.\n\nKey fingerprint parameters managed include: Canvas, WebGL, WebRTC, Audio context, Client Rects, Fonts, Screen resolution, Hardware concurrency, Device memory, and more. The WebRTC protection is particularly noteworthy — it effectively prevents IP leaks during browsing sessions.",
-      },
-      {
-        title: "Window Synchronizer",
-        content: "The **Window Synchronizer** is a productivity feature that many competitors lack. It allows one-click real-time synchronization of keyboard and mouse operations from a master browser window to multiple slave windows. This is invaluable for tasks like batch account registration, simultaneous posting across social media accounts, or managing multiple e-commerce stores.\n\nThe synchronizer also supports inputting **identical or different texts** across multiple profiles simultaneously, greatly improving operational efficiency for multi-account management.",
-      },
-      {
-        title: "API & Automation",
-        content: "MoreLogin provides both **REST API and Local API** for automation. You can programmatically create, launch, shut down, and delete profiles. The platform supports integration with major automation frameworks:\n\n- **Selenium** — for browser automation scripts\n- **Puppeteer** — for headless Chrome automation\n- **Playwright** — for cross-browser testing and automation\n\nThe Local API runs on your machine and provides fast, low-latency access to profile management. The REST API enables remote management and integration with your existing tools and workflows.",
-      },
-      {
-        title: "Team Collaboration & Security",
-        content: "MoreLogin excels in team scenarios with features like:\n\n- **Flexible permission management** — create custom roles with granular permissions\n- **Operation logging** — track all team member activities for audit trails\n- **Account password protection** — prevent unauthorized access to managed accounts\n- **Profile transfer** — safely hand over profiles between team members\n- **Instant permission revocation** — immediately revoke access when employees leave\n\nThese features make MoreLogin particularly suitable for agencies and large teams where security and accountability are paramount.",
-      },
-      {
-        title: "Pricing Analysis",
-        content: "MoreLogin offers arguably the **best value proposition** in the antidetect browser market:\n\n- **Free plan**: 2 profiles forever with ALL features unlocked (not a stripped-down version)\n- **Pro plan**: Starting at just **$5.4/month** (yearly billing) for 10 profiles\n- **Custom plan**: Flexible pricing for larger teams\n\nThe Pro plan pricing is fully customizable: you enter the number of profiles and team members you need, and the price adjusts accordingly. Annual billing offers up to 50% discount, making it one of the most cost-effective solutions for businesses scaling their multi-account operations.",
-      },
-    ],
+  {
+    "title": "What Makes MoreLogin Different?",
+    "content": "MoreLogin's standout feature is its **next-generation ML-based canvas fingerprinting**. Unlike most antidetect browsers that use random noise injection (which can actually be detected as anomalous), MoreLogin collects real canvas fingerprint data from billions of users worldwide and uses machine learning to match them in real-time. This means each browser profile gets a genuinely authentic fingerprint, making detection bypass natural and seamless.\n\nAnother major differentiator is the **six-layer data encryption system**. The platform generates a unique encryption key for each browser profile based on your device and profile information. With end-to-end encryption enabled, even MoreLogin themselves cannot access your data — only you hold the decryption key."
+  },
+  {
+    "title": "Fingerprint Technology Deep Dive",
+    "content": "MoreLogin supports both **Chromium and Firefox** browser kernels, giving users the flexibility to choose the engine that best suits their workflow. When creating a new profile, the system **intelligently matches** the language, timezone, and geographic location to your proxy region, eliminating common mismatches that trigger detection.\n\nKey fingerprint parameters managed include: Canvas, WebGL, WebRTC, Audio context, Client Rects, Fonts, Screen resolution, Hardware concurrency, Device memory, and more. The WebRTC protection is particularly noteworthy — it effectively prevents IP leaks during browsing sessions."
+  },
+  {
+    "title": "Window Synchronizer",
+    "content": "The **Window Synchronizer** is a productivity feature that many competitors lack. It allows one-click real-time synchronization of keyboard and mouse operations from a master browser window to multiple slave windows. This is invaluable for tasks like batch account registration, simultaneous posting across social media accounts, or managing multiple e-commerce stores.\n\nThe synchronizer also supports inputting **identical or different texts** across multiple profiles simultaneously, greatly improving operational efficiency for multi-account management."
+  },
+  {
+    "title": "API & Automation",
+    "content": "MoreLogin provides both **REST API and Local API** for automation. You can programmatically create, launch, shut down, and delete profiles. The platform supports integration with major automation frameworks:\n\n- **Selenium** — for browser automation scripts\n- **Puppeteer** — for headless Chrome automation\n- **Playwright** — for cross-browser testing and automation\n\nThe Local API runs on your machine and provides fast, low-latency access to profile management. The REST API enables remote management and integration with your existing tools and workflows."
+  },
+  {
+    "title": "Team Collaboration & Security",
+    "content": "MoreLogin excels in team scenarios with features like:\n\n- **Flexible permission management** — create custom roles with granular permissions\n- **Operation logging** — track all team member activities for audit trails\n- **Account password protection** — prevent unauthorized access to managed accounts\n- **Profile transfer** — safely hand over profiles between team members\n- **Instant permission revocation** — immediately revoke access when employees leave\n\nThese features make MoreLogin particularly suitable for agencies and large teams where security and accountability are paramount."
+  },
+  {
+    "title": "Pricing Analysis",
+    "content": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
+  }
+],
     testimonials: [
       {
         name: "Jaden S.",
@@ -168,31 +128,31 @@ export const browsers: Browser[] = [
       },
     ],
     faqs: [
-      {
-        question: "Is MoreLogin free to use?",
-        answer: "Yes, MoreLogin offers a permanently free plan with 2 browser profiles and all features unlocked. No credit card is required. You can use it forever for personal or testing purposes.",
-      },
-      {
-        question: "How does MoreLogin's canvas fingerprinting work?",
-        answer: "Unlike browsers that use random noise injection, MoreLogin uses machine learning to analyze canvas fingerprint data from billions of real users worldwide and matches them in real-time. This produces genuinely authentic fingerprints that are virtually undetectable.",
-      },
-      {
-        question: "What payment methods does MoreLogin accept?",
-        answer: "MoreLogin accepts PayPal, credit/debit cards (Visa, Mastercard), and cryptocurrency via Coinbase.",
-      },
-      {
-        question: "Can I use MoreLogin for team collaboration?",
-        answer: "Yes, MoreLogin has robust team features including multi-user remote collaboration, flexible role-based permissions, operation logging, account password protection, and instant permission revocation for departing team members.",
-      },
-      {
-        question: "Is MoreLogin good value for money?",
-        answer: "Yes, MoreLogin offers one of the best value propositions in the market. The free plan includes all core features with 2 profiles, while the Pro plan starts at just $5.4/month with yearly billing. Pricing is fully customizable — you choose exactly how many profiles and team members you need.",
-      },
-      {
-        question: "Does MoreLogin support browser automation?",
-        answer: "Yes, MoreLogin supports Selenium, Puppeteer, and Playwright for browser automation. It provides both REST API and Local API for programmatic profile management including creation, launch, shutdown, and deletion.",
-      },
-    ],
+  {
+    "question": "Is MoreLogin free to use?",
+    "answer": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
+  },
+  {
+    "question": "How does MoreLogin's canvas fingerprinting work?",
+    "answer": "Unlike browsers that use random noise injection, MoreLogin uses machine learning to analyze canvas fingerprint data from billions of real users worldwide and matches them in real-time. This produces genuinely authentic fingerprints that are virtually undetectable."
+  },
+  {
+    "question": "What payment methods does MoreLogin accept?",
+    "answer": "MoreLogin accepts PayPal, credit/debit cards (Visa, Mastercard), and cryptocurrency via Coinbase."
+  },
+  {
+    "question": "Can I use MoreLogin for team collaboration?",
+    "answer": "Yes, MoreLogin has robust team features including multi-user remote collaboration, flexible role-based permissions, operation logging, account password protection, and instant permission revocation for departing team members."
+  },
+  {
+    "question": "Is MoreLogin good value for money?",
+    "answer": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
+  },
+  {
+    "question": "Does MoreLogin support browser automation?",
+    "answer": "Yes, MoreLogin supports Selenium, Puppeteer, and Playwright for browser automation. It provides both REST API and Local API for programmatic profile management including creation, launch, shutdown, and deletion."
+  }
+],
   },
   {
     id: "adspower",
@@ -200,10 +160,10 @@ export const browsers: Browser[] = [
     slug: "adspower",
     tagline: "Popular antidetect browser for e-commerce & social media",
     description:
-      "AdsPower is one of the most widely used antidetect browsers with over 9 million users across 235 countries. It features dual browser engines (SunBrowser & FlowerBrowser), a powerful built-in RPA automation builder, and an intuitive interface designed for e-commerce sellers, social media marketers, and affiliate teams.",
+      "AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan.",
     logo: "/images/browsers/adspower.svg",
     website: "https://www.adspower.com",
-    affiliateUrl: "https://www.adspower.com/share/antibrowserhub",
+    affiliateUrl: affiliateDestinations["adspower"],
     rating: {
       overall: 4.5,
       fingerprint: 4.5,
@@ -212,37 +172,7 @@ export const browsers: Browser[] = [
       pricing: 4.3,
       support: 4.5,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 2,
-      startingPrice: "$5.4/mo",
-      plans: [
-        {
-          name: "Free",
-          price: "$0",
-          profiles: "2 profiles",
-          features: ["Core fingerprint features", "Community support", "SunBrowser engine"],
-        },
-        {
-          name: "Base",
-          price: "$5.4/mo",
-          profiles: "10 profiles",
-          features: ["Custom fingerprint", "RPA tools", "Local API"],
-        },
-        {
-          name: "Pro",
-          price: "$30/mo",
-          profiles: "100 profiles",
-          features: ["Full API access", "Team features", "Priority support", "Batch operations"],
-        },
-        {
-          name: "Custom",
-          price: "Contact",
-          profiles: "Unlimited",
-          features: ["Enterprise features", "Dedicated manager", "Custom integration"],
-        },
-      ],
-    },
+    pricing: { free: vendorUpdates["adspower"].freeProfiles > 0, freeProfiles: vendorUpdates["adspower"].freeProfiles, startingPrice: vendorUpdates["adspower"].startingPrice, plans: vendorUpdates["adspower"].plans },
     features: [
       "SunBrowser (Chromium) & FlowerBrowser (Firefox) — dual engine support with Chrome Web Store compatibility",
       "Built-in RPA Automation — visual no-code automation builder with ready-to-use templates",
@@ -258,22 +188,22 @@ export const browsers: Browser[] = [
       "Bug Bounty Program — in-house security vulnerability reporting program",
     ],
     pros: [
-      "Very user-friendly interface — one of the easiest to learn",
-      "Built-in RPA/no-code automation builder with templates",
-      "Largest user base (9M+ users across 235 countries)",
-      "Dual browser engines (SunBrowser + FlowerBrowser)",
-      "Affordable entry-level pricing starting at $5.4/mo",
-      "Multi-windows synchronizer for batch operations",
-      "Strong security with encrypted transmission and storage",
-      "4.8 TrustScore rating across review platforms",
-    ],
+  "Very user-friendly interface — one of the easiest to learn",
+  "Built-in RPA/no-code automation builder with templates",
+  "Largest user base (9M+ users across 235 countries)",
+  "Dual browser engines (SunBrowser + FlowerBrowser)",
+  "Monthly entry-level pricing starts at $9",
+  "Multi-windows synchronizer for batch operations",
+  "Strong security with encrypted transmission and storage",
+  "4.8 TrustScore rating across review platforms"
+],
     cons: [
-      "Higher-tier plans can be expensive for large teams",
-      "Fingerprint detection scores vary in some tests",
-      "No web-based version — desktop app required",
-      "Cloud phone feature requires separate service (DuoPlus)",
-      "Linux support is limited",
-    ],
+  "Higher-tier plans can be expensive for large teams",
+  "Fingerprint detection scores vary in some tests",
+  "No web-based version — desktop app required",
+  "Cloud phone feature requires separate service (DuoPlus)",
+  "Linux support is limited"
+],
     platforms: ["windows", "macos"],
     hasAPI: true,
     hasTeamFeatures: true,
@@ -294,27 +224,27 @@ export const browsers: Browser[] = [
       "Betting account management",
     ],
     reviewContent: [
-      {
-        title: "What Makes AdsPower Stand Out?",
-        content: "AdsPower has grown to become one of the largest antidetect browsers with over **9 million users** across **235 countries and regions**. Its key differentiator is the combination of a very intuitive interface with powerful built-in automation tools.\n\nThe platform offers **50+ customizable fingerprint parameters** including IP, language, resolution, timezone, cookies, geolocation, fonts, proxy, DNS, Canvas, WebGL, WebGPU, and more. This level of customization makes it nearly impossible for websites to associate browsing activity with a user's true identity.",
-      },
-      {
-        title: "Dual Browser Engines",
-        content: "AdsPower offers two proprietary browser engines:\n\n- **SunBrowser** — Built on the Chromium engine with added fingerprint management. Unlike Chrome, it doesn't send user information to Google. Fully compatible with Chrome Web Store extensions.\n- **FlowerBrowser** — Built on Firefox engine for users who prefer Mozilla-based workflows.\n\nThis dual-engine approach gives users the flexibility to choose the browser that best suits their target platforms and workflows. You can even personalize your SunBrowser experience with extensions from the Chrome Web Store or upload your own.",
-      },
-      {
-        title: "RPA Automation Builder",
-        content: "AdsPower's **built-in RPA (Robotic Process Automation)** is one of its strongest features. It provides a visual, no-code automation builder where you can:\n\n- Choose from **ready-to-use templates** for common tasks\n- Create custom automation workflows with drag-and-drop\n- Run automated scenarios across multiple profiles simultaneously\n- Combine with the Synchronizer for maximum efficiency\n\nThis is particularly valuable for repetitive tasks like account registration, posting content, or data collection — activities that would take hours manually can be completed in minutes.",
-      },
-      {
-        title: "Security & Privacy",
-        content: "AdsPower takes security seriously with multiple layers of protection:\n\n- **Encrypted Transmission & Storage** — All credentials, browsing data, and sensitive information are encrypted end-to-end\n- **Local Data Control** — Your data stays on your device and won't sync without your permission\n- **Extension Security** — The Extension Center only contains extensions from the official plugin library, with auto-update disabled to prevent malware\n- **Account Security** — 2FA support, failed login alerts, and abnormal login interception\n- **In-House Bug Bounty Program** — Active vulnerability reporting program for white-hat security researchers\n\nAdsPower has achieved industry certification, ensuring top-notch security for global marketers' online activities.",
-      },
-      {
-        title: "Team Collaboration",
-        content: "For teams and agencies, AdsPower offers robust collaboration features:\n\n- **Precise Profile Permission** — Control access with user-specific permissions\n- **Action Logs** — Track all team member activities for accountability\n- **Batch Operations** — Manage groups of profiles instantly through mass actions\n- **Profile Sharing** — Securely share profiles, proxies, and cookies between team members\n\nThe permission system allows you to restrict unauthorized usage, set up abnormal login reminders, and maintain full audit trails of all operations.",
-      },
-    ],
+  {
+    "title": "What Makes AdsPower Stand Out?",
+    "content": "AdsPower has grown to become one of the largest antidetect browsers with over **9 million users** across **235 countries and regions**. Its key differentiator is the combination of a very intuitive interface with powerful built-in automation tools.\n\nThe platform offers **50+ customizable fingerprint parameters** including IP, language, resolution, timezone, cookies, geolocation, fonts, proxy, DNS, Canvas, WebGL, WebGPU, and more. This level of customization makes it nearly impossible for websites to associate browsing activity with a user's true identity."
+  },
+  {
+    "title": "Dual Browser Engines",
+    "content": "AdsPower offers two proprietary browser engines:\n\n- **SunBrowser** — Built on the Chromium engine with added fingerprint management. Unlike Chrome, it doesn't send user information to Google. Fully compatible with Chrome Web Store extensions.\n- **FlowerBrowser** — Built on Firefox engine for users who prefer Mozilla-based workflows.\n\nThis dual-engine approach gives users the flexibility to choose the browser that best suits their target platforms and workflows. You can even personalize your SunBrowser experience with extensions from the Chrome Web Store or upload your own."
+  },
+  {
+    "title": "RPA Automation Builder",
+    "content": "AdsPower's **built-in RPA (Robotic Process Automation)** is one of its strongest features. It provides a visual, no-code automation builder where you can:\n\n- Choose from **ready-to-use templates** for common tasks\n- Create custom automation workflows with drag-and-drop\n- Run automated scenarios across multiple profiles simultaneously\n- Combine with the Synchronizer for maximum efficiency\n\nThis is particularly valuable for repetitive tasks like account registration, posting content, or data collection — activities that would take hours manually can be completed in minutes."
+  },
+  {
+    "title": "Security & Privacy",
+    "content": "AdsPower takes security seriously with multiple layers of protection:\n\n- **Encrypted Transmission & Storage** — All credentials, browsing data, and sensitive information are encrypted end-to-end\n- **Local Data Control** — Your data stays on your device and won't sync without your permission\n- **Extension Security** — The Extension Center only contains extensions from the official plugin library, with auto-update disabled to prevent malware\n- **Account Security** — 2FA support, failed login alerts, and abnormal login interception\n- **In-House Bug Bounty Program** — Active vulnerability reporting program for white-hat security researchers\n\nAdsPower has achieved industry certification, ensuring top-notch security for global marketers' online activities."
+  },
+  {
+    "title": "Team Collaboration",
+    "content": "For teams and agencies, AdsPower offers robust collaboration features:\n\n- **Precise Profile Permission** — Control access with user-specific permissions\n- **Action Logs** — Track all team member activities for accountability\n- **Batch Operations** — Manage groups of profiles instantly through mass actions\n- **Profile Sharing** — Securely share profiles, proxies, and cookies between team members\n\nThe permission system allows you to restrict unauthorized usage, set up abnormal login reminders, and maintain full audit trails of all operations."
+  }
+],
     testimonials: [
       {
         name: "Ratiranjan N.",
@@ -338,31 +268,31 @@ export const browsers: Browser[] = [
       },
     ],
     faqs: [
-      {
-        question: "Is AdsPower browser free?",
-        answer: "Yes, AdsPower offers a free plan with up to 2 browser profiles. This is a great way to test the platform before committing to a paid plan. Paid plans start at just $5.4/month.",
-      },
-      {
-        question: "What is SunBrowser?",
-        answer: "SunBrowser is AdsPower's proprietary browser engine built on Chromium with added fingerprint management capabilities. Unlike Chrome, it doesn't send user information to Google, making it ideal for running accounts without exposing real parameters.",
-      },
-      {
-        question: "What platforms does AdsPower support?",
-        answer: "AdsPower supports Windows and macOS. You can download the appropriate version from their official website.",
-      },
-      {
-        question: "Does AdsPower have RPA automation?",
-        answer: "Yes, AdsPower includes a powerful built-in RPA automation builder. You can create custom workflows with a visual drag-and-drop interface, use ready-to-use templates, and run automated scenarios across multiple profiles simultaneously.",
-      },
-      {
-        question: "Is AdsPower safe to use?",
-        answer: "Yes, AdsPower prioritizes user privacy and security. All data transmission and storage is encrypted. They have an in-house Bug Bounty Program and have achieved industry security certification.",
-      },
-      {
-        question: "What proxy types does AdsPower support?",
-        answer: "AdsPower works with all popular proxy protocols including HTTP/HTTPS, SOCKS5, and SSH, supporting both IPv4 and IPv6 addresses. It integrates seamlessly with providers like Bright Data, Oxylabs, and many more.",
-      },
-    ],
+  {
+    "question": "Is AdsPower browser free?",
+    "answer": "AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent)."
+  },
+  {
+    "question": "What is SunBrowser?",
+    "answer": "SunBrowser is AdsPower's proprietary browser engine built on Chromium with added fingerprint management capabilities. Unlike Chrome, it doesn't send user information to Google, making it ideal for running accounts without exposing real parameters."
+  },
+  {
+    "question": "What platforms does AdsPower support?",
+    "answer": "AdsPower supports Windows and macOS. You can download the appropriate version from their official website."
+  },
+  {
+    "question": "Does AdsPower have RPA automation?",
+    "answer": "Yes, AdsPower includes a powerful built-in RPA automation builder. You can create custom workflows with a visual drag-and-drop interface, use ready-to-use templates, and run automated scenarios across multiple profiles simultaneously."
+  },
+  {
+    "question": "Is AdsPower safe to use?",
+    "answer": "Yes, AdsPower prioritizes user privacy and security. All data transmission and storage is encrypted. They have an in-house Bug Bounty Program and have achieved industry security certification."
+  },
+  {
+    "question": "What proxy types does AdsPower support?",
+    "answer": "AdsPower works with all popular proxy protocols including HTTP/HTTPS, SOCKS5, and SSH, supporting both IPv4 and IPv6 addresses. It integrates seamlessly with providers like Bright Data, Oxylabs, and many more."
+  }
+],
   },
   {
     id: "gologin",
@@ -370,10 +300,10 @@ export const browsers: Browser[] = [
     slug: "gologin",
     tagline: "Cloud-based antidetect browser with web access",
     description:
-      "GoLogin is a cloud-first antidetect browser that allows users to access and manage browser profiles from any device through a web interface. Built on its proprietary Orbita engine, it offers solid fingerprint protection, a clean user experience, and unique cross-platform accessibility including an Android app.",
+      "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature.",
     logo: "/images/browsers/gologin.svg",
     website: "https://gologin.com",
-    affiliateUrl: "https://gologin.com/join/antibrowserhub-IPRPLFI",
+    affiliateUrl: affiliateDestinations["gologin"],
     rating: {
       overall: 4.4,
       fingerprint: 4.4,
@@ -382,17 +312,7 @@ export const browsers: Browser[] = [
       pricing: 4.4,
       support: 4.3,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 3,
-      startingPrice: "$24/mo",
-      plans: [
-        { name: "Free", price: "$0", profiles: "3 profiles", features: ["Web access", "Basic fingerprint", "Community support"] },
-        { name: "Professional", price: "$24/mo", profiles: "100 profiles", features: ["REST API", "Cloud profiles", "Custom fingerprint"] },
-        { name: "Business", price: "$49/mo", profiles: "300 profiles", features: ["Team sharing (10 seats)", "Priority support"] },
-        { name: "Enterprise", price: "$99/mo", profiles: "1000 profiles", features: ["Custom fingerprints", "Dedicated manager", "SLA support"] },
-      ],
-    },
+    pricing: { free: vendorUpdates["gologin"].freeProfiles > 0, freeProfiles: vendorUpdates["gologin"].freeProfiles, startingPrice: vendorUpdates["gologin"].startingPrice, plans: vendorUpdates["gologin"].plans },
     features: [
       "Cloud-Based Web Access — manage profiles from any device via browser",
       "Orbita Browser Engine — proprietary Chromium-based engine with built-in fingerprint management",
@@ -406,20 +326,20 @@ export const browsers: Browser[] = [
       "Multi-Platform — Windows, macOS, Linux, Android, and web",
     ],
     pros: [
-      "Only antidetect browser with full web-based access",
-      "Clean, modern, and intuitive interface",
-      "Good free tier with 3 profiles and 7-day full trial",
-      "Android app for mobile management",
-      "Cloud profile launching saves local resources",
-      "Built-in free proxy options included",
-      "50% annual billing discount available",
-    ],
+  "Only antidetect browser with full web-based access",
+  "Clean, modern, and intuitive interface",
+  "Good free tier with 3 profiles and 7-day full trial",
+  "Android app for mobile management",
+  "Cloud profile launching saves local resources",
+  "Built-in free proxy options included",
+  "50% annual billing discount available"
+],
     cons: [
-      "Cloud dependency can cause slower profile launches",
-      "Limited built-in automation options (no RPA)",
-      "No Firefox kernel — Chromium only",
-      "Web version may have limited functionality vs desktop",
-    ],
+  "Cloud dependency can cause slower profile launches",
+  "Limited built-in automation options (no RPA)",
+  "No Firefox kernel — Chromium only",
+  "Web version may have limited functionality vs desktop"
+],
     platforms: ["windows", "macos", "linux", "android"],
     hasAPI: true,
     hasTeamFeatures: true,
@@ -438,35 +358,50 @@ export const browsers: Browser[] = [
       "Market research across regions",
     ],
     reviewContent: [
-      {
-        title: "Cloud-First Approach",
-        content: "GoLogin's biggest differentiator is its **cloud-based architecture**. Unlike other antidetect browsers that require a desktop application, GoLogin lets you manage all your browser profiles directly through a **web interface**.\n\nThis means you can access your profiles from any computer — a work desktop, a home laptop, or even a library computer. Simply log in to the GoLogin web app and your profiles are there, ready to use.",
-      },
-      {
-        title: "Orbita Browser Engine",
-        content: "GoLogin uses its proprietary **Orbita browser engine**, built on top of Chromium. The engine is designed specifically for antidetect purposes, with fingerprint management built into the core.\n\nThe fingerprint generator automatically configures parameters based on your proxy location, matching timezone, language, and geolocation settings to create a consistent and believable browser identity.",
-      },
-      {
-        title: "Cross-Platform Accessibility",
-        content: "GoLogin offers the widest platform support in the antidetect browser market:\n\n- **Desktop App** — Windows, macOS, Linux\n- **Web App** — Access from any browser on any device\n- **Android App** — Manage profiles on mobile\n- **Cloud Launch** — Run profiles on GoLogin's cloud servers\n\nThis cross-platform approach makes GoLogin ideal for teams who work remotely or need to access profiles from multiple locations.",
-      },
-      {
-        title: "Pricing & Value",
-        content: "GoLogin offers competitive pricing with a **50% discount on annual billing**:\n\n- **Free**: 3 profiles forever — more generous than most\n- **Professional**: $24/month for 100 profiles\n- **Business**: $49/month for 300 profiles with 10 team seats\n- **Enterprise**: $99/month for 1,000 profiles\n\nAll paid plans include a **7-day free trial** with full access to all features.",
-      },
-    ],
+  {
+    "title": "Cloud-First Approach",
+    "content": "GoLogin's biggest differentiator is its **cloud-based architecture**. Unlike other antidetect browsers that require a desktop application, GoLogin lets you manage all your browser profiles directly through a **web interface**.\n\nThis means you can access your profiles from any computer — a work desktop, a home laptop, or even a library computer. Simply log in to the GoLogin web app and your profiles are there, ready to use."
+  },
+  {
+    "title": "Orbita Browser Engine",
+    "content": "GoLogin uses its proprietary **Orbita browser engine**, built on top of Chromium. The engine is designed specifically for antidetect purposes, with fingerprint management built into the core.\n\nThe fingerprint generator automatically configures parameters based on your proxy location, matching timezone, language, and geolocation settings to create a consistent and believable browser identity."
+  },
+  {
+    "title": "Cross-Platform Accessibility",
+    "content": "GoLogin offers the widest platform support in the antidetect browser market:\n\n- **Desktop App** — Windows, macOS, Linux\n- **Web App** — Access from any browser on any device\n- **Android App** — Manage profiles on mobile\n- **Cloud Launch** — Run profiles on GoLogin's cloud servers\n\nThis cross-platform approach makes GoLogin ideal for teams who work remotely or need to access profiles from multiple locations."
+  },
+  {
+    "title": "Pricing & Value",
+    "content": "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
+  }
+],
     testimonials: [
       { name: "Alex M.", role: "Digital Marketer", text: "The web access feature is a game changer. I can manage my profiles from my office, home, or even my phone. No other antidetect browser offers this level of flexibility." },
       { name: "Sarah K.", role: "Agency Owner", text: "We switched to GoLogin for the cloud features. My team of 8 can all access the same profiles without any desktop app setup." },
       { name: "Michael T.", role: "E-Commerce Seller", text: "The Android app is super handy for quick checks on my store accounts. And the free proxies included help keep costs down." },
     ],
     faqs: [
-      { question: "Can I use GoLogin without installing software?", answer: "Yes, GoLogin offers a full web-based interface. You can manage and launch profiles directly from your browser without installing any desktop application." },
-      { question: "Does GoLogin have a free plan?", answer: "Yes, GoLogin offers a permanent free plan with 3 browser profiles. All paid plans also include a 7-day free trial with full access." },
-      { question: "What is the Orbita browser engine?", answer: "Orbita is GoLogin's proprietary Chromium-based engine with fingerprint management built into the core, providing reliable antidetect capabilities." },
-      { question: "Does GoLogin work on mobile?", answer: "Yes, GoLogin has a dedicated Android app for managing and launching browser profiles on mobile." },
-      { question: "Does GoLogin offer annual discounts?", answer: "Yes, GoLogin offers a 50% discount on all plans when you choose annual billing." },
-    ],
+  {
+    "question": "Can I use GoLogin without installing software?",
+    "answer": "Yes, GoLogin offers a full web-based interface. You can manage and launch profiles directly from your browser without installing any desktop application."
+  },
+  {
+    "question": "Does GoLogin have a free plan?",
+    "answer": "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
+  },
+  {
+    "question": "What is the Orbita browser engine?",
+    "answer": "Orbita is GoLogin's proprietary Chromium-based engine with fingerprint management built into the core, providing reliable antidetect capabilities."
+  },
+  {
+    "question": "Does GoLogin work on mobile?",
+    "answer": "Yes, GoLogin has a dedicated Android app for managing and launching browser profiles on mobile."
+  },
+  {
+    "question": "Does GoLogin offer annual discounts?",
+    "answer": "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
+  }
+],
   },
   {
     id: "multilogin",
@@ -474,10 +409,10 @@ export const browsers: Browser[] = [
     slug: "multilogin",
     tagline: "The pioneer of antidetect browsers",
     description:
-      "Multilogin is the original antidetect browser, pioneering the industry since 2015. Trusted by over 10,000 professionals, it features proprietary Mimic (Chromium) and Stealthfox (Firefox) engines with premium fingerprint spoofing. The platform has evolved into a comprehensive multi-account management solution with cloud phone capabilities.",
+      "Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits.",
     logo: "/images/browsers/multilogin.svg",
     website: "https://multilogin.com",
-    affiliateUrl: "https://multilogin.com/?from=antibrowserhub",
+    affiliateUrl: affiliateDestinations["multilogin"],
     rating: {
       overall: 4.3,
       fingerprint: 4.7,
@@ -486,16 +421,7 @@ export const browsers: Browser[] = [
       pricing: 3.5,
       support: 4.4,
     },
-    pricing: {
-      free: false,
-      freeProfiles: 0,
-      startingPrice: "€99/mo",
-      plans: [
-        { name: "Solo", price: "€99/mo", profiles: "100 profiles", features: ["Mimic + Stealthfox", "Basic automation", "Email support"] },
-        { name: "Team", price: "€199/mo", profiles: "300 profiles", features: ["Team sharing", "API access", "Priority support", "3 seats"] },
-        { name: "Scale", price: "€399/mo", profiles: "1000 profiles", features: ["Custom automation", "Dedicated manager", "SLA", "10 seats"] },
-      ],
-    },
+    pricing: { free: vendorUpdates["multilogin"].freeProfiles > 0, freeProfiles: vendorUpdates["multilogin"].freeProfiles, startingPrice: vendorUpdates["multilogin"].startingPrice, plans: vendorUpdates["multilogin"].plans },
     features: [
       "Mimic (Chromium) Engine — proprietary browser engine with advanced fingerprint masking",
       "Stealthfox (Firefox) Engine — custom Firefox-based browser for diversified fingerprinting",
@@ -509,21 +435,19 @@ export const browsers: Browser[] = [
       "Headless Browser — support for headless automation workflows",
     ],
     pros: [
-      "Industry pioneer with proven 9+ year track record",
-      "Excellent fingerprint quality (Mimic + Stealthfox)",
-      "Both Chromium and Firefox engine support",
-      "Cloud phone capabilities for Android operations",
-      "Strong enterprise security and encryption",
-      "Trusted by 10,000+ professionals worldwide",
-      "Comprehensive API documentation",
-    ],
+  "Industry pioneer with proven 9+ year track record",
+  "Excellent fingerprint quality (Mimic + Stealthfox)",
+  "Both Chromium and Firefox engine support",
+  "Cloud phone capabilities for Android operations",
+  "Strong enterprise security and encryption",
+  "Trusted by 10,000+ professionals worldwide",
+  "Comprehensive API documentation"
+],
     cons: [
-      "Most expensive option — no free plan available",
-      "Steeper learning curve for new users",
-      "Interface feels less modern than newer competitors",
-      "Slower to adopt new features",
-      "Starting price of €99/mo may be prohibitive for individuals",
-    ],
+  "Steeper learning curve for new users",
+  "Interface feels less modern than newer competitors",
+  "Slower to adopt new features"
+],
     platforms: ["windows", "macos", "linux"],
     hasAPI: true,
     hasTeamFeatures: true,
@@ -541,35 +465,50 @@ export const browsers: Browser[] = [
       "Cloud phone operations for mobile accounts",
     ],
     reviewContent: [
-      {
-        title: "The Industry Pioneer",
-        content: "Multilogin was founded in **2015** and is widely recognized as the **original antidetect browser**. Over the past 9+ years, it has built a reputation for having some of the most reliable fingerprint spoofing technology in the market.\n\nThe platform is trusted by **over 10,000 professionals** worldwide and has evolved from a simple antidetect browser into a comprehensive multi-account management platform that now includes cloud phone capabilities.",
-      },
-      {
-        title: "Mimic & Stealthfox Engines",
-        content: "Multilogin stands out with its **two proprietary browser engines**:\n\n- **Mimic** — Built on Chromium with deep fingerprint integration. It generates fingerprints at the engine level rather than using JavaScript injection, making detection significantly harder.\n- **Stealthfox** — Built on Firefox, providing an alternative browser engine that can bypass detection systems specifically targeting Chromium-based antidetect browsers.\n\nHaving both engines gives users the flexibility to diversify their browser fingerprints across different browser types — a strategy that significantly reduces the risk of bulk detection.",
-      },
-      {
-        title: "Cloud Phone Integration",
-        content: "Multilogin has expanded beyond browser profiles with its **Cloud Phone** feature, allowing users to run Android devices directly from the dashboard. This is particularly valuable for:\n\n- Managing mobile app accounts (Instagram, TikTok, WhatsApp)\n- Testing mobile-specific workflows\n- Running Android automation without physical devices\n\nCloud phones can be managed alongside browser profiles in the same dashboard, providing a unified multi-account management experience.",
-      },
-      {
-        title: "Enterprise Security",
-        content: "As the most enterprise-focused option in the market, Multilogin offers:\n\n- **Profile Encryption** — All stored profiles are encrypted with enterprise-grade security\n- **Role-Based Access Control** — Granular permissions for team members\n- **Audit Trails** — Complete logging of all operations\n- **Data Isolation** — Each profile operates in its own isolated environment\n- **Compliance Ready** — Designed for organizations with strict security requirements",
-      },
-    ],
+  {
+    "title": "The Industry Pioneer",
+    "content": "Multilogin was founded in **2015** and is widely recognized as the **original antidetect browser**. Over the past 9+ years, it has built a reputation for having some of the most reliable fingerprint spoofing technology in the market.\n\nThe platform is trusted by **over 10,000 professionals** worldwide and has evolved from a simple antidetect browser into a comprehensive multi-account management platform that now includes cloud phone capabilities."
+  },
+  {
+    "title": "Mimic & Stealthfox Engines",
+    "content": "Multilogin stands out with its **two proprietary browser engines**:\n\n- **Mimic** — Built on Chromium with deep fingerprint integration. It generates fingerprints at the engine level rather than using JavaScript injection, making detection significantly harder.\n- **Stealthfox** — Built on Firefox, providing an alternative browser engine that can bypass detection systems specifically targeting Chromium-based antidetect browsers.\n\nHaving both engines gives users the flexibility to diversify their browser fingerprints across different browser types — a strategy that significantly reduces the risk of bulk detection."
+  },
+  {
+    "title": "Cloud Phone Integration",
+    "content": "Multilogin has expanded beyond browser profiles with its **Cloud Phone** feature, allowing users to run Android devices directly from the dashboard. This is particularly valuable for:\n\n- Managing mobile app accounts (Instagram, TikTok, WhatsApp)\n- Testing mobile-specific workflows\n- Running Android automation without physical devices\n\nCloud phones can be managed alongside browser profiles in the same dashboard, providing a unified multi-account management experience."
+  },
+  {
+    "title": "Enterprise Security",
+    "content": "As the most enterprise-focused option in the market, Multilogin offers:\n\n- **Profile Encryption** — All stored profiles are encrypted with enterprise-grade security\n- **Role-Based Access Control** — Granular permissions for team members\n- **Audit Trails** — Complete logging of all operations\n- **Data Isolation** — Each profile operates in its own isolated environment\n- **Compliance Ready** — Designed for organizations with strict security requirements"
+  }
+],
     testimonials: [
       { name: "David L.", role: "Agency Director", text: "We've been with Multilogin since 2017. The fingerprint quality is unmatched — our accounts rarely face detection issues. The premium price is justified for mission-critical operations." },
       { name: "Jennifer R.", role: "E-Commerce Manager", text: "The Stealthfox engine has been a game changer for our Amazon operations. Having both Chromium and Firefox options gives us much better detection avoidance." },
       { name: "Thomas W.", role: "Security Researcher", text: "Multilogin's engine-level fingerprint integration is technically superior to JavaScript-based approaches. For professional use cases, the investment is worth it." },
     ],
     faqs: [
-      { question: "Does Multilogin offer a free plan?", answer: "No, Multilogin does not have a free plan. However, they offer trial access starting at €1.99 to test the platform before committing to a full subscription." },
-      { question: "What are Mimic and Stealthfox?", answer: "Mimic and Stealthfox are Multilogin's proprietary browser engines built on Chromium and Firefox respectively. They integrate fingerprint management at the engine level for more reliable detection avoidance." },
-      { question: "What are Cloud Phones?", answer: "Cloud Phones allow you to run Android devices from Multilogin's cloud infrastructure. You can manage mobile app accounts alongside browser profiles from a single dashboard." },
-      { question: "Is Multilogin suitable for individuals?", answer: "Multilogin is primarily designed for professionals and teams. The starting price of €99/month makes it more suitable for businesses that need enterprise-grade reliability and security." },
-      { question: "Does Multilogin support automation?", answer: "Yes, Multilogin provides a comprehensive REST API and supports integration with Playwright, Selenium, and Puppeteer for browser automation." },
-    ],
+  {
+    "question": "Does Multilogin offer a free plan?",
+    "answer": "Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API."
+  },
+  {
+    "question": "What are Mimic and Stealthfox?",
+    "answer": "Mimic and Stealthfox are Multilogin's proprietary browser engines built on Chromium and Firefox respectively. They integrate fingerprint management at the engine level for more reliable detection avoidance."
+  },
+  {
+    "question": "What are Cloud Phones?",
+    "answer": "Cloud Phones allow you to run Android devices from Multilogin's cloud infrastructure. You can manage mobile app accounts alongside browser profiles from a single dashboard."
+  },
+  {
+    "question": "Is Multilogin suitable for individuals?",
+    "answer": "Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API."
+  },
+  {
+    "question": "Does Multilogin support automation?",
+    "answer": "Yes, Multilogin provides a comprehensive REST API and supports integration with Playwright, Selenium, and Puppeteer for browser automation."
+  }
+],
   },
   {
     id: "dolphin-anty",
@@ -577,10 +516,10 @@ export const browsers: Browser[] = [
     slug: "dolphin-anty",
     tagline: "Affordable antidetect browser for affiliate marketers",
     description:
-      "Dolphin Anty is designed specifically for affiliate marketers, media buyers, and traffic arbitrage professionals. Used by 860,000+ people and 2,200+ teams daily, it offers a generous free plan, an intuitive interface, powerful scenario automation, and seamless team collaboration features.",
+      "Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively.",
     logo: "/images/browsers/dolphin-anty.svg",
     website: "https://dolphin-anty.com",
-    affiliateUrl: "https://dolphin-anty.net/a/5122358/antibrowserhub",
+    affiliateUrl: affiliateDestinations["dolphin-anty"],
     rating: {
       overall: 4.2,
       fingerprint: 4.3,
@@ -589,17 +528,7 @@ export const browsers: Browser[] = [
       pricing: 4.6,
       support: 3.8,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 10,
-      startingPrice: "$89/mo",
-      plans: [
-        { name: "Free", price: "$0", profiles: "10 profiles", features: ["Real fingerprints", "Basic automation", "Community support"] },
-        { name: "Base", price: "$89/mo", profiles: "100 profiles", features: ["API access", "Scenario automation", "Cookie robot", "Cloud sync"] },
-        { name: "Team", price: "$159/mo", profiles: "300 profiles", features: ["Team features", "Profile transfer", "Priority support"] },
-        { name: "Enterprise", price: "$299/mo", profiles: "1000+ profiles", features: ["Custom setup", "Dedicated manager", "Full API"] },
-      ],
-    },
+    pricing: { free: vendorUpdates["dolphin-anty"].freeProfiles > 0, freeProfiles: vendorUpdates["dolphin-anty"].freeProfiles, startingPrice: vendorUpdates["dolphin-anty"].startingPrice, plans: vendorUpdates["dolphin-anty"].plans },
     features: [
       "Chromium-Based Engine — with real device fingerprints for authentic browsing",
       "Scenario Automation — visual no-code automation builder for farming, data collection, and more",
@@ -615,22 +544,22 @@ export const browsers: Browser[] = [
       "Local API — programmatic profile management",
     ],
     pros: [
-      "Most generous free plan (10 profiles with full features)",
-      "Purpose-built for affiliate marketing and media buying",
-      "Powerful visual scenario automation builder",
-      "Real device fingerprints — not randomly generated",
-      "860,000+ daily users — large active community",
-      "Multi-windows synchronizer for batch operations",
-      "Cloud sync across Windows, Mac, and Linux",
-      "Supports iOS and Android fingerprint generation",
-    ],
+  "Most generous free plan (10 profiles with full features)",
+  "Purpose-built for affiliate marketing and media buying",
+  "Powerful visual scenario automation builder",
+  "Real device fingerprints — not randomly generated",
+  "860,000+ daily users — large active community",
+  "Multi-windows synchronizer for batch operations",
+  "Cloud sync across Windows, Mac, and Linux",
+  "Supports iOS and Android fingerprint generation"
+],
     cons: [
-      "No Firefox kernel — Chromium only",
-      "Documentation could be more comprehensive",
-      "Support response times vary outside business hours",
-      "Higher paid plan pricing than some competitors",
-      "Web-based version not available",
-    ],
+  "No Firefox kernel — Chromium only",
+  "Documentation could be more comprehensive",
+  "Support response times vary outside business hours",
+  "Higher paid plan pricing than some competitors",
+  "Web-based version not available"
+],
     platforms: ["windows", "macos", "linux"],
     hasAPI: true,
     hasTeamFeatures: true,
@@ -649,23 +578,23 @@ export const browsers: Browser[] = [
       "Data scraping & collection",
     ],
     reviewContent: [
-      {
-        title: "Built for Affiliate Marketers",
-        content: "Dolphin Anty was created specifically for the **affiliate marketing and traffic arbitrage** community. The browser is used by **860,000+ people and 2,200+ teams** every day, making it one of the most popular choices in this niche.\n\nThe platform focuses on the workflows that affiliate marketers need most: account farming, ad campaign management, and multi-account operations across Facebook, Google, TikTok, and other advertising platforms.",
-      },
-      {
-        title: "Real Device Fingerprints",
-        content: "Unlike many antidetect browsers that generate random fingerprints, Dolphin Anty uses **real device fingerprints** collected from actual devices. This approach produces more authentic and believable browser identities.\n\nThe platform supports fingerprint generation for multiple operating systems including **iOS and Android**, which is particularly useful for operations that require mobile-like browsing patterns. You can control over **20 fingerprint parameters** and customize every aspect of your profile.",
-      },
-      {
-        title: "Scenario Automation",
-        content: "Dolphin Anty includes a **visual scenario builder** that allows you to create automated workflows without coding:\n\n- **Farming scenarios** — automate account warm-up and activity\n- **Data collection** — scrape information across multiple profiles\n- **Registration flows** — batch create accounts automatically\n- **Custom workflows** — build any automation you need\n\nScenarios can be created using a drag-and-drop constructor that even beginners can master quickly. Available on Windows, Linux, and macOS.",
-      },
-      {
-        title: "Team Features & Cloud Sync",
-        content: "Dolphin Anty excels in team collaboration:\n\n- **Profile Transfer** — share profiles, proxies, and cookies with team members\n- **Folder Permissions** — profiles within folders inherit permissions automatically\n- **User Limits** — restrict the number of profiles each team member can access\n- **Bookmark Folders** — organize bookmarks by website type within profiles\n\n**Dolphin{cloud}** enables seamless synchronization of profiles, cookies, and extensions across devices, so you can work from any Windows, Mac, or Linux computer.",
-      },
-    ],
+  {
+    "title": "Built for Affiliate Marketers",
+    "content": "Dolphin Anty was created specifically for the **affiliate marketing and traffic arbitrage** community. The browser is used by **860,000+ people and 2,200+ teams** every day, making it one of the most popular choices in this niche.\n\nThe platform focuses on the workflows that affiliate marketers need most: account farming, ad campaign management, and multi-account operations across Facebook, Google, TikTok, and other advertising platforms."
+  },
+  {
+    "title": "Real Device Fingerprints",
+    "content": "Unlike many antidetect browsers that generate random fingerprints, Dolphin Anty uses **real device fingerprints** collected from actual devices. This approach produces more authentic and believable browser identities.\n\nThe platform supports fingerprint generation for multiple operating systems including **iOS and Android**, which is particularly useful for operations that require mobile-like browsing patterns. You can control over **20 fingerprint parameters** and customize every aspect of your profile."
+  },
+  {
+    "title": "Scenario Automation",
+    "content": "Dolphin Anty includes a **visual scenario builder** that allows you to create automated workflows without coding:\n\n- **Farming scenarios** — automate account warm-up and activity\n- **Data collection** — scrape information across multiple profiles\n- **Registration flows** — batch create accounts automatically\n- **Custom workflows** — build any automation you need\n\nScenarios can be created using a drag-and-drop constructor that even beginners can master quickly. Available on Windows, Linux, and macOS."
+  },
+  {
+    "title": "Team Features & Cloud Sync",
+    "content": "Dolphin Anty excels in team collaboration:\n\n- **Profile Transfer** — share profiles, proxies, and cookies with team members\n- **Folder Permissions** — profiles within folders inherit permissions automatically\n- **User Limits** — restrict the number of profiles each team member can access\n- **Bookmark Folders** — organize bookmarks by website type within profiles\n\n**Dolphin{cloud}** enables seamless synchronization of profiles, cookies, and extensions across devices, so you can work from any Windows, Mac, or Linux computer."
+  }
+],
     testimonials: [
       { name: "Dmitry M.", role: "CPA Network Owner", text: "I've been working with Dolphin{anty} since the beta version. The team are true professionals, and working with them and their product is a real pleasure." },
       { name: "H0urma", role: "Media Buyer", text: "Dolphin{anty} is the best antidetect browser on the market. Thanks to intuitive functionality and optimization, it copes with all tasks better than all its competitors. We give it 9.999/10." },
@@ -673,12 +602,27 @@ export const browsers: Browser[] = [
       { name: "CrazyFB", role: "Affiliate Marketer", text: "User-friendly interface, great security with 2FA, and all necessary parameters for sorting and filtering. Customer support is always there to assist at any time." },
     ],
     faqs: [
-      { question: "How many free profiles does Dolphin Anty offer?", answer: "Dolphin Anty offers a generous free plan with 10 browser profiles — the most generous free tier among antidetect browsers." },
-      { question: "Does Dolphin Anty support mobile fingerprints?", answer: "Yes, Dolphin Anty can generate fingerprints for iOS and Android devices, which is useful for operations requiring mobile-like browsing patterns." },
-      { question: "What is Dolphin{cloud}?", answer: "Dolphin{cloud} is the cloud synchronization service that syncs your profiles, cookies, and extensions across devices. You can work from any Windows, Mac, or Linux computer with seamless data access." },
-      { question: "Does Dolphin Anty have automation?", answer: "Yes, Dolphin Anty includes a visual scenario builder for creating automated workflows without coding. You can automate farming, data collection, registration, and custom tasks." },
-      { question: "Is Dolphin Anty good for teams?", answer: "Yes, Dolphin Anty offers comprehensive team features including profile transfer, folder-based permissions, user limits, and cloud synchronization across devices." },
-    ],
+  {
+    "question": "How many free profiles does Dolphin Anty offer?",
+    "answer": "Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more."
+  },
+  {
+    "question": "Does Dolphin Anty support mobile fingerprints?",
+    "answer": "Yes, Dolphin Anty can generate fingerprints for iOS and Android devices, which is useful for operations requiring mobile-like browsing patterns."
+  },
+  {
+    "question": "What is Dolphin{cloud}?",
+    "answer": "Dolphin{cloud} is the cloud synchronization service that syncs your profiles, cookies, and extensions across devices. You can work from any Windows, Mac, or Linux computer with seamless data access."
+  },
+  {
+    "question": "Does Dolphin Anty have automation?",
+    "answer": "Yes, Dolphin Anty includes a visual scenario builder for creating automated workflows without coding. You can automate farming, data collection, registration, and custom tasks."
+  },
+  {
+    "question": "Is Dolphin Anty good for teams?",
+    "answer": "Yes, Dolphin Anty offers comprehensive team features including profile transfer, folder-based permissions, user limits, and cloud synchronization across devices."
+  }
+],
   },
   {
     id: "octobrowser",
@@ -686,10 +630,10 @@ export const browsers: Browser[] = [
     slug: "octobrowser",
     tagline: "Premium antidetect browser with clean UI and strong security",
     description:
-      "Octo Browser is a premium antidetect browser built on the latest Chromium source code with real device fingerprints. Known for its clean, intuitive interface and strong security track record, it's particularly popular among teams that prioritize reliability and UI quality.",
+      "Octo Browser Lite starts at 3 profiles. Starter/Base/Team/Advanced include 10/100/350/1200 base profiles; advertised expansion ceilings are not included quotas. API starts at Base. Team has 3 team seats and Advanced 8. Octium 155 was published on October 8, 2026.",
     logo: "/images/browsers/octobrowser.svg",
     website: "https://octobrowser.org",
-    affiliateUrl: "https://octobrowser.org/signup/?p=10407101",
+    affiliateUrl: affiliateDestinations["octobrowser"],
     rating: {
       overall: 4.1,
       fingerprint: 4.4,
@@ -698,17 +642,7 @@ export const browsers: Browser[] = [
       pricing: 3.2,
       support: 4.2,
     },
-    pricing: {
-      free: false,
-      freeProfiles: 0,
-      startingPrice: "€29/mo",
-      plans: [
-        { name: "Starter", price: "€29/mo", profiles: "10 profiles", features: ["Basic features", "Email support"] },
-        { name: "Base", price: "€79/mo", profiles: "100 profiles", features: ["API access", "3 team seats", "Built-in proxies"] },
-        { name: "Team", price: "€169/mo", profiles: "350 profiles", features: ["8 team seats", "Priority support", "Automation"] },
-        { name: "Advanced", price: "€329/mo", profiles: "1200 profiles", features: ["Custom setup", "Dedicated manager", "Full API"] },
-      ],
-    },
+    pricing: { free: vendorUpdates["octobrowser"].freeProfiles > 0, freeProfiles: vendorUpdates["octobrowser"].freeProfiles, startingPrice: vendorUpdates["octobrowser"].startingPrice, plans: vendorUpdates["octobrowser"].plans },
     features: [
       "Latest Chromium Source Code — always up-to-date with the newest browser version",
       "Real Device Fingerprints — fingerprints sourced from actual devices for maximum authenticity",
@@ -722,22 +656,21 @@ export const browsers: Browser[] = [
       "Quick Profile Launch — optimized for fast browser startup times",
     ],
     pros: [
-      "Excellent UI design — one of the cleanest interfaces available",
-      "Strong security track record — no reported data breaches",
-      "Fast profile launch performance — optimized startup",
-      "Built on latest Chromium source code — always current",
-      "Built-in proxy marketplace for convenient proxy purchase",
-      "Good documentation with video tutorials",
-      "Real device fingerprints for maximum authenticity",
-    ],
+  "Excellent UI design — one of the cleanest interfaces available",
+  "Strong security track record — no reported data breaches",
+  "Fast profile launch performance — optimized startup",
+  "Built on latest Chromium source code — always current",
+  "Built-in proxy marketplace for convenient proxy purchase",
+  "Good documentation with video tutorials",
+  "Real device fingerprints for maximum authenticity"
+],
     cons: [
-      "No free plan or trial period available",
-      "Starter plan has significant limitations",
-      "No mobile app or web-based version",
-      "No mobile fingerprints (iOS/Android)",
-      "No Firefox kernel support — Chromium only",
-      "Limited mass action capabilities",
-    ],
+  "Starter plan has significant limitations",
+  "No mobile app or web-based version",
+  "No mobile fingerprints (iOS/Android)",
+  "No Firefox kernel support — Chromium only",
+  "Limited mass action capabilities"
+],
     platforms: ["windows", "macos", "linux"],
     hasAPI: true,
     hasTeamFeatures: true,
@@ -755,35 +688,50 @@ export const browsers: Browser[] = [
       "Market research operations",
     ],
     reviewContent: [
-      {
-        title: "Built on Latest Chromium",
-        content: "Octo Browser stands out by always being built on the **latest Chromium source code**. While many antidetect browsers lag behind on browser updates, Octo Browser consistently maintains compatibility with the newest web standards and security patches.\n\nThis is important because detection systems often check browser version numbers and behaviors. Using an outdated browser version can be a red flag, so staying current gives Octo Browser users an advantage in detection avoidance.",
-      },
-      {
-        title: "Real Device Fingerprints",
-        content: "Like a few premium competitors, Octo Browser uses **real device fingerprints** collected from actual hardware. This approach produces more authentic browsing identities than randomly generated parameters.\n\nThe **auto fingerprint configuration** feature intelligently sets up all parameters to create a consistent and believable profile, reducing the manual setup time significantly.",
-      },
-      {
-        title: "Premium UI Experience",
-        content: "Octo Browser is widely praised for having one of the **cleanest and most intuitive interfaces** in the antidetect browser market. The design philosophy prioritizes:\n\n- **Clean layout** — minimal clutter with logical organization\n- **Fast navigation** — quick access to frequently used features\n- **Quick profile launch** — optimized startup times\n- **Visual proxy status** — easy-to-read proxy health indicators\n\nFor teams that need to onboard new members quickly, the intuitive UI reduces training time significantly.",
-      },
-      {
-        title: "Security & Reliability",
-        content: "Octo Browser has maintained a **clean security track record** with no reported data breaches since its founding in 2020. Security features include:\n\n- **2FA Authentication** — two-factor login protection\n- **Profile Encryption** — all stored profiles are encrypted\n- **Built-in Proxy Marketplace** — purchase proxies directly in-app from verified providers\n- **Regular Updates** — frequent security patches and feature updates\n\nThe built-in proxy marketplace is convenient for users who want a streamlined proxy setup experience without integrating third-party services.",
-      },
-    ],
+  {
+    "title": "Built on Latest Chromium",
+    "content": "Octo Browser stands out by always being built on the **latest Chromium source code**. While many antidetect browsers lag behind on browser updates, Octo Browser consistently maintains compatibility with the newest web standards and security patches.\n\nThis is important because detection systems often check browser version numbers and behaviors. Using an outdated browser version can be a red flag, so staying current gives Octo Browser users an advantage in detection avoidance."
+  },
+  {
+    "title": "Real Device Fingerprints",
+    "content": "Like a few premium competitors, Octo Browser uses **real device fingerprints** collected from actual hardware. This approach produces more authentic browsing identities than randomly generated parameters.\n\nThe **auto fingerprint configuration** feature intelligently sets up all parameters to create a consistent and believable profile, reducing the manual setup time significantly."
+  },
+  {
+    "title": "Premium UI Experience",
+    "content": "Octo Browser is widely praised for having one of the **cleanest and most intuitive interfaces** in the antidetect browser market. The design philosophy prioritizes:\n\n- **Clean layout** — minimal clutter with logical organization\n- **Fast navigation** — quick access to frequently used features\n- **Quick profile launch** — optimized startup times\n- **Visual proxy status** — easy-to-read proxy health indicators\n\nFor teams that need to onboard new members quickly, the intuitive UI reduces training time significantly."
+  },
+  {
+    "title": "Security & Reliability",
+    "content": "Octo Browser has maintained a **clean security track record** with no reported data breaches since its founding in 2020. Security features include:\n\n- **2FA Authentication** — two-factor login protection\n- **Profile Encryption** — all stored profiles are encrypted\n- **Built-in Proxy Marketplace** — purchase proxies directly in-app from verified providers\n- **Regular Updates** — frequent security patches and feature updates\n\nThe built-in proxy marketplace is convenient for users who want a streamlined proxy setup experience without integrating third-party services."
+  }
+],
     testimonials: [
       { name: "Viktor S.", role: "Team Lead", text: "Octo Browser has the best UI of any antidetect browser I've tried. The clean interface and fast profile launching make our daily operations much smoother." },
       { name: "Anna P.", role: "Media Buyer", text: "The built-in proxy marketplace is super convenient. No more juggling between proxy providers and the browser — everything is in one place." },
       { name: "Marcus D.", role: "E-Commerce Manager", text: "We chose Octo Browser for the security. No data breaches and encrypted profiles give us peace of mind when managing hundreds of store accounts." },
     ],
     faqs: [
-      { question: "Does Octo Browser have a free plan?", answer: "No, Octo Browser does not offer a free plan or trial period. The Starter plan begins at €29/month for 10 profiles." },
-      { question: "Is Octo Browser always up-to-date?", answer: "Yes, Octo Browser is built on the latest Chromium source code and receives regular updates to stay current with the newest web standards and security patches." },
-      { question: "Does Octo Browser have a proxy marketplace?", answer: "Yes, Octo Browser includes a built-in proxy marketplace where you can purchase and configure proxies directly within the application from verified providers." },
-      { question: "What platforms does Octo Browser support?", answer: "Octo Browser supports Windows, macOS, and Linux. There is no mobile app or web-based version available." },
-      { question: "Is Octo Browser secure?", answer: "Yes, Octo Browser has maintained a clean security track record with no reported data breaches. It offers 2FA authentication and encrypted profile storage." },
-    ],
+  {
+    "question": "Does Octo Browser have a free plan?",
+    "answer": "Octo Browser Lite starts at 3 profiles. Starter/Base/Team/Advanced include 10/100/350/1200 base profiles; advertised expansion ceilings are not included quotas. API starts at Base. Team has 3 team seats and Advanced 8. Octium 155 was published on October 8, 2026. Monthly prices; annual equivalents: €7/21/56/119/231. Starter trial lasts 2 days, once per new user; no ongoing free plan."
+  },
+  {
+    "question": "Is Octo Browser always up-to-date?",
+    "answer": "Yes, Octo Browser is built on the latest Chromium source code and receives regular updates to stay current with the newest web standards and security patches."
+  },
+  {
+    "question": "Does Octo Browser have a proxy marketplace?",
+    "answer": "Yes, Octo Browser includes a built-in proxy marketplace where you can purchase and configure proxies directly within the application from verified providers."
+  },
+  {
+    "question": "What platforms does Octo Browser support?",
+    "answer": "Octo Browser supports Windows, macOS, and Linux. There is no mobile app or web-based version available."
+  },
+  {
+    "question": "Is Octo Browser secure?",
+    "answer": "Yes, Octo Browser has maintained a clean security track record with no reported data breaches. It offers 2FA authentication and encrypted profile storage."
+  }
+],
   },
   {
     id: "incogniton",
@@ -794,7 +742,7 @@ export const browsers: Browser[] = [
       "Incogniton is a versatile antidetect browser designed for digital marketers, e-commerce sellers, and affiliate professionals. It offers both Chromium and Firefox support, a built-in Selenium/Puppeteer integration for automation, and a generous free plan with up to 10 profiles. Known for its clean interface and strong fingerprint management.",
     logo: "/images/browsers/incogniton.svg",
     website: "https://incogniton.com",
-    affiliateUrl: "https://incogniton.com/?ref=antibrowserhub",
+    affiliateUrl: affiliateDestinations["incogniton"],
     rating: {
       overall: 4.2,
       fingerprint: 4.3,
@@ -891,7 +839,7 @@ export const browsers: Browser[] = [
       "Kameleo is a Budapest-based antidetect browser designed with developers and web scraping professionals in mind. It features two custom-built browser kernels, mobile browser emulation, Docker support for scalable operations, and a comprehensive API with SDK support for multiple programming languages.",
     logo: "/images/browsers/kameleo.svg",
     website: "https://kameleo.io",
-    affiliateUrl: "https://kameleo.io/?ref=antibrowserhub",
+    affiliateUrl: affiliateDestinations["kameleo"],
     rating: {
       overall: 4.3,
       fingerprint: 4.5,
@@ -995,7 +943,7 @@ export const browsers: Browser[] = [
       "VMLogin is a professional antidetect browser that replaces multiple computers or VPS with virtual browser profiles. It offers deep fingerprint customization, batch operations, and team collaboration features. Popular in Asian markets, VMLogin supports multiple payment methods and provides comprehensive fingerprint parameter control.",
     logo: "/images/browsers/vmlogin.svg",
     website: "https://www.vmlogin.us",
-    affiliateUrl: "https://www.vmlogin.us/?ref=antibrowserhub",
+    affiliateUrl: affiliateDestinations["vmlogin"],
     rating: {
       overall: 4.0,
       fingerprint: 4.3,
@@ -1092,7 +1040,7 @@ export const browsers: Browser[] = [
       "Undetectable is an antidetect browser that stands out with its unique pricing model — offering unlimited local browser profiles on all plans. It uses real device fingerprints from a constantly updated database and provides a cloud-based architecture for team collaboration. The platform is growing rapidly and offers competitive pricing.",
     logo: "/images/browsers/undetectable.svg",
     website: "https://undetectable.io",
-    affiliateUrl: "https://undetectable.io/?ref=antibrowserhub",
+    affiliateUrl: affiliateDestinations["undetectable"],
     rating: {
       overall: 4.1,
       fingerprint: 4.2,
@@ -1188,7 +1136,7 @@ export const browsers: Browser[] = [
       "Hidemyacc is an antidetect browser from Vietnam that has grown rapidly in Southeast Asian markets. It offers a built-in automation tool, cloud profile sync, and competitive pricing. The platform focuses on e-commerce and social media management use cases, with support for both Chromium and Firefox kernels.",
     logo: "/images/browsers/hidemyacc.svg",
     website: "https://hidemyacc.com",
-    affiliateUrl: "https://go.hidemyacc.com/antibrowserhub",
+    affiliateUrl: affiliateDestinations["hidemyacc"],
     rating: {
       overall: 3.9,
       fingerprint: 4.0,
@@ -1285,7 +1233,7 @@ export const browsers: Browser[] = [
       "Lalicat is an antidetect browser tailored for cross-border e-commerce sellers and digital marketers. It offers solid fingerprint protection, team collaboration, and an emphasis on security with encrypted data storage. Popular in Chinese-speaking markets, it provides competitive pricing and reliable multi-account management.",
     logo: "/images/browsers/lalicat.svg",
     website: "https://www.lalicat.com",
-    affiliateUrl: "https://www.lalicat.com/?ref=antibrowserhub",
+    affiliateUrl: affiliateDestinations["lalicat"],
     rating: {
       overall: 3.8,
       fingerprint: 4.0,
@@ -1377,7 +1325,7 @@ export const browsers: Browser[] = [
       "Marketer Browser is a newer antidetect browser designed specifically for digital marketers and social media managers. It combines antidetect fingerprint protection with built-in marketing tools, offering an all-in-one solution for multi-account management. The platform emphasizes ease of use and includes pre-built workflows for common marketing tasks.",
     logo: "/images/browsers/marketer-browser.svg",
     website: "https://marketerbrowser.com",
-    affiliateUrl: "https://marketerbrowser.com/?ref=antibrowserhub",
+    affiliateUrl: affiliateDestinations["marketer-browser"],
     rating: {
       overall: 3.7,
       fingerprint: 3.9,

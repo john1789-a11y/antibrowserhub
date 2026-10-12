@@ -346,7 +346,9 @@ Pixelscan 专注于检测不一致性：
 **症状**：Pixelscan 显示黄色或红色标记
 **解决**：检查所有参数的一致性——特别是 UA、操作系统、屏幕分辨率 and GPU 的匹配`,
 
-  "best-for-amazon": `## 为什么亚马逊卖家需要指纹浏览器？
+  "best-for-amazon": `> 官网价格核验于 2026-10-12
+
+## 为什么亚马逊卖家需要指纹浏览器？
 
 亚马逊在检测**多店铺关联**方面极其严格。他们结合浏览器指纹、IP 追踪、Cookie 和行为分析来识别关联账号。如果被发现操作多个店铺，亚马逊会永久封禁所有相关店铺。
 
@@ -354,10 +356,11 @@ Pixelscan 专注于检测不一致性：
 
 ## 我们的首选推荐
 
-### 1. MoreLogin — 最佳整体选择
-- 采用基于 ML（机器学习）的真实画布指纹，能通过亚马逊的高级检测。
-- 智能自动匹配时区、语言和地理位置。
-- 每月仅需 **$5.4** 起，性价比极高。
+### MoreLogin
+
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+
+[MoreLogin](https://www.morelogin.com/pricing)
 
 ### 2. AdsPower — 最适合自动化运营
 - 内置 RPA 自动化，适合批量更新 listing、管理库存等重复性任务。
@@ -374,20 +377,25 @@ Pixelscan 专注于检测不一致性：
 3. **保持参数一致**：配置文件的时区、语言和地理位置必须与代理 IP 完全匹配。
 4. **支付方式隔离**：使用不同的银行账户和信用卡，避免资金链关联。`,
 
-  "best-for-facebook-ads": `## 为什么 Facebook 广告投放需要指纹浏览器？
+  "best-for-facebook-ads": `> 官网价格核验于 2026-10-12
+
+## 为什么 Facebook 广告投放需要指纹浏览器？
 
 Facebook 的防关联机制非常强大。在同一个浏览器中运行多个广告账号，极易因 Cookie 污染、IP 交叉或指纹一致而被批量封号。
 
 ## 热门指纹浏览器推荐
 
-### 1. AdsPower — 最佳 Facebook 广告利器
-- 内置 **RPA 自动化构建器**，可自动养号、发帖和管理广告。
-- **Cookie 机器人**可自动收集 Cookie，加速账号权重积累。
-- 起步价仅 **$5.4/月**。
+### AdsPower
 
-### 2. Dolphin Anty — 最佳 Affiliate 营销浏览器
-- 提供 **10 个永久免费配置文件**，适合预算有限的个人投手。
-- 专为 Affiliate 营销设计，支持 Scenario 自动化和真实移动指纹。
+AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent；API 限速依套餐而定。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
+
+[AdsPower](https://www.adspower.com/pricing)
+
+### Dolphin Anty
+
+Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 3. MoreLogin — 适合成长型团队
 - 机器学习 Canvas 指纹，完美避开 Facebook 的检测。
@@ -401,7 +409,9 @@ Facebook 的防关联机制非常强大。在同一个浏览器中运行多个�
 - **第 15-21 天**：绑定支付方式，投小额互动广告 ($5-10/天)。
 - **第 22 天+**：逐步提高广告预算。`,
 
-  "best-free-antidetect-browser": `## 免费指纹浏览器真的有用吗？
+  "best-free-antidetect-browser": `> 官网价格核验于 2026-10-12
+
+## 免费指纹浏览器真的有用吗？
 
 是的！几款主流的指纹浏览器都提供了功能完整的免费套餐，非常适合测试、个人多账号管理或小规模运营。
 
@@ -409,35 +419,50 @@ Facebook 的防关联机制非常强大。在同一个浏览器中运行多个�
 
 | 浏览器 | 免费环境数 | 核心功能 | 限制 |
 |--------|------------|----------|------|
-| **Dolphin Anty** | 10 | 真实指纹、基础自动化 | 无 API，团队功能受限 |
+| **Dolphin Anty** | 5 | 真实指纹、基础自动化 | 无 API，团队功能受限 |
 | **Incogniton** | 10 | 浏览器同步、Selenium 集成 | 无高级指纹生成 |
 | **Undetectable** | 5 云端 + 无限本地 | 本地环境不限量！ | 云端仅限 5 个 |
-| **GoLogin** | 3 | 云端配置、Web 端访问 | 功能有限 |
-| **MoreLogin** | 2 | 解锁所有高级功能 (包括 API) | 仅限 2 个环境 |
+| **GoLogin** | 3 | 3 个浏览器环境 | 云端启动：50 环境起；API/SDK/MCP：100 环境起 |
+| **MoreLogin** | 2 | Chrome、Firefox、Local API、同步器 | 2 个环境 |
 | **AdsPower** | 2 | 核心指纹 spoofing、SunBrowser | 自动化功能受限 |
 
 ## 免费方案推荐
 
-- **需要最多的免费环境？** 选择 **Dolphin Anty** (10 个) 或 **Incogniton** (10 个)。
-- **需要在单台电脑上无限多开？** 选择 **Undetectable**（本地环境无限）。
-- **需要最顶级的指纹质量与 API 功能？** 选择 **MoreLogin**（功能全解锁）。`,
+### MoreLogin
 
-  "best-for-affiliate-marketing": `## 为什么联盟营销需要指纹浏览器？
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### Dolphin Anty
+
+Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
+
+  "best-for-affiliate-marketing": `> 官网价格核验于 2026-10-12
+
+## 为什么联盟营销需要指纹浏览器？
 
 联盟营销 (Affiliate Marketing) 需要操作多个广告平台和联盟项目账号。一旦发生关联封号，意味着前期的测品投入和佣金积蓄都会付诸东流。
 
 ## 核心推荐
 
-### 1. Dolphin Anty — 专为联盟客设计
-- 创始人本身就是联盟客，完美契合流量套利行业的需求。
-- **10 个免费环境**，提供真实的 iOS/Android 移动端指纹。
+### Dolphin Anty
+
+Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 2. AdsPower — 大规模团队的首选
 - 强大的 **RPA 自动养号和注册** 模板。
 - **多窗口同步器** 方便多账号批量操作。
 
-### 3. MoreLogin — 性价比极高
-- 机器学习防关联技术，**$5.4/月** 起，非常适合预算有限但追求高品质指纹的团队。
+### MoreLogin
+
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+
+[MoreLogin](https://www.morelogin.com/pricing)
 
 ## 联盟营销基本工作流
 
@@ -465,7 +490,9 @@ Facebook 的防关联机制非常强大。在同一个浏览器中运行多个�
 - 引擎底层的指纹修改（Mimic 和 Stealthfox），防封能力最强。
 - 支持无头（Headless）运行，非常稳定。`,
 
-  "best-for-tiktok": `## 为什么 TikTok 运营需要特殊工具？
+  "best-for-tiktok": `> 官网价格核验于 2026-10-12
+
+## 为什么 TikTok 运营需要特殊工具？
 
 TikTok 作为一个移动优先的平台，其风控系统极其严格。它会检测设备的移动指纹、GPS 定位、代理 IP 类型以及操作行为模式。
 
@@ -475,24 +502,29 @@ TikTok 作为一个移动优先的平台，其风控系统极其严格。它会�
 - 提供 TikTok 专用的 RPA 自动化模板，支持自动管理广告组与预算。
 - 支持多窗口同步操作。
 
-### 2. Dolphin Anty — 最适合 TikTok 创作者
-- 强大的 Android 和 iOS 移动指纹模拟，通过 TikTok 的移动风控。
-- 10 个免费配置文件，适合零成本开始矩阵起号。
+### Dolphin Anty
+
+Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 3. MoreLogin — 最佳 TikTok 店铺选择
 - 支持 **云手机 (Cloud Phone)** 整合，能直接在浏览器中操作真实的云端 Android 系统。
 - 画布指纹质量高，防关联效果好。`,
 
-  "best-for-crypto-airdrop": `## 为什么加密货币空投需要指纹浏览器？
+  "best-for-crypto-airdrop": `> 官网价格核验于 2026-10-12
+
+## 为什么加密货币空投需要指纹浏览器？
 
 在加密货币圈，薅空投（Airdrop Farming）是快速积累资本的手段。然而，项目方会采用 **Sybil（女巫）攻击检测** 来清洗多开地址。如果你的多个钱包在同一设备、同一 IP 下与合约交互，会被直接拉黑。
 
 ## 核心推荐
 
-### 1. MoreLogin — 薅空投神器
-- **窗口同步器**：可以在一个主窗口操作，其余几十个窗口同步跟随，极大提高刷单效率。
-- **扩展支持**：支持批量安装 MetaMask、Phantom 等主流插件。
-- 极低的价格 (**$5.4/月** 起) 适合空投工作室大规模部署。
+### MoreLogin
+
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+
+[MoreLogin](https://www.morelogin.com/pricing)
 
 ### 2. AdsPower — 标签与分组管理
 - 适合对数百个钱包进行分组和状态标记（如：已交互、待交互）。
@@ -505,25 +537,69 @@ TikTok 作为一个移动优先的平台，其风控系统极其严格。它会�
 3. **资金隔离**：避免从同一个交易所地址或中心化钱包往所有多开钱包打币，建议使用 Sub-accounts（子账户）或混币器进行资金分发。
 4. **行为随机**：错开交互时间，随机化交易金额，避免操作的逻辑一致。`,
 
-  "cheapest-antidetect-browser": `## 2026 热门指纹浏览器价格对比
+  "cheapest-antidetect-browser": `> 官网价格核验于 2026-10-12
+
+## 2026 热门指纹浏览器价格对比
 
 寻找最便宜的指纹浏览器取决于你需要多少个浏览器环境：
 
-| 浏览器 | 免费环境 | 10个环境 | 50个环境 | 100个环境 | 100环境单价 |
-|--------|----------|----------|----------|-----------|-------------|
-| **MoreLogin** | 2 | $5.4/月 | 自定义 | 自定义 | 约 $0.15-$0.3 |
-| **AdsPower** | 2 | $5.4/月 | 约 $20/月 | $30/月 | $0.30 |
-| **GoLogin** | 3 | $24/月 | $24/月 | $24/月 | $0.24 |
-| **Dolphin Anty** | 10 | $89/月 | $89/月 | $89/月 | $0.89 |
-| **Multilogin** | 0 | €99/月 | €99/月 | €99/月 | €0.99 |
+### MoreLogin
+
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### AdsPower
+
+AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent；API 限速依套餐而定。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
+
+[AdsPower](https://www.adspower.com/pricing)
+
+### GoLogin
+
+GoLogin 提供 3 个免费环境，付费从 10 个环境起。API、SDK 和 MCP 从 100 个环境套餐开放；云端浏览器启动及 Cookie 导入导出从 50 个环境起。低价套餐不包含所有自动化能力。 展示月付价格；年付折算从 $4.50/月起，按年付款。
+
+[GoLogin](https://gologin.com/pricing/)
+
+### Multilogin
+
+Multilogin 提供 5 个免费云端环境，一次性 200 MB 代理额度和 30 分钟移动端时长，免费版不含 API。Pro 10/20/50 的 API 限额分别为每分钟 50/75/100 次。Business 从 100 个环境起，含无限团队席位。浏览器与云手机资源有各自限额。 Pro 10 月付 $11，年付 $85（约 $7.08/月）。免费环境仅限云端，不含 API。
+
+[Multilogin](https://multilogin.com/pricing/)
+
+### Dolphin Anty
+
+Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 *注：以上为按月订阅价格，按年订阅通常能节省 20%-50%。*
 
 ## 性价比之王
 
-- **少于 10 个环境**：选择 **Dolphin Anty**（免费 10 个环境）。
-- **10-100 个环境**：选择 **MoreLogin** 或 **AdsPower**（10个环境仅需 $5.4/月，按需定制最划算）。
-- **100 个环境以上**：选择 **GoLogin** 或 **MoreLogin**（GoLogin 的 100 个环境套餐性价比非常高）。`,
+### MoreLogin
+
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### AdsPower
+
+AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent；API 限速依套餐而定。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
+
+[AdsPower](https://www.adspower.com/pricing)
+
+### GoLogin
+
+GoLogin 提供 3 个免费环境，付费从 10 个环境起。API、SDK 和 MCP 从 100 个环境套餐开放；云端浏览器启动及 Cookie 导入导出从 50 个环境起。低价套餐不包含所有自动化能力。 展示月付价格；年付折算从 $4.50/月起，按年付款。
+
+[GoLogin](https://gologin.com/pricing/)
+
+### Dolphin Anty
+
+Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 
   "avoid-amazon-suspension": `## 亚马逊如何检测卖家多账号？
 

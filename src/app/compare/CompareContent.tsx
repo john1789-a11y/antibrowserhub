@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { vendorUpdates } from "@/data/vendorUpdates";
 import { browsers } from "@/data/browsers";
 import { useI18n } from "@/components/I18nProvider";
 import BrowserLogo from "@/components/BrowserLogo";
@@ -41,7 +42,7 @@ const comparisonCategories = [
   },
   { titleKey: "💼 Features & Usability", titles: { en: "💼 Features & Usability", zh: "💼 功能与易用性", ru: "💼 Функции и удобство", ja: "💼 機能と使いやすさ", fr: "💼 Fonctionnalités", de: "💼 Funktionen & Nutzbarkeit" },
     rows: [
-      { label: { en: "Free Plan", zh: "免费计划", ru: "Бесплатный план", ja: "無料プラン", fr: "Plan gratuit", de: "Kostenloser Plan" }, values: ["✓ 2 profiles", "✓ 2 profiles", "✓ 3 profiles", "✗ None", "✓ 10 profiles", "✗ None", "✓ 10 profiles", "✓ 2 concurrent", "✗ 3-day trial", "✓ 5 cloud", "✓ 5 profiles", "✗ None", "✓ 3 profiles"] },
+      { label: { en: "Free Plan", zh: "免费计划", ru: "Бесплатный план", ja: "無料プラン", fr: "Plan gratuit", de: "Kostenloser Plan" }, values: ["—", "—", "—", "—", "—", "—", "✓ 10 profiles", "✓ 2 concurrent", "✗ 3-day trial", "✓ 5 cloud", "✓ 5 profiles", "✗ None", "✓ 3 profiles"] },
       { label: { en: "API Access", zh: "API 访问", ru: "Доступ к API", ja: "APIアクセス", fr: "Accès API", de: "API-Zugang" }, values: ["REST + Local API", "Local API", "REST API", "REST API", "Local API", "REST API", "REST API", "REST API + SDK", "REST API", "REST API", "REST API", "REST API", "REST API"] },
       { label: { en: "Team Collaboration", zh: "团队协作", ru: "Совместная работа", ja: "チーム協力", fr: "Collaboration", de: "Teamarbeit" }, values: ["✓ Advanced", "✓ Advanced", "✓ Profile sharing", "✓ Team mgmt", "✓ Profile transfer", "✓ Limited seats", "✓ Profile sharing", "✓ Team mgmt", "✓ Sub-accounts", "✓ Profile sharing", "✓ Basic", "✓ Sub-accounts", "✓ Basic"] },
       { label: { en: "Bulk Operations", zh: "批量操作", ru: "Массовые операции", ja: "一括操作", fr: "Opérations en masse", de: "Massenoperationen" }, values: ["✓ Create/Open/Delete", "✓ Extensive", "✓ Basic", "✓ Basic", "✓ Mass actions", "✗ Limited", "✓ Bulk create", "✓ Basic", "✓ Batch create", "✓ Basic", "✓ Mass actions", "✓ Batch ops", "✓ Basic"] },
@@ -51,10 +52,10 @@ const comparisonCategories = [
   },
   { titleKey: "💰 Pricing", titles: { en: "💰 Pricing (Monthly)", zh: "💰 价格（月付）", ru: "💰 Цены (ежемесячно)", ja: "💰 料金（月額）", fr: "💰 Tarifs (mensuels)", de: "💰 Preise (monatlich)" },
     rows: [
-      { label: { en: "Entry Plan", zh: "入门套餐", ru: "Начальный план", ja: "エントリープラン", fr: "Plan d'entrée", de: "Einstiegsplan" }, values: ["$5.4 / 10 profiles", "$5.4 / 10 profiles", "$24 / 100 profiles", "€99 / 100 profiles", "$89 / 100 profiles", "€29 / 10 profiles", "$29.99 / 50 profiles", "€45 / 10 concurrent", "$99 / 200 profiles", "$49 / 50 cloud", "$15 / 30 profiles", "$59 / 100 profiles", "$30 / 50 profiles"] },
-      { label: { en: "100 Profiles Plan", zh: "100 配置套餐", ru: "План на 100 профилей", ja: "100プロファイルプラン", fr: "Plan 100 profils", de: "100-Profile-Plan" }, values: ["~$40 / 150 profiles", "$30 / 100 profiles", "$24 / 100 profiles", "€99 / 100 profiles", "$89 / 100 profiles", "€79 / 100 profiles", "$79.99 / 150 profiles", "€299 / 100 concurrent", "$99 / 200 profiles", "$99 / 100 cloud", "$30 / 60 profiles", "$59 / 100 profiles", "$60 / 150 profiles"] },
-      { label: { en: "Team Plan", zh: "团队套餐", ru: "Командный план", ja: "チームプラン", fr: "Plan équipe", de: "Team-Plan" }, values: ["$80 / 400 profiles", "Contact", "$49 / 300 profiles", "€199 / 300 profiles", "$159 / 300 profiles", "€169 / 350 profiles", "$149.99 / 500 profiles", "€1499 / 1000+ concurrent", "$209 / 500 profiles", "Contact", "$80 / 200 profiles", "$199 / 500 profiles", "$120 / 500 profiles"] },
-      { label: { en: "Annual Discount", zh: "年付折扣", ru: "Годовая скидка", ja: "年間割引", fr: "Remise annuelle", de: "Jahresrabatt" }, values: ["✓ Up to 50%", "✓ Available", "✓ 50%", "✓ Available", "✓ Available", "✓ 10-30%", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available"] },
+      { label: { en: "Entry Plan", zh: "入门套餐", ru: "Начальный план", ja: "エントリープラン", fr: "Plan d'entrée", de: "Einstiegsplan" }, values: ["—", "—", "—", "—", "—", "—", "$29.99 / 50 profiles", "€45 / 10 concurrent", "$99 / 200 profiles", "$49 / 50 cloud", "$15 / 30 profiles", "$59 / 100 profiles", "$30 / 50 profiles"] },
+      { label: { en: "100 Profiles Plan", zh: "100 配置套餐", ru: "План на 100 профилей", ja: "100プロファイルプラン", fr: "Plan 100 profils", de: "100-Profile-Plan" }, values: ["—", "—", "—", "—", "—", "—", "$79.99 / 150 profiles", "€299 / 100 concurrent", "$99 / 200 profiles", "$99 / 100 cloud", "$30 / 60 profiles", "$59 / 100 profiles", "$60 / 150 profiles"] },
+      { label: { en: "Team Plan", zh: "团队套餐", ru: "Командный план", ja: "チームプラン", fr: "Plan équipe", de: "Team-Plan" }, values: ["—", "—", "—", "—", "—", "—", "$149.99 / 500 profiles", "€1499 / 1000+ concurrent", "$209 / 500 profiles", "Contact", "$80 / 200 profiles", "$199 / 500 profiles", "$120 / 500 profiles"] },
+      { label: { en: "Annual Discount", zh: "年付折扣", ru: "Годовая скидка", ja: "年間割引", fr: "Remise annuelle", de: "Jahresrabatt" }, values: ["—", "—", "—", "—", "—", "—", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available"] },
     ],
   },
   { titleKey: "🤖 Automation", titles: { en: "🤖 Automation Support", zh: "🤖 自动化支持", ru: "🤖 Автоматизация", ja: "🤖 自動化サポート", fr: "🤖 Automatisation", de: "🤖 Automatisierung" },
@@ -76,11 +77,26 @@ const verdicts = [
   { scenario: { en: "💻 Developers", zh: "💻 开发者", ru: "💻 Разработчики", ja: "💻 開発者", fr: "💻 Développeurs", de: "💻 Entwickler" }, recommended: "MoreLogin",
     reason: { en: "Comprehensive REST + Local API, Playwright/Selenium/Puppeteer support, and MCP integration.", zh: "完整的 REST + 本地 API，支持 Playwright/Selenium/Puppeteer 和 MCP 集成。", ru: "REST + Local API, поддержка Playwright/Selenium/Puppeteer и MCP.", ja: "REST + Local API、Playwright/Selenium/Puppeteer対応、MCP統合。", fr: "API REST + locale, support Playwright/Selenium/Puppeteer et MCP.", de: "REST + Local API, Playwright/Selenium/Puppeteer und MCP-Integration." }, browsers: ["MoreLogin", "GoLogin", "Multilogin"] },
   { scenario: { en: "🆓 Best Free Plan", zh: "🆓 最佳免费方案", ru: "🆓 Лучший бесплатный план", ja: "🆓 最高の無料プラン", fr: "🆓 Meilleur plan gratuit", de: "🆓 Bester kostenloser Plan" }, recommended: "Dolphin Anty",
-    reason: { en: "10 free profiles forever — the most generous free tier.", zh: "永久 10 个免费配置 — 最慷慨的免费方案。", ru: "10 бесплатных профилей навсегда — самый щедрый бесплатный план.", ja: "永久無料10プロファイル — 最も寛大な無料プラン。", fr: "10 profils gratuits à vie — le plan gratuit le plus généreux.", de: "10 kostenlose Profile für immer — der großzügigste kostenlose Plan." }, browsers: ["Dolphin Anty", "GoLogin", "MoreLogin"] },
+    reason: {"en": "5 free profiles, with up to 3 running simultaneously.", "zh": "5 个免费环境，最多同时运行 3 个。", "ru": "5 бесплатных профилей, до 3 одновременно.", "ja": "無料 5 プロファイル、同時実行は 3 まで。", "fr": "5 profils gratuits, dont 3 simultanés.", "de": "5 kostenlose Profile, bis zu 3 gleichzeitig."}, browsers: ["Dolphin Anty", "GoLogin", "MoreLogin"] },
 ];
 
 export default function CompareContent() {
   const { locale, t } = useI18n();
+  const officialPlans = { en: "See official plans", zh: "查看官方配置", ru: "См. официальные тарифы", ja: "公式プラン参照", fr: "Voir les forfaits officiels", de: "Offizielle Tarife ansehen" };
+  function currentValue(label: string, idx: number, fallback: string): string {
+    const browser = browsers[idx];
+    const update = vendorUpdates[browser.slug];
+    if (!update) return fallback;
+    if (label === "Free Plan") return update.freeProfiles ? `✓ ${update.freeProfiles} ${i(ui.profiles, locale)}` : "✗";
+    if (label === "Entry Plan") return `${update.startingPrice} / ${update.plans.find(p => p.price !== "$0")?.profiles} ${i(ui.profiles, locale)}`;
+    if (label === "100 Profiles Plan") return update.plans.find(p => p.profiles === "100")?.price || i(officialPlans, locale);
+    if (label === "Team Plan") return i(officialPlans, locale);
+    if (label === "Annual Discount") return update.billing[locale];
+    if (label === "API Access" && browser.slug === "gologin") return "100+";
+    if (label === "API Access" && browser.slug === "octobrowser") return "Base+";
+    if (label === "MCP Support" && browser.slug === "adspower") return "✓";
+    return fallback;
+  }
   const browserNames = browsers.map((b) => b.name);
 
   return (
@@ -128,9 +144,11 @@ export default function CompareContent() {
                   {category.rows.map((row) => (
                     <tr key={row.label.en}>
                       <td style={{ fontWeight: 500 }}>{i(row.label, locale)}</td>
-                      {row.values.map((val, idx) => (
+                      {row.values.map((original, idx) => {
+                        const val = currentValue(row.label.en, idx, original);
+                        return (
                         <td key={idx}>{val === "✓" ? <span className="check">✓</span> : val === "✗" ? <span className="cross">✗</span> : val.startsWith("✓") ? <span className="check">{val}</span> : val.startsWith("✗") ? <span className="cross">{val}</span> : val}</td>
-                      ))}
+                      ); })}
                     </tr>
                   ))}
                 </tbody>

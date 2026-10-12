@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllUseCaseSlugs, getUseCaseBySlug } from "@/data/useCases";
@@ -14,11 +15,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const uc = getUseCaseBySlug(slug);
   if (!uc) return {};
-  return {
+  return pageMetadata(`/best-for/${slug}`, {
     title: uc.title.en,
     description: uc.metaDescription.en,
     alternates: { canonical: `/best-for/${slug}` },
-  };
+  });
 }
 
 export default async function BestForPage({ params }: Props) {
@@ -44,12 +45,7 @@ export default async function BestForPage({ params }: Props) {
         "@type": "SoftwareApplication",
         name: b!.name,
         applicationCategory: "BrowserApplication",
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: b!.rating.overall,
-          bestRating: 5,
-          ratingCount: 100 + idx * 20,
-        },
+
       },
     })),
   };

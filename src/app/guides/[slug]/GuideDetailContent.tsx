@@ -1,4 +1,6 @@
 "use client";
+import GuideCommercialContent from "@/components/GuideCommercialContent";
+import { affiliateProductForUrl, getAffiliateDestination } from "@/lib/affiliate";
 import Link from "next/link";
 import { useI18n } from "@/components/I18nProvider";
 import { getPageTexts } from "@/i18n/pages";
@@ -89,7 +91,12 @@ function renderMarkdown(content: string) {
     if (!line.trim()) { html.push(""); continue; }
     const fmt = (s: string) =>
       s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, label: string, url: string) => {
+          const product = affiliateProductForUrl(url);
+          const destination = product ? getAffiliateDestination(product) : url;
+          const escaped = (destination || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+          return `<a href="${escaped}" target="_blank" rel="${product ? "sponsored " : ""}noopener noreferrer"${product ? ` data-affiliate-product="${product}"` : ""}>${label}</a>`;
+        })
         .replace(/`([^`]+)`/g, "<code>$1</code>");
     if (line.startsWith("## ")) { const t = line.slice(3); html.push(`<h2 id="${slugify(t)}">${fmt(t)}</h2>`); }
     else if (line.startsWith("### ")) { const t = line.slice(4); html.push(`<h3 id="${slugify(t)}">${fmt(t)}</h3>`); }
@@ -133,7 +140,7 @@ export default function GuideDetailContent({ guide }: { guide: GuideData }) {
       </section>
       <section className="section">
         <div className="container guide-layout">
-          <article className="guide-content" dangerouslySetInnerHTML={{ __html: renderMarkdown(content) }} />
+          <GuideCommercialContent html={renderMarkdown(content)} />
           <GuideTOC items={toc} />
         </div>
         <div className="container" style={{ maxWidth: 800 }}>

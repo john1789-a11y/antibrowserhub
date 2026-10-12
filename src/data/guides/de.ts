@@ -240,28 +240,32 @@ Ja! Mehrere renommierte Browser bieten kostenlose Pläne mit echtem Schutz. Dies
 
 | Browser | Kostenlose Profile | Wichtigste Funktionen | Einschränkungen |
 |---------|---------------------|----------------------|-----------------|
-| **Dolphin Anty** | 10 | Echte Fingerprints, Basis-Automatisierung | Keine API |
+| **Dolphin Anty** | 5 | Echte Fingerprints, Basis-Automatisierung | Keine API |
 | **Incogniton** | 10 | Synchronisierung, Selenium-Integration | Keine erweiterten Fingerprints |
 | **Undetectable** | 5 Cloud + ∞ Lokal | Unbegrenzte lokale Profile! | Cloud limitiert auf 5 |
-| **GoLogin** | 3 | Web-Zugriff, Cloud-Profile | Eingeschränkte Funktionen |
-| **MoreLogin** | 2 | Alle Features freigeschaltet (inkl. API) | Nur 2 Profile |
+| **GoLogin** | 3 | 3 Browserprofile | Cloud-Start: ab 50; API/SDK/MCP: ab 100 |
+| **MoreLogin** | 2 | Chrome, Firefox, Local API, Synchronisierung | 2 Profile |
 | **AdsPower** | 2 | Basis-Spoofing, SunBrowser | Eingeschränkte Automatisierung |
 
 ## Unsere Empfehlung
 
-- **Meiste kostenlose Profile**: **Dolphin Anty** (10) oder **Incogniton** (10).
+- **Meiste kostenlose Profile**: **Dolphin Anty** (5) oder **Incogniton** (10).
 - **Unbegrenzte lokale Profile**: **Undetectable** (lokal unbegrenzt).
-- **Beste Qualität und API-Zugriff**: **MoreLogin** (alle Features im kostenlosen Tarif freigeschaltet).`,
+- MoreLogin: 2 kostenlose Profile und Local API.`,
 
-  "best-for-affiliate-marketing": `## Warum benötigen Affiliate-Marketer Antidetect-Browser?
+  "best-for-affiliate-marketing": `> Offizielle Preise geprüft am 2026-10-12
+
+## Warum benötigen Affiliate-Marketer Antidetect-Browser?
 
 Affiliate-Marketing erfordert die Verwaltung vieler Konten bei Google, Facebook, TikTok und Affiliate-Netzwerken. Eine Sperre führt zum Verlust wertvoller Kampagnen und Einnahmen.
 
 ## Unsere Top-Empfehlungen
 
-### 1. Dolphin Anty — Von Affiliates für Affiliates entwickelt
-- Speziell für Traffic-Arbitrage und Affiliate-Marketing optimiert.
-- Szenario-Automatisierung, mobile Fingerprints und 10 kostenlose Profile.
+### Dolphin Anty
+
+Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 2. AdsPower — Bestes für Skalierung
 - RPA-Vorlagen für automatische Kontoregistrierung und -erwärmung.
@@ -293,7 +297,9 @@ Moderne Websites verwenden fortschrittliche Anti-Bot-Systeme (Cloudflare, CAPTCH
 - Fingerprint-Modifikationen direkt auf Engine-Ebene (Stealthfox / Mimic).
 - Sehr hohe Stabilität im Headless-Betrieb für Großprojekte.`,
 
-  "best-for-tiktok": `## Warum TikTok-Marketing spezielle Tools erfordert
+  "best-for-tiktok": `> Offizielle Preise geprüft am 2026-10-12
+
+## Warum TikTok-Marketing spezielle Tools erfordert
 
 TikTok ist eine mobile App und prüft daher gezielt Mobil-Fingerprints, GPS-Standorte, Gerätetypen und die Qualität der Proxy-IPs (Wohnsitz- oder Mobil-IPs bevorzugt).
 
@@ -302,9 +308,11 @@ TikTok ist eine mobile App und prüft daher gezielt Mobil-Fingerprints, GPS-Stan
 ### 1. AdsPower — Beste Anzeigen-Automatisierung
 - Spezielle RPA-Vorlagen für TikTok Ads-Erstellung und Budgetverwaltung.
 
-### 2. Dolphin Anty — Bestes für Creator-Netzwerke
-- Simulation echter Mobil-Fingerprints (Android/iOS) zur Umgehung von In-App-Checks.
-- 10 kostenlose Profile für den Start Ihres Netzwerks.
+### Dolphin Anty
+
+Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### 3. MoreLogin — TikTok Shop und Cloud-Phones
 - Echte virtuelle Android-Telefone (Cloud Phone) direkt im Browser steuern.
@@ -329,23 +337,67 @@ Für Airdrop Farming und DeFi-Interaktionen ist die Verwaltung vieler Wallets n�
 2. **Dedizierte Wohnsitz-Proxies**: Jede Wallet benötigt eine eigene IP-Adresse.
 3. **Transaktions-Trennung**: Senden Sie Gasgebühren nicht von einer einzigen Wallet an alle anderen. Verwenden Sie Sub-Accounts von Börsen (z. B. OKX).`,
 
-  "cheapest-antidetect-browser": `## Preisergleich der Antidetect-Browser (2026)
+  "cheapest-antidetect-browser": `> Offizielle Preise geprüft am 2026-10-12
+
+## Preisergleich der Antidetect-Browser (2026)
 
 Der günstigste Browser hängt von der Anzahl der benötigten Profile ab:
 
-| Browser | Kostenlos | 10 Profile | 50 Profile | 100 Profile | Preis/Profil (100) |
-|---------|-----------|------------|------------|-------------|--------------------|
-| **MoreLogin** | 2 | 5,4 $/mo | Custom | Custom | ~$0.15 - 0.30 |
-| **AdsPower** | 2 | 5,4 $/mo | ~$20/mo | $30/mo | $0.30 |
-| **GoLogin** | 3 | $24/mo | $24/mo | $24/mo | $0.24 |
-| **Dolphin Anty** | 10 | $89/mo | $89/mo | $89/mo | $0.89 |
-| **Multilogin** | 0 | €99/mo | €99/mo | €99/mo | €0.99 |
+### MoreLogin
+
+MoreLogin bietet 2 kostenlose Profile und 2 Nutzer. Pro beginnt bei 10 Profilen. Chrome, Firefox, Synchronisierung und Local API werden unterstützt. Cloud-Smartphone-APIs bieten Fernverbindungen und Geräteverwaltung; Ressourcen werden separat berechnet. 9 $ monatlich; bei Jahreszahlung umgerechnet 5,40 $/Monat. Cloud-Smartphones separat.
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### AdsPower
+
+AdsPower bietet 2 kostenlose Profile. Professional: 10, 20, 50 oder 100; Business für größere Konfigurationen. Automatisierung und AI Agent sind verfügbar. Im September kamen geplante Aufgaben, Schnellerstellung und parallele Agents hinzu. API-Limits hängen vom Tarif ab. USD, ohne zusätzliche Mitglieder; Abrechnung alle 30 Tage. Professional 10: 64,80 $/Jahr, umgerechnet 5,40 $/Monat.
+
+[AdsPower](https://www.adspower.com/pricing)
+
+### GoLogin
+
+GoLogin bietet 3 kostenlose Profile und bezahlte Tarife ab 10. API, SDK und MCP gibt es ab 100 Profilen; Cloud-Start und Cookie-Import/Export ab 50. Kleine Tarife enthalten nicht alle Funktionen. Monatspreise; bei Jahreszahlung ab umgerechnet 4,50 $/Monat.
+
+[GoLogin](https://gologin.com/pricing/)
+
+### Multilogin
+
+Multilogin bietet 5 kostenlose Cloud-Profile, einmalig 200 MB Proxy und 30 mobile Minuten, ohne API. Pro 10/20/50: 50/75/100 API-Anfragen pro Minute. Business ab 100 Profilen mit unbegrenzten Teamplätzen. Cloud-Smartphones haben eigene Limits. Pro 10: 11 $ monatlich oder 85 $ jährlich (ca. 7,08 $/Monat). Kostenlose Profile nur in der Cloud, ohne API.
+
+[Multilogin](https://multilogin.com/pricing/)
+
+### Dolphin Anty
+
+Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ## Preis-Leistungs-Sieger
 
-- **Unter 10 Profilen**: **Dolphin Anty** (10 kostenlose Profile).
-- **10 bis 100 Profile**: **MoreLogin** oder **AdsPower** (10 Profile für nur 5,4 $/Monat).
-- **Über 100 Profile**: **GoLogin** (Pauschalpreis von 24 $/Monat für 100 Profile ist unschlagbar).`,
+### MoreLogin
+
+MoreLogin bietet 2 kostenlose Profile und 2 Nutzer. Pro beginnt bei 10 Profilen. Chrome, Firefox, Synchronisierung und Local API werden unterstützt. Cloud-Smartphone-APIs bieten Fernverbindungen und Geräteverwaltung; Ressourcen werden separat berechnet. 9 $ monatlich; bei Jahreszahlung umgerechnet 5,40 $/Monat. Cloud-Smartphones separat.
+
+[MoreLogin](https://www.morelogin.com/pricing)
+
+### AdsPower
+
+AdsPower bietet 2 kostenlose Profile. Professional: 10, 20, 50 oder 100; Business für größere Konfigurationen. Automatisierung und AI Agent sind verfügbar. Im September kamen geplante Aufgaben, Schnellerstellung und parallele Agents hinzu. API-Limits hängen vom Tarif ab. USD, ohne zusätzliche Mitglieder; Abrechnung alle 30 Tage. Professional 10: 64,80 $/Jahr, umgerechnet 5,40 $/Monat.
+
+[AdsPower](https://www.adspower.com/pricing)
+
+### GoLogin
+
+GoLogin bietet 3 kostenlose Profile und bezahlte Tarife ab 10. API, SDK und MCP gibt es ab 100 Profilen; Cloud-Start und Cookie-Import/Export ab 50. Kleine Tarife enthalten nicht alle Funktionen. Monatspreise; bei Jahreszahlung ab umgerechnet 4,50 $/Monat.
+
+[GoLogin](https://gologin.com/pricing/)
+
+### Dolphin Anty
+
+Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+
+[Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 
   "avoid-amazon-suspension": `## Wie erkennt Amazon verknüpfte Konten?
 

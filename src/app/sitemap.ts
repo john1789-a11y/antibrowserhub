@@ -1,3 +1,6 @@
+import { reviewUpdatedAt } from "@/data/vendorUpdates";
+import { updatedGuides, CONTENT_UPDATE_DATE } from "@/data/contentUpdates";
+import { getComparisonBySlug } from "@/data/comparisons";
 import { MetadataRoute } from "next";
 import { getAllBrowserSlugs } from "@/data/browsers";
 import { getAllComparisonSlugs } from "@/data/comparisons";
@@ -12,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const browserSlugs = getAllBrowserSlugs();
   const browserPages = browserSlugs.map((slug) => ({
     url: `${baseUrl}/reviews/${slug}`,
-    lastModified: lastUpdated,
+    lastModified: new Date(reviewUpdatedAt(slug)),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -20,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const comparisonSlugs = getAllComparisonSlugs();
   const comparisonPages = comparisonSlugs.map((slug) => ({
     url: `${baseUrl}/compare/${slug}`,
-    lastModified: lastUpdated,
+    lastModified: new Date([reviewUpdatedAt(getComparisonBySlug(slug)!.browserA.slug), reviewUpdatedAt(getComparisonBySlug(slug)!.browserB.slug)].sort().at(-1)!),
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -28,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const guideSlugs = getAllGuideSlugs();
   const guidePages = guideSlugs.map((slug) => ({
     url: `${baseUrl}/guides/${slug}`,
-    lastModified: lastUpdated,
+    lastModified: updatedGuides.includes(slug) ? new Date(CONTENT_UPDATE_DATE) : lastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -36,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const useCaseSlugs = getAllUseCaseSlugs();
   const useCasePages = useCaseSlugs.map((slug) => ({
     url: `${baseUrl}/best-for/${slug}`,
-    lastModified: lastUpdated,
+    lastModified: new Date(CONTENT_UPDATE_DATE),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -44,25 +47,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "daily",
       priority: 1,
     },
     {
       url: `${baseUrl}/reviews`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/compare`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/guides`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -92,19 +95,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/deals`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "monthly",
       priority: 0.7,
     },
@@ -122,13 +125,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/best-for`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: lastUpdated,
+      lastModified: new Date(CONTENT_UPDATE_DATE),
       changeFrequency: "monthly",
       priority: 0.3,
     },

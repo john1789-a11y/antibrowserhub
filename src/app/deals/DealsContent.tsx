@@ -1,4 +1,6 @@
 "use client";
+import { vendorUpdates } from "@/data/vendorUpdates";
+import AffiliateLink from "@/components/AffiliateLink";
 import Link from "next/link";
 import { useI18n } from "@/components/I18nProvider";
 import BrowserLogo from "@/components/BrowserLogo";
@@ -13,7 +15,6 @@ interface Deal {
   description: string;
   code?: string;
   discount: string;
-  affiliateUrl: string;
   expiry: string;
   verified: boolean;
 }
@@ -27,21 +28,19 @@ const deals: Deal[] = [
     title: "Free Plan — 2 Profiles Forever",
     description: "Get started with MoreLogin's free plan including 2 browser profiles, ML Canvas fingerprinting, and full API access.",
     discount: "FREE",
-    affiliateUrl: "https://www.morelogin.com/?ref=antibrowserhub",
     expiry: "No expiry",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "MoreLogin",
     browserSlug: "morelogin",
     color: "#6366f1",
     dealType: "discount",
-    title: "Annual Plan — Up to 50% Off",
-    description: "Save up to 50% when you choose an annual subscription on any MoreLogin plan.",
-    discount: "50% OFF",
-    affiliateUrl: "https://www.morelogin.com/?ref=antibrowserhub",
+    title: "Annual Plan — 40% Annual Discount",
+    description: "Save 40% when you choose an annual subscription on any MoreLogin plan.",
+    discount: "40% OFF",
     expiry: "Ongoing",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "AdsPower",
@@ -51,9 +50,8 @@ const deals: Deal[] = [
     title: "Free Plan — 2 Profiles",
     description: "AdsPower offers 2 free browser profiles with built-in RPA automation tools.",
     discount: "FREE",
-    affiliateUrl: "https://www.adspower.com/?ref=antibrowserhub",
     expiry: "No expiry",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "GoLogin",
@@ -63,9 +61,8 @@ const deals: Deal[] = [
     title: "Free Plan — 3 Profiles",
     description: "GoLogin provides 3 free cloud-based browser profiles with web access.",
     discount: "FREE",
-    affiliateUrl: "https://gologin.com/?ref=antibrowserhub",
     expiry: "No expiry",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "GoLogin",
@@ -75,9 +72,8 @@ const deals: Deal[] = [
     title: "Annual Plan — 50% Off",
     description: "Get 50% off any GoLogin plan when you pay annually. Best deal in the market.",
     discount: "50% OFF",
-    affiliateUrl: "https://gologin.com/?ref=antibrowserhub",
     expiry: "Ongoing",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "Dolphin Anty",
@@ -85,11 +81,10 @@ const deals: Deal[] = [
     color: "#f59e0b",
     dealType: "free",
     title: "Forever Free — 10 Profiles",
-    description: "The most generous free plan in the market — 10 browser profiles forever with Cookie Robot.",
+    description: "The most generous free plan in the market — 5 browser profiles forever with Cookie Robot.",
     discount: "10 FREE",
-    affiliateUrl: "https://dolphin-anty.com/?ref=antibrowserhub",
     expiry: "No expiry",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "Incogniton",
@@ -99,9 +94,8 @@ const deals: Deal[] = [
     title: "Free Starter — 10 Profiles",
     description: "Incogniton offers 10 free profiles with Selenium integration and basic fingerprint management.",
     discount: "10 FREE",
-    affiliateUrl: "https://incogniton.com/?ref=antibrowserhub",
     expiry: "No expiry",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "Hidemyacc",
@@ -111,9 +105,8 @@ const deals: Deal[] = [
     title: "Starting at Just $15/mo",
     description: "The most affordable antidetect browser starting at only $15/month for 30 profiles with automation.",
     discount: "$15/mo",
-    affiliateUrl: "https://go.hidemyacc.com/antibrowserhub",
     expiry: "Ongoing",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "Undetectable",
@@ -123,9 +116,8 @@ const deals: Deal[] = [
     title: "Free Plan + Unlimited Local Profiles",
     description: "5 free cloud profiles plus unlimited local profiles on all plans — including free.",
     discount: "UNLIMITED",
-    affiliateUrl: "https://undetectable.io/?ref=antibrowserhub",
     expiry: "No expiry",
-    verified: true,
+    verified: false,
   },
   {
     browserName: "Kameleo",
@@ -135,14 +127,13 @@ const deals: Deal[] = [
     title: "Free Plan — 2 Concurrent Browsers",
     description: "Get started with mobile emulation and Docker support. 2 concurrent browsers with 300 minutes.",
     discount: "FREE",
-    affiliateUrl: "https://kameleo.io/?ref=antibrowserhub",
     expiry: "No expiry",
-    verified: true,
+    verified: false,
   },
 ];
 
 export default function DealsContent() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <>
@@ -188,11 +179,11 @@ export default function DealsContent() {
                         fontSize: "0.75rem", fontWeight: 700,
                       }}
                     >
-                      {deal.discount}
+                      {vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? String(vendorUpdates[deal.browserSlug].freeProfiles) : vendorUpdates[deal.browserSlug].startingPrice) : deal.discount}
                     </span>
                   </div>
-                  <h3 className="feature-title" style={{ fontSize: "0.95rem", marginBottom: 8 }}>{deal.title}</h3>
-                  <p className="feature-desc" style={{ fontSize: "0.82rem", marginBottom: 12 }}>{deal.description}</p>
+                  <h3 className="feature-title" style={{ fontSize: "0.95rem", marginBottom: 8 }}>{vendorUpdates[deal.browserSlug] ? deal.browserName : deal.title}</h3>
+                  <p className="feature-desc" style={{ fontSize: "0.82rem", marginBottom: 12 }}>{vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? vendorUpdates[deal.browserSlug].summary[locale] : vendorUpdates[deal.browserSlug].billing[locale]) : deal.description}</p>
                   {deal.code && (
                     <div style={{
                       padding: "8px 16px", borderRadius: 8,
@@ -204,9 +195,9 @@ export default function DealsContent() {
                     </div>
                   )}
                   <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                    <a href={deal.affiliateUrl} target="_blank" rel="noopener noreferrer" className="card-cta" style={{ fontSize: "0.78rem" }}>
+                    <AffiliateLink product={deal.browserSlug} placement="deal" className="card-cta" style={{ fontSize: "0.78rem" }}>
                       {t.deals.getDeal}
-                    </a>
+                    </AffiliateLink>
                     <Link href={`/reviews/${deal.browserSlug}`} style={{ fontSize: "0.78rem", color: "var(--text-muted)" }}>
                       {t.deals.readReview}
                     </Link>
@@ -244,11 +235,11 @@ export default function DealsContent() {
                         fontSize: "0.75rem", fontWeight: 700,
                       }}
                     >
-                      {deal.discount}
+                      {vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? String(vendorUpdates[deal.browserSlug].freeProfiles) : vendorUpdates[deal.browserSlug].startingPrice) : deal.discount}
                     </span>
                   </div>
-                  <h3 className="feature-title" style={{ fontSize: "0.95rem", marginBottom: 8 }}>{deal.title}</h3>
-                  <p className="feature-desc" style={{ fontSize: "0.82rem", marginBottom: 12 }}>{deal.description}</p>
+                  <h3 className="feature-title" style={{ fontSize: "0.95rem", marginBottom: 8 }}>{vendorUpdates[deal.browserSlug] ? deal.browserName : deal.title}</h3>
+                  <p className="feature-desc" style={{ fontSize: "0.82rem", marginBottom: 12 }}>{vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? vendorUpdates[deal.browserSlug].summary[locale] : vendorUpdates[deal.browserSlug].billing[locale]) : deal.description}</p>
                   {deal.code && (
                     <div style={{
                       padding: "8px 16px", borderRadius: 8,
@@ -260,11 +251,11 @@ export default function DealsContent() {
                     </div>
                   )}
                   <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                    <a href={deal.affiliateUrl} target="_blank" rel="noopener noreferrer" className="card-cta" style={{ fontSize: "0.78rem" }}>
+                    <AffiliateLink product={deal.browserSlug} placement="deal" className="card-cta" style={{ fontSize: "0.78rem" }}>
                       {t.deals.getDeal}
-                    </a>
+                    </AffiliateLink>
                     <span style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}>
-                      {t.deals.expires}: {deal.expiry}
+                      {t.deals.expires}: {vendorUpdates[deal.browserSlug]?.verifiedAt || deal.expiry}
                     </span>
                   </div>
                 </div>

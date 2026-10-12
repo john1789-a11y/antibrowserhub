@@ -1,4 +1,5 @@
 "use client";
+import { reviewUpdatedAt } from "@/data/vendorUpdates";
 import BrowserLogo from "@/components/BrowserLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useI18n } from "@/components/I18nProvider";
@@ -7,7 +8,7 @@ import type { Browser } from "@/types";
 const ui: Record<string, Record<string, string>> = {
   reviewSuffix: { en: "Review 2026", zh: "评测 2026", ru: "Обзор 2026", ja: "レビュー 2026", fr: "Avis 2026", de: "Bewertung 2026" },
   from: { en: "From", zh: "起步价", ru: "От", ja: "から", fr: "À partir de", de: "Ab" },
-  updated: { en: "Updated June 2026", zh: "更新于 2026年6月", ru: "Обновлено: июнь 2026", ja: "2026年6月更新", fr: "Mis à jour juin 2026", de: "Aktualisiert Juni 2026" },
+  updated: { en: "Updated", zh: "更新于", ru: "Обновлено", ja: "更新日", fr: "Mis à jour", de: "Aktualisiert" },
   freePlan: { en: "Free Plan Available", zh: "有免费计划", ru: "Бесплатный план", ja: "無料プランあり", fr: "Plan gratuit", de: "Kostenloser Plan" },
   reviews: { en: "Reviews", zh: "评测", ru: "Обзоры", ja: "レビュー", fr: "Avis", de: "Bewertungen" },
 };
@@ -35,7 +36,7 @@ export default function ReviewHero({ browser }: ReviewHeroProps) {
             <div className="review-meta">
               <span>⭐ {browser.rating.overall}/5</span>
               <span>💰 {i(ui.from)} {browser.pricing.startingPrice}</span>
-              <span>📅 {i(ui.updated)}</span>
+              <span>📅 {`${i(ui.updated)} ${new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeZone: "UTC" }).format(new Date(reviewUpdatedAt(browser.slug)))}`}</span>
               {browser.pricing.free && <span>🆓 {i(ui.freePlan)}</span>}
             </div>
           </div>

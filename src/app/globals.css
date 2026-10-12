@@ -2330,3 +2330,11 @@ img { max-width: 100%; height: auto; }
   .tool-result-item { flex-direction: column; align-items: flex-start; gap: 4px; }
   .tool-result-value { text-align: left; }
 }
+
+/* ===== VENDOR OFFICIAL UPDATES ===== */
+.vendor-update { margin: 20px 0; padding: 20px; border: 1px solid var(--border-primary); border-radius: var(--radius-md); background: var(--bg-card); }
+.vendor-update h3 { font-size: 1rem; margin-bottom: 12px; color: var(--text-primary); }
+.vendor-update p { margin: 10px 0; color: var(--text-secondary); line-height: 1.7; }
+.vendor-update a { color: var(--color-indigo); }
+.vendor-update .vendor-update-scope { font-size: .8rem; color: var(--text-muted); }
+@media (max-width: 768px) { .vendor-update { padding: 16px; } }

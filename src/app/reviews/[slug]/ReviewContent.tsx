@@ -1,8 +1,11 @@
 "use client";
+import AffiliateLink from "@/components/AffiliateLink";
+import VendorUpdateNote from "@/components/VendorUpdateNote";
 import Link from "next/link";
 import { Browser } from "@/types";
 import { browsers } from "@/data/browsers";
 import { useI18n } from "@/components/I18nProvider";
+import { vendorUpdates } from "@/data/vendorUpdates";
 import BrowserLogo from "@/components/BrowserLogo";
 import ReviewTOC from "./ReviewTOC";
 
@@ -29,7 +32,7 @@ const ui: Record<string, Record<string, string>> = {
   automation: { en: "Automation", zh: "自动化", ru: "Автоматизация", ja: "自動化", fr: "Automatisation", de: "Automatisierung" },
   founded: { en: "Founded", zh: "成立", ru: "Год основания", ja: "設立年", fr: "Fondé en", de: "Gegründet" },
   tryFree: { en: "Try {name} Free →", zh: "免费试用 {name} →", ru: "Попробовать {name} бесплатно →", ja: "{name} を無料で試す →", fr: "Essayer {name} gratuitement →", de: "{name} kostenlos testen →" },
-  updated: { en: "Updated June 2026", zh: "更新于 2026年6月", ru: "Обновлено: июнь 2026", ja: "2026年6月更新", fr: "Mis à jour juin 2026", de: "Aktualisiert Juni 2026" },
+  updated: { en: "Updated", zh: "更新于", ru: "Обновлено", ja: "更新日", fr: "Mis à jour", de: "Aktualisiert" },
   from: { en: "From", zh: "起步", ru: "От", ja: "から", fr: "À partir de", de: "Ab" },
   freeAvailable: { en: "Free Plan Available", zh: "有免费计划", ru: "Бесплатный план", ja: "無料プランあり", fr: "Plan gratuit", de: "Kostenloser Plan" },
   yes: { en: "Yes", zh: "是", ru: "Да", ja: "はい", fr: "Oui", de: "Ja" },
@@ -63,6 +66,7 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
     { label: i(ui.support), value: browser.rating.support },
   ];
 
+  const update = vendorUpdates[browser.slug];
   const otherBrowsers = browsers.filter((b) => b.id !== browser.id).slice(0, 3);
 
   const tocSections = [
@@ -82,10 +86,11 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
       <div className="container">
         <div className="review-content-grid">
           <div className="review-main">
+            <VendorUpdateNote slug={browser.slug} />
             {/* Overview */}
             <h2 id="overview">{i(ui.overview)}</h2>
             <p style={{ color: "var(--text-secondary)", marginBottom: 32, lineHeight: 1.8 }}>
-              {browser.description}
+              {update ? update.summary[locale] : browser.description}
             </p>
 
             {/* Detailed Ratings */}
@@ -109,7 +114,7 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
               <div className="pros-list">
                 <h3>{i(ui.pros)}</h3>
                 <ul>
-                  {browser.pros.map((p) => (<li key={p}>👍 {p}</li>))}
+                  {browser.pros.map((p) => (<li key={p}>👍 {update && p === "Monthly entry-level pricing starts at $9" ? update.billing[locale] : update && p === "Free plan includes 2 profiles and Local API" ? update.summary[locale] : p}</li>))}
                 </ul>
               </div>
               <div className="cons-list">
@@ -128,7 +133,7 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
                   <div key={section.title} className="review-section">
                     <h3>{section.title}</h3>
                     <div className="review-section-content">
-                      {section.content.split("\n\n").map((paragraph, idx) => (
+                      {(update && section.content === update.summary.en + " " + update.billing.en ? `${update.summary[locale]} ${update.billing[locale]}` : section.content).split("\n\n").map((paragraph, idx) => (
                         <p key={idx} dangerouslySetInnerHTML={{
                           __html: paragraph
                             .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -175,7 +180,7 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
                 <div key={plan.name} className="pricing-card">
                   <h3>{plan.name}</h3>
                   <div className="pricing-card-price">{plan.price}</div>
-                  <div className="pricing-card-profiles">{plan.profiles}</div>
+                  <div className="pricing-card-profiles">{plan.profiles}{update ? ` ${i(ui.profiles)}` : ""}</div>
                   <ul>
                     {plan.features.map((f) => (<li key={f}>{f}</li>))}
                   </ul>
@@ -214,7 +219,7 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
                   {browser.faqs.map((faq) => (
                     <details key={faq.question} className="faq-item">
                       <summary className="faq-question">{faq.question}</summary>
-                      <div className="faq-answer">{faq.answer}</div>
+                      <div className="faq-answer">{update && (faq.answer === update.summary.en + " " + update.billing.en) ? `${update.summary[locale]} ${update.billing[locale]}` : faq.answer}</div>
                     </details>
                   ))}
                 </div>
@@ -274,9 +279,9 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
                 <span className="sidebar-item-label">{i(ui.founded)}</span>
                 <span className="sidebar-item-value">{browser.foundedYear}</span>
               </div>
-              <a href={browser.affiliateUrl} target="_blank" rel="noopener noreferrer" className="sidebar-cta">
+              <AffiliateLink product={browser.slug} placement="review-sidebar" className="sidebar-cta">
                 {i(ui.tryFree).replace("{name}", browser.name)}
-              </a>
+              </AffiliateLink>
             </div>
 
             {/* Table of Contents */}

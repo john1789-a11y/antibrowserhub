@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import UmamiAnalytics from "@/components/UmamiAnalytics";
 import AttributionCapture from "@/components/AttributionCapture";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -83,6 +84,7 @@ export default function RootLayout({
             <Footer />
           </I18nProvider>
         </ThemeProvider>
+        <UmamiAnalytics />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -25,17 +25,19 @@ This round does not introduce language URLs or hreflang. English remains the ser
 
 ## Referral tracking and attribution
 
+Updated on 2026-10-13: custom recommendation events now use optional Umami Cloud Hobby, not Vercel custom events. See [Umami setup and acceptance](./umami-analytics.md). Vercel basic traffic analytics remains.
+
 Existing referral addresses are retained in `src/data/affiliateDestinations.ts`; no account IDs, destination parameters or merchant sub-ID formats were invented. Shared `AffiliateLink` covers review sidebar, comparison CTAs, best-for, deals and proxy CTAs. Guide root marketing/referral links use the same destinations and event fields; official pricing, support and documentation citations retain their source destinations. Browser cards currently link internally to reviews and are not counted as merchant clicks.
 
 `affiliate_click` sends only product, placement, locale, a known site pathname, first landing pathname, approved source category and approved campaign category. Source allowlist: google, bing, newsletter, youtube, telegram, reddit, direct. Campaign allowlist: launch, pricing-update, browser-comparison, newsletter. Unknown source becomes `other`; absent source becomes `unattributed`, which does not imply direct traffic. The added custom event properties do not contain full URLs, query strings, referrers or emails. Vercel also collects standard page URL and referrer metadata according to its privacy documentation. First landing/category labels use sessionStorage for the current browser-tab session; restricted storage and analytics errors do not block navigation. This is session-level on-site attribution, not a cross-device user or merchant purchase attribution system.
 
 Primary/keyboard clicks and middle-button activation are handled without canceling navigation. Right-button and duplicate primary/aux event types are excluded. Referral anchors have `sponsored noopener noreferrer`.
 
-[Vercel custom events](https://vercel.com/docs/analytics/custom-events) require an eligible Pro/Enterprise Web Analytics plan. Confirm the account/project plan before claiming events are collected. Local code checks do not verify production event delivery or commissions.
+Umami requires a real website ID in the production build environment. No ID is included; do not claim event collection is active before production verification. The setup document describes the free quota and event-property usage.
 
 ## Account verification still required
 
-1. Check Vercel project Web Analytics plan and enable custom-event access where needed; after deployment, verify `affiliate_click` fields and one-event-per-activation behavior in the dashboard.
+1. Configure the real Umami Hobby website ID; after deployment, verify `affiliate_click` fields and one-event-per-activation behavior under Events → Properties. No Vercel plan upgrade is required.
 2. In each vendor's affiliate dashboard, verify ownership and current validity of the retained referral links, cookie windows, attribution rules and payout conditions. Compare test referrals with dashboard records using the vendor-supported method.
 3. Add merchant sub-ID/campaign parameters only after the vendor documents support them; none have been appended in this round.
 4. Connect Search Console and compare index/canonical inspection and search performance after deployment. No Search Console credentials, merchant credentials or secrets are required in source control.

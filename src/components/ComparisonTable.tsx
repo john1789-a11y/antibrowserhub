@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { vendorUpdates } from "@/data/vendorUpdates";
 import { browsers } from "@/data/browsers";
 import { useI18n } from "./I18nProvider";
 
@@ -45,7 +46,7 @@ export default function ComparisonTable() {
           <tr>
             <td>{l("freePlan")}</td>
             {visibleBrowsers.map((b) => (
-              <td key={b.id}>{b.pricing.free ? <span className="check">✓ {b.pricing.freeProfiles} {l("profiles")}</span> : <span className="cross">✗</span>}</td>
+              <td key={b.id}>{b.pricing.free ? <span className="check">✓ {vendorUpdates[b.slug]?.freeProfilesLabel?.[locale] ?? `${b.pricing.freeProfiles} ${l("profiles")}`}</span> : <span>{vendorUpdates[b.slug]?.freeProfilesLabel?.[locale] ?? "✗"}</span>}</td>
             ))}
           </tr>
           <tr>

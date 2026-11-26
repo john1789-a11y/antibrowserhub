@@ -192,7 +192,7 @@ Un navigateur anti-détection crée des **environnements totalement isolés** po
 
 ### MoreLogin
 
-MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. Browser RPA nécessite un profil Chromium local et le client de bureau v2.73.0 ou ultérieur. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -249,9 +249,9 @@ Oui ! La plupart des navigateurs réputés proposent des forfaits gratuits avec 
 | Navigateur | Profils gratuits | Fonctionnalités clés | Limitations |
 |------------|------------------|----------------------|-------------|
 | **Dolphin Anty** | 3 | Empreintes réelles, automatisation | Pas d'API |
-| **Incogniton** | 10 | Synchronisation, intégration Selenium | Pas de fonctions avancées |
-| **Undetectable** | 5 cloud + ∞ locaux | Profils locaux **illimités** ! | Limité à 5 sur le cloud |
-| **GoLogin** | 3 | 3 profils de navigateur | Lancement cloud : dès 50 ; API/SDK/MCP : dès 100 |
+| **Incogniton** | 10 profils les deux premiers mois, puis 3 | Proxys intégrés gratuits | Selenium/Puppeteer et API REST à partir d’Entrepreneur |
+| **Undetectable** | 5 profils cloud | 10 configurations | 50 créations par mois, profils locaux dès Base |
+| **GoLogin** | 3 | 3 profils de navigateur | 25 créations par mois civil |
 | **MoreLogin** | 2 | Chrome, Firefox, Local API, synchronisation | 2 profils |
 | **AdsPower** | 2 | Spoofing de base, SunBrowser | Automatisation limitée |
 
@@ -259,7 +259,7 @@ Oui ! La plupart des navigateurs réputés proposent des forfaits gratuits avec 
 
 ### MoreLogin
 
-MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. Browser RPA nécessite un profil Chromium local et le client de bureau v2.73.0 ou ultérieur. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -289,7 +289,7 @@ Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistré
 
 ### MoreLogin
 
-MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. Browser RPA nécessite un profil Chromium local et le client de bureau v2.73.0 ou ultérieur. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -363,25 +363,25 @@ Le choix de l'option la moins chère dépend du nombre de profils requis :
 
 ### MoreLogin
 
-MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. Browser RPA nécessite un profil Chromium local et le client de bureau v2.73.0 ou ultérieur. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offre 2 profils gratuits. Professional : 10, 20, 50 ou 100 ; Business pour davantage. Automatisation et AI Agent sont disponibles. Les notes de septembre ajoutent planification, création rapide et agents parallèles. Les limites API dépendent du forfait. USD, sans membres supplémentaires ; facturation tous les 30 jours. Professional 10 : 64,80 $/an, soit 5,40 $/mois.
+AdsPower offre 2 profils gratuits. Professional : 10, 20, 50 ou 100 ; Business pour davantage. Automatisation et AI Agent sont disponibles. Les notes de septembre ajoutent planification, création rapide et agents parallèles. Le forfait gratuit exclut l’API locale et comprend zéro crédit AI Agent. L’API locale autorise 120 requêtes par minute avec Professional, 300 avec Business et 600 avec Enterprise. USD, sans membres supplémentaires ; facturation tous les 30 jours. Professional 10 : 64,80 $/an, soit 5,40 $/mois.
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offre 3 profils gratuits et des forfaits payants dès 10. API, SDK et MCP commencent à 100 profils ; lancement cloud et import/export de cookies à 50. Les petits forfaits ne comprennent pas toutes les fonctions. Prix mensuels ; paiement annuel à partir de 4,50 $/mois équivalent.
+GoLogin Free permet de conserver 3 profils et d’en créer 25 par mois civil. Le lancement dans le cloud et l’API REST nécessitent un abonnement payant. Professional démarre à 10 profils et inclut une session cloud simultanée et 300 requêtes API par minute. Prix mensuels ; paiement annuel à partir de 4,50 $/mois équivalent.
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin : 5 profils cloud gratuits, 200 Mo de proxy et 30 minutes mobiles offerts une fois, sans API. Pro 10/20/50 : 50/75/100 requêtes API par minute. Business commence à 100 profils avec sièges illimités. Les limites des téléphones cloud sont distinctes. Pro 10 : 11 $/mois ou 85 $/an (environ 7,08 $/mois). Profils gratuits cloud uniquement, sans API.
+Multilogin Free inclut 5 profils cloud au total, dont un mobile, et un crédit unique de 200 Mo de trafic proxy et de 30 minutes mobiles. Les profils gratuits sont supprimés après 7 jours sans lancement. L’API est accessible dès Pro 10, avec 50/75/100 requêtes par minute sur Pro 10/20/50. Business commence à 100 profils et inclut des sièges illimités. Pro 10 : 11 $/mois ou 85 $/an (environ 7,08 $/mois). Profils gratuits cloud uniquement, sans API.
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -395,19 +395,19 @@ Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistré
 
 ### MoreLogin
 
-MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
+MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profils. Chrome, Firefox, synchronisation et Local API sont disponibles. Les API des téléphones cloud proposent connexion distante et gestion des appareils, avec facturation séparée. Browser RPA nécessite un profil Chromium local et le client de bureau v2.73.0 ou ultérieur. 9 $ par mois ; équivalent annuel de 5,40 $/mois, payé annuellement. Téléphones cloud séparés.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offre 2 profils gratuits. Professional : 10, 20, 50 ou 100 ; Business pour davantage. Automatisation et AI Agent sont disponibles. Les notes de septembre ajoutent planification, création rapide et agents parallèles. Les limites API dépendent du forfait. USD, sans membres supplémentaires ; facturation tous les 30 jours. Professional 10 : 64,80 $/an, soit 5,40 $/mois.
+AdsPower offre 2 profils gratuits. Professional : 10, 20, 50 ou 100 ; Business pour davantage. Automatisation et AI Agent sont disponibles. Les notes de septembre ajoutent planification, création rapide et agents parallèles. Le forfait gratuit exclut l’API locale et comprend zéro crédit AI Agent. L’API locale autorise 120 requêtes par minute avec Professional, 300 avec Business et 600 avec Enterprise. USD, sans membres supplémentaires ; facturation tous les 30 jours. Professional 10 : 64,80 $/an, soit 5,40 $/mois.
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offre 3 profils gratuits et des forfaits payants dès 10. API, SDK et MCP commencent à 100 profils ; lancement cloud et import/export de cookies à 50. Les petits forfaits ne comprennent pas toutes les fonctions. Prix mensuels ; paiement annuel à partir de 4,50 $/mois équivalent.
+GoLogin Free permet de conserver 3 profils et d’en créer 25 par mois civil. Le lancement dans le cloud et l’API REST nécessitent un abonnement payant. Professional démarre à 10 profils et inclut une session cloud simultanée et 300 requêtes API par minute. Prix mensuels ; paiement annuel à partir de 4,50 $/mois équivalent.
 
 [GoLogin](https://gologin.com/pricing/)
 

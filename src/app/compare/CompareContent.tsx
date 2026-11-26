@@ -36,34 +36,34 @@ const comparisonCategories = [
       { label: { en: "Canvas Fingerprint", zh: "Canvas 指纹", ru: "Canvas отпечаток", ja: "Canvas指紋", fr: "Empreinte Canvas", de: "Canvas Fingerprint" }, values: ["ML-based real data", "Noise injection", "Custom generation", "Advanced spoofing", "Real fingerprints", "Auto mode", "Auto generation", "Intelligent spoofing", "Deep customization", "Real device data", "Basic masking", "Basic masking", "Basic spoofing"] },
       { label: { en: "WebGL Fingerprint", zh: "WebGL 指纹", ru: "WebGL отпечаток", ja: "WebGL指紋", fr: "Empreinte WebGL", de: "WebGL Fingerprint" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
       { label: { en: "WebRTC Protection", zh: "WebRTC 保护", ru: "Защита WebRTC", ja: "WebRTC保護", fr: "Protection WebRTC", de: "WebRTC-Schutz" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
-      { label: { en: "Mobile Fingerprints", zh: "移动端指纹", ru: "Мобильные отпечатки", ja: "モバイル指紋", fr: "Empreintes mobiles", de: "Mobile Fingerprints" }, values: ["✓ Android/iOS", "✓ Android", "✓ Android", "✓", "✓ iOS/Android", "✗", "✗", "✓ Android/iOS", "✗", "✗", "✗", "✗", "✗"] },
+      { label: { en: "Mobile Fingerprints", zh: "移动端指纹", ru: "Мобильные отпечатки", ja: "モバイル指紋", fr: "Empreintes mobiles", de: "Mobile Fingerprints" }, values: ["✓ Android/iOS", "✓ Android", "✓ Android", "✓", "✓ iOS/Android", "✓ Android", "✗", "✓ Android/iOS", "✓ Android/iOS", "✗", "iOS / Android (Base+)", "✗", "✗"] },
       { label: { en: "2FA Support", zh: "双因素认证", ru: "Поддержка 2FA", ja: "2FA対応", fr: "Support 2FA", de: "2FA-Unterstützung" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
     ],
   },
   { titleKey: "💼 Features & Usability", titles: { en: "💼 Features & Usability", zh: "💼 功能与易用性", ru: "💼 Функции и удобство", ja: "💼 機能と使いやすさ", fr: "💼 Fonctionnalités", de: "💼 Funktionen & Nutzbarkeit" },
     rows: [
-      { label: { en: "Free Plan", zh: "免费计划", ru: "Бесплатный план", ja: "無料プラン", fr: "Plan gratuit", de: "Kostenloser Plan" }, values: ["—", "—", "—", "—", "—", "—", "✓ 10 profiles", "✓ 2 concurrent", "✗ 3-day trial", "✓ 5 cloud", "✓ 5 profiles", "✗ None", "✓ 3 profiles"] },
-      { label: { en: "API Access", zh: "API 访问", ru: "Доступ к API", ja: "APIアクセス", fr: "Accès API", de: "API-Zugang" }, values: ["REST + Local API", "Local API", "REST API", "REST API", "Local API", "REST API", "REST API", "REST API + SDK", "REST API", "REST API", "REST API", "REST API", "REST API"] },
+      { label: { en: "Free Plan", zh: "免费计划", ru: "Бесплатный план", ja: "無料プラン", fr: "Plan gratuit", de: "Kostenloser Plan" }, values: ["—", "—", "—", "—", "—", "—", "10 → 3", "✓ 2 concurrent", "✗ 3-day trial", "—", "—", "—", "—"] },
+      { label: { en: "API Access", zh: "API 访问", ru: "Доступ к API", ja: "APIアクセス", fr: "Accès API", de: "API-Zugang" }, values: ["REST + Local API", "Local API · Professional+", "REST API", "REST API", "Local API", "REST API", "Entrepreneur+", "REST API + SDK", "Basic / Scale: Advanced REST API", "Local API (Base+)", "Team / Business", "REST API + CLI", "Ultimate / Full"] },
       { label: { en: "Team Collaboration", zh: "团队协作", ru: "Совместная работа", ja: "チーム協力", fr: "Collaboration", de: "Teamarbeit" }, values: ["✓ Advanced", "✓ Advanced", "✓ Profile sharing", "✓ Team mgmt", "✓ Profile transfer", "✓ Limited seats", "✓ Profile sharing", "✓ Team mgmt", "✓ Sub-accounts", "✓ Profile sharing", "✓ Basic", "✓ Sub-accounts", "✓ Basic"] },
       { label: { en: "Bulk Operations", zh: "批量操作", ru: "Массовые операции", ja: "一括操作", fr: "Opérations en masse", de: "Massenoperationen" }, values: ["✓ Create/Open/Delete", "✓ Extensive", "✓ Basic", "✓ Basic", "✓ Mass actions", "✗ Limited", "✓ Bulk create", "✓ Basic", "✓ Batch create", "✓ Basic", "✓ Mass actions", "✓ Batch ops", "✓ Basic"] },
-      { label: { en: "Built-in Proxies", zh: "内置代理", ru: "Встроенные прокси", ja: "内蔵プロキシ", fr: "Proxies intégrés", de: "Integrierte Proxies" }, values: ["✓ Proxy store", "✓ Partner proxies", "✓ Free + Paid", "✓ Integration", "✗", "✓ 3 providers", "✗", "✗", "✗", "✗", "✗", "✗", "✗"] },
-      { label: { en: "RPA / No-code", zh: "RPA / 无代码", ru: "RPA / Без кода", ja: "RPA / ノーコード", fr: "RPA / No-code", de: "RPA / No-Code" }, values: ["✗", "✓ Built-in RPA", "✗", "✗", "✓ Scenarios", "✗", "✗", "✗", "✗", "✗", "✓ Built-in", "✗", "✓ Pre-built workflows"] },
+      { label: { en: "Built-in Proxies", zh: "内置代理", ru: "Встроенные прокси", ja: "内蔵プロキシ", fr: "Proxies intégrés", de: "Integrierte Proxies" }, values: ["✓ Proxy store", "✓ Partner proxies", "✓ Free + Paid", "✓ Integration", "✗", "✓ 3 providers", "✓", "✗", "✗", "✗", "✓ Base+", "✗", "✗"] },
+      { label: { en: "RPA / No-code", zh: "RPA / 无代码", ru: "RPA / Без кода", ja: "RPA / ノーコード", fr: "RPA / No-code", de: "RPA / No-Code" }, values: ["✓ Chromium · v2.73.0+", "✓ Built-in RPA", "✗", "✗", "✓ Scenarios", "✗", "✗", "✗", "✗", "✗", "✓ Built-in", "✗", "✓ Pre-built workflows"] },
     ],
   },
   { titleKey: "💰 Pricing", titles: { en: "💰 Pricing (Monthly)", zh: "💰 价格（月付）", ru: "💰 Цены (ежемесячно)", ja: "💰 料金（月額）", fr: "💰 Tarifs (mensuels)", de: "💰 Preise (monatlich)" },
     rows: [
-      { label: { en: "Entry Plan", zh: "入门套餐", ru: "Начальный план", ja: "エントリープラン", fr: "Plan d'entrée", de: "Einstiegsplan" }, values: ["—", "—", "—", "—", "—", "—", "$29.99 / 50 profiles", "€45 / 10 concurrent", "$99 / 200 profiles", "$49 / 50 cloud", "$15 / 30 profiles", "$59 / 100 profiles", "$30 / 50 profiles"] },
-      { label: { en: "100 Profiles Plan", zh: "100 配置套餐", ru: "План на 100 профилей", ja: "100プロファイルプラン", fr: "Plan 100 profils", de: "100-Profile-Plan" }, values: ["—", "—", "—", "—", "—", "—", "$79.99 / 150 profiles", "€299 / 100 concurrent", "$99 / 200 profiles", "$99 / 100 cloud", "$30 / 60 profiles", "$59 / 100 profiles", "$60 / 150 profiles"] },
-      { label: { en: "Team Plan", zh: "团队套餐", ru: "Командный план", ja: "チームプラン", fr: "Plan équipe", de: "Team-Plan" }, values: ["—", "—", "—", "—", "—", "—", "$149.99 / 500 profiles", "€1499 / 1000+ concurrent", "$209 / 500 profiles", "Contact", "$80 / 200 profiles", "$199 / 500 profiles", "$120 / 500 profiles"] },
-      { label: { en: "Annual Discount", zh: "年付折扣", ru: "Годовая скидка", ja: "年間割引", fr: "Remise annuelle", de: "Jahresrabatt" }, values: ["—", "—", "—", "—", "—", "—", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available", "✓ Available"] },
+      { label: { en: "Entry Plan", zh: "入门套餐", ru: "Начальный план", ja: "エントリープラン", fr: "Plan d'entrée", de: "Einstiegsplan" }, values: ["—", "—", "—", "—", "—", "—", "$19.99 / 10", "€59 / 10 concurrent", "$99 / 200 profiles", "—", "—", "—", "—"] },
+      { label: { en: "100 Profiles Plan", zh: "100 配置套餐", ru: "План на 100 профилей", ja: "100プロファイルプラン", fr: "Plan 100 profils", de: "100-Profile-Plan" }, values: ["—", "—", "—", "—", "—", "—", "$79.99 / 150 profiles", "€299 / 100 concurrent", "$99 / 200 profiles", "—", "—", "—", "—"] },
+      { label: { en: "Team Plan", zh: "团队套餐", ru: "Командный план", ja: "チームプラン", fr: "Plan équipe", de: "Team-Plan" }, values: ["—", "—", "—", "—", "—", "—", "Professional: $79.99 / 150", "€1499 / 1000+ concurrent", "$209 / 500 profiles", "—", "—", "—", "—"] },
+      { label: { en: "Annual Discount", zh: "年付折扣", ru: "Годовая скидка", ja: "年間割引", fr: "Remise annuelle", de: "Jahresrabatt" }, values: ["—", "—", "—", "—", "—", "—", "40%", "✓ Available", "✓ Available", "—", "—", "—", "—"] },
     ],
   },
   { titleKey: "🤖 Automation", titles: { en: "🤖 Automation Support", zh: "🤖 自动化支持", ru: "🤖 Автоматизация", ja: "🤖 自動化サポート", fr: "🤖 Automatisation", de: "🤖 Automatisierung" },
     rows: [
-      { label: { en: "Playwright", zh: "Playwright", ru: "Playwright", ja: "Playwright", fr: "Playwright", de: "Playwright" }, values: ["✓", "✗", "✓", "✓", "✗", "✗", "✗", "✓", "✗", "✗", "✗", "✗", "✗"] },
-      { label: { en: "Selenium", zh: "Selenium", ru: "Selenium", ja: "Selenium", fr: "Selenium", de: "Selenium" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"] },
-      { label: { en: "Puppeteer", zh: "Puppeteer", ru: "Puppeteer", ja: "Puppeteer", fr: "Puppeteer", de: "Puppeteer" }, values: ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓", "✗"] },
-      { label: { en: "Built-in RPA", zh: "内置 RPA", ru: "Встроенный RPA", ja: "内蔵RPA", fr: "RPA intégré", de: "Integriertes RPA" }, values: ["✗", "✓", "✗", "✗", "✓", "✗", "✗", "✗", "✗", "✗", "✓", "✗", "✗"] },
+      { label: { en: "Playwright", zh: "Playwright", ru: "Playwright", ja: "Playwright", fr: "Playwright", de: "Playwright" }, values: ["✓", "Professional+", "✓", "✓", "✗", "✗", "✗", "✓", "✗", "✗", "✗", "✗", "✗"] },
+      { label: { en: "Selenium", zh: "Selenium", ru: "Selenium", ja: "Selenium", fr: "Selenium", de: "Selenium" }, values: ["✓", "Professional+", "✓", "✓", "✓", "✓", "Entrepreneur+", "✓", "✓", "✓", "✓", "✓", "✓"] },
+      { label: { en: "Puppeteer", zh: "Puppeteer", ru: "Puppeteer", ja: "Puppeteer", fr: "Puppeteer", de: "Puppeteer" }, values: ["✓", "Professional+", "✓", "✓", "✓", "✓", "Entrepreneur+", "✓", "✓", "✓", "✓", "✓", "✗"] },
+      { label: { en: "Built-in RPA", zh: "内置 RPA", ru: "Встроенный RPA", ja: "内蔵RPA", fr: "RPA intégré", de: "Integriertes RPA" }, values: ["✓ Chromium · v2.73.0+", "✓", "✗", "✗", "✓", "✗", "✗", "✗", "✗", "✗", "✓", "✗", "✗"] },
       { label: { en: "MCP Support", zh: "MCP 支持", ru: "Поддержка MCP", ja: "MCP対応", fr: "Support MCP", de: "MCP-Unterstützung" }, values: ["✓", "✗", "✓", "✗", "✗", "✗", "✗", "✗", "✗", "✗", "✗", "✗", "✗"] },
     ],
   },
@@ -87,13 +87,16 @@ export default function CompareContent() {
     const browser = browsers[idx];
     const update = vendorUpdates[browser.slug];
     if (!update) return fallback;
+    if (label === "Free Plan" && update.freeProfilesLabel) return update.freeProfilesLabel[locale];
     if (label === "Free Plan") return update.freeProfiles ? `✓ ${update.freeProfiles} ${i(ui.profiles, locale)}` : "✗";
-    if (label === "Entry Plan") return `${update.startingPrice} / ${update.plans.find(p => p.price !== "$0")?.profiles} ${i(ui.profiles, locale)}`;
+    if (label === "Entry Plan") return `${update.startingPrice} / ${update.plans.find(p => p.price === update.startingPrice)?.profiles} ${i(ui.profiles, locale)}`;
     if (label === "100 Profiles Plan") return update.plans.find(p => p.profiles === "100")?.price || i(officialPlans, locale);
     if (label === "Team Plan") return i(officialPlans, locale);
     if (label === "Annual Discount") return update.billing[locale];
-    if (label === "API Access" && browser.slug === "gologin") return "100+";
+    if (label === "API Access" && browser.slug === "gologin") return "Professional (300 RPM)";
+    if (label === "API Access" && browser.slug === "multilogin") return "Pro 10+";
     if (label === "API Access" && browser.slug === "octobrowser") return "Base+";
+    if (browser.slug === "morelogin" && (label === "Built-in RPA" || label === "RPA / No-code")) return i({"en": "Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later.", "zh": "Browser RPA 需要本地 Chromium 环境及 v2.73.0 或更高版本的桌面客户端。", "ru": "Для Browser RPA нужен локальный профиль Chromium и клиент версии v2.73.0 или новее.", "ja": "Browser RPA はローカルの Chromium プロファイルと v2.73.0 以降のデスクトップクライアントが必要です。", "fr": "Browser RPA nécessite un profil Chromium local et le client de bureau v2.73.0 ou ultérieur.", "de": "Browser RPA erfordert ein lokales Chromium-Profil und den Desktop-Client ab v2.73.0."}, locale);
     if (label === "MCP Support" && browser.slug === "adspower") return "✓";
     return fallback;
   }
@@ -122,7 +125,7 @@ export default function CompareContent() {
                     <td><div style={{ display: "flex", alignItems: "center", gap: 10 }}><BrowserLogo slug={b.slug} name={b.name} color={b.color} size={32} /><strong>{b.name}</strong></div></td>
                     <td><span style={{ fontWeight: 700, color: "var(--color-cyan)" }}>⭐ {b.rating.overall}</span></td>
                     <td>{b.pricing.startingPrice}</td>
-                    <td>{b.pricing.free ? <span className="check">✓ {b.pricing.freeProfiles} {i(ui.profiles, locale)}</span> : <span className="cross">✗</span>}</td>
+                    <td>{b.pricing.free ? <span className="check">✓ {vendorUpdates[b.slug]?.freeProfilesLabel?.[locale] ?? `${b.pricing.freeProfiles} ${i(ui.profiles, locale)}`}</span> : <span>{vendorUpdates[b.slug]?.freeProfilesLabel?.[locale] ?? "✗"}</span>}</td>
                     <td style={{ fontSize: "0.82rem", color: "var(--text-secondary)" }}>{b.tagline}</td>
                     <td style={{ whiteSpace: "nowrap" }}><Link href={`/reviews/${b.slug}`} className="card-cta" style={{ fontSize: "0.75rem", padding: "6px 14px", whiteSpace: "nowrap" }}>{t.reviews.readReview}</Link></td>
                   </tr>

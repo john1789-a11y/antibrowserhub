@@ -358,7 +358,7 @@ Pixelscan 专注于检测不一致性：
 
 ### MoreLogin
 
-MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 Browser RPA 需要本地 Chromium 环境及 v2.73.0 或更高版本的桌面客户端。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -387,7 +387,7 @@ Facebook 的防关联机制非常强大。在同一个浏览器中运行多个�
 
 ### AdsPower
 
-AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent；API 限速依套餐而定。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
+AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent。免费版不含 Local API，AI Agent 额度为零。Professional、Business、Enterprise 的 Local API 限额分别为每分钟 120、300、600 次。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
 
 [AdsPower](https://www.adspower.com/pricing)
 
@@ -420,9 +420,9 @@ Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可�
 | 浏览器 | 免费环境数 | 核心功能 | 限制 |
 |--------|------------|----------|------|
 | **Dolphin Anty** | 3 | 真实指纹、基础自动化 | 无 API，团队功能受限 |
-| **Incogniton** | 10 | 浏览器同步、Selenium 集成 | 无高级指纹生成 |
-| **Undetectable** | 5 云端 + 无限本地 | 本地环境不限量！ | 云端仅限 5 个 |
-| **GoLogin** | 3 | 3 个浏览器环境 | 云端启动：50 环境起；API/SDK/MCP：100 环境起 |
+| **Incogniton** | 前两个月 10 个环境，之后 3 个 | 免费内置代理 | Entrepreneur 起支持 Selenium/Puppeteer 和 REST API |
+| **Undetectable** | 5 个云环境 | 10 种浏览器配置 | 每月创建 50 次；本地环境需付费 |
+| **GoLogin** | 3 | 3 个浏览器环境 | 每个自然月最多创建 25 次 |
 | **MoreLogin** | 2 | Chrome、Firefox、Local API、同步器 | 2 个环境 |
 | **AdsPower** | 2 | 核心指纹 spoofing、SunBrowser | 自动化功能受限 |
 
@@ -430,7 +430,7 @@ Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可�
 
 ### MoreLogin
 
-MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 Browser RPA 需要本地 Chromium 环境及 v2.73.0 或更高版本的桌面客户端。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -460,7 +460,7 @@ Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可�
 
 ### MoreLogin
 
-MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 Browser RPA 需要本地 Chromium 环境及 v2.73.0 或更高版本的桌面客户端。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -522,7 +522,7 @@ Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可�
 
 ### MoreLogin
 
-MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 Browser RPA 需要本地 Chromium 环境及 v2.73.0 或更高版本的桌面客户端。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -545,25 +545,25 @@ MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环�
 
 ### MoreLogin
 
-MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 Browser RPA 需要本地 Chromium 环境及 v2.73.0 或更高版本的桌面客户端。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent；API 限速依套餐而定。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
+AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent。免费版不含 Local API，AI Agent 额度为零。Professional、Business、Enterprise 的 Local API 限额分别为每分钟 120、300、600 次。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin 提供 3 个免费环境，付费从 10 个环境起。API、SDK 和 MCP 从 100 个环境套餐开放；云端浏览器启动及 Cookie 导入导出从 50 个环境起。低价套餐不包含所有自动化能力。 展示月付价格；年付折算从 $4.50/月起，按年付款。
+GoLogin 免费版最多保存 3 个环境，每个自然月可创建 25 次。云端启动和 REST API 需付费套餐。Professional 从 10 个环境起，含 1 个并发云端会话，API 每分钟限 300 次请求。 展示月付价格；年付折算从 $4.50/月起，按年付款。
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin 提供 5 个免费云端环境，一次性 200 MB 代理额度和 30 分钟移动端时长，免费版不含 API。Pro 10/20/50 的 API 限额分别为每分钟 50/75/100 次。Business 从 100 个环境起，含无限团队席位。浏览器与云手机资源有各自限额。 Pro 10 月付 $11，年付 $85（约 $7.08/月）。免费环境仅限云端，不含 API。
+Multilogin 免费版的云端环境总额度为 5 个，其中包含 1 个移动环境，一次性赠送 200 MB 代理流量和 30 分钟移动时长。连续 7 天未启动任何环境会删除免费环境。API 从 Pro 10 起开放；Pro 10/20/50 每分钟分别限 50/75/100 次请求。Business 从 100 个环境起，团队席位不限。 Pro 10 月付 $11，年付 $85（约 $7.08/月）。免费环境仅限云端，不含 API。
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -579,19 +579,19 @@ Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可�
 
 ### MoreLogin
 
-MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
+MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环境起。支持 Chrome、Firefox、同步器和 Local API。云手机 Open/Local API 支持远程连接和生命周期操作，云手机资源独立计费。 Browser RPA 需要本地 Chromium 环境及 v2.73.0 或更高版本的桌面客户端。 月付 $9；年付折算 $5.40/月，按年付款。云手机单独计费。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent；API 限速依套餐而定。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
+AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个环境，Business 支持更大配置。提供浏览器自动化和 AI Agent。9 月版本新增 Agent 定时任务、快速创建环境和并行 Agent。免费版不含 Local API，AI Agent 额度为零。Professional、Business、Enterprise 的 Local API 限额分别为每分钟 120、300、600 次。 美元报价，不含额外成员；月付按 30 天计费。Professional 10 年付 $64.80，折算 $5.40/月。
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin 提供 3 个免费环境，付费从 10 个环境起。API、SDK 和 MCP 从 100 个环境套餐开放；云端浏览器启动及 Cookie 导入导出从 50 个环境起。低价套餐不包含所有自动化能力。 展示月付价格；年付折算从 $4.50/月起，按年付款。
+GoLogin 免费版最多保存 3 个环境，每个自然月可创建 25 次。云端启动和 REST API 需付费套餐。Professional 从 10 个环境起，含 1 个并发云端会话，API 每分钟限 300 次请求。 展示月付价格；年付折算从 $4.50/月起，按年付款。
 
 [GoLogin](https://gologin.com/pricing/)
 

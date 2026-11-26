@@ -78,7 +78,7 @@ function files(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMa
   assert.equal(affiliate.affiliateProductForUrl("https://gologin.com/"), "gologin");
   assert.equal(affiliate.affiliateProductForUrl("https://support.gologin.com/"), undefined);
   const vendors = load("src/data/vendorUpdates.ts").vendorUpdates;
-  assert.equal(Object.keys(vendors).length, 6);
+  assert.deepEqual(Object.keys(vendors).sort(), Array.from(browsers, browser => browser.slug).sort());
   for (const [slug, vendor] of Object.entries(vendors)) {
     for (const locale of ["en", "zh", "ru", "ja", "fr", "de"]) assert.ok(vendor.summary[locale] && vendor.billing[locale]);
     const browser = browsers.find(b => b.slug === slug);
@@ -86,24 +86,48 @@ function files(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMa
     assert.equal(browser.pricing.startingPrice, vendor.startingPrice);
     assert.equal(browser.pricing.freeProfiles, vendor.freeProfiles);
   }
+  for (const locale of ["en", "zh", "ru", "ja", "fr", "de"]) {
+    assert.match(vendors.morelogin.summary[locale], /Chromium.*v2\.73\.0/);
+    assert.match(vendors.adspower.summary[locale], /120.*300.*600/);
+  }
+  assert.equal(vendors.lalicat.plans.find(plan => plan.name === "Team").price, "$209/mo");
+  assert.deepEqual(Array.from(vendors["marketer-browser"].plans, plan => plan.price), ["$0", "$29/mo", "$49/mo", "$69/mo"]);
+  assert.equal(vendors.undetectable.freeProfiles, 5);
+  assert.equal(vendors.undetectable.plans.at(-1).price, "$199/mo");
+  assert.equal(vendors.hidemyacc.freeProfiles, 0);
+  assert.deepEqual(Array.from(vendors.hidemyacc.plans, plan => plan.profiles), ["5", "30", "100", "300", "1000"]);
+  for (const summary of Object.values(vendors.undetectable.summary)) assert.match(summary, /50/);
+  for (const summary of Object.values(vendors.hidemyacc.summary)) assert.match(summary, /30/);
   assert.equal(vendors["dolphin-anty"].freeProfiles, 3);
   assert.equal(vendors["dolphin-anty"].plans.find(plan => plan.name === "Free").profiles, "3");
   assert.equal(vendors["dolphin-anty"].startingPrice, "$10/mo");
   const dolphin = browsers.find(browser => browser.slug === "dolphin-anty");
   assert.equal(dolphin.description, vendors["dolphin-anty"].summary.en);
   assert.ok(dolphin.faqs.some(faq => faq.answer === vendors["dolphin-anty"].summary.en + " " + vendors["dolphin-anty"].billing.en));
+  assert.equal(vendors.incogniton.freeProfiles, 3);
+  assert.deepEqual(Array.from(vendors.incogniton.plans.slice(0, 3), plan => [plan.price, plan.profiles]), [["$0", "10 → 3"], ["$19.99/mo", "10"], ["$29.99/mo", "50"]]);
+  for (const summary of Object.values(vendors.incogniton.summary)) assert.match(summary, /Entrepreneur/);
   assert.equal(vendors.multilogin.freeProfiles, 5);
+  assert.equal(vendors.multilogin.plans.find(plan => plan.name === "Business 300")?.price, "$89/mo");
+  assert.match(vendors.gologin.summary.en, /25 creations per calendar month/);
+  assert.match(vendors.gologin.summary.en, /300 API requests per minute/);
+  assert.equal(vendors.kameleo.startingPrice, "€59/mo");
+  assert.equal(vendors.kameleo.freeProfiles, 100);
+  assert.equal(vendors.kameleo.plans.find(plan => plan.name === "Business").price, "€299/mo");
+  assert.ok(vendors.vmlogin.plans.find(plan => plan.name === "Team").features.includes("Basic REST API"));
+  assert.ok(vendors.vmlogin.plans.find(plan => plan.name === "Scale").features.includes("Advanced REST API"));
   const freeGuide = load("src/data/guides.ts").getGuideBySlug("best-free-antidetect-browser").content;
   assert.ok(!freeGuide.includes("unlocks every single feature"));
   assert.ok(!freeGuide.includes("3 profiles + web interface"));
   assert.ok(!freeGuide.includes("Dolphin Anty (10)"));
+  assert.doesNotMatch(freeGuide, /You get 10 browser profiles|- 10 browser profiles/);
   const translated = load("src/data/guides/index.ts");
   for (const locale of ["en", "zh", "ru", "ja", "fr", "de"]) {
     const text = translated.getTranslatedGuideContent("best-free-antidetect-browser", locale, freeGuide);
     const goRow = text.split("\n").find(line => line.startsWith("| **GoLogin**"));
-    if (goRow) assert.ok(goRow.includes("50") && goRow.includes("100"), locale);
+    if (goRow) assert.ok(goRow.includes("25"), locale);
     assert.ok(!/\| \*\*Dolphin Anty\*\* \| (?:5|10) \|/.test(text), locale);
   }
   assert.ok(!load("src/data/guides.ts").getGuideBySlug("cheapest-antidetect-browser").content.includes("June 2026"));
-  console.log(`PASS: ${routesChecked} route metadata records, exact route allowlist, six vendors, referral destinations, attribution privacy/session/failure handling, mouse activation.`);
+  console.log(`PASS: ${routesChecked} route metadata records, exact route allowlist, ${Object.keys(vendors).length} vendors, referral destinations, attribution privacy/session/failure handling, mouse activation.`);
 })().catch(error => { console.error(error); process.exitCode = 1; });

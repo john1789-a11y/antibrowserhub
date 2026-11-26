@@ -216,7 +216,7 @@ Amazonは複数店舗の運営（アカウントの紐付け）に対して極�
 
 ### MoreLogin
 
-MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
+MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 Browser RPA はローカルの Chromium プロファイルと v2.73.0 以降のデスクトップクライアントが必要です。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -243,7 +243,7 @@ Metaのクローラーは極めて高性能です。同一デバイスから複�
 
 ### AdsPower
 
-AdsPower は無料 2 プロファイル、Professional は 10・20・50・100、Business はより大規模な構成に対応。自動化と AI Agent を提供し、9 月に定期実行、クイック作成、並列 Agent を追加。API 上限はプランによります。 米ドル、追加メンバーなし、30 日ごとの請求。Professional 10 は年額 $64.80（月換算 $5.40）。
+AdsPower は無料 2 プロファイル、Professional は 10・20・50・100、Business はより大規模な構成に対応。自動化と AI Agent を提供し、9 月に定期実行、クイック作成、並列 Agent を追加。無料プランでは Local API は利用できず、AI Agent のクレジットは 0 です。Local API の毎分のリクエスト上限は Professional が 120、Business が 300、Enterprise が 600 です。 米ドル、追加メンバーなし、30 日ごとの請求。Professional 10 は年額 $64.80（月換算 $5.40）。
 
 [AdsPower](https://www.adspower.com/pricing)
 
@@ -273,16 +273,16 @@ Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファ�
 | ブラウザ | 無料プロファイル数 | 特徴 | 制限 |
 |--------|---------------------|------|------|
 | **Dolphin Anty** | 3 | リアルな指紋生成、自動化 | API利用不可 |
-| **Incogniton** | 10 | 同期、Selenium連携 | 高度な偽装なし |
-| **Undetectable** | 5クラウド + ∞ローカル | PC内にローカルプロファイルが**無制限**！ | クラウドは5つまで |
-| **GoLogin** | 3 | ブラウザ 3 プロファイル | クラウド起動：50 以上、API/SDK/MCP：100 以上 |
+| **Incogniton** | 最初の2か月は10プロファイル、その後は3 | 無料の内蔵プロキシ | Selenium/Puppeteer・REST API は Entrepreneur 以上 |
+| **Undetectable** | クラウド 5 件 | ブラウザ構成 10 種 | 月 50 回作成、ローカルは有料 |
+| **GoLogin** | 3 | ブラウザ 3 プロファイル | 暦月あたり作成 25 回 |
 | **MoreLogin** | 2 | Chrome・Firefox・Local API・同期 | 2 プロファイル |
 | **AdsPower** | 2 | 主要エンジンの偽装、SunBrowser | RPA自動化制限 |
 
 ## 選び方のアドバイス
 
 - **Dolphin Anty**：新規アカウントは無料で最大 3 プロファイル。
-- **1台のPCで大量のアカウントをローカル管理したい**：**Undetectable**（ローカル無制限）。
+- **Undetectable** — 無料版はクラウドプロファイル 5 件、月 50 回の作成、ブラウザ構成 10 種に対応します。ローカルプロファイル無制限と Local API は Base 以上で利用できます。
 - **すべてのAPI自動化機能を試したい**：**MoreLogin**（機能無制限）。`,
 
   "best-for-affiliate-marketing": `> 公式料金確認日 2026-10-12
@@ -303,7 +303,7 @@ Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファ�
 
 ### MoreLogin
 
-MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
+MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 Browser RPA はローカルの Chromium プロファイルと v2.73.0 以降のデスクトップクライアントが必要です。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -362,7 +362,7 @@ Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファ�
 
 ### MoreLogin
 
-MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
+MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 Browser RPA はローカルの Chromium プロファイルと v2.73.0 以降のデスクトップクライアントが必要です。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -383,25 +383,25 @@ MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro 
 
 ### MoreLogin
 
-MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
+MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 Browser RPA はローカルの Chromium プロファイルと v2.73.0 以降のデスクトップクライアントが必要です。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower は無料 2 プロファイル、Professional は 10・20・50・100、Business はより大規模な構成に対応。自動化と AI Agent を提供し、9 月に定期実行、クイック作成、並列 Agent を追加。API 上限はプランによります。 米ドル、追加メンバーなし、30 日ごとの請求。Professional 10 は年額 $64.80（月換算 $5.40）。
+AdsPower は無料 2 プロファイル、Professional は 10・20・50・100、Business はより大規模な構成に対応。自動化と AI Agent を提供し、9 月に定期実行、クイック作成、並列 Agent を追加。無料プランでは Local API は利用できず、AI Agent のクレジットは 0 です。Local API の毎分のリクエスト上限は Professional が 120、Business が 300、Enterprise が 600 です。 米ドル、追加メンバーなし、30 日ごとの請求。Professional 10 は年額 $64.80（月換算 $5.40）。
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin は無料 3 プロファイル、有料は 10 から。API・SDK・MCP は 100 以上、クラウド起動と Cookie の入出力は 50 以上のプランで利用可能です。低価格プランには機能制限があります。 月払い価格を表示。年払いは月換算 $4.50 からです。
+GoLogin の無料枠は保存 3 プロファイル、作成は暦月あたり 25 回までです。クラウド起動と REST API は有料プランで利用できます。Professional は 10 プロファイルからで、クラウド同時接続は 1 セッション、API は毎分 300 リクエストです。 月払い価格を表示。年払いは月換算 $4.50 からです。
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin は無料クラウド 5 プロファイル、初回のみプロキシ 200 MB とモバイル 30 分を提供。無料版に API はありません。Pro 10/20/50 の API は毎分 50/75/100 回。Business は 100 プロファイルから、チーム席数無制限。端末の上限は別です。 Pro 10 は月額 $11 または年額 $85（月換算約 $7.08）。無料プロファイルはクラウド専用で API なし。
+Multilogin の無料枠はモバイル 1 件を含めてクラウドプロファイル合計 5 件で、プロキシ通信量 200 MB とモバイル利用 30 分を初回のみ付与します。7 日間どのプロファイルも起動しないと無料プロファイルは削除されます。API は Pro 10 から利用でき、Pro 10/20/50 の上限は毎分 50/75/100 回です。Business は 100 プロファイルからで、チーム席数は無制限です。 Pro 10 は月額 $11 または年額 $85（月換算約 $7.08）。無料プロファイルはクラウド専用で API なし。
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -415,19 +415,19 @@ Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファ�
 
 ### MoreLogin
 
-MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
+MoreLogin は無料で 2 プロファイルと 2 ユーザーを提供し、Pro は 10 プロファイルからです。Chrome、Firefox、同期、Local API に対応。クラウドフォン API はリモート接続と端末管理を提供し、別途課金されます。 Browser RPA はローカルの Chromium プロファイルと v2.73.0 以降のデスクトップクライアントが必要です。 月払い $9、年払いは月換算 $5.40。クラウドフォンは別料金です。
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower は無料 2 プロファイル、Professional は 10・20・50・100、Business はより大規模な構成に対応。自動化と AI Agent を提供し、9 月に定期実行、クイック作成、並列 Agent を追加。API 上限はプランによります。 米ドル、追加メンバーなし、30 日ごとの請求。Professional 10 は年額 $64.80（月換算 $5.40）。
+AdsPower は無料 2 プロファイル、Professional は 10・20・50・100、Business はより大規模な構成に対応。自動化と AI Agent を提供し、9 月に定期実行、クイック作成、並列 Agent を追加。無料プランでは Local API は利用できず、AI Agent のクレジットは 0 です。Local API の毎分のリクエスト上限は Professional が 120、Business が 300、Enterprise が 600 です。 米ドル、追加メンバーなし、30 日ごとの請求。Professional 10 は年額 $64.80（月換算 $5.40）。
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin は無料 3 プロファイル、有料は 10 から。API・SDK・MCP は 100 以上、クラウド起動と Cookie の入出力は 50 以上のプランで利用可能です。低価格プランには機能制限があります。 月払い価格を表示。年払いは月換算 $4.50 からです。
+GoLogin の無料枠は保存 3 プロファイル、作成は暦月あたり 25 回までです。クラウド起動と REST API は有料プランで利用できます。Professional は 10 プロファイルからで、クラウド同時接続は 1 セッション、API は毎分 300 リクエストです。 月払い価格を表示。年払いは月換算 $4.50 からです。
 
 [GoLogin](https://gologin.com/pricing/)
 

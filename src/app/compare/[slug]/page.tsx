@@ -1,4 +1,4 @@
-import { reviewUpdatedAt } from "@/data/vendorUpdates";
+import { reviewUpdatedAt, vendorUpdates } from "@/data/vendorUpdates";
 import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import AffiliateLink from "@/components/AffiliateLink";
@@ -153,7 +153,7 @@ export default async function ComparisonPage({ params }: Props) {
                   ))}
                   {browser.pricing.free && (
                     <span className="feature-tag">
-                      🆓 {browser.pricing.freeProfiles} Free
+                      🆓 {vendorUpdates[browser.slug]?.freeProfilesLabel?.en ?? `${browser.pricing.freeProfiles} Free`}
                     </span>
                   )}
                   {browser.hasAPI && (
@@ -450,7 +450,7 @@ export default async function ComparisonPage({ params }: Props) {
                 <h3>Try {browser.name}</h3>
                 <p style={{ fontSize: "0.88rem" }}>
                   {browser.pricing.free
-                    ? `Start with ${browser.pricing.freeProfiles} free profiles — no credit card required.`
+                    ? (vendorUpdates[browser.slug]?.freeProfilesLabel?.en ?? `Start with ${browser.pricing.freeProfiles} free profiles — no credit card required.`)
                     : `Plans start from ${browser.pricing.startingPrice}.`}
                 </p>
                 <AffiliateLink product={browser.slug} placement="comparison"

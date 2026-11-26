@@ -116,7 +116,7 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
                 <h3>{i(ui.pros)}</h3>
                 <ul>
                   {browser.pros.map((p, index) => {
-                    const pro = browser.slug === "dolphin-anty" && index === 0
+                    const pro = (browser.slug === "dolphin-anty" || browser.slug === "incogniton") && index === 0
                       ? getBrowserI18n(browser.slug, locale)?.features[0] ?? p
                       : update && p === "Monthly entry-level pricing starts at $9" ? update.billing[locale]
                       : update && p === "Free plan includes 2 profiles and Local API" ? update.summary[locale]
@@ -265,7 +265,7 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
               </div>
               <div className="sidebar-item">
                 <span className="sidebar-item-label">{i(ui.freePlan)}</span>
-                <span className="sidebar-item-value">{browser.pricing.free ? `✓ ${browser.pricing.freeProfiles} ${i(ui.profiles)}` : `✗ ${i(ui.no)}`}</span>
+                <span className="sidebar-item-value">{update?.freeProfilesLabel?.[locale] ?? (browser.pricing.free ? `✓ ${browser.pricing.freeProfiles} ${i(ui.profiles)}` : `✗ ${i(ui.no)}`)}</span>
               </div>
               <div className="sidebar-item">
                 <span className="sidebar-item-label">{i(ui.apiSupport)}</span>

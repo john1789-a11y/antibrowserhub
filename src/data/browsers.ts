@@ -9,7 +9,7 @@ export const browsers: Browser[] = [
     slug: "morelogin",
     tagline: "Enterprise-grade antidetect browser with powerful API & ML-based fingerprinting",
     description:
-      "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately.",
+      "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later.",
     logo: "/images/browsers/morelogin.svg",
     website: "https://www.morelogin.com",
     affiliateUrl: affiliateDestinations["morelogin"],
@@ -97,7 +97,7 @@ export const browsers: Browser[] = [
   },
   {
     "title": "Pricing Analysis",
-    "content": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
+    "content": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
   }
 ],
     testimonials: [
@@ -130,7 +130,7 @@ export const browsers: Browser[] = [
     faqs: [
   {
     "question": "Is MoreLogin free to use?",
-    "answer": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
+    "answer": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
   },
   {
     "question": "How does MoreLogin's canvas fingerprinting work?",
@@ -146,7 +146,7 @@ export const browsers: Browser[] = [
   },
   {
     "question": "Is MoreLogin good value for money?",
-    "answer": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
+    "answer": "MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate."
   },
   {
     "question": "Does MoreLogin support browser automation?",
@@ -160,7 +160,7 @@ export const browsers: Browser[] = [
     slug: "adspower",
     tagline: "Popular antidetect browser for e-commerce & social media",
     description:
-      "AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan.",
+      "AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise.",
     logo: "/images/browsers/adspower.svg",
     website: "https://www.adspower.com",
     affiliateUrl: affiliateDestinations["adspower"],
@@ -208,7 +208,7 @@ export const browsers: Browser[] = [
     hasAPI: true,
     hasTeamFeatures: true,
     hasCookieImport: true,
-    automationSupport: ["Selenium", "Puppeteer", "RPA"],
+    automationSupport: ["Selenium", "Puppeteer", "Playwright", "RPA"],
     foundedYear: 2019,
     color: "#f59e0b",
     useCases: [
@@ -270,7 +270,7 @@ export const browsers: Browser[] = [
     faqs: [
   {
     "question": "Is AdsPower browser free?",
-    "answer": "AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent)."
+    "answer": "AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent)."
   },
   {
     "question": "What is SunBrowser?",
@@ -300,7 +300,7 @@ export const browsers: Browser[] = [
     slug: "gologin",
     tagline: "Cloud-based antidetect browser with web access",
     description:
-      "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature.",
+      "GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute.",
     logo: "/images/browsers/gologin.svg",
     website: "https://gologin.com",
     affiliateUrl: affiliateDestinations["gologin"],
@@ -372,7 +372,7 @@ export const browsers: Browser[] = [
   },
   {
     "title": "Pricing & Value",
-    "content": "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
+    "content": "GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
   }
 ],
     testimonials: [
@@ -387,7 +387,7 @@ export const browsers: Browser[] = [
   },
   {
     "question": "Does GoLogin have a free plan?",
-    "answer": "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
+    "answer": "GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
   },
   {
     "question": "What is the Orbita browser engine?",
@@ -399,7 +399,7 @@ export const browsers: Browser[] = [
   },
   {
     "question": "Does GoLogin offer annual discounts?",
-    "answer": "GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
+    "answer": "GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually."
   }
 ],
   },
@@ -409,7 +409,7 @@ export const browsers: Browser[] = [
     slug: "multilogin",
     tagline: "The pioneer of antidetect browsers",
     description:
-      "Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits.",
+      "Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats.",
     logo: "/images/browsers/multilogin.svg",
     website: "https://multilogin.com",
     affiliateUrl: affiliateDestinations["multilogin"],
@@ -490,7 +490,7 @@ export const browsers: Browser[] = [
     faqs: [
   {
     "question": "Does Multilogin offer a free plan?",
-    "answer": "Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API."
+    "answer": "Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API."
   },
   {
     "question": "What are Mimic and Stealthfox?",
@@ -502,7 +502,7 @@ export const browsers: Browser[] = [
   },
   {
     "question": "Is Multilogin suitable for individuals?",
-    "answer": "Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API."
+    "answer": "Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API."
   },
   {
     "question": "Does Multilogin support automation?",
@@ -738,8 +738,7 @@ export const browsers: Browser[] = [
     name: "Incogniton",
     slug: "incogniton",
     tagline: "User-friendly antidetect browser with Selenium & Puppeteer integration",
-    description:
-      "Incogniton is a versatile antidetect browser designed for digital marketers, e-commerce sellers, and affiliate professionals. It offers both Chromium and Firefox support, a built-in Selenium/Puppeteer integration for automation, and a generous free plan with up to 10 profiles. Known for its clean interface and strong fingerprint management.",
+    description: vendorUpdates.incogniton.summary.en,
     logo: "/images/browsers/incogniton.svg",
     website: "https://incogniton.com",
     affiliateUrl: affiliateDestinations["incogniton"],
@@ -751,33 +750,23 @@ export const browsers: Browser[] = [
       pricing: 4.4,
       support: 4.0,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 10,
-      startingPrice: "$29.99/mo",
-      plans: [
-        { name: "Starter", price: "$0", profiles: "10 profiles", features: ["Basic fingerprint", "Selenium integration", "Community support"] },
-        { name: "Entrepreneur", price: "$29.99/mo", profiles: "50 profiles", features: ["Cookie management", "Bulk import", "API access"] },
-        { name: "Professional", price: "$79.99/mo", profiles: "150 profiles", features: ["Team features", "Priority support", "Paste-as-Human typing"] },
-        { name: "Multinational", price: "$149.99/mo", profiles: "500 profiles", features: ["Unlimited team members", "Dedicated manager", "Custom setup"] },
-      ],
-    },
+    pricing: { free: true, freeProfiles: vendorUpdates.incogniton.freeProfiles, startingPrice: vendorUpdates.incogniton.startingPrice, plans: vendorUpdates.incogniton.plans },
     features: [
       "Chromium & Firefox Support — dual browser engine for diverse fingerprinting",
-      "Selenium & Puppeteer Integration — built-in automation framework support",
+      "Selenium/Puppeteer and REST API from Entrepreneur",
       "Paste-as-Human Typing — simulates natural typing patterns when pasting text",
       "Bulk Profile Creation — create and manage hundreds of profiles at once",
       "Cookie Collector — automated cookie collection and management",
       "Team Collaboration — share profiles and manage permissions",
       "Synchronizer — replicate actions across multiple profiles",
-      "REST API — programmatic profile management and automation",
+      "REST API — available from Entrepreneur",
       "Data Encryption — secure local data storage with encryption",
       "Custom DNS — configure DNS settings per profile",
     ],
     pros: [
-      "Generous free plan with 10 profiles",
+      "10 profiles for the first two months, then 3",
       "Both Chromium and Firefox engine support",
-      "Built-in Selenium and Puppeteer integration",
+      "Selenium and Puppeteer integration from Entrepreneur",
       "Unique Paste-as-Human typing feature",
       "Clean and intuitive user interface",
       "Affordable entry-level pricing",
@@ -788,7 +777,6 @@ export const browsers: Browser[] = [
       "No mobile app or web-based version",
       "Limited RPA/no-code automation options",
       "Support response times can be slow",
-      "No built-in proxy marketplace",
     ],
     platforms: ["windows", "macos"],
     hasAPI: true,
@@ -808,7 +796,7 @@ export const browsers: Browser[] = [
     reviewContent: [
       {
         title: "What Makes Incogniton Stand Out?",
-        content: "Incogniton differentiates itself with a focus on **usability and automation integration**. The built-in support for Selenium and Puppeteer means developers can start automating workflows immediately without complex setup. The **Paste-as-Human typing** feature is unique — when you paste text, it simulates natural typing patterns with random delays, making automated actions look more human-like.",
+        content: "Incogniton differentiates itself with a focus on **usability and automation integration**. Selenium and Puppeteer integration starts with Entrepreneur. The **Paste-as-Human typing** feature is unique — when you paste text, it simulates natural typing patterns with random delays, making automated actions look more human-like.",
       },
       {
         title: "Fingerprint Management",
@@ -816,7 +804,7 @@ export const browsers: Browser[] = [
       },
       {
         title: "Team & Automation",
-        content: "The platform offers solid team collaboration features with profile sharing, permission management, and activity logging. The **REST API** enables programmatic control of profiles, and the built-in **Cookie Collector** automates the process of warming up new profiles by collecting cookies from popular websites.",
+        content: "The platform offers solid team collaboration features with profile sharing, permission management, and activity logging. From Entrepreneur, the **REST API** enables programmatic control of profiles, and the built-in **Cookie Collector** automates the process of warming up new profiles by collecting cookies from popular websites.",
       },
     ],
     testimonials: [
@@ -824,10 +812,10 @@ export const browsers: Browser[] = [
       { name: "Laura K.", role: "E-Commerce Seller", text: "The free plan with 10 profiles is very generous. I was able to test everything before upgrading. The Selenium integration works flawlessly." },
     ],
     faqs: [
-      { question: "How many free profiles does Incogniton offer?", answer: "Incogniton offers a free Starter plan with up to 10 browser profiles, including basic fingerprint management and Selenium integration." },
+      { question: "How many free profiles does Incogniton offer?", answer: vendorUpdates.incogniton.summary.en + " " + vendorUpdates.incogniton.billing.en },
       { question: "Does Incogniton support Firefox?", answer: "Yes, Incogniton supports both Chromium and Firefox browser engines, giving users flexibility in their fingerprint configurations." },
       { question: "What is Paste-as-Human typing?", answer: "Paste-as-Human is a unique feature that simulates natural typing patterns when you paste text into a browser profile, making automated actions appear more human-like." },
-      { question: "Does Incogniton have an API?", answer: "Yes, Incogniton provides a REST API for programmatic profile management, including creation, launch, and deletion of profiles." },
+      { question: "Does Incogniton have an API?", answer: "Entrepreneur and higher plans provide a REST API for programmatic profile management, including creation, launch, and deletion of profiles." },
     ],
   },
   {
@@ -848,17 +836,7 @@ export const browsers: Browser[] = [
       pricing: 4.1,
       support: 4.3,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 2,
-      startingPrice: "€45/mo",
-      plans: [
-        { name: "Free", price: "€0", profiles: "2 concurrent", features: ["2 browser kernels", "100 cloud profiles", "300 min usage", "3 team members"] },
-        { name: "Startup", price: "€45/mo (annual)", profiles: "10+ concurrent", features: ["Unlimited usage time", "Unlimited team members", "5000 cloud profiles"] },
-        { name: "Business", price: "€299/mo (annual)", profiles: "100+ concurrent", features: ["Mobile emulation", "Headless mode", "Volume discounts"] },
-        { name: "Enterprise", price: "€1499/mo", profiles: "1000+ concurrent", features: ["Expert consultation", "Priority support", "Custom scaling"] },
-      ],
-    },
+    pricing: { free: vendorUpdates["kameleo"].freeProfiles > 0, freeProfiles: vendorUpdates["kameleo"].freeProfiles, startingPrice: vendorUpdates["kameleo"].startingPrice, plans: vendorUpdates["kameleo"].plans },
     features: [
       "Two Custom Browser Kernels — proprietary Chromium and Firefox engines built for antidetect",
       "Mobile Browser Emulation — emulate Android and iOS mobile browsers on desktop",
@@ -919,7 +897,7 @@ export const browsers: Browser[] = [
       },
       {
         title: "Pricing Deep Dive",
-        content: "Kameleo uses a **concurrent browser** pricing model rather than total profiles. The Free plan allows 2 concurrent browsers with 300 minutes of usage time. The Startup plan at **€45/month (annual)** unlocks unlimited usage time and team members. For scale operations, the Business plan starts at **€299/month** and includes mobile emulation and headless mode.",
+        content: vendorUpdates.kameleo.summary.en + " " + vendorUpdates.kameleo.billing.en,
       },
     ],
     testimonials: [
@@ -928,10 +906,10 @@ export const browsers: Browser[] = [
       { name: "Pavel K.", role: "DevOps Lead", text: "Running Kameleo in Docker containers on our K8s cluster was surprisingly smooth. The headless mode works great for our CI/CD pipeline." },
     ],
     faqs: [
-      { question: "Does Kameleo have a free plan?", answer: "Yes, Kameleo offers a free plan with 2 concurrent browsers, 100 cloud profiles, and 300 minutes of browser usage time per month." },
+      { question: "Does Kameleo have a free plan?", answer: vendorUpdates.kameleo.summary.en + " " + vendorUpdates.kameleo.billing.en },
       { question: "What programming languages does Kameleo support?", answer: "Kameleo provides official SDKs for Python, C#, and JavaScript. The REST API can be used from any language." },
-      { question: "Can Kameleo run in Docker?", answer: "Yes, Kameleo supports Docker deployment, allowing you to run browser profiles in isolated containers for scalable server-side operations. This feature is available on Business plans and above." },
-      { question: "Does Kameleo support mobile fingerprints?", answer: "Yes, Kameleo can emulate Android and iOS mobile browsers on desktop with proper mobile fingerprints. This is available on Business plans and above." },
+      { question: "Can Kameleo run in Docker?", answer: "Docker is available on every plan, including Free." },
+      { question: "Does Kameleo support mobile fingerprints?", answer: "Free supports 2 emulated mobile browsers. Startup supports up to 30, subject to the purchased concurrency limit. Business and Enterprise have no separate mobile cap." },
     ],
   },
   {
@@ -952,17 +930,7 @@ export const browsers: Browser[] = [
       pricing: 3.6,
       support: 4.0,
     },
-    pricing: {
-      free: false,
-      freeProfiles: 0,
-      startingPrice: "$99/mo",
-      plans: [
-        { name: "Free Trial", price: "$0/3 days", profiles: "5 profiles", features: ["Basic fingerprint", "Batch create", "Cookie import/export"] },
-        { name: "Solo", price: "$99/mo", profiles: "200 profiles", features: ["5 sub-accounts", "Profile sharing", "REST API"] },
-        { name: "Team", price: "$209/mo", profiles: "500 profiles", features: ["10 sub-accounts", "Profile transfer", "Full API access"] },
-        { name: "Scale", price: "$499/mo", profiles: "3000 profiles", features: ["20 sub-accounts", "Advanced API", "Priority support"] },
-      ],
-    },
+    pricing: { free: vendorUpdates["vmlogin"].freeProfiles > 0, freeProfiles: vendorUpdates["vmlogin"].freeProfiles, startingPrice: vendorUpdates["vmlogin"].startingPrice, plans: vendorUpdates["vmlogin"].plans },
     features: [
       "Deep Fingerprint Customization — granular control over 50+ browser parameters",
       "Virtual Browser Profiles — replace multiple PCs/VPS with isolated profiles",
@@ -1025,7 +993,7 @@ export const browsers: Browser[] = [
       { name: "Maria G.", role: "Affiliate Marketer", text: "The sub-account system works well for our team of 15. Everyone has their own login and we can track all activities." },
     ],
     faqs: [
-      { question: "Does VMLogin have a free plan?", answer: "No, VMLogin does not offer a permanent free plan. However, there is a 3-day free trial that includes 5 browser profiles to test the platform." },
+      { question: "Does VMLogin have a free plan?", answer: vendorUpdates.vmlogin.summary.en + " " + vendorUpdates.vmlogin.billing.en },
       { question: "What operating systems does VMLogin support?", answer: "VMLogin currently only supports Windows. macOS and Linux are not available." },
       { question: "How many profiles can I create?", answer: "Depending on your plan: Solo (200), Team (500), or Scale (3000). A custom plan is available for larger needs." },
       { question: "Does VMLogin support automation?", answer: "Yes, VMLogin provides a REST API and supports integration with Selenium and Puppeteer for browser automation." },
@@ -1035,9 +1003,8 @@ export const browsers: Browser[] = [
     id: "undetectable",
     name: "Undetectable",
     slug: "undetectable",
-    tagline: "Affordable antidetect browser with unlimited local profiles",
-    description:
-      "Undetectable is an antidetect browser that stands out with its unique pricing model — offering unlimited local browser profiles on all plans. It uses real device fingerprints from a constantly updated database and provides a cloud-based architecture for team collaboration. The platform is growing rapidly and offers competitive pricing.",
+    tagline: "Cloud profiles on Free and unlimited local profiles on paid plans",
+    description: vendorUpdates.undetectable.summary.en,
     logo: "/images/browsers/undetectable.svg",
     website: "https://undetectable.io",
     affiliateUrl: affiliateDestinations["undetectable"],
@@ -1049,19 +1016,9 @@ export const browsers: Browser[] = [
       pricing: 4.5,
       support: 3.9,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 5,
-      startingPrice: "$49/mo",
-      plans: [
-        { name: "Free", price: "$0", profiles: "5 cloud profiles", features: ["Unlimited local profiles", "Basic fingerprint", "Community support"] },
-        { name: "Base", price: "$49/mo", profiles: "50 cloud profiles", features: ["Unlimited local", "Cookie import", "API access"] },
-        { name: "Professional", price: "$99/mo", profiles: "100 cloud profiles", features: ["Team features", "Profile sharing", "Priority support"] },
-        { name: "Custom", price: "Contact", profiles: "Unlimited", features: ["Dedicated manager", "Custom integration", "SLA support"] },
-      ],
-    },
+    pricing: { free: vendorUpdates.undetectable.freeProfiles > 0, freeProfiles: vendorUpdates.undetectable.freeProfiles, startingPrice: vendorUpdates.undetectable.startingPrice, plans: vendorUpdates.undetectable.plans },
     features: [
-      "Unlimited Local Profiles — no limit on locally stored browser profiles",
+      "Unlimited local profiles with any paid plan",
       "Real Device Fingerprints — fingerprints sourced from actual devices",
       "Cloud Sync — sync selected profiles across devices via cloud",
       "Configurable Fingerprint Database — regularly updated fingerprint library",
@@ -1073,7 +1030,7 @@ export const browsers: Browser[] = [
       "Proxy Integration — support for HTTP, SOCKS5, and SSH proxies",
     ],
     pros: [
-      "Unlimited local profiles on all plans (including free)",
+      "Unlimited local profiles with any paid plan",
       "Real device fingerprints from updated database",
       "Affordable pricing starting at $49/month",
       "Free plan available with 5 cloud profiles",
@@ -1106,15 +1063,11 @@ export const browsers: Browser[] = [
     reviewContent: [
       {
         title: "Unlimited Local Profiles",
-        content: "Undetectable's most compelling feature is **unlimited local browser profiles** on every plan, including the free tier. While cloud profiles (for syncing between devices) are limited by plan, you can create as many local profiles as your hardware can handle. This makes it excellent for operations that don't require cross-device sync.",
+        content: vendorUpdates.undetectable.summary.en + " " + vendorUpdates.undetectable.billing.en,
       },
       {
         title: "Real Device Fingerprints",
         content: "The platform uses a **configurable fingerprint database** sourced from real devices. This database is regularly updated to include new device models, browser versions, and operating systems. Users can select specific fingerprint configurations or let the system auto-generate optimal combinations.",
-      },
-      {
-        title: "Value Proposition",
-        content: "At **$49/month** for the Base plan with 50 cloud profiles and unlimited local profiles, Undetectable offers strong value. The free plan with 5 cloud profiles and unlimited local profiles is one of the most generous in the market for users who don't need cloud sync capabilities.",
       },
     ],
     testimonials: [
@@ -1122,8 +1075,8 @@ export const browsers: Browser[] = [
       { name: "Sophie R.", role: "E-Commerce Seller", text: "The pricing is very fair. I moved from a competitor charging 3x the price and the fingerprint quality is comparable." },
     ],
     faqs: [
-      { question: "What does 'unlimited local profiles' mean?", answer: "You can create as many browser profiles as you want on your local machine without any limit. Cloud profiles (for syncing between devices) are limited by your plan tier." },
-      { question: "Does Undetectable have a free plan?", answer: "Yes, Undetectable offers a free plan with 5 cloud profiles and unlimited local profiles." },
+      { question: "What does 'unlimited local profiles' mean?", answer: "Paid plans include unlimited profiles stored on your local machine. Cloud profiles (for syncing between devices) are limited by your plan tier." },
+      { question: "Does Undetectable have a free plan?", answer: vendorUpdates.undetectable.summary.en + " " + vendorUpdates.undetectable.billing.en },
       { question: "Are the fingerprints from real devices?", answer: "Yes, Undetectable uses a regularly updated database of fingerprints sourced from actual devices for maximum authenticity." },
     ],
   },
@@ -1132,8 +1085,7 @@ export const browsers: Browser[] = [
     name: "Hidemyacc",
     slug: "hidemyacc",
     tagline: "Vietnamese antidetect browser with automation and cloud sync",
-    description:
-      "Hidemyacc is an antidetect browser from Vietnam that has grown rapidly in Southeast Asian markets. It offers a built-in automation tool, cloud profile sync, and competitive pricing. The platform focuses on e-commerce and social media management use cases, with support for both Chromium and Firefox kernels.",
+    description: vendorUpdates.hidemyacc.summary.en,
     logo: "/images/browsers/hidemyacc.svg",
     website: "https://hidemyacc.com",
     affiliateUrl: affiliateDestinations["hidemyacc"],
@@ -1145,17 +1097,7 @@ export const browsers: Browser[] = [
       pricing: 4.5,
       support: 3.7,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 5,
-      startingPrice: "$15/mo",
-      plans: [
-        { name: "Free", price: "$0", profiles: "5 profiles", features: ["Basic fingerprint", "Community support"] },
-        { name: "Starter", price: "$15/mo", profiles: "30 profiles", features: ["Automation tool", "Cookie import", "Cloud sync"] },
-        { name: "Base", price: "$30/mo", profiles: "60 profiles", features: ["Team features", "API access", "Priority support"] },
-        { name: "Business", price: "$80/mo", profiles: "200 profiles", features: ["Advanced automation", "Dedicated support", "Custom setup"] },
-      ],
-    },
+    pricing: { free: vendorUpdates.hidemyacc.freeProfiles > 0, freeProfiles: vendorUpdates.hidemyacc.freeProfiles, startingPrice: vendorUpdates.hidemyacc.startingPrice, plans: vendorUpdates.hidemyacc.plans },
     features: [
       "Built-in Automation Tool — no-code automation builder for repetitive tasks",
       "Cloud Profile Sync — synchronize profiles across multiple devices",
@@ -1169,9 +1111,9 @@ export const browsers: Browser[] = [
       "Profile Templates — save configurations for quick profile creation",
     ],
     pros: [
-      "Very affordable pricing starting at just $15/month",
+      "Mini starts at $10 per month",
       "Built-in automation tool with no-code builder",
-      "Free plan with 5 profiles",
+      "7-day trial with 30 profiles",
       "Both Chromium and Firefox support",
       "Cloud sync for cross-device access",
       "Strong presence in Southeast Asian markets",
@@ -1203,7 +1145,7 @@ export const browsers: Browser[] = [
     reviewContent: [
       {
         title: "Budget-Friendly Option",
-        content: "Hidemyacc offers some of the **most affordable pricing** in the antidetect browser market. Starting at just **$15/month** for 30 profiles with automation included, it's an attractive option for individuals and small teams who need a reliable antidetect browser without breaking the bank.",
+        content: vendorUpdates.hidemyacc.summary.en + " " + vendorUpdates.hidemyacc.billing.en,
       },
       {
         title: "Built-in Automation",
@@ -1219,7 +1161,7 @@ export const browsers: Browser[] = [
       { name: "David C.", role: "Digital Marketer", text: "Best value antidetect browser I've found. The built-in automation covers all the basics I need for account management." },
     ],
     faqs: [
-      { question: "Is Hidemyacc free to use?", answer: "Yes, Hidemyacc offers a free plan with 5 browser profiles. Paid plans start at just $15/month for 30 profiles." },
+      { question: "Is Hidemyacc free to use?", answer: vendorUpdates.hidemyacc.summary.en + " " + vendorUpdates.hidemyacc.billing.en },
       { question: "Does Hidemyacc have automation features?", answer: "Yes, Hidemyacc includes a built-in no-code automation builder for creating workflows for tasks like account registration, posting, and data collection." },
       { question: "What browsers does Hidemyacc support?", answer: "Hidemyacc supports both Chromium and Firefox browser engines." },
     ],
@@ -1242,17 +1184,7 @@ export const browsers: Browser[] = [
       pricing: 4.3,
       support: 3.7,
     },
-    pricing: {
-      free: false,
-      freeProfiles: 0,
-      startingPrice: "$59/mo",
-      plans: [
-        { name: "Solo", price: "$59/mo", profiles: "100 profiles", features: ["Fingerprint protection", "Cookie management", "Basic support"] },
-        { name: "Team", price: "$99/mo", profiles: "200 profiles", features: ["5 sub-accounts", "Profile sharing", "API access"] },
-        { name: "Scale", price: "$199/mo", profiles: "500 profiles", features: ["10 sub-accounts", "Priority support", "Batch operations"] },
-        { name: "Custom", price: "Contact", profiles: "Unlimited", features: ["Dedicated manager", "Custom development", "SLA"] },
-      ],
-    },
+    pricing: { free: false, freeProfiles: vendorUpdates["lalicat"].freeProfiles, startingPrice: vendorUpdates["lalicat"].startingPrice, plans: vendorUpdates["lalicat"].plans },
     features: [
       "Fingerprint Protection — Canvas, WebGL, WebRTC, Audio, and more",
       "Encrypted Storage — secure local data encryption for all profiles",
@@ -1274,7 +1206,7 @@ export const browsers: Browser[] = [
       "Active Chinese-language community",
     ],
     cons: [
-      "No free plan or trial available",
+      "Three-day trial only",
       "Limited brand recognition outside Asian markets",
       "No Firefox kernel — Chromium only",
       "Documentation primarily in Chinese",
@@ -1311,7 +1243,7 @@ export const browsers: Browser[] = [
       { name: "Mike T.", role: "E-Commerce Manager", text: "The pricing is fair for what you get. We manage 200+ profiles across our team without issues." },
     ],
     faqs: [
-      { question: "Does Lalicat have a free plan?", answer: "No, Lalicat does not offer a free plan. The Solo plan starts at $59/month for 100 profiles." },
+      { question: "Does Lalicat have a free plan?", answer: vendorUpdates["lalicat"].summary.en + " " + vendorUpdates["lalicat"].billing.en },
       { question: "What platforms does Lalicat support?", answer: "Lalicat currently supports Windows only." },
       { question: "Is Lalicat good for e-commerce?", answer: "Yes, Lalicat is specifically designed for cross-border e-commerce operations like managing multiple Amazon, eBay, or Wish store accounts." },
     ],
@@ -1334,24 +1266,14 @@ export const browsers: Browser[] = [
       pricing: 4.0,
       support: 3.6,
     },
-    pricing: {
-      free: true,
-      freeProfiles: 3,
-      startingPrice: "$30/mo",
-      plans: [
-        { name: "Free", price: "$0", profiles: "3 profiles", features: ["Basic fingerprint", "Community support"] },
-        { name: "Starter", price: "$30/mo", profiles: "50 profiles", features: ["Marketing tools", "Cookie import", "Basic automation"] },
-        { name: "Pro", price: "$60/mo", profiles: "150 profiles", features: ["Team features", "API access", "Advanced automation"] },
-        { name: "Enterprise", price: "$120/mo", profiles: "500 profiles", features: ["Dedicated support", "Custom features", "Priority access"] },
-      ],
-    },
+    pricing: { free: false, freeProfiles: vendorUpdates["marketer-browser"].freeProfiles, startingPrice: vendorUpdates["marketer-browser"].startingPrice, plans: vendorUpdates["marketer-browser"].plans },
     features: [
       "Built-in Marketing Tools — pre-built tools for social media management",
       "Fingerprint Protection — Canvas, WebGL, WebRTC spoofing",
       "Pre-Built Workflows — ready-to-use automation for common marketing tasks",
       "Cookie Management — import and export cookies in bulk",
       "Team Collaboration — profile sharing and permission management",
-      "API Access — REST API for custom integrations",
+      "Advanced API — included in Ultimate and Full",
       "Proxy Support — HTTP, SOCKS5 proxy configuration",
       "Chromium Engine — built on Chromium with fingerprint modifications",
       "Auto-Warm-Up — automated profile warming for new accounts",
@@ -1360,10 +1282,10 @@ export const browsers: Browser[] = [
     pros: [
       "Purpose-built for marketing workflows",
       "Built-in marketing tools save time",
-      "Free plan with 3 profiles",
+      "Unlimited profiles in the paid editions",
       "Intuitive interface for non-technical users",
       "Pre-built workflows for common tasks",
-      "Affordable pricing starting at $30/month",
+      "Monthly Pro subscription starts at $29",
     ],
     cons: [
       "Newer platform with limited track record",
@@ -1403,9 +1325,9 @@ export const browsers: Browser[] = [
       { name: "Tom B.", role: "Content Creator", text: "Super easy to set up. I had my first 10 accounts running within an hour of signing up." },
     ],
     faqs: [
-      { question: "Is Marketer Browser free?", answer: "Yes, Marketer Browser offers a free plan with 3 browser profiles. Paid plans start at $30/month." },
+      { question: "Is Marketer Browser free?", answer: vendorUpdates["marketer-browser"].summary.en + " " + vendorUpdates["marketer-browser"].billing.en },
       { question: "What makes it different from other antidetect browsers?", answer: "Marketer Browser includes built-in marketing tools and pre-built workflows designed specifically for social media management and digital advertising tasks." },
-      { question: "Does Marketer Browser support automation?", answer: "Yes, it includes basic automation features with pre-built workflows for common marketing tasks, plus REST API access for custom integrations." },
+      { question: "Does Marketer Browser support automation?", answer: "Ultimate and Full include the advanced API and Master Control Program." },
     ],
   },
 ];

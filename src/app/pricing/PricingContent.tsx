@@ -116,7 +116,7 @@ export default function PricingContent() {
                         {b.pricing.free ? "✓ " + ix(ui.yes, locale) : "✗ " + ix(ui.no, locale)}
                       </span>
                     </td>
-                    <td>{b.pricing.freeProfiles || "—"}</td>
+                    <td>{vendorUpdates[b.slug]?.freeProfilesLabel?.[locale] ?? (b.pricing.freeProfiles || "—")}</td>
                     <td style={{ fontWeight: 700, color: "var(--text-primary)" }}>{b.pricing.startingPrice}</td>
                     <td>⭐ {b.rating.overall}</td>
                     <td>

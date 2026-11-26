@@ -1,3 +1,4 @@
+import { vendorUpdates } from "./vendorUpdates";
 import { browsers } from "./browsers";
 import type { Browser } from "@/types";
 
@@ -67,7 +68,7 @@ export function getComparisonRows(a: Browser, b: Browser) {
     overview: [
       { label: "Overall Rating", a: `⭐ ${a.rating.overall}/5`, b: `⭐ ${b.rating.overall}/5` },
       { label: "Starting Price", a: a.pricing.startingPrice, b: b.pricing.startingPrice },
-      { label: "Free Plan", a: a.pricing.free ? `✓ ${a.pricing.freeProfiles} profiles` : "✗ No", b: b.pricing.free ? `✓ ${b.pricing.freeProfiles} profiles` : "✗ No" },
+      { label: "Free Plan", a: vendorUpdates[a.slug]?.freeProfilesLabel?.en ?? (a.pricing.free ? `✓ ${a.pricing.freeProfiles} profiles` : "✗ No"), b: vendorUpdates[b.slug]?.freeProfilesLabel?.en ?? (b.pricing.free ? `✓ ${b.pricing.freeProfiles} profiles` : "✗ No") },
       { label: "Platforms", a: a.platforms.join(", "), b: b.platforms.join(", ") },
       { label: "Founded", a: String(a.foundedYear), b: String(b.foundedYear) },
     ],

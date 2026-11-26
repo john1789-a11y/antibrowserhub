@@ -605,7 +605,7 @@ main().catch(console.error);
 | Playwright | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | CLI Tool | ✓ | ✗ | ✗ | ✗ | ✗ | ✗ |
 | MCP Support | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ |
-| RPA Builder | ✓ | ✓ | ✗ | ✗ | ✓ | ✗ |
+| RPA Builder | Local Chromium, v2.73.0+ | ✓ | ✗ | ✗ | ✓ | ✗ |
 
 ## Best Practices
 
@@ -880,25 +880,25 @@ An antidetect browser creates **completely isolated browser environments** for e
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
+Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -996,19 +996,19 @@ A critical step that many advertisers skip:
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
@@ -1048,27 +1048,33 @@ Yes — several antidetect browsers offer legitimate free plans with real finger
 
 ## Complete Free Plan Comparison
 
+### Incogniton
+
+Incogniton’s free Starter plan includes 10 profiles for the first two months, then 3. Free built-in proxies are available on every plan. Selenium, Puppeteer, the REST API and the Synchronizer require Entrepreneur or higher. With monthly billing, Starter Plus costs $19.99 for 10 profiles and Entrepreneur costs $29.99 for 50. Standard prepayment discounts are 30% for six months and 40% for a year.
+
+[Incogniton](https://incogniton.com/pricing/)
+
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
+Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -1092,47 +1098,26 @@ Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run 
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
-**The up to 3 running simultaneously.** You get 10 browser profiles with real device fingerprints — enough for small-scale multi-account management.
-
-**What's included free:**
-- 10 browser profiles
-- Real device fingerprints (not random)
-- Chrome extension support
-- Basic scenario automation
-- Cloud sync across devices
-- WebGL/WebGPU spoofing
-
-**What's NOT included:**
-- API access
-- Full team collaboration
-- Cookie Robot
-- Priority support
+Free accounts can add up to 50 proxies and 10 browser extensions. Cloud sync, the scenario builder and Cookie Robot require a paid plan.
 
 **Best for:** Beginners, personal use, small-scale operations
 
-### 🥈 2. Undetectable — 5 Cloud + Unlimited Local
+### 2. Undetectable — 5 Cloud Profiles
 
-**The unique option.** Undetectable offers 5 cloud-synced profiles PLUS **unlimited local profiles** on every plan including free. If you don't need cloud sync, this is essentially an unlimited free antidetect browser.
+Free includes 5 cloud profiles, 50 profile creations per month and 10 browser configurations. Unlimited local profiles and Local API access start with Base.
 
-**What's included free:**
-- 5 cloud profiles
-- Unlimited local profiles
-- Cookie import/export
-- 10 config saves
-- Basic fingerprint management
-
-**Best for:** Users who work from a single computer and need many profiles
+[Official pricing](https://undetectable.io/pricing/)
 
 ### 3. MoreLogin — 2 Profiles and Local API
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later.
 
 ## Free vs Paid: When to Upgrade
 
 | You need... | Free is enough | Time to upgrade |
 |------------|---------------|-----------------|
 | 1-3 accounts | ✅ | — |
-| 5 accounts | ✅ (Incogniton) | Dolphin Anty |
+| 5 accounts | Incogniton during the first two months | Dolphin Anty, or Incogniton after two months |
 | 10+ accounts | — | ✅ |
 | Team collaboration | — | ✅ |
 | Local API | MoreLogin: 2 profiles | Plan-dependent |
@@ -1142,9 +1127,9 @@ MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles.
 ## Bottom Line
 
 - Dolphin Anty: up to 3 free profiles for new accounts.
-- **Need unlimited local profiles?** → Undetectable
+- **Need unlimited local profiles?** → Undetectable Base or higher
 - MoreLogin: 2 free profiles and Local API.
-- GoLogin: 3 free profiles; cloud launch starts at 50 profiles.`,
+- GoLogin: 3 free profiles and 25 creations per calendar month.`,
   },
   {
     title: "Best Antidetect Browser for Affiliate Marketing 2026",
@@ -1223,19 +1208,19 @@ Affiliate marketing revolves around managing multiple accounts across ad network
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
@@ -1547,25 +1532,25 @@ Finding the cheapest antidetect browser depends on how many profiles you need. H
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
+Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -1603,13 +1588,13 @@ Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run 
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 
@@ -1621,7 +1606,7 @@ Both offer entry-level paid plans at the same remarkably low price point. The di
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
@@ -1629,7 +1614,7 @@ MoreLogin's custom pricing model means you only pay for exactly what you need. A
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
@@ -1637,13 +1622,13 @@ GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK 
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
@@ -1651,25 +1636,25 @@ GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK 
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
+Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -1694,19 +1679,19 @@ Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run 
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### GoLogin
 
-GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK and MCP access starts at 100 profiles. Cloud browser launch and cookie import/export start at 50 profiles. A lower-priced plan does not include every automation feature. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
+GoLogin Free allows 3 saved profiles and 25 creations per calendar month. Cloud launches and REST API access require a paid plan. Professional starts at 10 profiles and includes one concurrent cloud session and 300 API requests per minute. Monthly prices; annual equivalent starts at $4.50/month, billed annually.
 
 [GoLogin](https://gologin.com/pricing/)
 
 ### Multilogin
 
-Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 mobile minutes. The free plan excludes API. Pro 10/20/50 has API limits of 50/75/100 RPM. Business starts at 100 profiles and includes unlimited team seats. Browser profiles and cloud-phone resources have separate limits. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
+Multilogin Free includes 5 cloud profiles in total, including one mobile profile, with one-time allowances of 200 MB of proxy traffic and 30 mobile minutes. Free profiles are deleted after 7 days of complete inactivity. API access starts with Pro 10. Pro 10/20/50 allow 50/75/100 requests per minute. Business starts at 100 profiles and includes unlimited team seats. Pro 10: $11 monthly or $85/year (about $7.08/month). Free profiles are cloud-only, without API.
 
 [Multilogin](https://multilogin.com/pricing/)
 
@@ -1747,13 +1732,13 @@ Similar listing descriptions, identical product photos, synchronized pricing cha
 
 ### MoreLogin
 
-MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
+MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles. Chrome and Firefox, synchronization and Local API are available. Cloud-phone Open/Local API includes remote connections and lifecycle operations; phone resources are billed separately. Browser RPA requires a local Chromium profile and desktop client v2.73.0 or later. Monthly $9; annual equivalent $5.40/month, billed annually. Cloud phones are separate.
 
 [MoreLogin](https://www.morelogin.com/pricing)
 
 ### AdsPower
 
-AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. API limits depend on the plan. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
+AdsPower offers 2 free profiles. Professional supports 10, 20, 50 or 100 profiles; Business supports larger configurations. It provides browser automation and an AI Agent. September release notes add scheduled Agent tasks, quick profile creation and parallel Agents. Free excludes the Local API and includes zero AI Agent credits. The Local API allows 120 requests/min on Professional, 300 on Business and 600 on Enterprise. USD, no additional members; monthly billing every 30 days. Professional 10: $64.80/year ($5.40/month equivalent).
 
 [AdsPower](https://www.adspower.com/pricing)
 

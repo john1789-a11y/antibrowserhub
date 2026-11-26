@@ -1,4 +1,5 @@
 "use client";
+import type { Locale } from "@/i18n/config";
 import { vendorUpdates } from "@/data/vendorUpdates";
 import AffiliateLink from "@/components/AffiliateLink";
 import Link from "next/link";
@@ -14,6 +15,7 @@ interface Deal {
   title: string;
   description: string;
   code?: string;
+  terms?: Record<Locale, string>;
   discount: string;
   expiry: string;
   verified: boolean;
@@ -59,7 +61,7 @@ const deals: Deal[] = [
     color: "#10b981",
     dealType: "free",
     title: "Free Plan — 3 Profiles",
-    description: "GoLogin provides 3 free cloud-based browser profiles with web access.",
+    description: "GoLogin Free allows 3 saved profiles and 25 creations per calendar month.",
     discount: "FREE",
     expiry: "No expiry",
     verified: false,
@@ -70,7 +72,7 @@ const deals: Deal[] = [
     color: "#10b981",
     dealType: "discount",
     title: "Annual Plan — 50% Off",
-    description: "Get 50% off any GoLogin plan when you pay annually. Best deal in the market.",
+    description: "GoLogin offers 50% off paid plans with annual billing.",
     discount: "50% OFF",
     expiry: "Ongoing",
     verified: false,
@@ -91,9 +93,9 @@ const deals: Deal[] = [
     browserSlug: "incogniton",
     color: "#2563eb",
     dealType: "free",
-    title: "Free Starter — 10 Profiles",
-    description: "Incogniton offers 10 free profiles with Selenium integration and basic fingerprint management.",
-    discount: "10 FREE",
+    title: "Free Starter",
+    description: vendorUpdates.incogniton.summary.en,
+    discount: "10 → 3",
     expiry: "No expiry",
     verified: false,
   },
@@ -102,9 +104,9 @@ const deals: Deal[] = [
     browserSlug: "hidemyacc",
     color: "#06b6d4",
     dealType: "discount",
-    title: "Starting at Just $15/mo",
-    description: "The most affordable antidetect browser starting at only $15/month for 30 profiles with automation.",
-    discount: "$15/mo",
+    title: "Mini — $10/mo",
+    description: vendorUpdates.hidemyacc.billing.en,
+    discount: "$10/mo",
     expiry: "Ongoing",
     verified: false,
   },
@@ -113,11 +115,31 @@ const deals: Deal[] = [
     browserSlug: "undetectable",
     color: "#f97316",
     dealType: "free",
-    title: "Free Plan + Unlimited Local Profiles",
-    description: "5 free cloud profiles plus unlimited local profiles on all plans — including free.",
-    discount: "UNLIMITED",
+    title: "Free Plan — 5 Cloud Profiles",
+    description: vendorUpdates.undetectable.summary.en,
+    discount: "5",
     expiry: "No expiry",
     verified: false,
+  },
+  {
+    browserName: "Octo Browser",
+    browserSlug: "octobrowser",
+    color: "#3479ef",
+    dealType: "coupon",
+    title: "Octo Browser",
+    description: "",
+    code: "OCTO50",
+    discount: "50%",
+    expiry: "2026-11-30",
+    verified: true,
+    terms: {
+      en: "November 2–30, 2026: new users receive 50% off subscriptions of three months or longer.",
+      zh: "2026 年 11 月 2 日至 30 日，新用户购买三个月或更长的订阅可享五折。",
+      ru: "Со 2 по 30 ноября 2026 года новые пользователи получают скидку 50% на подписки от трёх месяцев.",
+      ja: "2026 年 11 月 2～30 日、新規ユーザーは 3 か月以上の契約が 50% 割引になります。",
+      fr: "Du 2 au 30 novembre 2026, les nouveaux utilisateurs bénéficient de 50 % de réduction sur les abonnements de trois mois ou plus.",
+      de: "Vom 2. bis 30. November 2026 erhalten Neukunden 50 % Rabatt auf Abonnements ab drei Monaten.",
+    },
   },
   {
     browserName: "Kameleo",
@@ -179,7 +201,7 @@ export default function DealsContent() {
                         fontSize: "0.75rem", fontWeight: 700,
                       }}
                     >
-                      {vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? String(vendorUpdates[deal.browserSlug].freeProfiles) : vendorUpdates[deal.browserSlug].startingPrice) : deal.discount}
+                      {vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? (vendorUpdates[deal.browserSlug].freeProfilesLabel ? deal.discount : String(vendorUpdates[deal.browserSlug].freeProfiles)) : vendorUpdates[deal.browserSlug].startingPrice) : deal.discount}
                     </span>
                   </div>
                   <h3 className="feature-title" style={{ fontSize: "0.95rem", marginBottom: 8 }}>{vendorUpdates[deal.browserSlug] ? deal.browserName : deal.title}</h3>
@@ -235,11 +257,11 @@ export default function DealsContent() {
                         fontSize: "0.75rem", fontWeight: 700,
                       }}
                     >
-                      {vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? String(vendorUpdates[deal.browserSlug].freeProfiles) : vendorUpdates[deal.browserSlug].startingPrice) : deal.discount}
+                      {deal.code ? deal.discount : vendorUpdates[deal.browserSlug]?.startingPrice ?? deal.discount}
                     </span>
                   </div>
                   <h3 className="feature-title" style={{ fontSize: "0.95rem", marginBottom: 8 }}>{vendorUpdates[deal.browserSlug] ? deal.browserName : deal.title}</h3>
-                  <p className="feature-desc" style={{ fontSize: "0.82rem", marginBottom: 12 }}>{vendorUpdates[deal.browserSlug] ? (deal.dealType === "free" ? vendorUpdates[deal.browserSlug].summary[locale] : vendorUpdates[deal.browserSlug].billing[locale]) : deal.description}</p>
+                  <p className="feature-desc" style={{ fontSize: "0.82rem", marginBottom: 12 }}>{deal.terms?.[locale] ?? vendorUpdates[deal.browserSlug]?.billing[locale] ?? deal.description}</p>
                   {deal.code && (
                     <div style={{
                       padding: "8px 16px", borderRadius: 8,
@@ -255,7 +277,7 @@ export default function DealsContent() {
                       {t.deals.getDeal}
                     </AffiliateLink>
                     <span style={{ fontSize: "0.72rem", color: "var(--text-muted)" }}>
-                      {t.deals.expires}: {vendorUpdates[deal.browserSlug]?.verifiedAt || deal.expiry}
+                      {deal.code ? t.deals.expires : t.deals.verified}: {deal.code ? deal.expiry : vendorUpdates[deal.browserSlug]?.verifiedAt}
                     </span>
                   </div>
                 </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Browser } from "@/types";
 import { browsers } from "@/data/browsers";
 import { useI18n } from "@/components/I18nProvider";
+import { getBrowserI18n } from "@/i18n/browsers";
 import { vendorUpdates } from "@/data/vendorUpdates";
 import BrowserLogo from "@/components/BrowserLogo";
 import ReviewTOC from "./ReviewTOC";
@@ -114,7 +115,14 @@ export default function ReviewContent({ browser }: ReviewContentProps) {
               <div className="pros-list">
                 <h3>{i(ui.pros)}</h3>
                 <ul>
-                  {browser.pros.map((p) => (<li key={p}>👍 {update && p === "Monthly entry-level pricing starts at $9" ? update.billing[locale] : update && p === "Free plan includes 2 profiles and Local API" ? update.summary[locale] : p}</li>))}
+                  {browser.pros.map((p, index) => {
+                    const pro = browser.slug === "dolphin-anty" && index === 0
+                      ? getBrowserI18n(browser.slug, locale)?.features[0] ?? p
+                      : update && p === "Monthly entry-level pricing starts at $9" ? update.billing[locale]
+                      : update && p === "Free plan includes 2 profiles and Local API" ? update.summary[locale]
+                      : p;
+                    return <li key={p}>👍 {pro}</li>;
+                  })}
                 </ul>
               </div>
               <div className="cons-list">

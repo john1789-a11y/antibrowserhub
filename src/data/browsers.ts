@@ -516,7 +516,7 @@ export const browsers: Browser[] = [
     slug: "dolphin-anty",
     tagline: "Affordable antidetect browser for affiliate marketers",
     description:
-      "Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively.",
+      "Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively.",
     logo: "/images/browsers/dolphin-anty.svg",
     website: "https://dolphin-anty.com",
     affiliateUrl: affiliateDestinations["dolphin-anty"],
@@ -544,7 +544,7 @@ export const browsers: Browser[] = [
       "Local API — programmatic profile management",
     ],
     pros: [
-  "Most generous free plan (10 profiles with full features)",
+  "Free plan for new accounts with up to 3 profiles",
   "Purpose-built for affiliate marketing and media buying",
   "Powerful visual scenario automation builder",
   "Real device fingerprints — not randomly generated",
@@ -604,7 +604,7 @@ export const browsers: Browser[] = [
     faqs: [
   {
     "question": "How many free profiles does Dolphin Anty offer?",
-    "answer": "Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more."
+    "answer": "Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more."
   },
   {
     "question": "Does Dolphin Anty support mobile fingerprints?",

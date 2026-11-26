@@ -39,12 +39,12 @@ const data: Record<string, Record<Locale, BrowserI18n>> = {
     de: {"tagline":"5 kostenlose Cloud-Profile","features":["5 kostenlose Cloud-Profile","Gratisplan ohne API","Pro-API: 50–100 RPM","Business: unbegrenzte Plätze"]},
   },
   "dolphin-anty": {
-    en: {"tagline":"Free-tier friendly browser with built-in automation","features":["5 free profiles","3 concurrent free profiles","200 monthly recreations","Starter: cloud sync"]},
-    zh: {"tagline":"对免费用户友好，内置自动化功能","features":["5 个免费环境","免费版最多同时运行 3 个","每月重建 200 次","Starter：云同步"]},
-    ru: {"tagline":"Браузер с щедрым бесплатным планом и автоматизацией","features":["5 бесплатных профилей","3 одновременно бесплатно","200 пересозданий в месяц","Starter: облачная синхронизация"]},
-    ja: {"tagline":"無料プランが充実、自動化機能内蔵","features":["無料 5 プロファイル","無料版同時実行 3","月 200 回再作成","Starter：クラウド同期"]},
-    fr: {"tagline":"Navigateur généreux en gratuit avec automatisation intégrée","features":["5 profils gratuits","3 profils simultanés gratuits","200 recréations par mois","Starter : synchronisation cloud"]},
-    de: {"tagline":"Browser mit großzügigem Gratis-Plan und Automatisierung","features":["5 kostenlose Profile","3 gleichzeitig im Gratisplan","200 Neuerstellungen pro Monat","Starter: Cloud-Sync"]},
+    en: { tagline: "Browser with a free plan and paid automation options", features: ["Up to 3 free profiles for new accounts", "Run 3 profiles simultaneously", "Up to 20 profile creations per calendar month", "Starter: cloud sync"] },
+    zh: { tagline: "提供免费方案及付费自动化选项", features: ["新注册账号最多 3 个免费环境", "最多同时运行 3 个环境", "每个自然月最多创建 20 次", "Starter：云同步"] },
+    ru: { tagline: "Браузер с бесплатным планом и платными функциями автоматизации", features: ["До 3 бесплатных профилей для новых аккаунтов", "До 3 профилей одновременно", "До 20 созданий за календарный месяц", "Starter: облачная синхронизация"] },
+    ja: { tagline: "無料プランと有料の自動化オプションがあるブラウザ", features: ["新規アカウントは無料で最大 3 プロファイル", "最大 3 プロファイルを同時実行", "暦月あたり最大 20 回作成", "Starter：クラウド同期"] },
+    fr: { tagline: "Navigateur avec formule gratuite et options d’automatisation payantes", features: ["Jusqu’à 3 profils gratuits pour les nouveaux comptes", "Jusqu’à 3 profils actifs simultanément", "Jusqu’à 20 créations par mois civil", "Starter : synchronisation cloud"] },
+    de: { tagline: "Browser mit Gratisplan und kostenpflichtigen Automatisierungsoptionen", features: ["Bis zu 3 kostenlose Profile für neue Konten", "Bis zu 3 Profile gleichzeitig", "Bis zu 20 Profilerstellungen pro Kalendermonat", "Starter: Cloud-Sync"] },
   },
   octobrowser: {
     en: {"tagline":"Clean UI, strong security with zero breach history","features":["Lite: 3 profiles","API: Base and above","2-day new-user trial","Octium 155"]},

@@ -224,7 +224,7 @@ Meta dispose d'algorithmes de détection très avancés. L'utilisation de plusie
 
 ### Dolphin Anty
 
-Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistrés et actifs simultanément, et 20 créations par mois civil. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -248,7 +248,7 @@ Oui ! La plupart des navigateurs réputés proposent des forfaits gratuits avec 
 
 | Navigateur | Profils gratuits | Fonctionnalités clés | Limitations |
 |------------|------------------|----------------------|-------------|
-| **Dolphin Anty** | 5 | Empreintes réelles, automatisation | Pas d'API |
+| **Dolphin Anty** | 3 | Empreintes réelles, automatisation | Pas d'API |
 | **Incogniton** | 10 | Synchronisation, intégration Selenium | Pas de fonctions avancées |
 | **Undetectable** | 5 cloud + ∞ locaux | Profils locaux **illimités** ! | Limité à 5 sur le cloud |
 | **GoLogin** | 3 | 3 profils de navigateur | Lancement cloud : dès 50 ; API/SDK/MCP : dès 100 |
@@ -265,7 +265,7 @@ MoreLogin propose 2 profils gratuits et 2 utilisateurs. Pro commence à 10 profi
 
 ### Dolphin Anty
 
-Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistrés et actifs simultanément, et 20 créations par mois civil. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 
@@ -279,7 +279,7 @@ Le marketing d'affiliation (Affiliate Marketing) implique de gérer plusieurs co
 
 ### Dolphin Anty
 
-Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistrés et actifs simultanément, et 20 créations par mois civil. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -328,7 +328,7 @@ TikTok est une plateforme mobile avant tout. Elle analyse donc rigoureusement le
 
 ### Dolphin Anty
 
-Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistrés et actifs simultanément, et 20 créations par mois civil. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -387,7 +387,7 @@ Multilogin : 5 profils cloud gratuits, 200 Mo de proxy et 30 minutes mobiles off
 
 ### Dolphin Anty
 
-Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistrés et actifs simultanément, et 20 créations par mois civil. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -413,7 +413,7 @@ GoLogin offre 3 profils gratuits et des forfaits payants dès 10. API, SDK et MC
 
 ### Dolphin Anty
 
-Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
+Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistrés et actifs simultanément, et 20 créations par mois civil. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $. Prix mensuels de base. Prépaiement de 6 mois : −20 % ; 12 mois : −40 %. Sièges supplémentaires payants.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 

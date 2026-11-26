@@ -226,7 +226,7 @@ export const vendorUpdates: Record<string, VendorUpdate> = {
     ]
   },
   "dolphin-anty": {
-    "verifiedAt": "2026-10-12",
+    "verifiedAt": "2026-11-26",
     "source": "https://dolphin-anty.com/tarifs/",
     "billing": {
       "en": "Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.",
@@ -237,20 +237,20 @@ export const vendorUpdates: Record<string, VendorUpdate> = {
       "de": "Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra."
     },
     "summary": {
-      "en": "Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively.",
-      "zh": "Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。",
-      "ru": "Dolphin Anty Free: 5 профилей, до 3 одновременно, до 200 пересозданий в месяц. Starter от 20 профилей с облачной синхронизацией, передачей и экспортом cookie. Дополнительные места Base/Team/Enterprise: $10/$20/$25.",
-      "ja": "Dolphin Anty 無料版は 5 プロファイル、同時実行 3、月 200 回の再作成まで。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。",
-      "fr": "Dolphin Anty Free : 5 profils, 3 simultanés et 200 recréations par mois. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $.",
-      "de": "Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $."
+      "en": "Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively.",
+      "zh": "Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可同时运行这 3 个，每个自然月最多创建 20 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。",
+      "ru": "Dolphin Anty Free: для новых аккаунтов: до 3 сохранённых и одновременно запущенных профилей, до 20 созданий за календарный месяц. Starter от 20 профилей с облачной синхронизацией, передачей и экспортом cookie. Дополнительные места Base/Team/Enterprise: $10/$20/$25.",
+      "ja": "Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファイルを保存・同時実行でき、暦月あたり最大 20 回作成できます。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。",
+      "fr": "Dolphin Anty Free : pour les nouveaux comptes : jusqu’à 3 profils enregistrés et actifs simultanément, et 20 créations par mois civil. Starter commence à 20 avec synchronisation cloud, transfert et export de cookies. Sièges supplémentaires Base/Team/Enterprise : 10/20/25 $.",
+      "de": "Dolphin Anty Free: für neue Konten: bis zu 3 gespeicherte und gleichzeitig nutzbare Profile sowie 20 Erstellungen pro Kalendermonat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $."
     },
-    "freeProfiles": 5,
+    "freeProfiles": 3,
     "startingPrice": "$10/mo",
     "plans": [
       {
         "name": "Free",
         "price": "$0",
-        "profiles": "5",
+        "profiles": "3",
         "features": []
       },
       {

@@ -904,7 +904,7 @@ Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 m
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -961,7 +961,7 @@ For Facebook advertising, your antidetect browser needs:
 **Why:** Purpose-built for affiliate marketers and media buyers. Used daily by 860,000+ people and 2,200+ teams specifically for ad account management.
 
 **Key advantages:**
-- **5 free profiles forever** — up to 3 running simultaneously
+- **Up to 3 free profiles for new accounts**, with up to 20 creations per calendar month
 - **Scenario automation** — visual builder for account farming workflows
 - **Real device fingerprints** — not randomly generated
 - **iOS/Android fingerprint support** — important for mobile ad verification
@@ -1014,7 +1014,7 @@ GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK 
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -1024,7 +1024,7 @@ Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 pr
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
   },
@@ -1074,7 +1074,7 @@ Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 m
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -1088,7 +1088,7 @@ Octo Browser Lite starts at 3 profiles. Starter/Base/Team/Advanced include 10/10
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -1132,7 +1132,7 @@ MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles.
 | You need... | Free is enough | Time to upgrade |
 |------------|---------------|-----------------|
 | 1-3 accounts | ✅ | — |
-| 5 accounts | ✅ (Dolphin/Incogniton) | — |
+| 5 accounts | ✅ (Incogniton) | Dolphin Anty |
 | 10+ accounts | — | ✅ |
 | Team collaboration | — | ✅ |
 | Local API | MoreLogin: 2 profiles | Plan-dependent |
@@ -1141,7 +1141,7 @@ MoreLogin offers 2 free browser profiles and 2 users. Pro starts at 10 profiles.
 
 ## Bottom Line
 
-- **Need the most profiles free?** → Dolphin Anty (5) or Incogniton (10)
+- Dolphin Anty: up to 3 free profiles for new accounts.
 - **Need unlimited local profiles?** → Undetectable
 - MoreLogin: 2 free profiles and Local API.
 - GoLogin: 3 free profiles; cloud launch starts at 50 profiles.`,
@@ -1186,7 +1186,7 @@ Affiliate marketing revolves around managing multiple accounts across ad network
 **Why affiliates love it:**
 - **Scenario automation** — automate farming, registration, and management
 - **Real device fingerprints** — authentic browser identities
-- **5 free profiles** — start without investment
+- **Up to 3 free profiles for new accounts**
 - **iOS/Android fingerprints** — essential for mobile traffic campaigns
 - **Cookie Robot** — automated cookie collection and aging
 
@@ -1241,7 +1241,7 @@ GoLogin offers 3 free profiles and paid plans starting at 10 profiles. API, SDK 
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -1418,7 +1418,7 @@ AdsPower is the most popular choice for TikTok advertisers, with built-in templa
 For content creators managing multiple TikTok profiles:
 
 - **iOS/Android fingerprint generation** — crucial for TikTok's mobile-first detection
-- **5 free profiles** — start creating content across multiple accounts
+- **Up to 3 free profiles for new accounts**
 - **Scenario automation** — automate posting workflows
 - **Real device fingerprints** — pass TikTok's mobile checks
 
@@ -1499,12 +1499,12 @@ The crypto space — especially airdrop farming and DeFi — requires managing m
 - **Tag system** — track wallet status (farmed, claimed, pending)
 - **Team features** — share farming operations with partners
 
-### 3. Dolphin Anty — Best Free Tier for Crypto
+### 3. Dolphin Anty — Free Plan for Small Setups
 
-**Why:** 5 free profiles means you can start farming airdrops immediately without any investment.
+**Free plan:** New accounts can save up to 3 profiles.
 
 **Crypto advantages:**
-- **5 free profiles** — start farming immediately
+- **Up to 20 profile creations per calendar month** on Free
 - **Scenario automation** — automate testnet interactions
 - **Real fingerprints** — avoid Sybil flags
 - **Cloud sync** — access wallets from any device
@@ -1528,7 +1528,7 @@ The crypto space — especially airdrop farming and DeFi — requires managing m
 
 ## Bottom Line
 
-**MoreLogin** dominates for crypto/airdrop farming thanks to its low pricing, ML fingerprinting, and window synchronizer for batch operations. **Dolphin Anty** is the best free starting point for beginners entering the airdrop space.`,
+**MoreLogin** dominates for crypto/airdrop farming thanks to its low pricing, ML fingerprinting, and window synchronizer for batch operations. **Dolphin Anty** offers a free plan for up to 3 profiles on new accounts.`,
   },
   {
     title: "Cheapest Antidetect Browser Compared 2026",
@@ -1571,7 +1571,7 @@ Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 m
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -1589,13 +1589,13 @@ Octo Browser Lite starts at 3 profiles. Starter/Base/Team/Advanced include 10/10
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -1675,7 +1675,7 @@ Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 m
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -1712,7 +1712,7 @@ Multilogin has 5 free cloud profiles, a one-time 200 MB proxy allowance and 30 m
 
 ### Dolphin Anty
 
-Dolphin Anty Free includes 5 profiles, up to 3 running simultaneously and 200 profile recreations per month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
+Dolphin Anty Free for new accounts allows up to 3 saved profiles, all 3 can run at once, and up to 20 profile creations per calendar month. Starter begins at 20 profiles and adds cloud sync, transfer and cookie export. Additional seats on Base/Team/Enterprise cost $10/$20/$25 respectively. Monthly base prices. Six-month prepayment: 20% off; twelve-month: 40% off. Extra seats cost more.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
   },

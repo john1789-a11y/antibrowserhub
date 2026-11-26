@@ -240,7 +240,7 @@ Ja! Mehrere renommierte Browser bieten kostenlose Pläne mit echtem Schutz. Dies
 
 | Browser | Kostenlose Profile | Wichtigste Funktionen | Einschränkungen |
 |---------|---------------------|----------------------|-----------------|
-| **Dolphin Anty** | 5 | Echte Fingerprints, Basis-Automatisierung | Keine API |
+| **Dolphin Anty** | 3 | Echte Fingerprints, Basis-Automatisierung | Keine API |
 | **Incogniton** | 10 | Synchronisierung, Selenium-Integration | Keine erweiterten Fingerprints |
 | **Undetectable** | 5 Cloud + ∞ Lokal | Unbegrenzte lokale Profile! | Cloud limitiert auf 5 |
 | **GoLogin** | 3 | 3 Browserprofile | Cloud-Start: ab 50; API/SDK/MCP: ab 100 |
@@ -249,7 +249,7 @@ Ja! Mehrere renommierte Browser bieten kostenlose Pläne mit echtem Schutz. Dies
 
 ## Unsere Empfehlung
 
-- **Meiste kostenlose Profile**: **Dolphin Anty** (5) oder **Incogniton** (10).
+- **Dolphin Anty**: bis zu 3 kostenlose Profile für neue Konten.
 - **Unbegrenzte lokale Profile**: **Undetectable** (lokal unbegrenzt).
 - MoreLogin: 2 kostenlose Profile und Local API.`,
 
@@ -263,7 +263,7 @@ Affiliate-Marketing erfordert die Verwaltung vieler Konten bei Google, Facebook,
 
 ### Dolphin Anty
 
-Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+Dolphin Anty Free: für neue Konten: bis zu 3 gespeicherte und gleichzeitig nutzbare Profile sowie 20 Erstellungen pro Kalendermonat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -310,7 +310,7 @@ TikTok ist eine mobile App und prüft daher gezielt Mobil-Fingerprints, GPS-Stan
 
 ### Dolphin Anty
 
-Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+Dolphin Anty Free: für neue Konten: bis zu 3 gespeicherte und gleichzeitig nutzbare Profile sowie 20 Erstellungen pro Kalendermonat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -369,7 +369,7 @@ Multilogin bietet 5 kostenlose Cloud-Profile, einmalig 200 MB Proxy und 30 mobil
 
 ### Dolphin Anty
 
-Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+Dolphin Anty Free: für neue Konten: bis zu 3 gespeicherte und gleichzeitig nutzbare Profile sowie 20 Erstellungen pro Kalendermonat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -395,7 +395,7 @@ GoLogin bietet 3 kostenlose Profile und bezahlte Tarife ab 10. API, SDK und MCP 
 
 ### Dolphin Anty
 
-Dolphin Anty Free: 5 Profile, 3 gleichzeitig und 200 Neuerstellungen pro Monat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
+Dolphin Anty Free: für neue Konten: bis zu 3 gespeicherte und gleichzeitig nutzbare Profile sowie 20 Erstellungen pro Kalendermonat. Starter ab 20 mit Cloud-Sync, Übertragung und Cookie-Export. Zusätzliche Plätze bei Base/Team/Enterprise: 10/20/25 $. Monatliche Grundpreise. 6 Monate voraus: 20 % Rabatt; 12 Monate: 40 %. Zusatzplätze kosten extra.
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 

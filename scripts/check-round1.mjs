@@ -86,7 +86,12 @@ function files(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMa
     assert.equal(browser.pricing.startingPrice, vendor.startingPrice);
     assert.equal(browser.pricing.freeProfiles, vendor.freeProfiles);
   }
-  assert.equal(vendors["dolphin-anty"].freeProfiles, 5);
+  assert.equal(vendors["dolphin-anty"].freeProfiles, 3);
+  assert.equal(vendors["dolphin-anty"].plans.find(plan => plan.name === "Free").profiles, "3");
+  assert.equal(vendors["dolphin-anty"].startingPrice, "$10/mo");
+  const dolphin = browsers.find(browser => browser.slug === "dolphin-anty");
+  assert.equal(dolphin.description, vendors["dolphin-anty"].summary.en);
+  assert.ok(dolphin.faqs.some(faq => faq.answer === vendors["dolphin-anty"].summary.en + " " + vendors["dolphin-anty"].billing.en));
   assert.equal(vendors.multilogin.freeProfiles, 5);
   const freeGuide = load("src/data/guides.ts").getGuideBySlug("best-free-antidetect-browser").content;
   assert.ok(!freeGuide.includes("unlocks every single feature"));
@@ -97,7 +102,7 @@ function files(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMa
     const text = translated.getTranslatedGuideContent("best-free-antidetect-browser", locale, freeGuide);
     const goRow = text.split("\n").find(line => line.startsWith("| **GoLogin**"));
     if (goRow) assert.ok(goRow.includes("50") && goRow.includes("100"), locale);
-    assert.ok(!/\| \*\*Dolphin Anty\*\* \| 10 \|/.test(text), locale);
+    assert.ok(!/\| \*\*Dolphin Anty\*\* \| (?:5|10) \|/.test(text), locale);
   }
   assert.ok(!load("src/data/guides.ts").getGuideBySlug("cheapest-antidetect-browser").content.includes("June 2026"));
   console.log(`PASS: ${routesChecked} route metadata records, exact route allowlist, six vendors, referral destinations, attribution privacy/session/failure handling, mouse activation.`);

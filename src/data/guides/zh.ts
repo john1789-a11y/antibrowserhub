@@ -393,7 +393,7 @@ AdsPower 提供 2 个免费环境，Professional 可选 10、20、50 或 100 个
 
 ### Dolphin Anty
 
-Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可同时运行这 3 个，每个自然月最多创建 20 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -419,7 +419,7 @@ Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多�
 
 | 浏览器 | 免费环境数 | 核心功能 | 限制 |
 |--------|------------|----------|------|
-| **Dolphin Anty** | 5 | 真实指纹、基础自动化 | 无 API，团队功能受限 |
+| **Dolphin Anty** | 3 | 真实指纹、基础自动化 | 无 API，团队功能受限 |
 | **Incogniton** | 10 | 浏览器同步、Selenium 集成 | 无高级指纹生成 |
 | **Undetectable** | 5 云端 + 无限本地 | 本地环境不限量！ | 云端仅限 5 个 |
 | **GoLogin** | 3 | 3 个浏览器环境 | 云端启动：50 环境起；API/SDK/MCP：100 环境起 |
@@ -436,7 +436,7 @@ MoreLogin 提供 2 个免费浏览器环境和 2 个用户，Pro 从 10 个环�
 
 ### Dolphin Anty
 
-Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可同时运行这 3 个，每个自然月最多创建 20 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 
@@ -450,7 +450,7 @@ Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多�
 
 ### Dolphin Anty
 
-Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可同时运行这 3 个，每个自然月最多创建 20 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -504,7 +504,7 @@ TikTok 作为一个移动优先的平台，其风控系统极其严格。它会�
 
 ### Dolphin Anty
 
-Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可同时运行这 3 个，每个自然月最多创建 20 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -569,7 +569,7 @@ Multilogin 提供 5 个免费云端环境，一次性 200 MB 代理额度和 30 
 
 ### Dolphin Anty
 
-Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可同时运行这 3 个，每个自然月最多创建 20 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -597,7 +597,7 @@ GoLogin 提供 3 个免费环境，付费从 10 个环境起。API、SDK 和 MCP
 
 ### Dolphin Anty
 
-Dolphin Anty 免费版含 5 个环境，最多同时运行 3 个，每月最多重建 200 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
+Dolphin Anty 新注册账号的免费版最多保存 3 个浏览器环境，可同时运行这 3 个，每个自然月最多创建 20 次。Starter 从 20 个环境起，提供云同步、转移和 Cookie 导出。Base/Team/Enterprise 额外席位分别为 $10/$20/$25。 展示基础月付价；预付 6 个月优惠 20%，12 个月优惠 40%；额外席位另计。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 

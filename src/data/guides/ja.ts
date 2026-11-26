@@ -249,7 +249,7 @@ AdsPower は無料 2 プロファイル、Professional は 10・20・50・100、
 
 ### Dolphin Anty
 
-Dolphin Anty 無料版は 5 プロファイル、同時実行 3、月 200 回の再作成まで。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
+Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファイルを保存・同時実行でき、暦月あたり最大 20 回作成できます。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -272,7 +272,7 @@ Dolphin Anty 無料版は 5 プロファイル、同時実行 3、月 200 回の
 
 | ブラウザ | 無料プロファイル数 | 特徴 | 制限 |
 |--------|---------------------|------|------|
-| **Dolphin Anty** | 5 | リアルな指紋生成、自動化 | API利用不可 |
+| **Dolphin Anty** | 3 | リアルな指紋生成、自動化 | API利用不可 |
 | **Incogniton** | 10 | 同期、Selenium連携 | 高度な偽装なし |
 | **Undetectable** | 5クラウド + ∞ローカル | PC内にローカルプロファイルが**無制限**！ | クラウドは5つまで |
 | **GoLogin** | 3 | ブラウザ 3 プロファイル | クラウド起動：50 以上、API/SDK/MCP：100 以上 |
@@ -281,7 +281,7 @@ Dolphin Anty 無料版は 5 プロファイル、同時実行 3、月 200 回の
 
 ## 選び方のアドバイス
 
-- **プロファイル数が最も多く欲しい**：**Dolphin Anty**（5個）。
+- **Dolphin Anty**：新規アカウントは無料で最大 3 プロファイル。
 - **1台のPCで大量のアカウントをローカル管理したい**：**Undetectable**（ローカル無制限）。
 - **すべてのAPI自動化機能を試したい**：**MoreLogin**（機能無制限）。`,
 
@@ -344,7 +344,7 @@ TikTokはモバイル優先のプラットフォームであるため、解像�
 
 ### Dolphin Anty
 
-Dolphin Anty 無料版は 5 プロファイル、同時実行 3、月 200 回の再作成まで。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
+Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファイルを保存・同時実行でき、暦月あたり最大 20 回作成できます。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -407,7 +407,7 @@ Multilogin は無料クラウド 5 プロファイル、初回のみプロキシ
 
 ### Dolphin Anty
 
-Dolphin Anty 無料版は 5 プロファイル、同時実行 3、月 200 回の再作成まで。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
+Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファイルを保存・同時実行でき、暦月あたり最大 20 回作成できます。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)
 
@@ -433,7 +433,7 @@ GoLogin は無料 3 プロファイル、有料は 10 から。API・SDK・MCP �
 
 ### Dolphin Anty
 
-Dolphin Anty 無料版は 5 プロファイル、同時実行 3、月 200 回の再作成まで。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
+Dolphin Anty 新規アカウントの無料プランでは最大 3 プロファイルを保存・同時実行でき、暦月あたり最大 20 回作成できます。Starter は 20 からでクラウド同期、転送、Cookie 出力を提供。Base/Team/Enterprise の追加席は $10/$20/$25。 基本月額。6 か月前払いは 20%、12 か月は 40% 割引。追加席は別料金。
 
 [Dolphin Anty](https://dolphin-anty.com/tarifs/)`,
 
